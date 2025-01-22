@@ -1,0 +1,35 @@
+export const propertyrecordFormComponents = {
+	formId: 'propertyrecord',
+	title: 'Propertyrecord',
+	components: [
+		{
+			name: 'Text',
+			key: 'name',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord title',
+				},
+				{
+					name: 'Label',
+					value: 'Title',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'description',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord description',
+				},
+				{
+					name: 'Label',
+					value: 'Description',
+				}
+			]
+		}
+	]
+}

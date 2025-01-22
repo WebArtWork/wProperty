@@ -62,6 +62,76 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'propertiesrecords',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesrecords'
+					}
+				},
+				loadChildren: () => import('./modules/propertyrecord/pages/propertiesrecords/propertiesrecords.module').then(m => m.PropertiesrecordsModule)
+			}, 
+			{
+				path: 'propertiestrades',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiestrades'
+					}
+				},
+				loadChildren: () => import('./modules/propertytrade/pages/propertiestrades/propertiestrades.module').then(m => m.PropertiestradesModule)
+			}, 
+			{
+				path: 'propertiesworkers',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesworkers'
+					}
+				},
+				loadChildren: () => import('./modules/propertyworker/pages/propertiesworkers/propertiesworkers.module').then(m => m.PropertiesworkersModule)
+			}, 
+			{
+				path: 'propertiesservices',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesservices'
+					}
+				},
+				loadChildren: () => import('./modules/propertyservice/pages/propertiesservices/propertiesservices.module').then(m => m.PropertiesservicesModule)
+			}, 
+			{
+				path: 'propertiesproviders',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesproviders'
+					}
+				},
+				loadChildren: () => import('./modules/propertyprovider/pages/propertiesproviders/propertiesproviders.module').then(m => m.PropertiesprovidersModule)
+			}, 
+			{
+				path: 'propertiesmaterials',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesmaterials'
+					}
+				},
+				loadChildren: () => import('./modules/propertymaterial/pages/propertiesmaterials/propertiesmaterials.module').then(m => m.PropertiesmaterialsModule)
+			}, 
+			{
+				path: 'properties',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Properties'
+					}
+				},
+				loadChildren: () => import('./modules/property/pages/properties/properties.module').then(m => m.PropertiesModule)
+			}, 
+			{
 				path: 'profile',
 				canActivate: [MetaGuard],
 				data: {
