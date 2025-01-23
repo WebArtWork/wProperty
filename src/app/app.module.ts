@@ -28,6 +28,36 @@ const routes: Routes = [
 		children: [
 			/* guest */
 			{
+				path: 'providers',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Providers'
+					}
+				},
+				loadChildren: () => import('./pages/guest/providers/providers.module').then(m => m.ProvidersModule)
+			}, 
+			{
+				path: 'materials',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Materials'
+					}
+				},
+				loadChildren: () => import('./pages/guest/materials/materials.module').then(m => m.MaterialsModule)
+			}, 
+			{
+				path: 'markets',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Markets'
+					}
+				},
+				loadChildren: () => import('./pages/guest/markets/markets.module').then(m => m.MarketsModule)
+			}, 
+			{
 				path: 'components',
 				canActivate: [MetaGuard],
 				data: {
@@ -61,6 +91,76 @@ const routes: Routes = [
 		component: UserComponent,
 		children: [
 			/* user */
+			{
+				path: 'markets',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Markets'
+					}
+				},
+				loadChildren: () => import('./pages/user/markets/markets.module').then(m => m.MarketsModule)
+			}, 
+			{
+				path: 'workers',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Workers'
+					}
+				},
+				loadChildren: () => import('./pages/user/workers/workers.module').then(m => m.WorkersModule)
+			}, 
+			{
+				path: 'materials',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Materials'
+					}
+				},
+				loadChildren: () => import('./pages/user/materials/materials.module').then(m => m.MaterialsModule)
+			}, 
+			{
+				path: 'providers',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Providers'
+					}
+				},
+				loadChildren: () => import('./pages/user/providers/providers.module').then(m => m.ProvidersModule)
+			}, 
+			{
+				path: 'propertieshistories',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertieshistories'
+					}
+				},
+				loadChildren: () => import('./pages/user/propertieshistories/propertieshistories.module').then(m => m.PropertieshistoriesModule)
+			}, 
+			{
+				path: 'propertiesprofile',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiesprofile'
+					}
+				},
+				loadChildren: () => import('./pages/user/propertiesprofile/propertiesprofile.module').then(m => m.PropertiesprofileModule)
+			}, 
+			{
+				path: 'myproperties',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Myproperties'
+					}
+				},
+				loadChildren: () => import('./pages/user/myproperties/myproperties.module').then(m => m.MypropertiesModule)
+			}, 
 			{
 				path: 'propertiesrecords',
 				canActivate: [MetaGuard],
