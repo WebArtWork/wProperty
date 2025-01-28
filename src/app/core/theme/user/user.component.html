@@ -146,6 +146,17 @@
 				<a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
+					routerLink="propertiesservices"
+					class="nav__burger-link"
+					(click)="hideSidebar()"
+				>
+					<span class="material-icons">assignment</span>
+					<span translate>Theme.Services</span>
+				</a>
+				<hr *ngIf="us.role('admin')" />
+				<a
+					[routerLinkActiveOptions]="{ exact: true }"
+					routerLinkActive="_activeLink"
 					routerLink="propertiestrades"
 					class="nav__burger-link"
 					(click)="hideSidebar()"

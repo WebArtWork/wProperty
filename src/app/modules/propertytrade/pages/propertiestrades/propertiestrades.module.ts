@@ -7,6 +7,10 @@ const routes: Routes = [
 	{
 		path: '',
 		component: PropertiestradesComponent
+	},
+	{
+		path: ':property_id',
+		component: PropertiestradesComponent
 	}
 ];
 

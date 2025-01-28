@@ -7,38 +7,48 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertytradeFormComponents } from '../../formcomponents/propertytrade.formcomponents';
 import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	templateUrl: './propertiestrades.component.html',
 	styleUrls: ['./propertiestrades.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class PropertiestradesComponent {
 	columns = ['name', 'description'];
 
-	form: FormInterface = this._form.getForm('propertytrade', propertytradeFormComponents);
+	form: FormInterface = this._form.getForm(
+		'propertytrade',
+		propertytradeFormComponents
+	);
 
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
-		setPerPage: this._propertytradeService.setPerPage.bind(this._propertytradeService),
+		setPerPage: this._propertytradeService.setPerPage.bind(
+			this._propertytradeService
+		),
 		allDocs: false,
-		create: (): void => {
-			this._form.modal<Propertytrade>(this.form, {
-				label: 'Create',
-				click: async (created: unknown, close: () => void) => {
-					close();
+		create: this._router.url.includes('propertiestrades/')
+			? (): void => {
+					this._form.modal<Propertytrade>(this.form, {
+						label: 'Create',
+						click: async (created: unknown, close: () => void) => {
+							close();
 
-					this._preCreate(created as Propertytrade);
+							this._preCreate(created as Propertytrade);
 
-					await firstValueFrom(
-						this._propertytradeService.create(created as Propertytrade)
-					);
+							await firstValueFrom(
+								this._propertytradeService.create(
+									created as Propertytrade
+								)
+							);
 
-					this.setRows();
-				},
-			});
-		},
+							this.setRows();
+						}
+					});
+			  }
+			: null,
 		update: (doc: Propertytrade): void => {
 			this._form
 				.modal<Propertytrade>(this.form, [], doc)
@@ -55,51 +65,66 @@ export class PropertiestradesComponent {
 				),
 				buttons: [
 					{
-						text: this._translate.translate('Common.No'),
+						text: this._translate.translate('Common.No')
 					},
 					{
 						text: this._translate.translate('Common.Yes'),
 						callback: async (): Promise<void> => {
-							await firstValueFrom(this._propertytradeService.delete(doc));
+							await firstValueFrom(
+								this._propertytradeService.delete(doc)
+							);
 
 							this.setRows();
-						},
-					},
-				],
+						}
+					}
+				]
 			});
 		},
 		buttons: [
 			{
 				icon: 'cloud_download',
 				click: (doc: Propertytrade): void => {
-					this._form.modalUnique<Propertytrade>('propertytrade', 'url', doc);
-				},
-			},
+					this._form.modalUnique<Propertytrade>(
+						'propertytrade',
+						'url',
+						doc
+					);
+				}
+			}
 		],
 		headerButtons: [
 			{
 				icon: 'playlist_add',
 				click: this._bulkManagement(),
-				class: 'playlist',
+				class: 'playlist'
 			},
 			{
 				icon: 'edit_note',
 				click: this._bulkManagement(false),
-				class: 'edit',
-			},
-		],
+				class: 'edit'
+			}
+		]
 	};
 
 	rows: Propertytrade[] = [];
+
+	property_id = '';
 
 	constructor(
 		private _translate: TranslateService,
 		private _propertytradeService: PropertytradeService,
 		private _alert: AlertService,
 		private _form: FormService,
-		private _core: CoreService
+		private _core: CoreService,
+		private _router: Router,
+		private _route: ActivatedRoute
 	) {
 		this.setRows();
+
+		this._route.paramMap.subscribe((params) => {
+			this.property_id = params.get('property_id') || '';
+			console.log(this.property_id);
+		});
 	}
 
 	setRows(page = this._page): void {
@@ -108,11 +133,13 @@ export class PropertiestradesComponent {
 		this._core.afterWhile(
 			this,
 			() => {
-				this._propertytradeService.get({ page }).subscribe((rows) => {
-					this.rows.splice(0, this.rows.length);
+				this._propertytradeService
+					.get({ page, query: this._query() })
+					.subscribe((rows) => {
+						this.rows.splice(0, this.rows.length);
 
-					this.rows.push(...rows);
-				});
+						this.rows.push(...rows);
+					});
 			},
 			250
 		);
@@ -137,31 +164,43 @@ export class PropertiestradesComponent {
 						for (const propertytrade of this.rows) {
 							if (
 								!propertytrades.find(
-									(localPropertytrade) => localPropertytrade._id === propertytrade._id
+									(localPropertytrade) =>
+										localPropertytrade._id ===
+										propertytrade._id
 								)
 							) {
 								await firstValueFrom(
-									this._propertytradeService.delete(propertytrade)
+									this._propertytradeService.delete(
+										propertytrade
+									)
 								);
 							}
 						}
 
 						for (const propertytrade of propertytrades) {
 							const localPropertytrade = this.rows.find(
-								(localPropertytrade) => localPropertytrade._id === propertytrade._id
+								(localPropertytrade) =>
+									localPropertytrade._id === propertytrade._id
 							);
 
 							if (localPropertytrade) {
-								this._core.copy(propertytrade, localPropertytrade);
+								this._core.copy(
+									propertytrade,
+									localPropertytrade
+								);
 
 								await firstValueFrom(
-									this._propertytradeService.update(localPropertytrade)
+									this._propertytradeService.update(
+										localPropertytrade
+									)
 								);
 							} else {
 								this._preCreate(propertytrade);
 
 								await firstValueFrom(
-									this._propertytradeService.create(propertytrade)
+									this._propertytradeService.create(
+										propertytrade
+									)
 								);
 							}
 						}
@@ -173,6 +212,17 @@ export class PropertiestradesComponent {
 	}
 
 	private _preCreate(propertytrade: Propertytrade): void {
-		delete propertytrade.__created;
+		propertytrade.__created = false;
+
+		if (this.property_id) {
+			propertytrade.property = this.property_id;
+		}
+	}
+	private _query(): string {
+		let query = '';
+		if (this.property_id) {
+			query += (query ? '&' : '') + 'property=' + this.property_id;
+		}
+		return query;
 	}
 }

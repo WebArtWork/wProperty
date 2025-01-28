@@ -7,6 +7,10 @@ const routes: Routes = [
 	{
 		path: '',
 		component: MypropertiesComponent
+	},
+	{
+		path: ':properties/',
+		component: MypropertiesComponent
 	}
 ];
 

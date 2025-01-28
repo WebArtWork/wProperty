@@ -7,21 +7,27 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertyproviderFormComponents } from '../../formcomponents/propertyprovider.formcomponents';
 import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	templateUrl: './propertiesproviders.component.html',
 	styleUrls: ['./propertiesproviders.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class PropertiesprovidersComponent {
 	columns = ['name', 'description'];
 
-	form: FormInterface = this._form.getForm('propertyprovider', propertyproviderFormComponents);
+	form: FormInterface = this._form.getForm(
+		'propertyprovider',
+		propertyproviderFormComponents
+	);
 
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
-		setPerPage: this._propertyproviderService.setPerPage.bind(this._propertyproviderService),
+		setPerPage: this._propertyproviderService.setPerPage.bind(
+			this._propertyproviderService
+		),
 		allDocs: false,
 		create: (): void => {
 			this._form.modal<Propertyprovider>(this.form, {
@@ -32,11 +38,13 @@ export class PropertiesprovidersComponent {
 					this._preCreate(created as Propertyprovider);
 
 					await firstValueFrom(
-						this._propertyproviderService.create(created as Propertyprovider)
+						this._propertyproviderService.create(
+							created as Propertyprovider
+						)
 					);
 
 					this.setRows();
-				},
+				}
 			});
 		},
 		update: (doc: Propertyprovider): void => {
@@ -55,39 +63,57 @@ export class PropertiesprovidersComponent {
 				),
 				buttons: [
 					{
-						text: this._translate.translate('Common.No'),
+						text: this._translate.translate('Common.No')
 					},
 					{
 						text: this._translate.translate('Common.Yes'),
 						callback: async (): Promise<void> => {
-							await firstValueFrom(this._propertyproviderService.delete(doc));
+							await firstValueFrom(
+								this._propertyproviderService.delete(doc)
+							);
 
 							this.setRows();
-						},
-					},
-				],
+						}
+					}
+				]
 			});
 		},
 		buttons: [
 			{
+				icon: 'engineering',
+				hrefFunc: (doc: Propertyprovider): string => {
+					return '/propertiesworkers/' + doc._id;
+				}
+			},
+			{
+				icon: 'build',
+				hrefFunc: (doc: Propertyprovider): string => {
+					return '/propertiesservices/' + doc._id;
+				}
+			},
+			{
 				icon: 'cloud_download',
 				click: (doc: Propertyprovider): void => {
-					this._form.modalUnique<Propertyprovider>('propertyprovider', 'url', doc);
-				},
-			},
+					this._form.modalUnique<Propertyprovider>(
+						'propertyprovider',
+						'url',
+						doc
+					);
+				}
+			}
 		],
 		headerButtons: [
 			{
 				icon: 'playlist_add',
 				click: this._bulkManagement(),
-				class: 'playlist',
+				class: 'playlist'
 			},
 			{
 				icon: 'edit_note',
 				click: this._bulkManagement(false),
-				class: 'edit',
-			},
-		],
+				class: 'edit'
+			}
+		]
 	};
 
 	rows: Propertyprovider[] = [];
@@ -96,8 +122,10 @@ export class PropertiesprovidersComponent {
 		private _translate: TranslateService,
 		private _propertyproviderService: PropertyproviderService,
 		private _alert: AlertService,
+		private _route: ActivatedRoute,
 		private _form: FormService,
-		private _core: CoreService
+		private _core: CoreService,
+		private _router: Router
 	) {
 		this.setRows();
 	}
@@ -108,11 +136,13 @@ export class PropertiesprovidersComponent {
 		this._core.afterWhile(
 			this,
 			() => {
-				this._propertyproviderService.get({ page }).subscribe((rows) => {
-					this.rows.splice(0, this.rows.length);
+				this._propertyproviderService
+					.get({ page })
+					.subscribe((rows) => {
+						this.rows.splice(0, this.rows.length);
 
-					this.rows.push(...rows);
-				});
+						this.rows.push(...rows);
+					});
 			},
 			250
 		);
@@ -130,38 +160,53 @@ export class PropertiesprovidersComponent {
 							this._preCreate(propertyprovider);
 
 							await firstValueFrom(
-								this._propertyproviderService.create(propertyprovider)
+								this._propertyproviderService.create(
+									propertyprovider
+								)
 							);
 						}
 					} else {
 						for (const propertyprovider of this.rows) {
 							if (
 								!propertyproviders.find(
-									(localPropertyprovider) => localPropertyprovider._id === propertyprovider._id
+									(localPropertyprovider) =>
+										localPropertyprovider._id ===
+										propertyprovider._id
 								)
 							) {
 								await firstValueFrom(
-									this._propertyproviderService.delete(propertyprovider)
+									this._propertyproviderService.delete(
+										propertyprovider
+									)
 								);
 							}
 						}
 
 						for (const propertyprovider of propertyproviders) {
 							const localPropertyprovider = this.rows.find(
-								(localPropertyprovider) => localPropertyprovider._id === propertyprovider._id
+								(localPropertyprovider) =>
+									localPropertyprovider._id ===
+									propertyprovider._id
 							);
 
 							if (localPropertyprovider) {
-								this._core.copy(propertyprovider, localPropertyprovider);
+								this._core.copy(
+									propertyprovider,
+									localPropertyprovider
+								);
 
 								await firstValueFrom(
-									this._propertyproviderService.update(localPropertyprovider)
+									this._propertyproviderService.update(
+										localPropertyprovider
+									)
 								);
 							} else {
 								this._preCreate(propertyprovider);
 
 								await firstValueFrom(
-									this._propertyproviderService.create(propertyprovider)
+									this._propertyproviderService.create(
+										propertyprovider
+									)
 								);
 							}
 						}

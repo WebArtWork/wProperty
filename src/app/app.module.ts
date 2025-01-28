@@ -28,49 +28,6 @@ const routes: Routes = [
 		children: [
 			/* guest */
 			{
-				path: 'providers',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Providers'
-					}
-				},
-				loadChildren: () => import('./pages/guest/providers/providers.module').then(m => m.ProvidersModule)
-			}, 
-			{
-				path: 'materials',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Materials'
-					}
-				},
-				loadChildren: () => import('./pages/guest/materials/materials.module').then(m => m.MaterialsModule)
-			}, 
-			{
-				path: 'markets',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Markets'
-					}
-				},
-				loadChildren: () => import('./pages/guest/markets/markets.module').then(m => m.MarketsModule)
-			}, 
-			{
-				path: 'components',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Components'
-					}
-				},
-				loadChildren: () =>
-					import('./pages/guest/components/components.module').then(
-						(m) => m.ComponentsModule
-					)
-			},
-			{
 				path: 'sign',
 				canActivate: [MetaGuard],
 				data: {

@@ -7,6 +7,10 @@ const routes: Routes = [
 	{
 		path: '',
 		component: PropertiesservicesComponent
+	},
+	{
+		path: ':provider_id',
+		component: PropertiesservicesComponent
 	}
 ];
 

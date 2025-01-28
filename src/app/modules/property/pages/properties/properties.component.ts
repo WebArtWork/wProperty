@@ -7,21 +7,28 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertyFormComponents } from '../../formcomponents/property.formcomponents';
 import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
 	templateUrl: './properties.component.html',
 	styleUrls: ['./properties.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class PropertiesComponent {
 	columns = ['name', 'description'];
 
-	form: FormInterface = this._form.getForm('property', propertyFormComponents);
+	form: FormInterface = this._form.getForm(
+		'property',
+		propertyFormComponents
+	);
 
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
-		setPerPage: this._propertyService.setPerPage.bind(this._propertyService),
+		setPerPage: this._propertyService.setPerPage.bind(
+			this._propertyService
+		),
 		allDocs: false,
 		create: (): void => {
 			this._form.modal<Property>(this.form, {
@@ -36,7 +43,7 @@ export class PropertiesComponent {
 					);
 
 					this.setRows();
-				},
+				}
 			});
 		},
 		update: (doc: Property): void => {
@@ -55,49 +62,71 @@ export class PropertiesComponent {
 				),
 				buttons: [
 					{
-						text: this._translate.translate('Common.No'),
+						text: this._translate.translate('Common.No')
 					},
 					{
 						text: this._translate.translate('Common.Yes'),
 						callback: async (): Promise<void> => {
-							await firstValueFrom(this._propertyService.delete(doc));
+							await firstValueFrom(
+								this._propertyService.delete(doc)
+							);
 
 							this.setRows();
-						},
-					},
-				],
+						}
+					}
+				]
 			});
 		},
 		buttons: [
 			{
+				icon: 'description',
+				hrefFunc: (doc: Property): string => {
+					return '/propertiesrecords/' + doc._id;
+				}
+			},
+			{
+				icon: 'swap_horiz',
+				hrefFunc: (doc: Property): string => {
+					return '/propertiestrades/' + doc._id;
+				}
+			},
+			{
 				icon: 'cloud_download',
 				click: (doc: Property): void => {
 					this._form.modalUnique<Property>('property', 'url', doc);
-				},
+				}
 			},
+			{
+				icon: 'assignment',
+				hrefFunc: (doc: Property): string => {
+					return '/propertiesservices/' + doc._id;
+				}
+			}
 		],
 		headerButtons: [
 			{
 				icon: 'playlist_add',
 				click: this._bulkManagement(),
-				class: 'playlist',
+				class: 'playlist'
 			},
 			{
 				icon: 'edit_note',
 				click: this._bulkManagement(false),
-				class: 'edit',
-			},
-		],
+				class: 'edit'
+			}
+		]
 	};
 
 	rows: Property[] = [];
 
 	constructor(
 		private _translate: TranslateService,
-		private _propertyService: PropertyService,
+		private _propertyService: PropertyService, // Виправлено
 		private _alert: AlertService,
+		private _route: ActivatedRoute,
 		private _form: FormService,
-		private _core: CoreService
+		private _core: CoreService,
+		private _router: Router
 	) {
 		this.setRows();
 	}
@@ -137,7 +166,8 @@ export class PropertiesComponent {
 						for (const property of this.rows) {
 							if (
 								!propertys.find(
-									(localProperty) => localProperty._id === property._id
+									(localProperty) =>
+										localProperty._id === property._id
 								)
 							) {
 								await firstValueFrom(
@@ -148,7 +178,8 @@ export class PropertiesComponent {
 
 						for (const property of propertys) {
 							const localProperty = this.rows.find(
-								(localProperty) => localProperty._id === property._id
+								(localProperty) =>
+									localProperty._id === property._id
 							);
 
 							if (localProperty) {
