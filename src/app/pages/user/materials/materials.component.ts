@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./materials.component.scss'],
 	standalone: false
 })
-export class MaterialsComponent {}
+export class MaterialsComponent {
+	isMenuOpen=false;
+}

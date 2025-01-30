@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./workers.component.scss'],
 	standalone: false
 })
-export class WorkersComponent {}
+export class WorkersComponent {
+	isMenuOpen=false;
+}

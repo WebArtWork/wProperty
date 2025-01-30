@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./myproperties.component.scss'],
 	standalone: false
 })
-export class MypropertiesComponent {}
+export class MypropertiesComponent {
+	isMenuOpen=false;
+}

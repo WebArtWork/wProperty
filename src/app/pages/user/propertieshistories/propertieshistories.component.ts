@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./propertieshistories.component.scss'],
 	standalone: false
 })
-export class PropertieshistoriesComponent {}
+export class PropertieshistoriesComponent {
+	isMenuOpen=false;
+}
