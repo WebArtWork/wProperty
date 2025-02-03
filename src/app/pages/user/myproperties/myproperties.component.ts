@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Property } from 'src/app/modules/property/interfaces/property.interface';
+import { PropertyService } from 'src/app/modules/property/services/property.service';
 
 @Component({
 	templateUrl: './myproperties.component.html',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
 	standalone: false
 })
 export class MypropertiesComponent {
-	isMenuOpen=false;
+	isMenuOpen = false;
+	property: Property[] = [];
+	constructor(private _propertyService: PropertyService) {}
 }
