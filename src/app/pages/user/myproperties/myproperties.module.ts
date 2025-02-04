@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { MypropertiesComponent } from './myproperties.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MypropertyComponent } from './myproperty/myproperty.component';
 
 const routes: Routes = [
 	{
@@ -16,6 +17,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), CoreModule],
-	declarations: [MypropertiesComponent]
+	declarations: [MypropertiesComponent, MypropertyComponent]
 })
 export class MypropertiesModule {}
