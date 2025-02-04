@@ -8,7 +8,67 @@
 					routerLink="/myproperties"
 					class="nav__a"
 				>
+					<span class="material-icons">location_city</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/propertiesprofile"
+					class="nav__a"
+				>
 					<span class="material-icons">apartment</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/propertieshistories"
+					class="nav__a"
+				>
+					<span class="material-icons">history</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/workers"
+					class="nav__a"
+				>
+					<span class="material-icons">group</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/providers"
+					class="nav__a"
+				>
+					<span class="material-icons">business</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/materials"
+					class="nav__a"
+				>
+					<span class="material-icons">inventory</span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/markets"
+					class="nav__a"
+				>
+					<span class="material-icons">storefront</span>
 				</a>
 			</li>
 			<li class="nav__li _burger" (click)="showSidebar = !showSidebar">
@@ -18,6 +78,9 @@
 			</li>
 		</ul>
 	</nav>
+
+
+	
 
 	<div class="main" [class.showTable]="showSidebar">
 		<div class="fade" [@showInOut]="showSidebar" *ngIf="showSidebar"></div>
