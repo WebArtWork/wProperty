@@ -20,19 +20,18 @@
                     </div>
                 </div>
             </div>
-            <div class="documents-main">
-                <div class="documents-main-content">
-                    <div  class="documents-main-row">
-                        <p>Page Myproperties is connected</p>
-
-                        <section>title: My Properties</section>
-                        <section>description: Список нерухомості, якою володіє користувач.</section>
-                        <section>property list with action buttons edit, delete, view profile</section>
-                        <section>button to add new property</section>
-                    </div>
+            <div class = "documents-main">
+                <div class = "documents-main-content">
+                    <div
+                        *ngFor="let property of properties" 
+                        class="documents-main-row"
+                    >
+                        <a routerLink="/myproperty/{{property._id}}">
+                        <app-myproperty [property]="property"></app-myproperty>
+                        </a>
                 </div>
-                <app-myproperty *ngFor="let property of properties" [property]="property"></app-myproperty>
             </div>
+            
         </div>
     </div>
   </div>
