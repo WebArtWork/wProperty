@@ -1,8 +1,6 @@
 
 
 
-
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen"> 
     <div class="documents-container">
         <div class="documents-list">
@@ -22,7 +20,6 @@
                     </div>
                 </div>
             </div>
-           <!-- <div *ngFor="let property of properties">{{property |json}}</div> -->
             <div class="documents-main">
                 <div class="documents-main-content">
                     <div  class="documents-main-row">
@@ -34,8 +31,8 @@
                         <section>button to add new property</section>
                     </div>
                 </div>
+                <app-myproperty *ngFor="let property of properties" [property]="property"></app-myproperty>
             </div>
-  
         </div>
     </div>
   </div>

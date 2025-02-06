@@ -9,6 +9,17 @@ import { PropertyService } from 'src/app/modules/property/services/property.serv
 })
 export class MypropertiesComponent {
 	isMenuOpen = false;
-	property: Property[] = [];
+	properties: Property[] = []; // Змінено назву на "properties"
+
 	constructor(private _propertyService: PropertyService) {}
+
+	ngOnInit(): void {
+		this.loadProperties();
+	}
+
+	private loadProperties(): void {
+		this._propertyService.get().subscribe((data: Property[]) => {
+			this.properties = data;
+		});
+	}
 }
