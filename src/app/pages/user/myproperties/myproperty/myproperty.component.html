@@ -1,1 +1,7 @@
-{{property |json}}
+<a routerLink="/myproperty/{{property._id}}">
+    <div class="documents__title">{{property.name}}</div>
+    <div class="documents__description">{{property.description}}</div>
+</a>
+  <a routerLink="//{{property._id}}" class="nav__burger-link">
+    <span class="material-icons">task</span>
+  </a>
