@@ -2,16 +2,21 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { ProvidersComponent } from './providers.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ProviderComponent } from './provider/provider.component';
 
 const routes: Routes = [
 	{
 		path: '',
+		component: ProvidersComponent
+	},
+	{
+		path: ':providers/',
 		component: ProvidersComponent
 	}
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), CoreModule],
-	declarations: [ProvidersComponent]
+	declarations: [ProvidersComponent, ProviderComponent]
 })
 export class ProvidersModule {}

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen"> 
     <div class="documents-container">
         <div class="documents-list">
@@ -19,21 +13,19 @@
                         Title of sidebar...
                     </div>
                     <div class="documents-sidebar__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae consequatur quae. Modi corporis rem amet tempore debitis assumenda minima repellat labore expedita quam. Itaque accusamus culpa ullam necessitatibus nisi.
-                    </div>
+						<wbutton (click)="create()">Create</wbutton>
+					</div>
                 </div>
             </div>
-            <div class="documents-main">
-                <div class="documents-main-content">
-                    <div  class="documents-main-row">
-                        <p>Page Providers is connected</p>
-
-                        <section>title: Provider</section>
-                        <section>description: Список агентств для співпраці.</section>
-                        <section>agency list with contact buttons</section>
-                        <section>search bar and filters (location, rating)</section>
-                        <section>for user: button to save agency to favorites</section>                
-                    </div>
+            <div class = "documents-main">
+                <div class = "documents-main-content">
+                    <div
+                        *ngFor="let provider of providers" 
+                        class="documents-main-row"
+                    >
+                        <a routerLink="/provider/{{provider._id}}">
+                        <app-provider [provider]="provider"></app-provider>
+                        </a>
                 </div>
             </div>
   

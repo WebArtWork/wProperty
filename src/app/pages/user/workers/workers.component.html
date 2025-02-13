@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen"> 
     <div class="documents-container">
         <div class="documents-list">
@@ -21,24 +13,23 @@
                         Title of sidebar...
                     </div>
                     <div class="documents-sidebar__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae consequatur quae. Modi corporis rem amet tempore debitis assumenda minima repellat labore expedita quam. Itaque accusamus culpa ullam necessitatibus nisi.
-                    </div>
+						<wbutton (click)="create()">Create</wbutton>
+					</div>
                 </div>
             </div>
-            <div class="documents-main">
-                <div class="documents-main-content">
-                    <div  class="documents-main-row">
-                        <p>Page Workers is connected</p>
+            <div class = "documents-main">
+                <div class = "documents-main-content">
+                    <div
+                        *ngFor="let worker of workers" 
+                        class="documents-main-row"
+                    >
+                    <!--<a routerLink="/worker/{{worker.provider._id}}">
 
-                        <section>title: Workers</section>
-                        <section>description: Управління робітниками та їхніми завданнями.</section>
-                        <section>worker list with roles and contact info</section>
-                        <section>task assignment section</section>
-                        <section>button to add new worker</section>               
-                    </div>
+                        <app-worker [provider]="worker"></app-worker>
+                        </a>-->
                 </div>
             </div>
-  
+            
         </div>
     </div>
   </div>
