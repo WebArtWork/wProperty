@@ -1,6 +1,3 @@
-
-
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen"> 
     <div class="documents-container">
         <div class="documents-list">
@@ -27,7 +24,7 @@
                         class="documents-main-row"
                     >
                         <a routerLink="/myproperty/{{property._id}}">
-                        <app-myproperty [property]="property"></app-myproperty>
+                        <app-myproperty [property]="property" (load)="load()"></app-myproperty>
                         </a>
                 </div>
             </div>

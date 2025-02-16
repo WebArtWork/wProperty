@@ -29,6 +29,9 @@ export class MypropertiesComponent {
 			this.properties = data;
 		});
 	}
+	load(): void {
+		this.loadProperties();
+	}
 
 	/** Форма для створення нової властивості */
 	form: FormInterface = this._form.getForm(

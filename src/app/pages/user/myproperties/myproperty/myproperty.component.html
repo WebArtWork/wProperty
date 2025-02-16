@@ -2,6 +2,10 @@
     <div class="documents__title">{{property.name}}</div>
     <div class="documents__description">{{property.description}}</div>
 </a>
-  <a routerLink="//{{property._id}}" class="nav__burger-link">
+<!--  <a routerLink="//{{property._id}}" class="nav__burger-link">
     <span class="material-icons">task</span>
-  </a>
+  </a> -->
+<span class="material-icons" (click)="update()">edit</span>
+<span class="material-icons" (click)="delete()">delete</span>
+  
+  
