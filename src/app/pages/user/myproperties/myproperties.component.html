@@ -23,9 +23,7 @@
                         *ngFor="let property of properties" 
                         class="documents-main-row"
                     >
-                        <a routerLink="/myproperty/{{property._id}}">
-                        <app-myproperty [property]="property" (load)="load()"></app-myproperty>
-                        </a>
+                    <app-myproperty [property]="property" (load)="load()"></app-myproperty>
                 </div>
             </div>
             

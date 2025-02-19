@@ -23,9 +23,7 @@
                         *ngFor="let provider of providers" 
                         class="documents-main-row"
                     >
-                        <a routerLink="/provider/{{provider._id}}">
                         <app-provider [provider]="provider"></app-provider>
-                        </a>
                 </div>
             </div>
   

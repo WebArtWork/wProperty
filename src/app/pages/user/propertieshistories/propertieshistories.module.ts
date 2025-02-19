@@ -5,6 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
+		path: ':propertieshistories/',
+		component: PropertieshistoriesComponent
+	},
+	{
 		path: '',
 		component: PropertieshistoriesComponent
 	}

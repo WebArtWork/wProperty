@@ -20,13 +20,10 @@
             <div class = "documents-main">
                 <div class = "documents-main-content">
                     <div
-                        *ngFor="let worker of workers" 
+                        *ngFor="let provider of workers" 
                         class="documents-main-row"
                     >
-                    <!--<a routerLink="/worker/{{worker.provider._id}}">
-
-                        <app-worker [provider]="worker"></app-worker>
-                        </a>-->
+                        <app-worker [provider]="provider" (load)="load()"></app-worker>
                 </div>
             </div>
             

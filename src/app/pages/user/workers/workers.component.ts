@@ -31,6 +31,9 @@ export class WorkersComponent {
 				this.workers = data;
 			});
 	}
+	load(): void {
+		this.loadWorkers();
+	}
 
 	/** Форма для створення нового працівника */
 	form: FormInterface = this._form.getForm(
