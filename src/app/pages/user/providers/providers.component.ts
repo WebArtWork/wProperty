@@ -32,7 +32,7 @@ export class ProvidersComponent {
 
 	/** Форма для створення нового постачальника */
 	form: FormInterface = this._form.getForm(
-		'provider',
+		'business',
 		propertyproviderFormComponents
 	);
 

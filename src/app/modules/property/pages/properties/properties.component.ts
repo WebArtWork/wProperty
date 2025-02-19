@@ -47,13 +47,16 @@ export class PropertiesComponent {
 			});
 		},
 		update: (doc: Property): void => {
-			this._form
-				.modal<Property>(this.form, [], doc)
-				.then((updated: Property) => {
-					this._core.copy(updated, doc);
+			this._form.modal<Property>(this.form, {
+				label: 'Update',
+				click: async (updated: unknown, close: () => void) => {
+					close();
 
-					this._propertyService.update(doc);
-				});
+					this._core.copy(updated as Property, doc);
+
+					await firstValueFrom(this._propertyService.update(doc));
+				}
+			});
 		},
 		delete: (doc: Property): void => {
 			this._alert.question({

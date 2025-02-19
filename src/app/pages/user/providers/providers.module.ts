@@ -10,7 +10,7 @@ const routes: Routes = [
 		component: ProvidersComponent
 	},
 	{
-		path: ':providers/',
+		path: ':businesses/',
 		component: ProvidersComponent
 	}
 ];

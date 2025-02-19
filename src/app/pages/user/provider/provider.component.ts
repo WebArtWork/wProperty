@@ -9,7 +9,7 @@ import { PropertyproviderService } from 'src/app/modules/propertyprovider/servic
 })
 export class ProviderComponent {
 	provider = this._propertyproviderService.doc(
-		this._router.url.replace('/provider/', '')
+		this._router.url.replace('/business/', '')
 	);
 	constructor(
 		private _propertyproviderService: PropertyproviderService,

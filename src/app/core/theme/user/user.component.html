@@ -15,26 +15,6 @@
 				<a
 					routerLinkActive="_activeLink"
 					(click)="showSidebar = false"
-					routerLink="/propertiesprofile"
-					class="nav__a"
-				>
-					<span class="material-icons">apartment</span>
-				</a>
-			</li>
-			<li class="nav__li">
-				<a
-					routerLinkActive="_activeLink"
-					(click)="showSidebar = false"
-					routerLink="/propertieshistories"
-					class="nav__a"
-				>
-					<span class="material-icons">history</span>
-				</a>
-			</li>
-			<li class="nav__li">
-				<a
-					routerLinkActive="_activeLink"
-					(click)="showSidebar = false"
 					routerLink="/workers"
 					class="nav__a"
 				>
@@ -45,7 +25,7 @@
 				<a
 					routerLinkActive="_activeLink"
 					(click)="showSidebar = false"
-					routerLink="/providers"
+					routerLink="/businesses"
 					class="nav__a"
 				>
 					<span class="material-icons">business</span>
@@ -192,7 +172,7 @@
 					(click)="hideSidebar()"
 				>
 					<span class="material-icons">business</span>
-					<span translate>Theme.Providers</span>
+					<span translate>Theme.Business</span>
 				</a>
 				<hr *ngIf="us.role('admin')" />
 				<a
