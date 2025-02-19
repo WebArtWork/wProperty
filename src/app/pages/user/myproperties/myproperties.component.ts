@@ -20,17 +20,13 @@ export class MypropertiesComponent {
 	) {}
 
 	ngOnInit(): void {
-		this.loadProperties();
+		this.load();
 	}
 
-	/** Метод завантаження списку властивостей */
-	private loadProperties(): void {
+	load(): void {
 		this._propertyService.get().subscribe((data: Property[]) => {
 			this.properties = data;
 		});
-	}
-	load(): void {
-		this.loadProperties();
 	}
 
 	/** Форма для створення нової властивості */
@@ -51,7 +47,7 @@ export class MypropertiesComponent {
 				this._propertyService
 					.create(created as Property)
 					.subscribe(() => {
-						this.loadProperties();
+						this.load();
 					});
 			}
 		});
