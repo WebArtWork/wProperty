@@ -14,6 +14,19 @@
                     </div>
                     <div class="documents-sidebar__description">
                         <wbutton (click)="create()">Create</wbutton>
+
+                        <wselect
+							[items]=" [
+                            'sell / buy payment',
+                            'service',
+                            'materials',
+                            'rent payment',
+                            'incident'
+                        ]"
+							[placeholder]="'Type'"
+							(modelChange)="type=$event; load()"
+							[clearable]="true"
+						></wselect>
                     </div>
                 </div>
             </div>

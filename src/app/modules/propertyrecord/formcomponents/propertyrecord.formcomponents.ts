@@ -9,11 +9,47 @@ export const propertyrecordFormComponents = {
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'fill propertyrecord title',
+					value: 'fill propertyrecord title'
 				},
 				{
 					name: 'Label',
-					value: 'Title',
+					value: 'Title'
+				}
+			]
+		},
+		{
+			name: 'Select',
+			key: 'type',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord title'
+				},
+				{
+					name: 'Items',
+					value: [
+						'sell / buy payment',
+						'service',
+						'materials',
+						'rent payment',
+						'incident'
+					]
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'name',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord title'
+				},
+				{
+					name: 'Label',
+					value: 'Title'
 				}
 			]
 		},
@@ -23,13 +59,13 @@ export const propertyrecordFormComponents = {
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'fill propertyrecord description',
+					value: 'fill propertyrecord description'
 				},
 				{
 					name: 'Label',
-					value: 'Description',
+					value: 'Description'
 				}
 			]
 		}
 	]
-}
+};

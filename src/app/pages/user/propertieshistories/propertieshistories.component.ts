@@ -57,6 +57,7 @@ export class PropertieshistoriesComponent {
 				this.propertyRecords.push(...records);
 			});
 	}
+	type = '';
 
 	private _query(): string {
 		let query = '';
@@ -64,7 +65,9 @@ export class PropertieshistoriesComponent {
 		if (this.property_id) {
 			query += (query ? '&' : '') + 'property=' + this.property_id;
 		}
-
+		if (this.type) {
+			query += (query ? '&' : '') + 'type=' + this.type;
+		}
 		return query;
 	}
 
@@ -73,6 +76,9 @@ export class PropertieshistoriesComponent {
 
 		if (this.property_id) {
 			record.property = this.property_id;
+		}
+		if (this.type) {
+			record.property = this.type;
 		}
 	}
 }
