@@ -1,11 +1,11 @@
 import { CrudDocument } from 'wacom';
 
 export interface Property extends CrudDocument {
-	_id: string; // Додано поле _id
-	name: string; // Додано поле name
-	description: string; // Додано поле description
+	name: string;
+	description: string;
 	address: string;
-	type: string;
+	type: string; // Визначаємо допустимі значення типу
 	area: number;
 	price: number;
+	thumb: string;
 }

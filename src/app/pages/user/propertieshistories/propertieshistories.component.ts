@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertyrecordFormComponents } from 'src/app/modules/propertyrecord/formcomponents/propertyrecord.formcomponents';
@@ -11,33 +12,26 @@ import { PropertyrecordService } from 'src/app/modules/propertyrecord/services/p
 	standalone: false
 })
 export class PropertieshistoriesComponent {
-	isMenuOpen = false;
 	propertyRecords: Propertyrecord[] = [];
+	isMenuOpen = false;
 	property_id = '';
+
 	constructor(
 		private _propertyrecordService: PropertyrecordService,
+		private _route: ActivatedRoute,
 		private _form: FormService
-	) {}
-
-	ngOnInit(): void {
-		this.load();
+	) {
+		this._route.paramMap.subscribe((params) => {
+			this.property_id = params.get('property_id') || '';
+			this.load();
+		});
 	}
 
-	load(): void {
-		this._propertyrecordService
-			.get()
-			.subscribe((data: Propertyrecord[]) => {
-				this.propertyRecords = data;
-			});
-	}
-
-	/** Форма для створення нового запису історії */
 	form: FormInterface = this._form.getForm(
 		'propertyrecord',
 		propertyrecordFormComponents
 	);
 
-	/** Метод створення нового запису історії */
 	create(): void {
 		this._form.modal<Propertyrecord>(this.form, {
 			label: 'Create',
@@ -55,8 +49,30 @@ export class PropertieshistoriesComponent {
 		});
 	}
 
-	/** Попередня обробка перед створенням */
+	load(): void {
+		this._propertyrecordService
+			.get({ page: 1, query: this._query() })
+			.subscribe((records) => {
+				this.propertyRecords.splice(0, this.propertyRecords.length);
+				this.propertyRecords.push(...records);
+			});
+	}
+
+	private _query(): string {
+		let query = '';
+
+		if (this.property_id) {
+			query += (query ? '&' : '') + 'property=' + this.property_id;
+		}
+
+		return query;
+	}
+
 	private _preCreate(record: Propertyrecord): void {
-		delete record.__created; // Видаляємо системне поле, якщо воно є
+		delete record.__created;
+
+		if (this.property_id) {
+			record.property = this.property_id;
+		}
 	}
 }

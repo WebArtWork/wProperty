@@ -7,6 +7,10 @@ const routes: Routes = [
 	{
 		path: ':record_id',
 		component: PropertyhistoryComponent
+	},
+	{
+		path: ':provider_id',
+		component: PropertyhistoryComponent
 	}
 ];
 

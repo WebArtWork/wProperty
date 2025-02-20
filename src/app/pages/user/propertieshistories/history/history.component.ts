@@ -21,7 +21,6 @@ export class HistoryComponent {
 	);
 
 	@Output() load = new EventEmitter();
-
 	constructor(
 		private _form: FormService,
 		private _propertyrecordService: PropertyrecordService,

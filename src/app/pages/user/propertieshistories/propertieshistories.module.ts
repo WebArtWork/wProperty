@@ -6,11 +6,7 @@ import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
 	{
-		path: ':propertieshistories/',
-		component: PropertieshistoriesComponent
-	},
-	{
-		path: '',
+		path: ':provider_id',
 		component: PropertieshistoriesComponent
 	}
 ];

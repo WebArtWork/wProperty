@@ -17,7 +17,6 @@ export class PropertyhistoryComponent {
 	record = this._propertyrecordService.doc(
 		this._router.url.replace('/propertyhistory/', '')
 	);
-	property_id = '';
 	constructor(
 		private _propertyrecordService: PropertyrecordService,
 		private _router: Router,
@@ -56,7 +55,9 @@ export class PropertyhistoryComponent {
 					text: this._translate.translate('Common.Yes'),
 					callback: (): void => {
 						this._propertyrecordService.delete(record);
-						this._router.navigateByUrl('/propertieshistories');
+						this._router.navigateByUrl(
+							'/propertieshistories/' + record.property
+						);
 					}
 				}
 			]

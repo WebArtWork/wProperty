@@ -16,7 +16,15 @@ import { Route } from '@angular/router';
 	standalone: false
 })
 export class PropertiesComponent {
-	columns = ['name', 'description'];
+	columns = [
+		'name',
+		'description',
+		'address',
+		'type',
+		'area',
+		'price',
+		'thumb'
+	];
 
 	form: FormInterface = this._form.getForm(
 		'property',

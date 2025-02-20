@@ -20,7 +20,7 @@
 						{{property.name}}
 					</div>
 					<div class="documents-sidebar__description">
-						<wbutton (click)="update(property)">Update</wbutton>  
+						<wbutton (click)="update(property)">Edit</wbutton>  
 					 	<wbutton (click)="delete(property)">Delete</wbutton>  
 					</div>
 				</div>
@@ -31,11 +31,11 @@
 						<div class="documents__name">
 							{{property.name}}
 						</div>
-						<div class="documents__type">
-							{{property.type}}
-						</div>
 						<div class="documents__description">
 							{{property.description}}
+						</div>
+						<div class="documents__type">
+							{{property.type}}
 						</div>
                         <div class="documents__address">
 							{{property.address}}
@@ -45,6 +45,9 @@
 						</div>
 						<div class="documents__area">
 							{{property.area}} m²
+						</div>
+						<div class="documents__thumb">
+							{{property.thumb}}
 						</div>
 					</div>
 				</div>

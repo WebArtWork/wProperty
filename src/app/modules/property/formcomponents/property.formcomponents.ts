@@ -13,7 +13,7 @@ export const propertyFormComponents = {
 				},
 				{
 					name: 'Label',
-					value: 'Title'
+					value: 'Name'
 				}
 			]
 		},
@@ -46,12 +46,12 @@ export const propertyFormComponents = {
 			]
 		},
 		{
-			name: 'Dropdown',
+			name: 'Text',
 			key: 'type',
 			fields: [
 				{
-					name: 'Options',
-					value: ['Apartment', 'House', 'Commercial', 'Land']
+					name: 'Placeholder',
+					value: 'Enter property type'
 				},
 				{
 					name: 'Label',
@@ -88,16 +88,12 @@ export const propertyFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
-			key: 'imageUrl',
+			name: 'Photo',
+			key: 'thumb',
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'Enter image URL'
-				},
-				{
-					name: 'Label',
-					value: 'Image URL'
+					name: 'Photo',
+					value: 'photo'
 				}
 			]
 		}
