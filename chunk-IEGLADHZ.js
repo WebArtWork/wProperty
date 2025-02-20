@@ -1,0 +1,1 @@
+import{bb as c,fb as n,gb as a,hb as p,jb as s,r as o,u as r}from"./chunk-7LE56AYD.js";var u=(()=>{class e extends n{constructor(i,t,f,m){super({name:"propertyprovider"},i,t,f,m)}static{this.\u0275fac=function(t){return new(t||e)(r(p),r(a),r(s),r(c))}}static{this.\u0275prov=o({token:e,factory:e.\u0275fac,providedIn:"root"})}}return e})();export{u as a};
