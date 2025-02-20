@@ -49,6 +49,32 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'propertyhistory',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertyhistory'
+					}
+				},
+				loadChildren: () =>
+					import(
+						'./pages/user/propertyhistory/propertyhistory.module'
+					).then((m) => m.PropertyhistoryModule)
+			},
+			{
+				path: 'propertieshistories',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertieshistories'
+					}
+				},
+				loadChildren: () =>
+					import(
+						'./pages/user/propertieshistories/propertieshistories.module'
+					).then((m) => m.PropertieshistoriesModule)
+			},
+			{
 				path: 'records',
 				canActivate: [MetaGuard],
 				data: {
@@ -56,8 +82,11 @@ const routes: Routes = [
 						title: 'Records'
 					}
 				},
-				loadChildren: () => import('./pages/user/records/records.module').then(m => m.RecordsModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/records/records.module').then(
+						(m) => m.RecordsModule
+					)
+			},
 			{
 				path: 'business',
 				canActivate: [MetaGuard],
