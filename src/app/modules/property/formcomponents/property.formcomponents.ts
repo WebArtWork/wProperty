@@ -73,6 +73,37 @@ export const propertyFormComponents = {
 				}
 			]
 		},
+
+		{
+			name: 'Number',
+			key: 'rooms',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property rooms'
+				},
+				{
+					name: 'Label',
+					value: 'Rooms'
+				}
+			]
+		},
+
+		{
+			name: 'Number',
+			key: 'floor',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property floor'
+				},
+				{
+					name: 'Label',
+					value: 'Floor'
+				}
+			]
+		},
+
 		{
 			name: 'Number',
 			key: 'price',

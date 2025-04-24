@@ -49,6 +49,16 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'tasks',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Tasks'
+					}
+				},
+				loadChildren: () => import('./modules/propertytask/pages/tasks/tasks.module').then(m => m.TasksModule)
+			}, 
+			{
 				path: 'propertyhistory',
 				canActivate: [MetaGuard],
 				data: {
@@ -223,6 +233,19 @@ const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Propertiesservices'
+					}
+				},
+				loadChildren: () =>
+					import(
+						'./modules/propertyservice/pages/propertiesservices/propertiesservices.module'
+					).then((m) => m.PropertiesservicesModule)
+			},
+			{
+				path: 'propertiestasks',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Propertiestasks'
 					}
 				},
 				loadChildren: () =>

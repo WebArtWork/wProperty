@@ -66,6 +66,55 @@ export const propertyrecordFormComponents = {
 					value: 'Description'
 				}
 			]
+		},
+
+		
+
+		{
+			name: 'Text',
+			key: 'responsible',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord responsible'
+				},
+				{
+					name: 'Label',
+					value: 'Resposible'
+				}
+			]
+		},
+
+		{
+			name: 'Text',
+			key: 'comments',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord comments'
+				},
+				{
+					name: 'Label',
+					value: 'Comments'
+				}
+			]
+		},
+
+		{
+			name: 'Text',
+			key: 'expenses',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyrecord expenses'
+				},
+				{
+					name: 'Label',
+					value: 'Expenses'
+				}
+			]
 		}
+
+		
 	]
 };

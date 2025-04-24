@@ -30,6 +30,53 @@ export const propertymaterialFormComponents = {
 					value: 'Description',
 				}
 			]
+		},
+
+		{
+			name: 'Number',
+			key: 'quantity',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertymaterial quantity',
+				},
+				{
+					name: 'Label',
+					value: 'Quantity',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'supplier',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertymaterial supplier',
+				},
+				{
+					name: 'Label',
+					value: 'Supplier',
+				}
+			]
+		},
+
+		{
+			name: 'Number',
+			key: 'price',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertymaterial price',
+				},
+				{
+					name: 'Label',
+					value: 'Price',
+				}
+			]
 		}
 	]
 }
