@@ -101,7 +101,7 @@ export const propertyrecordFormComponents = {
 		},
 
 		{
-			name: 'Text',
+			name: 'Number',
 			key: 'expenses',
 			fields: [
 				{

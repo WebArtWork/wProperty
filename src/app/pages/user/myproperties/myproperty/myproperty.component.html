@@ -1,6 +1,18 @@
+<div class="documents-sidebar__img">
+  <img src="assets/default.png" alt="">
+</div>
+
 <a routerLink="/myproperty/{{property._id}}">
     <div class="documents__title">{{property.name}}</div>
 </a>
+
+<a routerLink="/myproperty/{{property._id}}">
+  <div class="documents__title">{{property.address}}</div>
+</a>
+<a routerLink="/myproperty/{{property._id}}">
+  <div class="documents__title">{{property.type}}</div>
+</a>
+
 <a routerLink="/propertieshistories/{{property._id}}" class="nav__burger-link">
   <span class="material-icons">article</span>
 </a>
