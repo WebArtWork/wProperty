@@ -30,6 +30,51 @@ export const propertyserviceFormComponents = {
 					value: 'Description',
 				}
 			]
+		},
+		{
+			name: 'Text',
+			key: 'service',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice service',
+				},
+				{
+					name: 'Label',
+					value: 'Service',
+				}
+			]
+		},
+		{
+			name: 'Number',
+			key: 'price',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice price',
+				},
+				{
+					name: 'Label',
+					value: 'Price',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'contact',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice contact',
+				},
+				{
+					name: 'Label',
+					value: 'Contact',
+				}
+			]
 		}
 	]
 }

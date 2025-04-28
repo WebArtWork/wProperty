@@ -56,6 +56,17 @@ const routes: Routes = [
 						title: 'Tasks'
 					}
 				},
+				loadChildren: () => import('./pages/user/tasks/tasks.module').then(m => m.TasksModule)
+			}, 
+			
+			{
+				path: 'webpropertytasks',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Task'
+					}
+				},
 				loadChildren: () => import('./modules/propertytask/pages/tasks/tasks.module').then(m => m.TasksModule)
 			}, 
 			{

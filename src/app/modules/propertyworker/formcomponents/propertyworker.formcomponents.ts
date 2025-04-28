@@ -30,6 +30,96 @@ export const propertyworkerFormComponents = {
 					value: 'Description',
 				}
 			]
-		}
+		},
+		{
+			name: 'Text',
+			key: 'fullname',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice full name',
+				},
+				{
+					name: 'Label',
+					value: 'Full Name',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'position',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice position',
+				},
+				{
+					name: 'Label',
+					value: 'Position',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'name',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice title',
+				},
+				{
+					name: 'Label',
+					value: 'Title',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'experience',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice experience',
+				},
+				{
+					name: 'Label',
+					value: 'Experience',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'task',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill propertyservice task',
+				},
+				{
+					name: 'Label',
+					value: 'Task',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'status',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Available / On-site',
+				},
+				{
+					name: 'Label',
+					value: 'Status',
+				}
+			]
+		},
 	]
 }

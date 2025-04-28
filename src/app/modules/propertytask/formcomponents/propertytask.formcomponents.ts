@@ -30,6 +30,36 @@ export const propertytaskFormComponents = {
 					value: 'Description',
 				}
 			]
-		}
+		},
+		{
+			name: 'Text',
+			key: 'assigned',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill assigned',
+				},
+				{
+					name: 'Label',
+					value: 'Assigned to',
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'deadline',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'fill deadline',
+				},
+				{
+					name: 'Label',
+					value: 'Deadline',
+				}
+			]
+		},
 	]
 }
