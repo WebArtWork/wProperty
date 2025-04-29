@@ -28,6 +28,11 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
+
+						<div class="documents__properties">
+							Properties
+						</div>
+
 						<div class="documents__name">
 							{{property.name}}
 						</div>
@@ -47,10 +52,10 @@
 						<div class="documents__thumb">
 							{{property.thumb}}
 						</div>
-						<div class="documents__thumb">
+						<div class="documents__floor">
 							floor
 						</div>
-						<div class="documents__thumb">
+						<div class="documents__rooms">
 							rooms
 						</div>
 
@@ -60,6 +65,178 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+
+						<div class="documents__records">
+							Records
+						</div>
+
+						<div class="documents_materials_box" *ngFor="let material of [{}, {}, {}]">
+							<hr>
+							<div class="documents__name">
+								name
+							</div>
+							<div class="documents__type">
+								type
+							</div>
+							<div class="documents__responsible">
+								responsible
+							</div>
+							<div class="documents__description">
+								description
+							</div>
+											 
+							<div class="documents__comments">
+								comments
+							</div>
+							<div class="documents__expenses">
+								expenses$
+							</div>
+						</div>
+						<wbutton>See More</wbutton>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+
+						<div class="documents__materials">
+							Materials
+						</div>
+
+						<div class="documents_materials_box" *ngFor="let material of [{}, {}, {}]">
+							<hr>
+							<div class="documents__name">
+								name
+							</div>
+							<div class="documents__quantity">
+								quantity
+							</div>
+							<div class="documents__supplier">
+								supplier
+							</div>
+							<div class="documents__description">
+								description
+							</div>					 			
+							
+							<div class="documents__price">
+								price $
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+
+						<div class="documents__business">
+							Business
+						</div>
+
+						<div class="documents_business_box" *ngFor="let material of [{}, {}, {}]">
+							<hr>
+							<div class="documents__companyname">
+								companyname
+							</div>
+							<div class="documents__contacts">
+								contacts
+							</div>					
+											 
+							<div class="documents__servicetype">
+								servicetype
+							</div>
+							<div class="documents__experience">
+								experience
+							</div>
+							<div class="documents__rating">
+								rating
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+
+						<div class="documents__workers">
+							Workers
+						</div>
+
+					<div  class="documents_workers_box"  *ngFor="let material of [{}, {}, {}]">
+						<hr>	
+						<div class="documents__fullname">
+							fullname
+						</div>
+										
+						<div class="documents__position">
+							position
+						</div>
+					 	
+						<div class="documents__experience">
+							experience
+						</div>
+						<div class="documents__task">
+							task
+						</div>
+						<div class="documents__status">
+							status
+						</div>
+					</div>
+						
+
+						
+					</div>
+				</div>
+			</div>
+
+
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+
+						<div class="documents__services">
+							Services
+						</div>
+						
+						
+					<div class="documents_services_box"  *ngFor="let material of [{}, {}, {}]">
+						<hr>
+						<div class="documents__service">
+							service
+						</div>
+						<div class="documents__description">
+							description
+						</div>
+						<div class="documents__price">
+							price
+						</div>
+										 					
+						<div class="documents__contact">
+							contact
+						</div>
+					</div>
+						
+					</div>
+				</div>
+			</div>
+
+
+			
+
+
 		</div>
 	</div>
 </div>

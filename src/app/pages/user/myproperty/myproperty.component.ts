@@ -5,6 +5,8 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { propertyFormComponents } from 'src/app/modules/property/formcomponents/property.formcomponents';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
+import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
+import { Propertymaterial } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { CoreService, AlertService } from 'wacom';
 
@@ -17,6 +19,7 @@ export class MypropertyComponent {
 	property = this._propertyService.doc(
 		this._router.url.replace('/myproperty/', '')
 	);
+
 
 	constructor(
 		private _propertyService: PropertyService,
@@ -33,6 +36,7 @@ export class MypropertyComponent {
 		'property',
 		propertyFormComponents
 	);
+	
 
 	update(prop: Property): void {
 		this._form
