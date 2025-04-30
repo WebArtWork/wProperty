@@ -12,7 +12,7 @@ import { PropertyworkerService } from 'src/app/modules/propertyworker/services/p
 })
 export class WorkersComponent {
 	isMenuOpen = false;
-	workers: Propertyworker[] = [];
+	workers: Propertyworker[] = [{} as Propertyworker, {} as Propertyworker, {}as Propertyworker];
 
 	constructor(
 		private _propertyworkerService: PropertyworkerService,
@@ -25,11 +25,11 @@ export class WorkersComponent {
 
 	/** Метод завантаження списку працівників */
 	private loadWorkers(): void {
-		this._propertyworkerService
-			.get()
-			.subscribe((data: Propertyworker[]) => {
-				this.workers = data;
-			});
+		// this._propertyworkerService
+		// 	.get()
+		// 	.subscribe((data: Propertyworker[]) => {
+		// 		this.workers = data;
+		// 	});
 	}
 	load(): void {
 		this.loadWorkers();
