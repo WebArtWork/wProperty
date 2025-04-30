@@ -6,14 +6,5 @@ import { Component } from '@angular/core';
 	standalone: false
 })
 export class MaterialsComponent {
-	isMenuOpen=false;
-}
-create(): void {
-	this._form.modal(this.formDoc, {
-		label: 'Create',
-		click: (data, close) => {
-			console.log('Submitted data:', data);
-			close();
-		},
-	});
+	isMenuOpen = false;
 }
