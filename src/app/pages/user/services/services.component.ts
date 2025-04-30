@@ -12,68 +12,7 @@ export class ServicesComponent {
 	formDoc: FormInterface = this._form.getForm('docForm', {
 		formId: 'docForm',
 		title: 'Doc form',
-		components: [
-			{
-				name: 'Text',
-				key: 'name',
-				focused: true,
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your name',
-					},
-					{
-						name: 'Label',
-						value: 'Name',
-					},
-				],
-			},
-			{
-				name: 'Text',
-				key: 'phone',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your phone',
-					},
-					{
-						name: 'Label',
-						value: 'Phone',
-					},
-				],
-			},
-			{
-				name: 'Text',
-				key: 'bio',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your bio',
-					},
-					{
-						name: 'Label',
-						value: 'Bio',
-					},
-					{
-						name: 'Textarea',
-						value: true,
-					},
-				],
-			},
-			{
-				name: 'Button',
-				fields: [
-					{
-						name: 'Label',
-						value: "Let's go",
-					},
-					{
-						name: 'Submit',
-						value: true,
-					},
-				],
-			},
-		],
+		components: [ /* ... */ ]
 	});
 
 	isMenuOpen = false;
@@ -82,5 +21,28 @@ export class ServicesComponent {
 
 	back(): void {
 		window.history.back();
+	}
+
+	
+
+	private loadServices(): void {
+		// this._propertyworkerService
+		// 	.get()
+		// 	.subscribe((data: Propertyworker[]) => {
+		// 		this.workers = data;
+		// 	});
+	}
+	load(): void {
+		this.loadServices();
+	}
+
+	create(): void {
+		this._form.modal(this.formDoc, {
+			label: 'Create',
+			click: (data, close) => {
+				console.log('Submitted data:', data);
+				close();
+			},
+		});
 	}
 }
