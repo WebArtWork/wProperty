@@ -39,12 +39,27 @@
 					<div class="documents-sidebar__img">
 						<img src="assets/default.png" alt="" />
 					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						<wbutton (click)="create()">Create</wbutton>
-					</div>
+					<div class="documents-sidebar__title">Services</div>
+					<wselect
+						[items]="[
+						'Electrical Wiring', 
+						'Water Plumbing', 
+						'Interior Design', 
+						'Renovation', 
+						'Landscaping', 
+						'HVAC Services', 
+						'Flooring Installation', 
+						'Roofing Services', 
+						'Painting & Wallpaper', 
+						'Pest Control', 
+						'Window & Door Installation', 
+						'Security Systems', 
+						'Waste Disposal', 
+						'Demolition Services'
+					]"
+						[clearable]="true"
+						placeholder="Service Type"
+					></wselect>
 				</div>
 			</div>
 			<div class="documents-main">

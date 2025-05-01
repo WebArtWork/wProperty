@@ -3,71 +3,162 @@
 		<div class="documents-list">
 			<div
 				class="burger-wrap"
-				class="burger-wrap"
 				(click)="isMenuOpen=!isMenuOpen"
 				[class.burger-wrap--open]="isMenuOpen"
 			>
 				<div class="burger" [class.burger--close]="isMenuOpen"></div>
 			</div>
+
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Sint molestiae consequatur quae. Modi corporis rem amet
-						tempore debitis assumenda minima repellat labore
-						expedita quam. Itaque accusamus culpa ullam
-						necessitatibus nisi.
-					</div>
+					<div class="documents-sidebar__title">Filters</div>
+					<wselect
+						[items]="['Apartment',
+                        'House',
+                        'Office',
+                        'Penthouse',
+                        'Studio',
+                        'Loft',
+                        'Townhouse',
+                        'Duplex',
+                        'Commercial Space',
+                        'Retail Space',
+                        'Warehouse',
+                        'Cottage',
+                        'Mansion',
+                        'Room',
+                        'Dormitory']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Property Type"
+					></wselect>
+
+					<wselect
+						[items]="['1 room', '2 rooms', '3+ rooms']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Number of Rooms"
+					></wselect>
+
+					<wselect
+						[items]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Floor"
+					></wselect>
+					<wselect
+						[items]="[
+                        'Up to 30 m²',
+                        '31 - 50 m²',
+                        '51 - 70 m²',
+                        '71 - 100 m²',
+                        '101 - 150 m²',
+                        'Above 150 m²'
+                    ]"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Area (m²)"
+					></wselect>
+
+					<wselect
+						[items]="['Up to 500,000', '500,000 - 1,000,000', 'Above 1,000,000']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Price"
+					></wselect>
+
+					<!-- Building Type -->
+					<wselect
+						[items]="['Tsar-era Building', 'Stalinka', 'Khrushchevka', 'Czech-style', 'Dormitory']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Building Type"
+					></wselect>
+
+					<!-- Condition / Renovation -->
+					<wselect
+						[items]="['Euro Renovation', 'Cosmetic Repair', 'Emergency Condition', 'Newly Built']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Renovation"
+					></wselect>
+
+					<!-- Appliances -->
+					<wselect
+						[items]="[
+                            'Furnished', 
+                            'Unfurnished',
+                        'Electric Kettle', 
+                        'Coffee Machine', 
+                        'Hair Dryer', 
+                        'Stove', 
+                        'Oven', 
+                        'Microwave', 
+                        'Multicooker', 
+                        'Air Conditioner',
+                        'Bathtub', 'Shower Cabin', 'Walk-in Closet', 'Loggia', 'Terrace'
+                        ]"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Appliances"
+					></wselect>
+
+					<!-- Utilities -->
+					<wselect
+						[items]="[
+                        'Gas', 
+                        'Electricity', 
+                        'Central Water Supply', 
+                        'Well', 
+                        'Sewerage', 
+                        'Garbage Disposal', 
+                        'Elevator', 
+                        'Internet'
+                        ]"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Utilities"
+					></wselect>
+
+					<!-- Nearby Infrastructure -->
+					<wselect
+						[items]="[
+                    'Kindergarten', 
+                    'School', 
+                    'Bus Stop', 
+                    'Metro', 
+                    'Market', 
+                    'Store'
+                     ]"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Nearby"
+					></wselect>
 				</div>
 			</div>
+
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<div class="documents-main-row">
-						<p>Page Markets is connected</p>
-
-						<section>title: Market</section>
-						<section>
-							description: Сторінка для продажу та купівлі
-							нерухомості.
-						</section>
-						<section>
-							listings with property details and contact options
-						</section>
-						<section>
-							search bar and filters (location, price range,
-							property type)
-						</section>
-						<section>for user: button to add new listing</section>
-					</div>
-
 					<div
 						*ngFor="let worker of [{}, {}, {}]"
-						class="documents-main-content"
+						class="documents-main-row"
 					>
-						<div class="documents-main-row">
-							<div>
-								<div class="documents-sidebar__img">
-									<img src="assets/default.png" alt="" />
-								</div>
-
-								<div class="documents__name">name</div>
-								<div class="documents__address">address</div>
-								<div class="documents__type">type</div>
-								<div class="documents__area">area m²</div>
-								<div class="documents__thumb"></div>
-								<div class="documents__floor">floor</div>
-								<div class="documents__rooms">rooms</div>
-								<div class="documents__price">price $</div>
+						<div>
+							<div class="documents-sidebar__img">
+								<img src="assets/default.png" alt="" />
 							</div>
+
+							<div class="documents__name">name</div>
+							<div class="documents__address">address</div>
+							<div class="documents__type">type</div>
+							<div class="documents__area">area m²</div>
+							<div class="documents__thumb"></div>
+							<div class="documents__floor">floor</div>
+							<div class="documents__rooms">rooms</div>
+							<div class="documents__price">price $</div>
 						</div>
 					</div>
 				</div>

@@ -3,7 +3,6 @@
 		<div class="documents-list">
 			<div
 				class="burger-wrap"
-				class="burger-wrap"
 				(click)="isMenuOpen=!isMenuOpen"
 				[class.burger-wrap--open]="isMenuOpen"
 			>
@@ -14,35 +13,38 @@
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						<wbutton (click)="create()">Create</wbutton>
-					</div>
+					<div class="documents-sidebar__title">Filters</div>
+
+					<wselect
+						[items]="['Under 100$', '100$ - 500$', '500$ - 1000$', 'Above 1000$']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Price Range"
+					></wselect>
+					<wselect
+						[items]="['Wood', 'Concrete', 'Steel', 'Plastic', 'Glass']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Material Type"
+					></wselect>
+					<wselect
+						[items]="['Construction', 'Water supply', 'Wiring the light', 'Renovation', 'Furniture', 'Interior Design', 'Landscaping']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Usage Industry"
+					></wselect>
 				</div>
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<div class="documents-main-row">
-						<p>Page Materials is connected</p>
-
-						<section>title: Materials</section>
-						<section>
-							Каталог матеріалів для обслуговування нерухомості.
-						</section>
-						<section>
-							material list with prices and descriptions
-						</section>
-						<section>
-							search bar and filters (category, price range)
-						</section>
-						<section>
-							for user: button to add to cart and view orders
-						</section>
+					<!-- Статичне вікно пошуку -->
+					<div class="search-container">
+						<input
+							type="text"
+							placeholder="Search materials..."
+							class="search-input"
+							disabled
+						/>
 					</div>
 
 					<div class="documents-main-content">
