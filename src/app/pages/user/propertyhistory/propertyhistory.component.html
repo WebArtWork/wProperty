@@ -1,4 +1,4 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen"> 
+<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div
@@ -16,41 +16,15 @@
 					<div class="documents-sidebar__img">
 						<img src="assets/default.png" alt="Property Image" />
 					</div>
-					<div class="documents-sidebar__title">
-						{{record.name}}
-					</div>
+					<div class="documents-sidebar__title">{{record.name}}</div>
 					<div class="documents-sidebar__description">
-						<wbutton (click)="update(record)">Update</wbutton>  
-					 	<wbutton (click)="delete(record)">Delete</wbutton>  
+						<wbutton (click)="update(record)">Update</wbutton>
+						<wbutton (click)="delete(record)">Delete</wbutton>
 					</div>
 				</div>
 			</div>
 			<div class="documents-main">
-				<div class="documents-main-content">
-					<div class="documents-main-row">
-						<div class="documents__name">
-							{{record.name}}
-						</div>
-						<div class="documents__type">
-							{{record.description}}
-						</div>
-						<div class="documents__type">
-							type
-						</div>
-						<div class="documents__type">
-							{{record.description}}							
-						</div>
-						<div class="documents__type">
-							responsible
-						</div>
-						<div class="documents__type">
-							comments
-						</div>
-						<div class="documents__type">
-							expenses
-						</div>
-					</div>
-				</div>
+				<div class="documents-main-content"></div>
 			</div>
 		</div>
 	</div>
