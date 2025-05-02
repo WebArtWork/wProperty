@@ -280,10 +280,22 @@ wform {
 .burger:after {
 	bottom: 1px;
 }
-
+.w-select__arrow{
+	span{
+		color: var(--c-text-primary);
+	}
+}
 /* burger */
 
 .documents {
+	&-header{
+		&__logo{
+			img{
+				width: 42px;
+				height: 42px;
+			}
+		}
+	}
 	&-wrapper {
 		//overflow-y: scroll;
 		height: 100vh;
@@ -338,6 +350,7 @@ wform {
 		background: var(--c-bg-secondary);
 		height: calc(100vh - 100px);
 		border-radius: 12px;
+		z-index: 45;
 		position: fixed;
 		top: 80px;
 		&__close{
@@ -647,5 +660,8 @@ wform {
 	.documents-products__wrap{
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	.documents-main-content {
+		padding: 0;
 	}
 }
