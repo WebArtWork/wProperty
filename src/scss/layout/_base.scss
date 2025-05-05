@@ -525,6 +525,95 @@ wform {
 	}
 }
 
+.documents-prop-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.documents-prop-icon{
+    width: 28px;
+    height: 28px;
+    background: rgba(88, 141, 244, 0.21);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        font-size: 22px;
+		color: #7494d3;
+    }
+}
+.documents-prop-text{
+    padding: 0 0 0 12px;
+    flex: 1 0;
+    font-size: 18px;
+    font-weight: 500;
+	color: var(--c-text-primary);
+}
+.documents__price{
+    color: #aec1e7;
+    font-size: 22px;
+    font-weight: 800;
+}
+.documents__name{
+    font-size: 24px;
+    color: #aec1e7;
+    padding-bottom: 10px;
+}
+.documents__description{
+    padding-bottom: 5px;
+	font-size: 18px;
+}
+.documents-block-list{
+    display: flex;
+    flex-flow: row wrap;
+}
+.documents-block-text{
+    flex: 1 0;
+    padding-right: 150px;
+}
+.documents-block-img{
+    flex: 1;
+    img{
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+.documents-properties-title{
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 2px solid var(--c-text-primary);
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover{
+        color: #aec1e7;
+    }
+}
+.documents-properties-title__text{
+    flex: 1 0;
+    font-size: 24px;
+    transition: all .3s;
+	color: var(--c-text-primary);
+}
+.documents-properties-title__arrow{
+    display: flex;
+    span{
+        font-size: 40px;
+		color: var(--c-text-primary);
+    }
+    transition: all .3s;
+}
+
+.documents-properties-title__arrow {
+	transition: transform 0.3s ease;
+	&.expanded {
+	  transform: rotate(-90deg);
+	}
+  }
+
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
@@ -649,6 +738,19 @@ wform {
 	.documents-text {
 		flex: 0 0 100%;
 		padding: 20px 0 0 0;
+	}
+	.documents-block-list {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.documents-block-text {
+		flex: 1 0;
+		padding-right: 0;
+	}
+	.documents-block-img {
+		flex: 0 0 100%;
+		order: -1;
+		max-width: 400px;
 	}
 
 }

@@ -8,14 +8,31 @@ import { Property } from 'src/app/modules/property/interfaces/property.interface
 import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
 import { Propertymaterial } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CoreService, AlertService } from 'wacom';
+
 
 @Component({
 	templateUrl: './myproperty.component.html',
 	styleUrls: ['./myproperty.component.scss'],
-	standalone: false
+	
+	standalone: false,
+	animations: [
+		trigger('accordionAnimation', [
+		  state('closed', style({ height: '0', opacity: 0, overflow: 'hidden' })),
+		  state('open', style({ height: '*', opacity: 1 })),
+		  transition('closed <=> open', animate('300ms ease-in-out')),
+		])
+	  ]
 })
 export class MypropertyComponent {
+
+	isOpen = true;
+
+	toggleAccordion() {
+	  this.isOpen = !this.isOpen;
+	}
+
 	property = this._propertyService.doc(
 		this._router.url.replace('/myproperty/', '')
 	);
