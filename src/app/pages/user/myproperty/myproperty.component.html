@@ -113,7 +113,247 @@
 						</div>
 					</div>
 				</div>
+				<div class="prop-section">
+					<div class="documents-main-content">
+						<div class="documents-main-row">
+							<div class="documents-properties-title" (click)="toggleAccordion()">
+								<div class="documents-properties-title__text">
+									Services
+								</div>
+								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+									<span class="material-icons" >keyboard_arrow_down</span>
+								</div>
+							</div>
+
+							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+								<div class="services-main">
+									<div
+								class="documents_services_box"
+								*ngFor="let material of [{}, {}, {}]"
+							>
+									<div class="documents_services_box-item">
+										<div class="services-img">
+											<img src="assets/services.jpg" alt="">
+										</div>
+										<div class="documents__service services__title">service</div>
+										<div class="documents__description services__description">
+											description
+										</div>
+										<div class="business-contacts services-contacts">
+											<a href="" class="business-contacts-social documents-prop-wrap">
+												<div class="business-contacts-social__icon documents-prop-icon">
+													<span class="material-icons" >call</span>
+												</div>
+												<div class="business-contacts-social__text documents-prop-text">
+													+380734356878
+												</div>
+											</a>
+											<a href="" class="business-contacts-social documents-prop-wrap">
+												<div class="business-contacts-social__icon documents-prop-icon">
+													<span class="material-icons" >outgoing_mail</span>
+												</div>
+												<div class="business-contacts-social__text documents-prop-text">
+													testrrmail
+												</div>
+											</a>
+											<a href="" class="business-contacts-social documents-prop-wrap">
+												<div class="business-contacts-social__icon documents-prop-icon">
+													<span class="material-icons" >language</span>
+												</div>
+												<div class="business-contacts-social__text documents-prop-text">
+													Web site
+												</div>
+											</a>
+										</div>
+										<div class="documents__price services__price">price</div>
+									</div>
+								</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="prop-section">
+					<div class="documents-main-content">
+						<div class="documents-main-row">
+							<div class="documents-properties-title" (click)="toggleAccordion()">
+								<div class="documents-properties-title__text">
+									Materials
+								</div>
+								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+									<span class="material-icons" >keyboard_arrow_down</span>
+								</div>
+							</div>
+							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+								<div class="material-wrapper">
+									<div
+								class="documents_materials_box"
+								*ngFor="let material of [{}, {}, {}]"
+							>
+									<div class="documents_materials_box-item">
+										<div class="documents__name">name</div>
+										<div class="documents__description">
+											description
+										</div>
+										<div class="materials-wrapper">
+											<div class="materials-wrapper__icon"></div>
+											<div class="materials-wrapper__text">
+												Quantity: <span>1</span>
+											</div>
+										</div>
+										<div class="materials-wrapper">
+											<div class="materials-wrapper__icon"></div>
+											<div class="materials-wrapper__text">
+												Supplier: <span>1</span>
+											</div>
+										</div>		
+										<div class="documents__price">price $</div>
+									</div>
+								</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
 	
+				<div class="prop-section">
+					<div class="documents-main-content">
+						<div class="documents-main-row">
+							<div class="documents-properties-title" (click)="toggleAccordion()">
+								<div class="documents-properties-title__text">
+									Business
+								</div>
+								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+									<span class="material-icons" >keyboard_arrow_down</span>
+								</div>
+							</div>
+
+							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+								<div
+								class="documents_business_box business-wrapper"
+								*ngFor="let material of [{}, {}, {}]"
+							>
+								<div class="business-text">
+									<div class="business-img">
+										<img src="assets/prop.jpg" alt="">
+									</div>
+									<div class="documents__companyname business-text__title">
+										companyname
+									</div>
+									<div class="business-text__description">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsum harum officia, exercitationem perferendis.
+									</div>
+									<div class="business-contacts">
+										<a href="" class="business-contacts-social documents-prop-wrap">
+											<div class="business-contacts-social__icon documents-prop-icon">
+												<span class="material-icons" >call</span>
+											</div>
+											<div class="business-contacts-social__text documents-prop-text">
+												+380734356878
+											</div>
+										</a>
+										<a href="" class="business-contacts-social documents-prop-wrap">
+											<div class="business-contacts-social__icon documents-prop-icon">
+												<span class="material-icons" >outgoing_mail</span>
+											</div>
+											<div class="business-contacts-social__text documents-prop-text">
+												testrrmail
+											</div>
+										</a>
+										<a href="" class="business-contacts-social documents-prop-wrap">
+											<div class="business-contacts-social__icon documents-prop-icon">
+												<span class="material-icons" >language</span>
+											</div>
+											<div class="business-contacts-social__text documents-prop-text">
+												Web site
+											</div>
+										</a>
+									</div>
+		
+
+									<div class="materials-wrapper">
+										<div class="materials-wrapper__icon">
+											
+										</div>
+										<div class="materials-wrapper__text documents__servicetype">
+											Service type: <span>name of type</span>
+										</div>
+									</div>
+									<div class="materials-wrapper">
+										<div class="materials-wrapper__icon">
+											
+										</div>
+										<div class="materials-wrapper__text documents__experience">
+											Experience: <span>5 years</span>
+										</div>
+									</div>
+									<div class="documents__rating business-rating">
+										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
+										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
+										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
+										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
+										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
+									</div>
+								</div>
+							</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+	
+				<div class="prop-section">
+					<div class="documents-main-content">
+						<div class="documents-main-row">
+							<div class="documents-properties-title" (click)="toggleAccordion()">
+								<div class="documents-properties-title__text">
+									Workers
+								</div>
+								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+									<span class="material-icons" >keyboard_arrow_down</span>
+								</div>
+							</div>
+
+							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+								<div
+								class="documents_workers_box"
+								*ngFor="let material of [{}, {}, {}]"
+							>
+								<div class="documents-prop-wrap">
+									<div class="documents-prop-icon">
+										<span class="material-icons" >person</span>
+									</div>
+									<div class="documents-prop-text">
+										Full Name
+									</div>
+								</div>
+
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text">Position: <span>pos</span></div>
+								</div>
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text"> Experience: <span>5 years</span></div>
+								</div>
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text"> Task: <span>task of worker</span></div>
+								</div>
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text"> Status: <span>5 years</span></div>
+								</div>
+							</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
@@ -141,97 +381,9 @@
 					</div>
 				</div>
 	
-				<div class="prop-section">
-					<div class="documents-main-content">
-						<div class="documents-main-row">
-							<div class="documents__materials">Materials</div>
+			
 	
-							<div
-								class="documents_materials_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-								<hr />
-								<div class="documents__name">name</div>
-								<div class="documents__quantity">quantity</div>
-								<div class="documents__supplier">supplier</div>
-								<div class="documents__description">
-									description
-								</div>
-	
-								<div class="documents__price">price $</div>
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<div class="prop-section">
-					<div class="documents-main-content">
-						<div class="documents-main-row">
-							<div class="documents__business">Business</div>
-	
-							<div
-								class="documents_business_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-								<hr />
-								<div class="documents__companyname">
-									companyname
-								</div>
-								<div class="documents__contacts">contacts</div>
-	
-								<div class="documents__servicetype">
-									servicetype
-								</div>
-								<div class="documents__experience">experience</div>
-								<div class="documents__rating">rating</div>
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<div class="prop-section">
-					<div class="documents-main-content">
-						<div class="documents-main-row">
-							<div class="documents__workers">Workers</div>
-	
-							<div
-								class="documents_workers_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-								<hr />
-								<div class="documents__fullname">fullname</div>
-	
-								<div class="documents__position">position</div>
-	
-								<div class="documents__experience">experience</div>
-								<div class="documents__task">task</div>
-								<div class="documents__status">status</div>
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<div class="prop-section">
-					<div class="documents-main-content">
-						<div class="documents-main-row">
-							<div class="documents__services">Services</div>
-	
-							<div
-								class="documents_services_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-								<hr />
-								<div class="documents__service">service</div>
-								<div class="documents__description">
-									description
-								</div>
-								<div class="documents__price">price</div>
-	
-								<div class="documents__contact">contact</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 
 		</div>
