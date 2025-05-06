@@ -628,7 +628,6 @@ wform {
 	max-width: 33.333%;
 	display: flex;
 	flex-flow: column wrap;
-	border-right: 1px solid var(--c-text-primary);
 	padding: 0 15px;
 	&:last-child{
 		border: none;
@@ -758,6 +757,18 @@ wform {
 		object-fit: cover;
 		border-radius: 6px;
 	}
+}
+.documents_records_box{
+	background-color: var(--doc-products);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.records-comments{
+	background: #aec1e747;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 5px 0;
 }
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {

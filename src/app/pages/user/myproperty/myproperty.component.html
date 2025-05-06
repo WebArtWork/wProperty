@@ -357,26 +357,42 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents__records">Records</div>
-	
-							<div
-								class="documents_materials_box"
+							<div class="documents-properties-title" (click)="toggleAccordion()">
+								<div class="documents-properties-title__text">
+									Records
+								</div>
+								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+									<span class="material-icons" >keyboard_arrow_down</span>
+								</div>
+							</div>
+
+							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+								<div
+								class="documents_records_box"
 								*ngFor="let material of [{}, {}, {}]"
 							>
-								<hr />
-								<div class="documents__name">name</div>
-								<div class="documents__type">type</div>
-								<div class="documents__responsible">
-									responsible
+								<div class="documents__name records-title">name</div>
+								<div class="documents__description records__description">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quos atque hic, assumenda laudantium corporis.
 								</div>
-								<div class="documents__description">
-									description
+
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text">Type: <span>5 years</span></div>
+								</div>
+								<div class="materials-wrapper">
+									<div class="materials-wrapper__icon"></div>
+									<div class="materials-wrapper__text">responsible: <span>5 years</span></div>
 								</div>
 	
-								<div class="documents__comments">comments</div>
-								<div class="documents__expenses">expenses$</div>
+								<div class="documents__comments records-comments">Comments block lorem ipsjun asdsadsad</div>
+								<div class="documents__price records__price">$expenses</div>
 							</div>
 							<wbutton>See More</wbutton>
+							</div>
+
+
+
 						</div>
 					</div>
 				</div>
