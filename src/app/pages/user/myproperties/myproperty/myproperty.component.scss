@@ -1,14 +1,16 @@
    .property{
     &__img{
+        margin-bottom: 10px;
         img{
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 185px;
             border-radius: 6px;
+            object-fit: cover;
         }
     }
     &__name{
         .documents__title{
-            color: #588df4;
+            color: #aec1e7;
             font-size: 22px;
         }
     }
@@ -33,7 +35,7 @@
             justify-content: center;
             span{
                 display: flex;
-                color: #528df4;
+                color: #aec1e7;
             }
         }
 

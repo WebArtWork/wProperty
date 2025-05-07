@@ -772,6 +772,27 @@ wform {
     padding: 2px 5px;
     margin: 5px 0;
 }
+.materials-search{
+	position: relative;
+	input{
+		background: rgba(174, 193, 231, 0.2784313725);
+		border: none;
+		padding: 8px 10px 8px 45px;
+		border-radius: 6px;
+		width: 100%;
+		color: #fff;
+		&::placeholder{
+			color: #fff;
+		}
+	}
+	&__img{
+		position: absolute;
+		display: flex;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 10px;
+	}
+}
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
