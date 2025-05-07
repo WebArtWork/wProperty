@@ -77,7 +77,7 @@ const routes: Routes = [
 						title: 'Task'
 					}
 				},
-				loadChildren: () => import('./modules/propertytask/pages/tasks/tasks.module').then(m => m.TasksModule)
+				loadChildren: () => import('./modules/propertytask/pages/propertiestasks/tasks.module').then(m => m.TasksModule)
 			}, 
 			{
 				path: 'propertyhistory',

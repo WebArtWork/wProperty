@@ -24,6 +24,8 @@ export class TasksComponent {
 		setPerPage: this._propertytaskService.setPerPage.bind(this._propertytaskService),
 		allDocs: false,
 		create: (): void => {
+			
+
 			this._form.modal<Propertytask>(this.form, {
 				label: 'Create',
 				click: async (created: unknown, close: () => void) => {
