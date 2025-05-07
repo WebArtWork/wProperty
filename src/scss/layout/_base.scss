@@ -648,8 +648,10 @@ wform {
 		flex:1 0;
 		font-weight: 700;
 		padding-left: 5px;
+		color: var(--c-text-primary);
 		span{
 			font-weight: 500;
+			color: rgb(210 218 236 / 99%);
 		}
 	}
 }
@@ -769,6 +771,27 @@ wform {
     border-radius: 5px;
     padding: 2px 5px;
     margin: 5px 0;
+}
+.materials-search{
+	position: relative;
+	input{
+		background: rgba(174, 193, 231, 0.2784313725);
+		border: none;
+		padding: 8px 10px 8px 45px;
+		border-radius: 6px;
+		width: 100%;
+		color: #fff;
+		&::placeholder{
+			color: #fff;
+		}
+	}
+	&__img{
+		position: absolute;
+		display: flex;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 10px;
+	}
 }
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
@@ -927,6 +950,13 @@ wform {
 	.documents_services_box {
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	.business-contacts {
+		flex-flow: column wrap;
+		align-items: start;
+	}
+	.documents-main-content{
+		padding: 0;
 	}
 }
 @media screen and (max-width: 479px) {
