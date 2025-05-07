@@ -648,8 +648,10 @@ wform {
 		flex:1 0;
 		font-weight: 700;
 		padding-left: 5px;
+		color: var(--c-text-primary);
 		span{
 			font-weight: 500;
+			color: rgb(210 218 236 / 99%);
 		}
 	}
 }
@@ -927,6 +929,13 @@ wform {
 	.documents_services_box {
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	.business-contacts {
+		flex-flow: column wrap;
+		align-items: start;
+	}
+	.documents-main-content{
+		padding: 0;
 	}
 }
 @media screen and (max-width: 479px) {
