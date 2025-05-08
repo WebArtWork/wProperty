@@ -9,6 +9,7 @@ import { propertyrecordFormComponents } from '../../formcomponents/propertyrecor
 import { firstValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { log } from 'console';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
 	templateUrl: './propertiesrecords.component.html',
@@ -115,11 +116,39 @@ export class PropertiesrecordsComponent {
 		private _translate: TranslateService,
 		private _propertyrecordService: PropertyrecordService,
 		private _alert: AlertService,
+		private _userService: UserService,
 		private _route: ActivatedRoute,
 		private _form: FormService,
 		private _core: CoreService,
 		private _router: Router
 	) {
+			//worker
+					this._core.onComplete('user_loaded').then(() => {
+						console.log(this._userService.users);
+				  
+						(
+						  this.form.components[3]?.fields?.[0].value as unknown as User[]
+						).push(...this._userService.users);
+					  });
+			//seller
+					  this._core.onComplete('user_loaded').then(() => {
+						console.log(this._userService.users);
+				  
+						(
+						  this.form.components[4]?.fields?.[0].value as unknown as User[]
+						).push(...this._userService.users);
+					  });
+
+			//buyer
+			this._core.onComplete('user_loaded').then(() => {
+				console.log(this._userService.users);
+		  
+				(
+				  this.form.components[5]?.fields?.[0].value as unknown as User[]
+				).push(...this._userService.users);
+			  });
+
+
 		this.setRows();
 
 		this._route.paramMap.subscribe((params) => {

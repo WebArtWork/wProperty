@@ -69,24 +69,7 @@ export const propertytaskFormComponents = {
 			  
 			]
 		  },
-		  {
-			"name": "Select",
-			"key": "author",
-			"fields": [
-			  {
-				"name": "Items",
-				"value": [] 
-			  },
-			  {
-				"name": "Placeholder",
-				"value": "Select author"
-			  },
-			  {
-				"name": "Label",
-				"value": "Author"
-			  }
-			]
-		  },
+		 
 		  
 		  {
 			"name": "Select",

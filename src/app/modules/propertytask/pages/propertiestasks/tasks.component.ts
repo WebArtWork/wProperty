@@ -115,10 +115,25 @@ export class TasksComponent {
 		private _form: FormService,
 		private _core: CoreService
 	) {
-		// this._core.onComplete('user_loaded').then(() => {});
-		(this.form.components[3]?.fields?.[0].value as unknown as User[]).push(
-			...this._userService.users
-		);
+
+		//assigned
+		this._core.onComplete('user_loaded').then(() => {
+			console.log(this._userService.users);
+	  
+			(
+			  this.form.components[3]?.fields?.[0].value as unknown as User[]
+			).push(...this._userService.users);
+		  });
+		//client
+		  this._core.onComplete('user_loaded').then(() => {
+			console.log(this._userService.users);
+	  
+			(
+			  this.form.components[4]?.fields?.[0].value as unknown as User[]
+			).push(...this._userService.users);
+		  });
+		  
+		
 
 		this.setRows();
 	}

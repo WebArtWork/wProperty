@@ -1,7 +1,7 @@
 export const environment = {
 	roles: ['propertyworker'],
 	production: true,
-	appId: 'test',
+	appId: 'property',
 	url: 'https://webart.work',
 	meta: {
 		title: 'Web Art Work',

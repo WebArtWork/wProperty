@@ -82,10 +82,15 @@ export const propertyrecordFormComponents = {
 			]
 		  },*/
 		  {
-			"name": "Text",
+			"name": "Select",
 			"key": "materials",
-			focused: true,
+			"Multiple": true,
+			"focused": true,
 			"fields": [
+			  {
+				"name": "Items",
+				"value": ["", "", ""]
+			  },
 			  {
 				"name": "Placeholder",
 				"value": "Enter materials information"
@@ -96,8 +101,10 @@ export const propertyrecordFormComponents = {
 			  }
 			]
 		  },
+		  
+		  
 		  {
-			"name": "Text",
+			"name": "Photos",
 			"key": "photos",
 			
 			"fields": [
@@ -112,41 +119,54 @@ export const propertyrecordFormComponents = {
 			]
 		  },
 		  {
-			"name": "Text",
+			"name": "Select",
 			"key": "worker",
 			
 			"fields": [
 			  {
-				"name": "Placeholder",
-				"value": "Enter worker id"
+				"name": "Items",
+				"value": []
 			  },
+			  {
+				"name": "Placeholder",
+				"value": "Select worker"
+			  },
+
 			  {
 				"name": "Label",
 				"value": "Worker"
 			  }
 			]
 		  },{
-			"name": "Text",
+			"name": "Select",
 			"key": "seller",
-			
 			"fields": [
+			 {
+					"name": "Items",
+					"value": []
+			 },
 			  {
 				"name": "Placeholder",
-				"value": "Enter seller id"
+				"value": "Select seller "
 			  },
+			 
 			  {
 				"name": "Label",
 				"value": "Seller"
 			  }
 			]
-		  },{
-			"name": "Text",
+		  },
+		  {
+			"name": "Select",
 			"key": "buyer",
-			
 			"fields": [
 			  {
+				"name": "Items",
+				"value": []
+			  },
+			  {
 				"name": "Placeholder",
-				"value": "Enter buyer id"
+				"value": "Select buyer"
 			  },
 			  {
 				"name": "Label",
