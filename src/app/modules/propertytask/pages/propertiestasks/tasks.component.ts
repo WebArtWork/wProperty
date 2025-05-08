@@ -7,6 +7,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertytaskFormComponents } from '../../formcomponents/propertytask.formcomponents';
 import { firstValueFrom } from 'rxjs';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
 	templateUrl: './tasks.component.html',
@@ -18,12 +19,15 @@ export class TasksComponent {
 
 	form: FormInterface = this._form.getForm('propertytask', propertytaskFormComponents);
 
+	
+
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
 		setPerPage: this._propertytaskService.setPerPage.bind(this._propertytaskService),
 		allDocs: false,
 		create: (): void => {
+			
 			
 
 			this._form.modal<Propertytask>(this.form, {
@@ -96,11 +100,22 @@ export class TasksComponent {
 
 	constructor(
 		private _translate: TranslateService,
+		private _userService: UserService,
 		private _propertytaskService: PropertytaskService,
 		private _alert: AlertService,
 		private _form: FormService,
 		private _core: CoreService
+		
 	) {
+		
+		
+		this._form.getComponent(this.form, 'assigned').fields[0].value = this._userService.users;
+		this._form.getComponent(this.form, 'assigned').resetFields();
+	
+	
+
+
+
 		this.setRows();
 	}
 

@@ -28,7 +28,11 @@ export const propertytaskFormComponents = {
 			  },
 			  {
 				"name": "Items",
-				"value": ["Repair", "Inspection", "Cleaning", "Maintenance"]
+				"value": [ "Repair", "Inspection", "Cleaning", "Maintenance",
+					"Painting", "Plumbing", "Electrical", "Landscaping", "Security",
+					"Pest Control", "HVAC", "Window Cleaning", "Roofing", "Flooring",
+					"Snow Removal", "IT Support", "Appliance Repair", "Waste Removal",
+					"Signage", "Furniture Assembly", "Lighting"]
 			  }
 			]
 		  },
@@ -66,12 +70,16 @@ export const propertytaskFormComponents = {
 			]
 		  },
 		  {
-			"name": "Text",
+			"name": "Select",
 			"key": "author",
 			"fields": [
 			  {
+				"name": "Items",
+				"value": [] 
+			  },
+			  {
 				"name": "Placeholder",
-				"value": "Enter name of the person who created the task"
+				"value": "Select author"
 			  },
 			  {
 				"name": "Label",
@@ -79,13 +87,18 @@ export const propertytaskFormComponents = {
 			  }
 			]
 		  },
+		  
 		  {
-			"name": "Text",
+			"name": "Select",
 			"key": "client",
 			"fields": [
 			  {
+				"name": "Items",
+				"value": [] 
+			  },
+			  {
 				"name": "Placeholder",
-				"value": "Enter client"
+				"value": "Select client"
 			  },
 			  {
 				"name": "Label",
@@ -93,6 +106,7 @@ export const propertytaskFormComponents = {
 			  }
 			]
 		  },
+		  
 		  {
 			"name": "Text",
 			"key": "address",
