@@ -8,28 +8,29 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { propertytaskFormComponents } from '../../formcomponents/propertytask.formcomponents';
 import { firstValueFrom } from 'rxjs';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { User } from 'src/app/modules/user/interfaces/user.interface';
 
 @Component({
 	templateUrl: './tasks.component.html',
 	styleUrls: ['./tasks.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class TasksComponent {
 	columns = ['name', 'description'];
 
-	form: FormInterface = this._form.getForm('propertytask', propertytaskFormComponents);
-
-	
+	form: FormInterface = this._form.getForm(
+		'propertytask',
+		propertytaskFormComponents
+	);
 
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
-		setPerPage: this._propertytaskService.setPerPage.bind(this._propertytaskService),
+		setPerPage: this._propertytaskService.setPerPage.bind(
+			this._propertytaskService
+		),
 		allDocs: false,
 		create: (): void => {
-			
-			
-
 			this._form.modal<Propertytask>(this.form, {
 				label: 'Create',
 				click: async (created: unknown, close: () => void) => {
@@ -38,11 +39,13 @@ export class TasksComponent {
 					this._preCreate(created as Propertytask);
 
 					await firstValueFrom(
-						this._propertytaskService.create(created as Propertytask)
+						this._propertytaskService.create(
+							created as Propertytask
+						)
 					);
 
 					this.setRows();
-				},
+				}
 			});
 		},
 		update: (doc: Propertytask): void => {
@@ -61,39 +64,45 @@ export class TasksComponent {
 				),
 				buttons: [
 					{
-						text: this._translate.translate('Common.No'),
+						text: this._translate.translate('Common.No')
 					},
 					{
 						text: this._translate.translate('Common.Yes'),
 						callback: async (): Promise<void> => {
-							await firstValueFrom(this._propertytaskService.delete(doc));
+							await firstValueFrom(
+								this._propertytaskService.delete(doc)
+							);
 
 							this.setRows();
-						},
-					},
-				],
+						}
+					}
+				]
 			});
 		},
 		buttons: [
 			{
 				icon: 'cloud_download',
 				click: (doc: Propertytask): void => {
-					this._form.modalUnique<Propertytask>('propertytask', 'url', doc);
-				},
-			},
+					this._form.modalUnique<Propertytask>(
+						'propertytask',
+						'url',
+						doc
+					);
+				}
+			}
 		],
 		headerButtons: [
 			{
 				icon: 'playlist_add',
 				click: this._bulkManagement(),
-				class: 'playlist',
+				class: 'playlist'
 			},
 			{
 				icon: 'edit_note',
 				click: this._bulkManagement(false),
-				class: 'edit',
-			},
-		],
+				class: 'edit'
+			}
+		]
 	};
 
 	rows: Propertytask[] = [];
@@ -105,16 +114,11 @@ export class TasksComponent {
 		private _alert: AlertService,
 		private _form: FormService,
 		private _core: CoreService
-		
 	) {
-		
-		
-		this._form.getComponent(this.form, 'assigned').fields[0].value = this._userService.users;
-		this._form.getComponent(this.form, 'assigned').resetFields();
-	
-	
-
-
+		// this._core.onComplete('user_loaded').then(() => {});
+		(this.form.components[3]?.fields?.[0].value as unknown as User[]).push(
+			...this._userService.users
+		);
 
 		this.setRows();
 	}
@@ -154,31 +158,43 @@ export class TasksComponent {
 						for (const propertytask of this.rows) {
 							if (
 								!propertytasks.find(
-									(localPropertytask) => localPropertytask._id === propertytask._id
+									(localPropertytask) =>
+										localPropertytask._id ===
+										propertytask._id
 								)
 							) {
 								await firstValueFrom(
-									this._propertytaskService.delete(propertytask)
+									this._propertytaskService.delete(
+										propertytask
+									)
 								);
 							}
 						}
 
 						for (const propertytask of propertytasks) {
 							const localPropertytask = this.rows.find(
-								(localPropertytask) => localPropertytask._id === propertytask._id
+								(localPropertytask) =>
+									localPropertytask._id === propertytask._id
 							);
 
 							if (localPropertytask) {
-								this._core.copy(propertytask, localPropertytask);
+								this._core.copy(
+									propertytask,
+									localPropertytask
+								);
 
 								await firstValueFrom(
-									this._propertytaskService.update(localPropertytask)
+									this._propertytaskService.update(
+										localPropertytask
+									)
 								);
 							} else {
 								this._preCreate(propertytask);
 
 								await firstValueFrom(
-									this._propertytaskService.create(propertytask)
+									this._propertytaskService.create(
+										propertytask
+									)
 								);
 							}
 						}
