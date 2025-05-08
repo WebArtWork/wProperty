@@ -122,7 +122,7 @@ export class PropertiesrecordsComponent {
 		private _core: CoreService,
 		private _router: Router
 	) {
-			//worker
+			/* worker
 					this._core.onComplete('user_loaded').then(() => {
 						console.log(this._userService.users);
 				  
@@ -146,7 +146,7 @@ export class PropertiesrecordsComponent {
 				(
 				  this.form.components[5]?.fields?.[0].value as unknown as User[]
 				).push(...this._userService.users);
-			  });
+			  });*/
 
 
 		this.setRows();
