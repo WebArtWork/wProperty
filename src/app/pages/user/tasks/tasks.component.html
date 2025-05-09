@@ -1,82 +1,111 @@
-<head>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtLqlAkgc34W4r4MbjplTnKn5PqcTDCZE&libraries=places"
-		async
-		defer
-	></script>
-</head>
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-			<div class="documents-header">
-				<div class="documents-header-left">
-					<div class="documents-header-left__arrow" (click)="back()">
-						<span class="material-icons">arrow_back_ios</span>
-					</div>
-					<div
-						class="documents-header-left__avatar"
-						routerLink="/profile"
-					>
-						<img [src]="userService.thumb" alt="" />
-					</div>
-				</div>
-				<div class="documents-header__title">Title header</div>
-				<div (click)="isMenuOpen = !isMenuOpen" class="burger-wrap">
-					<div
-						[class.burger--close]="isMenuOpen"
-						class="burger"
-					></div>
-				</div>
-			</div>
-
-			<div
-				[class.documents-sidebar--open]="isMenuOpen"
-				class="documents-sidebar"
-			>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="documents-sidebar__close"
-				>
-					<span class="material-icons">close</span>
-				</div>
-				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						Lorem ipsum dolor sit amet consectetur adipisicing
-						elit...
-					</div>
-				</div>
-			</div>
+			<div class="documents-header"></div>
 
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
+					<div class="stats-dashboard">
+						<div class="stat-card total">
+							<div class="stat-icon">
+								<i class="material-icons">playlist_add_check</i>
+							</div>
+							<div class="stat-info">
+								<div class="stat-number">23</div>
+								<div class="stat-label">Total Tasks</div>
+							</div>
+						</div>
+
+						<div class="stat-card in-progress">
+							<div class="stat-icon">
+								<i class="material-icons">hourglass_empty</i>
+							</div>
+							<div class="stat-info">
+								<div class="stat-number">8</div>
+								<div class="stat-label">In Progress</div>
+							</div>
+						</div>
+
+						<div class="stat-card done">
+							<div class="stat-icon">
+								<i class="material-icons">check_circle</i>
+							</div>
+							<div class="stat-info">
+								<div class="stat-number">10</div>
+								<div class="stat-label">Completed</div>
+							</div>
+						</div>
+
+						<div class="stat-card overdue">
+							<div class="stat-icon">
+								<i class="material-icons">error </i>
+							</div>
+							<div class="stat-info">
+								<div class="stat-number">5</div>
+								<div class="stat-label">Overdue</div>
+							</div>
 						</div>
 					</div>
-				</div>
+					<div id="taskListPanel" class="task-list-panel">
+						<div class="task1-card" id="task-1">
+							<h4 class="task-title">Task Title 1</h4>
+							<p class="task-category">
+								<i class="material-icons">category</i> Category:
+								Repair
+							</p>
+							<p class="task-time">
+								<i class="material-icons">access_time</i> Time:
+								12:00 - 13:00
+							</p>
+							<p class="task-address">
+								<i class="material-icons">location_on</i>
+								Address: 123 Main St.
+							</p>
+							<button
+								class="more-options"
+								(click)="goToDetails()"
+							>
+								<i class="material-icons">more_vert</i>
+							</button>
+						</div>
+						<div class="task2-card" id="task-2">
+							<h4 class="task-title">Task Title 2</h4>
+							<p class="task-category">
+								<i class="material-icons">category</i> Category:
+								Repair
+							</p>
+							<p class="task-time">
+								<i class="material-icons">access_time</i> Time:
+								12:00 - 13:00
+							</p>
+							<p class="task-address">
+								<i class="material-icons">location_on</i>
+								Address: 456 Oak St.
+							</p>
+							<button
+								class="more-options"
+								(click)="goToDetails()"
+							>
+								<i class="material-icons">more_vert</i>
+							</button>
+						</div>
+					</div>
 
-				<!-- Додаємо компонент Google Map після основного контенту -->
-				<google-map
-					height="500px"
-					width="100%"
-					[center]="center"
-					[zoom]="zoom"
-				>
-					<map-marker
-						*ngFor="let task of tasks"
-						[position]="task.location"
-						[label]="task.title"
-					></map-marker>
-				</google-map>
+					<button id="addTaskBtn" class="fab">➕</button>
+
+					<google-map
+						height="500px"
+						width="100%"
+						[center]="center"
+						[zoom]="zoom"
+					>
+						<map-marker
+							*ngFor="let task of tasks"
+							[position]="task.location"
+							[label]="task.title"
+						></map-marker>
+					</google-map>
+				</div>
 			</div>
 		</div>
 	</div>
