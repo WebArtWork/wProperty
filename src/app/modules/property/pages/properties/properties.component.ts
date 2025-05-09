@@ -90,13 +90,13 @@ export class PropertiesComponent {
 		},
 		buttons: [
 			{
-				icon: 'description',
+				icon: 'note_add',
 				hrefFunc: (doc: Property): string => {
 					return '/propertiesrecords/' + doc._id;
 				}
 			},
 			{
-				icon: 'swap_horiz',
+				icon: 'attach_money',
 				hrefFunc: (doc: Property): string => {
 					return '/propertiestrades/' + doc._id;
 				}

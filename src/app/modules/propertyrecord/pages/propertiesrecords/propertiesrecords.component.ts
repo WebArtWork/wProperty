@@ -10,6 +10,7 @@ import { firstValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { log } from 'console';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { User } from 'src/app/modules/user/interfaces/user.interface';
 
 @Component({
 	templateUrl: './propertiesrecords.component.html',
@@ -122,7 +123,7 @@ export class PropertiesrecordsComponent {
 		private _core: CoreService,
 		private _router: Router
 	) {
-			/* worker
+			// worker
 					this._core.onComplete('user_loaded').then(() => {
 						console.log(this._userService.users);
 				  
@@ -146,7 +147,7 @@ export class PropertiesrecordsComponent {
 				(
 				  this.form.components[5]?.fields?.[0].value as unknown as User[]
 				).push(...this._userService.users);
-			  });*/
+			  });
 
 
 		this.setRows();
