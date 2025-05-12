@@ -16,7 +16,15 @@ import { User } from 'src/app/modules/user/interfaces/user.interface';
 	standalone: false
 })
 export class TasksComponent {
-	columns = ['name', 'description'];
+	columns = ['name', 'description', 'category',
+		'assigned', 
+		'client',   
+		'address',
+		'deadline', 
+		'latitude', 
+		'longitude', 
+		'startTime',
+		'endTime']
 
 	form: FormInterface = this._form.getForm(
 		'propertytask',
