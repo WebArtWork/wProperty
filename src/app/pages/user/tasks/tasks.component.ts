@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
+import { GoogleMapsModule } from '@angular/google-maps';  // Імпортуємо Google Maps модуль
 
 interface Task {
   id: number;
@@ -14,10 +15,11 @@ interface Task {
 }
 
 @Component({
+  standalone: true,  // Оголошуємо компонент як standalone
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss'],
-  standalone: false,
+  imports: [GoogleMapsModule]  // Імпортуємо Google Maps модуль безпосередньо в компоненті
 })
 export class TasksComponent implements OnInit {
   formDoc: FormInterface = this._form.getForm('docForm', {
@@ -62,9 +64,9 @@ export class TasksComponent implements OnInit {
 
   center: google.maps.LatLngLiteral = { lat: 50.4501, lng: 30.5234 };
   zoom = 13;
-
   tasks: Task[] = [];
   isMenuOpen = false;
+  activeTaskId: number | null = null;
 
   constructor(
     public userService: UserService,
@@ -80,11 +82,39 @@ export class TasksComponent implements OnInit {
     ];
   }
 
+  focusOnTask(task: Task): void {
+    this.center = task.location;
+    this.zoom = 15;
+    this.activeTaskId = task.id;
+  }
+
+  focusOnMarker(task: Task): void {
+    this.center = task.location;
+    this.zoom = 15;
+    this.activeTaskId = task.id;
+
+    // Прокрутка до відповідної картки
+    const el = document.getElementById('task-' + task.id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  getMarkerIcon(task: Task): string {
+    return task.id === this.activeTaskId
+      ? 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+      : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+  }
+
   back(): void {
     window.history.back();
   }
 
   goToDetails(): void {
     this.router.navigate(['/task']);
+  }
+
+  onMapReady(event: any): void {
+    console.log('Карта готова!', event);
   }
 }

@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from 'src/app/core/core.module';
-import { TasksComponent } from './tasks.component';
-import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { GoogleMapsModule } from '@angular/google-maps'; // Додано GoogleMapsModule
+import { RouterModule, Routes } from '@angular/router';
+import { GoogleMapsModule } from '@angular/google-maps';  // Імпортуємо Google Maps модуль
+import { TasksComponent } from './tasks.component'; // Імпортуємо standalone компонент
 
 const routes: Routes = [
   {
     path: '',
-    component: TasksComponent
+    component: TasksComponent  // Вказуємо standalone компонент у маршрутах
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    CoreModule,
-    CommonModule, // Додано CommonModule
-    GoogleMapsModule // Додано GoogleMapsModule
-  ],
-  declarations: [TasksComponent]
+    CommonModule,  // Додавання CommonModule
+    RouterModule.forChild(routes),  // Додавання маршрутизації для цього модуля
+    GoogleMapsModule  // Додавання модуля Google Maps
+  ]
 })
 export class TasksModule {}
