@@ -1,3 +1,5 @@
+
+
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
@@ -33,8 +35,10 @@
 						{{property.name}}
 					</div>
 					<div class="documents-sidebar__description">
-						<wbutton (click)="update(property)">Edit</wbutton>
-						<wbutton (click)="delete(property)">Delete</wbutton>
+						<div class="documents-sidebar-btns">
+							<wbutton (click)="update(property)">Edit</wbutton>
+							<wbutton (click)="delete(property)">Delete</wbutton>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,15 +46,15 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Properties
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow">
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div class="documents-block-list">
 									<div class="documents-block-text">
 										<div class="documents__name">
@@ -116,16 +120,16 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Services
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow">
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
 
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div class="services-main">
 									<div
 								class="documents_services_box"
@@ -178,15 +182,15 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Materials
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow">
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div class="material-wrapper">
 									<div
 								class="documents_materials_box"
@@ -222,16 +226,16 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Business
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow">
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
 
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div
 								class="documents_business_box business-wrapper"
 								*ngFor="let material of [{}, {}, {}]"
@@ -309,16 +313,16 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Workers
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow">
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
 
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div
 								class="documents_workers_box"
 								*ngFor="let material of [{}, {}, {}]"
@@ -357,16 +361,16 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title" (click)="toggleAccordion()">
+							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
 								<div class="documents-properties-title__text">
 									Records
 								</div>
-								<div class="documents-properties-title__arrow" [class.expanded]="isOpen">
+								<div class="documents-properties-title__arrow" >
 									<span class="material-icons" >keyboard_arrow_down</span>
 								</div>
 							</div>
 
-							<div class="documents-properties-main" [@accordionAnimation]="isOpen ? 'open' : 'closed'">
+							<div class="documents-properties-main accordion-content">
 								<div
 								class="documents_records_box"
 								*ngFor="let material of [{}, {}, {}]"

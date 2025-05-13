@@ -796,6 +796,29 @@ wform {
 .task__description{
 	margin: 12px 0;
 }
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-button.active .material-icons {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.documents-sidebar-btns{
+    display: flex;
+    justify-content: space-between;
+    wbutton{
+        width: 100%;
+        margin-right: 2px;
+        &:last-child{
+            margin-right: 0;
+            margin-left: 2px;
+        }
+    }
+}
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
@@ -804,6 +827,10 @@ wform {
 	.documents-main {
 		flex: 1 0;
 		padding-left: 236px;
+	}
+	.documents_services_box {
+		flex: 0 0 50%;
+		max-width: 50%;
 	}
 }
 @media screen and (max-width: 991px) {
@@ -905,10 +932,6 @@ wform {
 		max-width: 50%;
 	}
 	.documents_materials_box {
-		flex: 0 0 50%;
-		max-width: 50%;
-	}
-	.documents_services_box {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
@@ -27,11 +27,28 @@ import { CoreService, AlertService } from 'wacom';
 })
 export class MypropertyComponent {
 
-	isOpen = true;
+openFirstAccordion(): void {
+    const firstContent = this.el.nativeElement.querySelector('.accordion-content') as HTMLElement;
+    const firstButton = this.el.nativeElement.querySelector('.accordion-button') as HTMLElement;
 
-	toggleAccordion() {
-	  this.isOpen = !this.isOpen;
-	}
+    if (firstContent && firstButton) {
+      this.renderer.setStyle(firstContent, 'maxHeight', firstContent.scrollHeight + 'px');
+      this.renderer.addClass(firstButton, 'active');
+    }
+  }
+
+  toggleAccordion(event: Event): void {
+    const button = event.currentTarget as HTMLElement;
+    const content = button.nextElementSibling as HTMLElement;
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      this.renderer.setStyle(content, 'maxHeight', null);
+      this.renderer.removeClass(button, 'active');
+    } else {
+      this.renderer.setStyle(content, 'maxHeight', content.scrollHeight + 'px');
+      this.renderer.addClass(button, 'active');
+    }
+  }
 
 	property = this._propertyService.doc(
 		this._router.url.replace('/myproperty/', '')
@@ -44,8 +61,11 @@ export class MypropertyComponent {
 		private _form: FormService,
 		private _core: CoreService,
 		private _alert: AlertService,
-		private _translate: TranslateService
-	) {}
+		private _translate: TranslateService,
+		private renderer: Renderer2,
+		private el: ElementRef
+	) {// Даємо Angular DOM відрендеритись повністю
+    setTimeout(() => this.openFirstAccordion(), 0);}
 
 	isMenuOpen = false;
 
