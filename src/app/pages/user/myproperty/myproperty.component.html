@@ -1,27 +1,38 @@
-
-
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-            <div class="documents-header">
-                <div class="documents-header-left">
-                  <div class="documents-header-left__arrow">
-                    <span class="material-icons">arrow_back_ios</span>
-                  </div>
-                  <div routerlink="/profile" class="documents-header-left__avatar" tabindex="0" ng-reflect-router-link="/profile">
-                    <img alt="" src="assets/default.png">
-                  </div>
-                </div>
-                <div class="documents-header__title">Title header</div>
-                <div class="burger-wrap" class="burger-wrap"  (click)="isMenuOpen=!isMenuOpen" [class.burger-wrap--open]="isMenuOpen">
-                    <div class="burger" [class.burger--close]="isMenuOpen"></div>
-                </div> 
-              </div>
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						routerlink="/profile"
+						class="documents-header-left__avatar"
+						tabindex="0"
+						ng-reflect-router-link="/profile"
+					>
+						<img alt="" src="assets/default.png" />
+					</div>
+				</div>
+				<div class="documents-header__title">Title header</div>
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
+					<div
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
+			</div>
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
-			<div
+				<div
 					(click)="isMenuOpen = !isMenuOpen"
 					class="documents-sidebar__close"
 				>
@@ -46,15 +57,22 @@
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Properties
 								</div>
 								<div class="documents-properties-title__arrow">
-									<span class="material-icons" >keyboard_arrow_down</span>
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
-							<div class="documents-properties-main accordion-content">
+							<div
+								class="documents-properties-main accordion-content"
+							>
 								<div class="documents-block-list">
 									<div class="documents-block-text">
 										<div class="documents__name">
@@ -63,349 +81,572 @@
 										<div class="documents__description">
 											{{property.description}}
 										</div>
-										<div class="documents-address documents-prop-wrap">
-											<div class="documents-address__icon documents-prop-icon">
-												<span class="material-icons">location_on</span>
+										<div
+											class="documents-address documents-prop-wrap"
+										>
+											<div
+												class="documents-address__icon documents-prop-icon"
+											>
+												<span class="material-icons"
+													>location_on</span
+												>
 											</div>
-											<div class="documents-address__text documents-prop-text">
+											<div
+												class="documents-address__text documents-prop-text"
+											>
 												{{property.address}}
 											</div>
 										</div>
-										<div class="documents-type documents-prop-wrap">
-											<div class="documents-type__icon documents-prop-icon">
-												<span class="material-icons">holiday_village</span>
+										<div
+											class="documents-type documents-prop-wrap"
+										>
+											<div
+												class="documents-type__icon documents-prop-icon"
+											>
+												<span class="material-icons"
+													>holiday_village</span
+												>
 											</div>
-											<div class="documents-type__text documents-prop-text">
+											<div
+												class="documents-type__text documents-prop-text"
+											>
 												{{property.type}}
 											</div>
 										</div>
-			
-										<div class="documents-area documents-prop-wrap">
-											<div class="documents-area__icon documents-prop-icon">
-												<span class="material-icons">square_foot</span>
+
+										<div
+											class="documents-area documents-prop-wrap"
+										>
+											<div
+												class="documents-area__icon documents-prop-icon"
+											>
+												<span class="material-icons"
+													>square_foot</span
+												>
 											</div>
-											<div class="documents-area__text documents-prop-text">
+											<div
+												class="documents-area__text documents-prop-text"
+											>
 												{{property.area}} m²
 											</div>
 										</div>
-										<div class="documents__thumb">{{property.thumb}}</div>
-										<div class="documents-area documents-prop-wrap">
-											<div class="documents-area__icon documents-prop-icon">
-												<span class="material-icons">stairs</span>
+										<div class="documents__thumb">
+											{{property.thumb}}
+										</div>
+										<div
+											class="documents-area documents-prop-wrap"
+										>
+											<div
+												class="documents-area__icon documents-prop-icon"
+											>
+												<span class="material-icons"
+													>stairs</span
+												>
 											</div>
-											<div class="documents-area__text documents-prop-text">
+											<div
+												class="documents-area__text documents-prop-text"
+											>
 												floor
 											</div>
 										</div>
-										<div class="documents-rooms documents-prop-wrap">
-											<div class="documents-rooms__icon documents-prop-icon">
-												<span class="material-icons">apartment</span>
+										<div
+											class="documents-rooms documents-prop-wrap"
+										>
+											<div
+												class="documents-rooms__icon documents-prop-icon"
+											>
+												<span class="material-icons"
+													>apartment</span
+												>
 											</div>
-											<div class="documents-rooms__text documents-prop-text">
+											<div
+												class="documents-rooms__text documents-prop-text"
+											>
 												rooms
 											</div>
 										</div>
-				
-										<div class="documents__price">{{property.price}} $</div>
+
+										<div class="documents__price">
+											{{property.price}} $
+										</div>
 									</div>
 									<div class="documents-block-img">
-										<img src="assets/prop.jpg" alt="">
+										<img src="assets/prop.jpg" alt="" />
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Services
 								</div>
 								<div class="documents-properties-title__arrow">
-									<span class="material-icons" >keyboard_arrow_down</span>
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
 
-							<div class="documents-properties-main accordion-content">
+							<div
+								class="documents-properties-main accordion-content"
+							>
 								<div class="services-main">
 									<div
-								class="documents_services_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-									<div class="documents_services_box-item">
-										<div class="services-img">
-											<img src="assets/services.jpg" alt="">
+										class="documents_services_box"
+										*ngFor="let material of [{}, {}, {}]"
+									>
+										<div
+											class="documents_services_box-item"
+										>
+											<div class="services-img">
+												<img
+													src="assets/services.jpg"
+													alt=""
+												/>
+											</div>
+											<div
+												class="documents__service services__title"
+											>
+												service
+											</div>
+											<div
+												class="documents__description services__description"
+											>
+												description
+											</div>
+											<div
+												class="business-contacts services-contacts"
+											>
+												<a
+													href=""
+													class="business-contacts-social documents-prop-wrap"
+												>
+													<div
+														class="business-contacts-social__icon documents-prop-icon"
+													>
+														<span
+															class="material-icons"
+															>call</span
+														>
+													</div>
+													<div
+														class="business-contacts-social__text documents-prop-text"
+													>
+														+380734356878
+													</div>
+												</a>
+												<a
+													href=""
+													class="business-contacts-social documents-prop-wrap"
+												>
+													<div
+														class="business-contacts-social__icon documents-prop-icon"
+													>
+														<span
+															class="material-icons"
+															>outgoing_mail</span
+														>
+													</div>
+													<div
+														class="business-contacts-social__text documents-prop-text"
+													>
+														testrrmail
+													</div>
+												</a>
+												<a
+													href=""
+													class="business-contacts-social documents-prop-wrap"
+												>
+													<div
+														class="business-contacts-social__icon documents-prop-icon"
+													>
+														<span
+															class="material-icons"
+															>language</span
+														>
+													</div>
+													<div
+														class="business-contacts-social__text documents-prop-text"
+													>
+														Web site
+													</div>
+												</a>
+											</div>
+											<div
+												class="documents__price services__price"
+											>
+												price
+											</div>
 										</div>
-										<div class="documents__service services__title">service</div>
-										<div class="documents__description services__description">
-											description
-										</div>
-										<div class="business-contacts services-contacts">
-											<a href="" class="business-contacts-social documents-prop-wrap">
-												<div class="business-contacts-social__icon documents-prop-icon">
-													<span class="material-icons" >call</span>
-												</div>
-												<div class="business-contacts-social__text documents-prop-text">
-													+380734356878
-												</div>
-											</a>
-											<a href="" class="business-contacts-social documents-prop-wrap">
-												<div class="business-contacts-social__icon documents-prop-icon">
-													<span class="material-icons" >outgoing_mail</span>
-												</div>
-												<div class="business-contacts-social__text documents-prop-text">
-													testrrmail
-												</div>
-											</a>
-											<a href="" class="business-contacts-social documents-prop-wrap">
-												<div class="business-contacts-social__icon documents-prop-icon">
-													<span class="material-icons" >language</span>
-												</div>
-												<div class="business-contacts-social__text documents-prop-text">
-													Web site
-												</div>
-											</a>
-										</div>
-										<div class="documents__price services__price">price</div>
 									</div>
 								</div>
-								</div>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Materials
 								</div>
 								<div class="documents-properties-title__arrow">
-									<span class="material-icons" >keyboard_arrow_down</span>
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
-							<div class="documents-properties-main accordion-content">
+							<div
+								class="documents-properties-main accordion-content"
+							>
 								<div class="material-wrapper">
 									<div
-								class="documents_materials_box"
-								*ngFor="let material of [{}, {}, {}]"
-							>
-									<div class="documents_materials_box-item">
-										<div class="documents__name">name</div>
-										<div class="documents__description">
-											description
-										</div>
-										<div class="materials-wrapper">
-											<div class="materials-wrapper__icon"></div>
-											<div class="materials-wrapper__text">
-												Quantity: <span>1</span>
+										class="documents_materials_box"
+										*ngFor="let material of [{}, {}, {}]"
+									>
+										<div
+											class="documents_materials_box-item"
+										>
+											<div class="documents__name">
+												name
+											</div>
+											<div class="documents__description">
+												description
+											</div>
+											<div class="materials-wrapper">
+												<div
+													class="materials-wrapper__icon"
+												></div>
+												<div
+													class="materials-wrapper__text"
+												>
+													Quantity: <span>1</span>
+												</div>
+											</div>
+											<div class="materials-wrapper">
+												<div
+													class="materials-wrapper__icon"
+												></div>
+												<div
+													class="materials-wrapper__text"
+												>
+													Supplier: <span>1</span>
+												</div>
+											</div>
+											<div class="documents__price">
+												price $
 											</div>
 										</div>
-										<div class="materials-wrapper">
-											<div class="materials-wrapper__icon"></div>
-											<div class="materials-wrapper__text">
-												Supplier: <span>1</span>
-											</div>
-										</div>		
-										<div class="documents__price">price $</div>
 									</div>
 								</div>
-								</div>
 							</div>
-							
 						</div>
 					</div>
 				</div>
-	
+
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Business
 								</div>
 								<div class="documents-properties-title__arrow">
-									<span class="material-icons" >keyboard_arrow_down</span>
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
 
-							<div class="documents-properties-main accordion-content">
-								<div
-								class="documents_business_box business-wrapper"
-								*ngFor="let material of [{}, {}, {}]"
+							<div
+								class="documents-properties-main accordion-content"
 							>
-								<div class="business-text">
-									<div class="business-img">
-										<img src="assets/prop.jpg" alt="">
-									</div>
-									<div class="documents__companyname business-text__title">
-										companyname
-									</div>
-									<div class="business-text__description">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsum harum officia, exercitationem perferendis.
-									</div>
-									<div class="business-contacts">
-										<a href="" class="business-contacts-social documents-prop-wrap">
-											<div class="business-contacts-social__icon documents-prop-icon">
-												<span class="material-icons" >call</span>
-											</div>
-											<div class="business-contacts-social__text documents-prop-text">
-												+380734356878
-											</div>
-										</a>
-										<a href="" class="business-contacts-social documents-prop-wrap">
-											<div class="business-contacts-social__icon documents-prop-icon">
-												<span class="material-icons" >outgoing_mail</span>
-											</div>
-											<div class="business-contacts-social__text documents-prop-text">
-												testrrmail
-											</div>
-										</a>
-										<a href="" class="business-contacts-social documents-prop-wrap">
-											<div class="business-contacts-social__icon documents-prop-icon">
-												<span class="material-icons" >language</span>
-											</div>
-											<div class="business-contacts-social__text documents-prop-text">
-												Web site
-											</div>
-										</a>
-									</div>
-		
+								<div
+									class="documents_business_box business-wrapper"
+									*ngFor="let material of [{}, {}, {}]"
+								>
+									<div class="business-text">
+										<div class="business-img">
+											<img src="assets/prop.jpg" alt="" />
+										</div>
+										<div
+											class="documents__companyname business-text__title"
+										>
+											companyname
+										</div>
+										<div class="business-text__description">
+											Lorem ipsum dolor sit amet
+											consectetur adipisicing elit.
+											Laboriosam ipsum harum officia,
+											exercitationem perferendis.
+										</div>
+										<div class="business-contacts">
+											<a
+												href=""
+												class="business-contacts-social documents-prop-wrap"
+											>
+												<div
+													class="business-contacts-social__icon documents-prop-icon"
+												>
+													<span class="material-icons"
+														>call</span
+													>
+												</div>
+												<div
+													class="business-contacts-social__text documents-prop-text"
+												>
+													+380734356878
+												</div>
+											</a>
+											<a
+												href=""
+												class="business-contacts-social documents-prop-wrap"
+											>
+												<div
+													class="business-contacts-social__icon documents-prop-icon"
+												>
+													<span class="material-icons"
+														>outgoing_mail</span
+													>
+												</div>
+												<div
+													class="business-contacts-social__text documents-prop-text"
+												>
+													testrrmail
+												</div>
+											</a>
+											<a
+												href=""
+												class="business-contacts-social documents-prop-wrap"
+											>
+												<div
+													class="business-contacts-social__icon documents-prop-icon"
+												>
+													<span class="material-icons"
+														>language</span
+													>
+												</div>
+												<div
+													class="business-contacts-social__text documents-prop-text"
+												>
+													Web site
+												</div>
+											</a>
+										</div>
 
-									<div class="materials-wrapper">
-										<div class="materials-wrapper__icon">
-											
+										<div class="materials-wrapper">
+											<div
+												class="materials-wrapper__icon"
+											></div>
+											<div
+												class="materials-wrapper__text documents__servicetype"
+											>
+												Service type:
+												<span>name of type</span>
+											</div>
 										</div>
-										<div class="materials-wrapper__text documents__servicetype">
-											Service type: <span>name of type</span>
+										<div class="materials-wrapper">
+											<div
+												class="materials-wrapper__icon"
+											></div>
+											<div
+												class="materials-wrapper__text documents__experience"
+											>
+												Experience: <span>5 years</span>
+											</div>
 										</div>
-									</div>
-									<div class="materials-wrapper">
-										<div class="materials-wrapper__icon">
-											
+										<div
+											class="documents__rating business-rating"
+										>
+											<div class="business-rating__star">
+												<span class="material-icons"
+													>star</span
+												>
+											</div>
+											<div class="business-rating__star">
+												<span class="material-icons"
+													>star</span
+												>
+											</div>
+											<div class="business-rating__star">
+												<span class="material-icons"
+													>star</span
+												>
+											</div>
+											<div class="business-rating__star">
+												<span class="material-icons"
+													>star</span
+												>
+											</div>
+											<div class="business-rating__star">
+												<span class="material-icons"
+													>star</span
+												>
+											</div>
 										</div>
-										<div class="materials-wrapper__text documents__experience">
-											Experience: <span>5 years</span>
-										</div>
-									</div>
-									<div class="documents__rating business-rating">
-										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
-										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
-										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
-										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
-										<div class="business-rating__star"> <span class="material-icons" >star</span></div>
 									</div>
 								</div>
 							</div>
-							</div>
-
-							
 						</div>
 					</div>
 				</div>
-	
+
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Workers
 								</div>
 								<div class="documents-properties-title__arrow">
-									<span class="material-icons" >keyboard_arrow_down</span>
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
 
-							<div class="documents-properties-main accordion-content">
-								<div
-								class="documents_workers_box"
-								*ngFor="let material of [{}, {}, {}]"
+							<div
+								class="documents-properties-main accordion-content"
 							>
-								<div class="documents-prop-wrap">
-									<div class="documents-prop-icon">
-										<span class="material-icons" >person</span>
+								<div
+									class="documents_workers_box"
+									*ngFor="let material of [{}, {}, {}]"
+								>
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>person</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											Full Name
+										</div>
 									</div>
-									<div class="documents-prop-text">
-										Full Name
-									</div>
-								</div>
 
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text">Position: <span>pos</span></div>
-								</div>
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text"> Experience: <span>5 years</span></div>
-								</div>
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text"> Task: <span>task of worker</span></div>
-								</div>
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text"> Status: <span>5 years</span></div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											Position: <span>pos</span>
+										</div>
+									</div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											Experience: <span>5 years</span>
+										</div>
+									</div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											Task: <span>task of worker</span>
+										</div>
+									</div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											Status: <span>5 years</span>
+										</div>
+									</div>
 								</div>
 							</div>
-							</div>
-							
 						</div>
 					</div>
 				</div>
 				<div class="prop-section">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="documents-properties-title accordion-button" (click)="toggleAccordion($event)">
+							<div
+								class="documents-properties-title accordion-button"
+								(click)="toggleAccordion($event)"
+							>
 								<div class="documents-properties-title__text">
 									Records
 								</div>
-								<div class="documents-properties-title__arrow" >
-									<span class="material-icons" >keyboard_arrow_down</span>
+								<div class="documents-properties-title__arrow">
+									<span class="material-icons"
+										>keyboard_arrow_down</span
+									>
 								</div>
 							</div>
 
-							<div class="documents-properties-main accordion-content">
-								<div
-								class="documents_records_box"
-								*ngFor="let material of [{}, {}, {}]"
+							<div
+								class="documents-properties-main accordion-content"
 							>
-								<div class="documents__name records-title">name</div>
-								<div class="documents__description records__description">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quos atque hic, assumenda laudantium corporis.
-								</div>
+								<div
+									class="documents_records_box"
+									*ngFor="let material of [{}, {}, {}]"
+								>
+									<div class="documents__name records-title">
+										name
+									</div>
+									<div
+										class="documents__description records__description"
+									>
+										Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Ex quos atque hic,
+										assumenda laudantium corporis.
+									</div>
 
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text">Type: <span>5 years</span></div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											Type: <span>5 years</span>
+										</div>
+									</div>
+									<div class="materials-wrapper">
+										<div
+											class="materials-wrapper__icon"
+										></div>
+										<div class="materials-wrapper__text">
+											responsible: <span>5 years</span>
+										</div>
+									</div>
+
+									<div
+										class="documents__comments records-comments"
+									>
+										Comments block lorem ipsjun asdsadsad
+									</div>
+									<div
+										class="documents__price records__price"
+									>
+										$expenses
+									</div>
 								</div>
-								<div class="materials-wrapper">
-									<div class="materials-wrapper__icon"></div>
-									<div class="materials-wrapper__text">responsible: <span>5 years</span></div>
-								</div>
-	
-								<div class="documents__comments records-comments">Comments block lorem ipsjun asdsadsad</div>
-								<div class="documents__price records__price">$expenses</div>
+								<wbutton>See More</wbutton>
 							</div>
-							<wbutton>See More</wbutton>
-							</div>
-
-
-
 						</div>
 					</div>
 				</div>
-	
-			
-	
-
 			</div>
-
 		</div>
 	</div>
 </div>
