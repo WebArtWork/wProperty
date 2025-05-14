@@ -1,25 +1,40 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-            <div class="documents-header">
-                <div class="documents-header-left">
-                  <div class="documents-header-left__arrow">
-                    <span class="material-icons">arrow_back_ios</span>
-                  </div>
-                  <div routerlink="/profile" class="documents-header-left__avatar" tabindex="0" ng-reflect-router-link="/profile">
-                    <img alt="" src="assets/default.png">
-                  </div>
-                </div>
-                <div class="documents-header__title">Title header</div>
-                <div class="burger-wrap" class="burger-wrap"  (click)="isMenuOpen=!isMenuOpen" [class.burger-wrap--open]="isMenuOpen">
-                    <div class="burger" [class.burger--close]="isMenuOpen"></div>
-                </div> 
-              </div>
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						routerlink="/profile"
+						class="documents-header-left__avatar"
+						tabindex="0"
+						ng-reflect-router-link="/profile"
+					>
+						<img alt="" src="assets/default.png" />
+					</div>
+				</div>
+				<div class="documents-header__title" translate>
+					Workers.Workers
+				</div>
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
+					<div
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
+			</div>
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
-			  <div
+				<div
 					(click)="isMenuOpen = !isMenuOpen"
 					class="documents-sidebar__close"
 				>

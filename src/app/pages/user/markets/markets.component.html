@@ -1,31 +1,46 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-            <div class="documents-header">
-                <div class="documents-header-left">
-                  <div class="documents-header-left__arrow">
-                    <span class="material-icons">arrow_back_ios</span>
-                  </div>
-                  <div routerlink="/profile" class="documents-header-left__avatar" tabindex="0" ng-reflect-router-link="/profile">
-                    <img alt="" src="assets/default.png">
-                  </div>
-                </div>
-                <div class="documents-header__title">Title header</div>
-                <div class="burger-wrap" class="burger-wrap"  (click)="isMenuOpen=!isMenuOpen" [class.burger-wrap--open]="isMenuOpen">
-                    <div class="burger" [class.burger--close]="isMenuOpen"></div>
-                </div> 
-              </div>
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						routerlink="/profile"
+						class="documents-header-left__avatar"
+						tabindex="0"
+						ng-reflect-router-link="/profile"
+					>
+						<img alt="" src="assets/default.png" />
+					</div>
+				</div>
+				<div class="documents-header__title" translate>
+					Markets.Markets
+				</div>
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
+					<div
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
+			</div>
 
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
-			<div
-			(click)="isMenuOpen = !isMenuOpen"
-			class="documents-sidebar__close"
-		>
-			<span class="material-icons">close</span>
-		</div>
+				<div
+					(click)="isMenuOpen = !isMenuOpen"
+					class="documents-sidebar__close"
+				>
+					<span class="material-icons">close</span>
+				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Filters</div>
 					<wselect
@@ -161,10 +176,12 @@
 					>
 						<div class="documents-block-list">
 							<div class="documents-block-text">
-								<div class="documents__name">name</div>	
+								<div class="documents__name">name</div>
 								<div class="documents-prop-wrap">
 									<div class="documents-prop-icon">
-										<span class="material-icons">location_on</span>
+										<span class="material-icons"
+											>location_on</span
+										>
 									</div>
 									<div class="documents-prop-text">
 										address
@@ -172,15 +189,17 @@
 								</div>
 								<div class="documents-prop-wrap">
 									<div class="documents-prop-icon">
-										<span class="material-icons">holiday_village</span>
+										<span class="material-icons"
+											>holiday_village</span
+										>
 									</div>
-									<div class="documents-prop-text">
-										type
-									</div>
+									<div class="documents-prop-text">type</div>
 								</div>
 								<div class="documents-prop-wrap">
 									<div class="documents-prop-icon">
-										<span class="material-icons">square_foot</span>
+										<span class="material-icons"
+											>square_foot</span
+										>
 									</div>
 									<div class="documents-prop-text">
 										area m²
@@ -188,24 +207,24 @@
 								</div>
 								<div class="documents-prop-wrap">
 									<div class="documents-prop-icon">
-										<span class="material-icons">stairs</span>
+										<span class="material-icons"
+											>stairs</span
+										>
 									</div>
-									<div class="documents-prop-text">
-										floor
-									</div>
+									<div class="documents-prop-text">floor</div>
 								</div>
 								<div class="documents-prop-wrap">
 									<div class="documents-prop-icon">
-										<span class="material-icons">apartment</span>
+										<span class="material-icons"
+											>apartment</span
+										>
 									</div>
-									<div class="documents-prop-text">
-										rooms
-									</div>
+									<div class="documents-prop-text">rooms</div>
 								</div>
 								<div class="documents__price">price $</div>
 							</div>
 							<div class="documents-block-img">
-								<img src="assets/prop.jpg" alt="">
+								<img src="assets/prop.jpg" alt="" />
 							</div>
 						</div>
 					</div>

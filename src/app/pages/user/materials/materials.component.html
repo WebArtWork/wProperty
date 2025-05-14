@@ -1,30 +1,45 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-            <div class="documents-header">
-                <div class="documents-header-left">
-                  <div class="documents-header-left__arrow">
-                    <span class="material-icons">arrow_back_ios</span>
-                  </div>
-                  <div routerlink="/profile" class="documents-header-left__avatar" tabindex="0" ng-reflect-router-link="/profile">
-                    <img alt="" src="assets/default.png">
-                  </div>
-                </div>
-                <div class="documents-header__title">Title header</div>
-                <div class="burger-wrap" class="burger-wrap"  (click)="isMenuOpen=!isMenuOpen" [class.burger-wrap--open]="isMenuOpen">
-                    <div class="burger" [class.burger--close]="isMenuOpen"></div>
-                </div> 
-              </div>
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						routerlink="/profile"
+						class="documents-header-left__avatar"
+						tabindex="0"
+						ng-reflect-router-link="/profile"
+					>
+						<img alt="" src="assets/default.png" />
+					</div>
+				</div>
+				<div class="documents-header__title" translate>
+					Materials.Materials
+				</div>
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
+					<div
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
+			</div>
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
-			<div
-			(click)="isMenuOpen = !isMenuOpen"
-			class="documents-sidebar__close"
-		>
-			<span class="material-icons">close</span>
-		</div>
+				<div
+					(click)="isMenuOpen = !isMenuOpen"
+					class="documents-sidebar__close"
+				>
+					<span class="material-icons">close</span>
+				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Filters</div>
 
@@ -52,7 +67,7 @@
 				<div class="documents-main-content">
 					<!-- Статичне вікно пошуку -->
 					<div class="materials-search">
-						<input type="text" placeholder="Find matrials">
+						<input type="text" placeholder="Find matrials" />
 						<div class="materials-search__img">
 							<span class="material-icons">search</span>
 						</div>
@@ -60,35 +75,43 @@
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div class="material-wrapper">
-								<div
-							class="documents_materials_box"
-							
-						>
-								<div class="documents_materials_box-item">
-									<div class="documents__name">name</div>
-									<div class="materials-wrapper">
-										<div class="materials-wrapper__icon"></div>
-										<div class="materials-wrapper__text">
-											Quantity: <span>1</span>
+								<div class="documents_materials_box">
+									<div class="documents_materials_box-item">
+										<div class="documents__name">name</div>
+										<div class="materials-wrapper">
+											<div
+												class="materials-wrapper__icon"
+											></div>
+											<div
+												class="materials-wrapper__text"
+											>
+												Quantity: <span>1</span>
+											</div>
+										</div>
+										<div class="materials-wrapper">
+											<div
+												class="materials-wrapper__icon"
+											></div>
+											<div
+												class="materials-wrapper__text"
+											>
+												Size: <span>1</span>
+											</div>
+										</div>
+										<div class="materials-wrapper">
+											<div
+												class="materials-wrapper__icon"
+											></div>
+											<div
+												class="materials-wrapper__text"
+											>
+												Material: <span>1</span>
+											</div>
 										</div>
 									</div>
-									<div class="materials-wrapper">
-										<div class="materials-wrapper__icon"></div>
-										<div class="materials-wrapper__text">
-											Size: <span>1</span>
-										</div>
-									</div>		
-									<div class="materials-wrapper">
-										<div class="materials-wrapper__icon"></div>
-										<div class="materials-wrapper__text">
-											Material: <span>1</span>
-										</div>
-									</div>	
 								</div>
 							</div>
-							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
