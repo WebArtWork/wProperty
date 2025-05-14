@@ -1,17 +1,6 @@
-/* Загальні стилі */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.documents-main-content--task{
+    width: 100%;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    min-height: 100vh;
-}
-
 /* Контейнер меню */
 .documents-wrapper {
     display: flex;
@@ -39,7 +28,7 @@ body {
 .stat-card {
     display: flex;
     align-items: center;
-    background-color: #444;
+    background-color: #252222;
     padding: 8px;
     border-radius: 5px;
     width: 23%;
@@ -50,6 +39,7 @@ body {
 .stat-icon {
     font-size: 20px;
     margin-right: 10px;
+        color: #7494d3;
 }
 
 .stat-info {

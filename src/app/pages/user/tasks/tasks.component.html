@@ -31,8 +31,7 @@
 
 			<div class="documents-container">
 				<div class="documents-list">
-					<div class="documents-main">
-						<div class="documents-main-content">
+						<div class="documents-main-content documents-main-content--task">
 							<div class="stats-dashboard">
 								<div class="stat-card total">
 									<div class="stat-icon">
@@ -86,24 +85,32 @@
 							</div>
 
 							<div id="taskListPanel" class="task-list-panel">
-								<div id="taskkard" class="taskkard">
+								<div id="taskkard" class="taskkard documents-main-row">
 									<h4 class="task-title"></h4>
-									<p class="task-category">
-										<i class="material-icons">category</i>
-										Category: Repair
-									</p>
-									<p class="task-time">
-										<i class="material-icons"
-											>access_time</i
-										>
-										Time: 12:00 - 13:00
-									</p>
-									<p class="task-address">
-										<i class="material-icons"
-											>location_on</i
-										>
-										Address: 123 Main St.
-									</p>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">category</span>
+										</div>
+										<div class="documents-prop-text">
+											 Category: Repair 
+										</div>
+									</div>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">access_time</span>
+										</div>
+										<div class="documents-prop-text">
+											Time: 12:00 - 13:00
+										</div>
+									</div>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">location_on</span>
+										</div>
+										<div class="documents-prop-text">
+											Address: 123 Main St.
+										</div>
+									</div>
 									<button
 										class="more-options"
 										(click)="goToDetails(); $event.stopPropagation()"
@@ -112,25 +119,33 @@
 									</button>
 								</div>
 							</div>
-							<div id="taskListPanel" class="task-list-panel">
+							<div id="taskListPanel" class="task-list-panel documents-main-row">
 								<div id="taskkard" class="taskkard">
 									<h4 class="task-title"></h4>
-									<p class="task-category">
-										<i class="material-icons">category</i>
-										Category: Repair
-									</p>
-									<p class="task-time">
-										<i class="material-icons"
-											>access_time</i
-										>
-										Time: 12:00 - 13:00
-									</p>
-									<p class="task-address">
-										<i class="material-icons"
-											>location_on</i
-										>
-										Address: 123 Main St.
-									</p>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">category</span>
+										</div>
+										<div class="documents-prop-text">
+											 Category: Repair 
+										</div>
+									</div>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">access_time</span>
+										</div>
+										<div class="documents-prop-text">
+											Time: 12:00 - 13:00
+										</div>
+									</div>
+									<div class="documents-prop-wrap documents_workers_box">
+										<div class="documents-prop-icon">
+											<span class="material-icons">location_on</span>
+										</div>
+										<div class="documents-prop-text">
+											Address: 123 Main St.
+										</div>
+									</div>
 									<button
 										class="more-options"
 										(click)="goToDetails(); $event.stopPropagation()"
@@ -139,8 +154,8 @@
 									</button>
 								</div>
 							</div>
-
-							<google-map
+							<div class="documents-main-row">
+															<google-map
 								height="500px"
 								width="100%"
 								[center]="center"
@@ -155,8 +170,9 @@
 									(mapClick)="focusOnMarker(task)"
 								></map-marker>
 							</google-map>
+							</div>
+
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>

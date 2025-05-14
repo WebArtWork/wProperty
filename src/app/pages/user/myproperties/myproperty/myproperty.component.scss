@@ -11,7 +11,7 @@
     &__name{
         .documents__title{
             color: #aec1e7;
-            font-size: 22px;
+            font-size: 18px;
         }
     }
     &-loc{
@@ -23,11 +23,11 @@
             flex: 1 0;
         }
         .documents__title{
-            padding: 0 0 0 12px;
+            padding: 0 0 0 7px;
         }
         &__img{
-            width: 38px;
-            height: 38px;
+            width: 28px;
+            height: 28px;
             background: rgb(88 141 244 / 21%);
             border-radius: 5px;
             display: flex;
@@ -36,6 +36,7 @@
             span{
                 display: flex;
                 color: #aec1e7;
+                font-size: 20px;
             }
         }
 
@@ -44,7 +45,7 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 10px;
         &__wrap{
             margin-right: 10px;
             padding-right: 10px;
@@ -54,20 +55,37 @@
             }
             span{
                 display: flex;
-                font-size: 32px;
+                font-size: 26px;
                 color: var(--c-text-primary);
             }
         }
     }
    }
 
-
-@media screen and (max-width: 479px) {
-    .property__img{
-        img{
-            width: 190px;
-            height: 190px;
-            border-radius: 6px;
+   .property-card-wrap{
+        display: flex;
+        flex-flow: row wrap;
+   }
+   .property-card{
+        &__text{
+            flex: 1 0;
+            padding-left: 10px;
         }
-    }
+        &__img{
+            flex: 0 0 200px;
+            img{
+                border-radius: 10px;
+            }
+        }
+   }
+   .property-loc__title{
+    font-size: 16px;
+   }
+   .property-card__img{
+    border-radius: 10px;
+   }
+@media screen and (max-width: 479px) {
+    .property-card__img{
+    	flex: 0 0 130px;
+	}
 }

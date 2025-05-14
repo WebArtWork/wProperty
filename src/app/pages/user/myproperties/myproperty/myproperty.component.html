@@ -1,7 +1,9 @@
-<div class="documents-sidebar__img property__img">
-  <img src="assets/prop.jpg" alt="">
-</div>
 
+<div class="property-card-wrap">
+  <div class="property-card__img">
+    <img src="assets/prop.jpg" alt="">
+  </div>
+  <div class="property-card__text">
 <a routerLink="/myproperty/{{property._id}}" class="property__name">
     <div class="documents__title">{{property.name}}</div>
 </a>
@@ -32,9 +34,5 @@
     <span class="material-icons" (click)="delete()">delete</span>
   </div>
 </div>
-
-
-
-
-  
-  
+  </div>
+</div>
