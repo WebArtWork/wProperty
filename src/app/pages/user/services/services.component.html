@@ -10,90 +10,82 @@
 						class="documents-header-left__avatar"
 						routerLink="/profile"
 					>
-						<img [src]="userService.thumb" alt="" />
+						<img
+							[src]="userService.thumb || 'assets/default.png'"
+							alt="User"
+						/>
 					</div>
 				</div>
 				<div class="documents-header__title" translate>
 					Services.Services
 				</div>
 				<div
+					class="burger-wrap"
 					(click)="isMenuOpen = !isMenuOpen"
-					class="burger-wrap"
-					class="burger-wrap"
+					[class.burger-wrap--open]="isMenuOpen"
 				>
 					<div
-						[class.burger--close]="isMenuOpen"
 						class="burger"
+						[class.burger--close]="isMenuOpen"
 					></div>
 				</div>
 			</div>
+
 			<div
-				[class.documents-sidebar--open]="isMenuOpen"
 				class="documents-sidebar"
+				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div
-					(click)="isMenuOpen = !isMenuOpen"
 					class="documents-sidebar__close"
+					(click)="isMenuOpen = false"
 				>
 					<span class="material-icons">close</span>
 				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
+						<img src="assets/default.png" alt="Sidebar Image" />
 					</div>
 					<div class="documents-sidebar__title">Services</div>
-					<wselect
-						[items]="[
-						'Electrical Wiring', 
-						'Water Plumbing', 
-						'Interior Design', 
-						'Renovation', 
-						'Landscaping', 
-						'HVAC Services', 
-						'Flooring Installation', 
-						'Roofing Services', 
-						'Painting & Wallpaper', 
-						'Pest Control', 
-						'Window & Door Installation', 
-						'Security Systems', 
-						'Waste Disposal', 
-						'Demolition Services'
-					]"
-						[clearable]="true"
-						placeholder="Service Type"
-					></wselect>
+					<div class="documents-sidebar__title">Filters</div>
+					<div class="service-search">
+						<input
+							type="text"
+							placeholder="Find service"
+							[(ngModel)]="searchText"
+						/>
+						<div class="service-search__img">
+							<span class="material-icons">search</span>
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
 						<div class="services-main">
 							<div class="documents_services_box">
-								<div class="documents_services_box-item">
-									<div *ngFor="let service of services">
-										<div
-											class="documents_services_box-item"
-										>
-											<div class="services-img">
-												<img
-													[src]="'assets/' + service.image"
-													[alt]="service.name"
-												/>
-											</div>
-											<div
-												class="documents__service services__title"
-											>
-												{{ ('Service.' + service.name) |
-												translate }}
-											</div>
-											<div
-												class="documents__description services__description"
-											>
-												{{ ('ServiceDescription.' +
-												service.description) | translate
-												}}
-											</div>
-										</div>
+								<div
+									*ngFor="let service of filteredServices()"
+									class="documents_services_box-item"
+								>
+									<div class="services-img">
+										<img
+											[src]="'assets/' + service.image"
+											[alt]="service.name"
+										/>
+									</div>
+									<div
+										class="documents__service services__title"
+									>
+										{{ ('Service.' + service.name) |
+										translate }}
+									</div>
+									<div
+										class="documents__description services__description"
+									>
+										{{ ('ServiceDescription.' +
+										service.description) | translate }}
 									</div>
 								</div>
 							</div>

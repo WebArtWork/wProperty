@@ -13,6 +13,7 @@ interface Service {
 @Component({
 	templateUrl: './services.component.html',
 	styleUrls: ['./services.component.scss'],
+	selector: 'app-services',
 	standalone: false
 })
 export class ServicesComponent {
@@ -23,6 +24,17 @@ export class ServicesComponent {
 			/* ... */
 		]
 	});
+
+	searchText: string = '';
+
+	filteredServices(): Service[] {
+		if (!this.searchText) {
+			return this.services;
+		}
+		return this.services.filter((service) =>
+			service.name.toLowerCase().includes(this.searchText.toLowerCase())
+		);
+	}
 
 	isMenuOpen = false;
 

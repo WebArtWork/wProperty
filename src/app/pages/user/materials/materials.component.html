@@ -42,14 +42,18 @@
 				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Filters</div>
-
-					<wselect
-						[items]="['Under 100$', '100$ - 500$', '500$ - 1000$', 'Above 1000$']"
-						[clearable]="true"
-						[multiple]="true"
-						placeholder="Price Range"
-					></wselect>
-					<wselect
+					<!-- Статичне вікно пошуку -->
+					<div class="materials-search">
+						<input
+							type="text"
+							placeholder="Find materials"
+							[(ngModel)]="searchText"
+						/>
+						<div class="materials-search__img">
+							<span class="material-icons">search</span>
+						</div>
+					</div>
+					<!--<wselect
 						[items]="['Wood', 'Concrete', 'Steel', 'Plastic', 'Glass']"
 						[clearable]="true"
 						[multiple]="true"
@@ -60,53 +64,22 @@
 						[clearable]="true"
 						[multiple]="true"
 						placeholder="Usage Industry"
-					></wselect>
+					></wselect>-->
 				</div>
 			</div>
+
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<!-- Статичне вікно пошуку -->
-					<div class="materials-search">
-						<input type="text" placeholder="Find matrials" />
-						<div class="materials-search__img">
-							<span class="material-icons">search</span>
-						</div>
-					</div>
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div class="material-wrapper">
 								<div class="documents_materials_box">
 									<div class="documents_materials_box-item">
-										<div class="documents__name">name</div>
-										<div class="materials-wrapper">
-											<div
-												class="materials-wrapper__icon"
-											></div>
-											<div
-												class="materials-wrapper__text"
-											>
-												Quantity: <span>1</span>
-											</div>
-										</div>
-										<div class="materials-wrapper">
-											<div
-												class="materials-wrapper__icon"
-											></div>
-											<div
-												class="materials-wrapper__text"
-											>
-												Size: <span>1</span>
-											</div>
-										</div>
-										<div class="materials-wrapper">
-											<div
-												class="materials-wrapper__icon"
-											></div>
-											<div
-												class="materials-wrapper__text"
-											>
-												Material type: <span>1</span>
-											</div>
+										<!-- Виведення -->
+										<div
+											*ngFor="let material of filteredMaterials()"
+										>
+											{{ material.name }}
 										</div>
 									</div>
 								</div>
