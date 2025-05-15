@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertyworkerFormComponents } from 'src/app/modules/propertyworker/formcomponents/propertyworker.formcomponents';
@@ -12,8 +12,10 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 	styleUrls: ['./workers.component.scss'],
 	standalone: false
 })
-export class WorkersComponent {
+export class WorkersComponent implements OnInit {
 	isMenuOpen = false;
+	allWorkers: User[] = [];
+	filteredWorkers: User[] = [];
 
 	constructor(
 		private _propertyworkerService: PropertyworkerService,
@@ -21,26 +23,30 @@ export class WorkersComponent {
 		private _userService: UserService
 	) {}
 
-	get workers(): User[] {
-		return this._userService.usersByRole['propertyworker'];
-	}
-
-	/*ngOnInit(): void {
+	ngOnInit(): void {
 		this.loadWorkers();
 	}
 
-	private loadWorkers(): void {
-		this._propertyworkerService
-			.get()
-			.subscribe((data: Propertyworker[]) => {
-				this.workers = data;
-			});
-	}
-	load(): void {
-		this.loadWorkers();
+	loadWorkers(): void {
+		// Витягуємо всіх користувачів з роллю 'propertyworker'
+		const all = this._userService.usersByRole['propertyworker'] || [];
+		this.allWorkers = all;
+		this.filteredWorkers = [...all]; // Початково без фільтрації
 	}
 
+	/** Фільтрація за конкретною роллю */
+	filterByRole(role: string | null): void {
+		if (!role) {
+			this.filteredWorkers = [...this.allWorkers];
+			return;
+		}
 
+		this.filteredWorkers = this.allWorkers.filter((user) =>
+			user.roles.includes(role.toLowerCase())
+		);
+	}
+
+	/** Створення нового працівника */
 	form: FormInterface = this._form.getForm(
 		'propertyworker',
 		propertyworkerFormComponents
@@ -51,9 +57,7 @@ export class WorkersComponent {
 			label: 'Create',
 			click: async (created: unknown, close: () => void) => {
 				close();
-
 				this._preCreate(created as Propertyworker);
-
 				this._propertyworkerService
 					.create(created as Propertyworker)
 					.subscribe(() => {
@@ -64,6 +68,6 @@ export class WorkersComponent {
 	}
 
 	private _preCreate(worker: Propertyworker): void {
-		delete worker.__created; 
-	}*/
+		delete worker.__created;
+	}
 }
