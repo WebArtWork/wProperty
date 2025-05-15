@@ -58,10 +58,11 @@
 						*ngFor="let provider of workers"
 						class="documents-main-row"
 					>
-						<app-worker
+						{{provider.name}}
+						<!--<app-worker
 							[provider]="provider"
 							(load)="load()"
-						></app-worker>
+						></app-worker>-->
 					</div>
 				</div>
 			</div>

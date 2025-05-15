@@ -4,6 +4,8 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { propertyworkerFormComponents } from 'src/app/modules/propertyworker/formcomponents/propertyworker.formcomponents';
 import { Propertyworker } from 'src/app/modules/propertyworker/interfaces/propertyworker.interface';
 import { PropertyworkerService } from 'src/app/modules/propertyworker/services/propertyworker.service';
+import { User } from 'src/app/modules/user/interfaces/user.interface';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
 	templateUrl: './workers.component.html',
@@ -12,36 +14,38 @@ import { PropertyworkerService } from 'src/app/modules/propertyworker/services/p
 })
 export class WorkersComponent {
 	isMenuOpen = false;
-	workers: Propertyworker[] = [{} as Propertyworker, {} as Propertyworker, {}as Propertyworker];
 
 	constructor(
 		private _propertyworkerService: PropertyworkerService,
-		private _form: FormService
+		private _form: FormService,
+		private _userService: UserService
 	) {}
 
-	ngOnInit(): void {
+	get workers(): User[] {
+		return this._userService.usersByRole['propertyworker'];
+	}
+
+	/*ngOnInit(): void {
 		this.loadWorkers();
 	}
 
-	/** Метод завантаження списку працівників */
 	private loadWorkers(): void {
-		// this._propertyworkerService
-		// 	.get()
-		// 	.subscribe((data: Propertyworker[]) => {
-		// 		this.workers = data;
-		// 	});
+		this._propertyworkerService
+			.get()
+			.subscribe((data: Propertyworker[]) => {
+				this.workers = data;
+			});
 	}
 	load(): void {
 		this.loadWorkers();
 	}
 
-	/** Форма для створення нового працівника */
+
 	form: FormInterface = this._form.getForm(
 		'propertyworker',
 		propertyworkerFormComponents
 	);
 
-	/** Метод створення нового працівника */
 	create(): void {
 		this._form.modal<Propertyworker>(this.form, {
 			label: 'Create',
@@ -59,8 +63,7 @@ export class WorkersComponent {
 		});
 	}
 
-	/** Попередня обробка перед створенням */
 	private _preCreate(worker: Propertyworker): void {
-		delete worker.__created; // Видаляємо системне поле, якщо воно є
-	}
+		delete worker.__created; 
+	}*/
 }
