@@ -15,7 +15,12 @@ import { AlertService, CoreService } from 'wacom';
 	styleUrl: './myproperty.component.scss'
 })
 export class MypropertyComponent {
+	readonly types = this._propertyService.types;
+
+	readonly type_icon = this._propertyService.type_icon;
+
 	@Input() property: Property;
+
 	form: FormInterface = this._form.getForm(
 		'property',
 		propertyFormComponents
@@ -24,12 +29,27 @@ export class MypropertyComponent {
 	@Output() load = new EventEmitter();
 
 	constructor(
-		private _form: FormService,
 		private _propertyService: PropertyService,
-		private _core: CoreService,
+		private _translate: TranslateService,
 		private _alert: AlertService,
-		private _translate: TranslateService
+		private _form: FormService,
+		private _core: CoreService
 	) {}
+
+	updateType(type: string) {
+		this._form
+			.modal<Property>(
+				this._propertyService.type_form[type],
+				[],
+				this.property
+			)
+			.then((updated: Property) => {
+				this._core.copy(updated, this.property);
+
+				this._propertyService.update(this.property);
+			});
+	}
+
 	update(): void {
 		this._form
 			.modal<Property>(this.form, [], this.property)

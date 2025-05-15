@@ -12,6 +12,7 @@ import { PropertyService } from 'src/app/modules/property/services/property.serv
 })
 export class MypropertiesComponent {
 	isMenuOpen = false;
+
 	properties: Property[] = [];
 
 	constructor(

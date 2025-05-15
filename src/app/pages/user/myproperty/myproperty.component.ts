@@ -8,52 +8,46 @@ import { Property } from 'src/app/modules/property/interfaces/property.interface
 import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
 import { Propertymaterial } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+	trigger,
+	state,
+	style,
+	transition,
+	animate
+} from '@angular/animations';
 import { CoreService, AlertService } from 'wacom';
-
 
 @Component({
 	templateUrl: './myproperty.component.html',
 	styleUrls: ['./myproperty.component.scss'],
-	
+
 	standalone: false,
 	animations: [
 		trigger('accordionAnimation', [
-		  state('closed', style({ height: '0', opacity: 0, overflow: 'hidden' })),
-		  state('open', style({ height: '*', opacity: 1 })),
-		  transition('closed <=> open', animate('300ms ease-in-out')),
+			state(
+				'closed',
+				style({ height: '0', opacity: 0, overflow: 'hidden' })
+			),
+			state('open', style({ height: '*', opacity: 1 })),
+			transition('closed <=> open', animate('300ms ease-in-out'))
 		])
-	  ]
+	]
 })
 export class MypropertyComponent {
+	readonly types = this._propertyService.types;
 
-openFirstAccordion(): void {
-    const firstContent = this.el.nativeElement.querySelector('.accordion-content') as HTMLElement;
-    const firstButton = this.el.nativeElement.querySelector('.accordion-button') as HTMLElement;
-
-    if (firstContent && firstButton) {
-      this.renderer.setStyle(firstContent, 'maxHeight', firstContent.scrollHeight + 'px');
-      this.renderer.addClass(firstButton, 'active');
-    }
-  }
-
-  toggleAccordion(event: Event): void {
-    const button = event.currentTarget as HTMLElement;
-    const content = button.nextElementSibling as HTMLElement;
-
-    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-      this.renderer.setStyle(content, 'maxHeight', null);
-      this.renderer.removeClass(button, 'active');
-    } else {
-      this.renderer.setStyle(content, 'maxHeight', content.scrollHeight + 'px');
-      this.renderer.addClass(button, 'active');
-    }
-  }
+	readonly type_icon = this._propertyService.type_icon;
 
 	property = this._propertyService.doc(
 		this._router.url.replace('/myproperty/', '')
 	);
 
+	isMenuOpen = false;
+
+	form: FormInterface = this._form.getForm(
+		'property',
+		propertyFormComponents
+	);
 
 	constructor(
 		private _propertyService: PropertyService,
@@ -64,16 +58,59 @@ openFirstAccordion(): void {
 		private _translate: TranslateService,
 		private renderer: Renderer2,
 		private el: ElementRef
-	) {// Даємо Angular DOM відрендеритись повністю
-    setTimeout(() => this.openFirstAccordion(), 0);}
+	) {
+		// Даємо Angular DOM відрендеритись повністю
+		setTimeout(() => this.openFirstAccordion(), 0);
+	}
 
-	isMenuOpen = false;
+	updateType(type: string) {
+		this._form
+			.modal<Property>(
+				this._propertyService.type_form[type],
+				[],
+				this.property
+			)
+			.then((updated: Property) => {
+				this._core.copy(updated, this.property);
 
-	form: FormInterface = this._form.getForm(
-		'property',
-		propertyFormComponents
-	);
-	
+				this._propertyService.update(this.property);
+			});
+	}
+
+	openFirstAccordion(): void {
+		const firstContent = this.el.nativeElement.querySelector(
+			'.accordion-content'
+		) as HTMLElement;
+		const firstButton = this.el.nativeElement.querySelector(
+			'.accordion-button'
+		) as HTMLElement;
+
+		if (firstContent && firstButton) {
+			this.renderer.setStyle(
+				firstContent,
+				'maxHeight',
+				firstContent.scrollHeight + 'px'
+			);
+			this.renderer.addClass(firstButton, 'active');
+		}
+	}
+
+	toggleAccordion(event: Event): void {
+		const button = event.currentTarget as HTMLElement;
+		const content = button.nextElementSibling as HTMLElement;
+
+		if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+			this.renderer.setStyle(content, 'maxHeight', null);
+			this.renderer.removeClass(button, 'active');
+		} else {
+			this.renderer.setStyle(
+				content,
+				'maxHeight',
+				content.scrollHeight + 'px'
+			);
+			this.renderer.addClass(button, 'active');
+		}
+	}
 
 	update(prop: Property): void {
 		this._form

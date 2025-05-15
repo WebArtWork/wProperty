@@ -48,7 +48,20 @@
 					<div class="documents-sidebar__description">
 						<div class="documents-sidebar-btns">
 							<wbutton (click)="update(property)">Edit</wbutton>
+						</div>
+						<div class="documents-sidebar-btns">
 							<wbutton (click)="delete(property)">Delete</wbutton>
+						</div>
+						<div
+							class="documents-sidebar-btns"
+							*ngFor="let type of types"
+						>
+							<wbutton (click)="updateType(type)">
+								<i class="material-icons"
+									>{{type_icon[type]}}</i
+								>
+								<span>{{type}}</span>
+							</wbutton>
 						</div>
 					</div>
 				</div>
