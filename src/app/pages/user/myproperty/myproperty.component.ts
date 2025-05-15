@@ -51,12 +51,12 @@ export class MypropertyComponent {
 
 	constructor(
 		private _propertyService: PropertyService,
-		private _router: Router,
+		private _translate: TranslateService,
+		private _alert: AlertService,
+		private renderer: Renderer2,
 		private _form: FormService,
 		private _core: CoreService,
-		private _alert: AlertService,
-		private _translate: TranslateService,
-		private renderer: Renderer2,
+		private _router: Router,
 		private el: ElementRef
 	) {
 		// Даємо Angular DOM відрендеритись повністю
@@ -73,7 +73,7 @@ export class MypropertyComponent {
 			.then((updated: Property) => {
 				this._core.copy(updated, this.property);
 
-				this._propertyService.update(this.property);
+				this._propertyService.updateType(this.property);
 			});
 	}
 

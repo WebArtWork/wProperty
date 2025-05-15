@@ -3,6 +3,16 @@ export const propertyPartialSaleFormComponents = {
 	title: 'Property Partial Sale',
 	components: [
 		{
+			name: 'Boolean',
+			key: 'isPartialSale',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Partial Sale'
+				}
+			]
+		},
+		{
 			name: 'Text',
 			key: 'name',
 			focused: true,

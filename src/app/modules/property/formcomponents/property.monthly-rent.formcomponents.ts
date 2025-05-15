@@ -3,6 +3,16 @@ export const propertyMonthlyRentFormComponents = {
 	title: 'Property Monthly Rent',
 	components: [
 		{
+			name: 'Boolean',
+			key: 'isMonthlyRent',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Monthly Rent'
+				}
+			]
+		},
+		{
 			name: 'Text',
 			key: 'name',
 			focused: true,

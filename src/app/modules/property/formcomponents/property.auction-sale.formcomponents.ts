@@ -3,6 +3,16 @@ export const propertyAuctionSaleFormComponents = {
 	title: 'Property Auction Sale',
 	components: [
 		{
+			name: 'Boolean',
+			key: 'isAuctionSale',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Auction Sale'
+				}
+			]
+		},
+		{
 			name: 'Text',
 			key: 'name',
 			focused: true,

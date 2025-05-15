@@ -57,4 +57,61 @@ export class PropertyService extends CrudService<Property> {
 			name: 'property'
 		});
 	}
+
+	updateType(property: Property) {
+		property.types = property.types || [];
+
+		if (property.isForSale && !property.types.includes('For Sale')) {
+			property.types.push('For Sale');
+		} else if (!property.isForSale && property.types.includes('For Sale')) {
+			property.types.splice(property.types.indexOf('For Sale'), 1);
+		}
+
+		if (
+			property.isPartialSale &&
+			!property.types.includes('Partial Sale')
+		) {
+			property.types.push('Partial Sale');
+		} else if (
+			!property.isPartialSale &&
+			property.types.includes('Partial Sale')
+		) {
+			property.types.splice(property.types.indexOf('Partial Sale'), 1);
+		}
+
+		if (
+			property.isMonthlyRent &&
+			!property.types.includes('Monthly Rent')
+		) {
+			property.types.push('Monthly Rent');
+		} else if (
+			!property.isMonthlyRent &&
+			property.types.includes('Monthly Rent')
+		) {
+			property.types.splice(property.types.indexOf('Monthly Rent'), 1);
+		}
+
+		if (property.isDailyRent && !property.types.includes('Daily Rent')) {
+			property.types.push('Daily Rent');
+		} else if (
+			!property.isDailyRent &&
+			property.types.includes('Daily Rent')
+		) {
+			property.types.splice(property.types.indexOf('Daily Rent'), 1);
+		}
+
+		if (
+			property.isAuctionSale &&
+			!property.types.includes('Auction Sale')
+		) {
+			property.types.push('Auction Sale');
+		} else if (
+			!property.isAuctionSale &&
+			property.types.includes('Auction Sale')
+		) {
+			property.types.splice(property.types.indexOf('Auction Sale'), 1);
+		}
+
+		this.update(property);
+	}
 }

@@ -3,6 +3,16 @@ export const propertyForSaleFormComponents = {
 	title: 'Property For Sale',
 	components: [
 		{
+			name: 'Boolean',
+			key: 'isForSale',
+			fields: [
+				{
+					name: 'Label',
+					value: 'For sale'
+				}
+			]
+		},
+		{
 			name: 'Text',
 			key: 'name',
 			focused: true,

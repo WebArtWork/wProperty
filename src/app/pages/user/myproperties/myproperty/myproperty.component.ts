@@ -46,7 +46,7 @@ export class MypropertyComponent {
 			.then((updated: Property) => {
 				this._core.copy(updated, this.property);
 
-				this._propertyService.update(this.property);
+				this._propertyService.updateType(this.property);
 			});
 	}
 

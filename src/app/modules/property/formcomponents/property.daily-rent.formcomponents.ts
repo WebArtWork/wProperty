@@ -3,6 +3,16 @@ export const propertyDailyRentFormComponents = {
 	title: 'Property Daily Rent',
 	components: [
 		{
+			name: 'Boolean',
+			key: 'isDailyRent',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Daily Rent'
+				}
+			]
+		},
+		{
 			name: 'Text',
 			key: 'name',
 			focused: true,
