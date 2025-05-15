@@ -53,6 +53,8 @@
 				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Filters</div>
+
+					<!-- Property Type -->
 					<wselect
 						(modelChange)="selectedPropertyTypes = $event; load()"
 						placeholder="Property Type"
@@ -61,6 +63,7 @@
 						[multiple]="true"
 					></wselect>
 
+					<!-- Number of Rooms -->
 					<wselect
 						(modelChange)="selectedRooms = $event; load()"
 						placeholder="Number of Rooms"
@@ -69,6 +72,7 @@
 						[items]="rooms"
 					></wselect>
 
+					<!-- Floor -->
 					<wselect
 						(modelChange)="selectedFloors = $event; load()"
 						placeholder="Floor"
@@ -76,6 +80,8 @@
 						[multiple]="true"
 						[items]="floors"
 					></wselect>
+
+					<!-- Area (m²) -->
 					<wselect
 						(modelChange)="selectedAreas = $event; load()"
 						[items]="areas"
@@ -123,7 +129,7 @@
 					<!-- Nearby Infrastructure -->
 					<wselect
 						(modelChange)="selectedNearbys = $event; load()"
-						placeholder="Utilities"
+						placeholder="Nearby Infrastructure"
 						[clearable]="true"
 						[multiple]="true"
 						[items]="utilities"
