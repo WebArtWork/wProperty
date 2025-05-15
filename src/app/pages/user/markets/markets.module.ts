@@ -9,7 +9,11 @@ const routes: Routes = [
 		component: MarketsComponent
 	},
 	{
-		path: 'author/:_id',
+		path: ':type/:author_id',
+		component: MarketsComponent
+	},
+	{
+		path: ':_type',
 		component: MarketsComponent
 	}
 ];
