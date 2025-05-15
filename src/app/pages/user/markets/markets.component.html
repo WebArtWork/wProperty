@@ -54,48 +54,31 @@
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Filters</div>
 					<wselect
-						[items]="['Apartment',
-                        'House',
-                        'Office',
-                        'Penthouse',
-                        'Studio',
-                        'Loft',
-                        'Townhouse',
-                        'Duplex',
-                        'Commercial Space',
-                        'Retail Space',
-                        'Warehouse',
-                        'Cottage',
-                        'Mansion',
-                        'Room',
-                        'Dormitory']"
-						[clearable]="true"
-						[multiple]="true"
+						(modelChange)="selectedPropertyTypes = $event; load()"
 						placeholder="Property Type"
+						[items]="propertyTypes"
+						[clearable]="true"
+						[multiple]="true"
 					></wselect>
 
 					<wselect
-						[items]="['1 room', '2 rooms', '3+ rooms']"
-						[clearable]="true"
-						[multiple]="true"
+						(modelChange)="selectedRooms = $event; load()"
 						placeholder="Number of Rooms"
+						[clearable]="true"
+						[multiple]="true"
+						[items]="rooms"
 					></wselect>
 
 					<wselect
-						[items]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']"
+						(modelChange)="selectedFloors = $event; load()"
+						placeholder="Floor"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Floor"
+						[items]="floors"
 					></wselect>
 					<wselect
-						[items]="[
-                        'Up to 30 m²',
-                        '31 - 50 m²',
-                        '51 - 70 m²',
-                        '71 - 100 m²',
-                        '101 - 150 m²',
-                        'Above 150 m²'
-                    ]"
+						(modelChange)="selectedAreas = $event; load()"
+						[items]="areas"
 						[clearable]="true"
 						[multiple]="true"
 						placeholder="Area (m²)"
@@ -103,77 +86,56 @@
 
 					<!-- Building Type -->
 					<wselect
-						[items]="['Tsar-era Building', 'Stalinka', 'Khrushchevka', 'Czech-style', 'Dormitory']"
+						(modelChange)="selectedBuildingTypes = $event; load()"
+						placeholder="Building Type"
+						[items]="buildingTypes"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Building Type"
 					></wselect>
 
 					<!-- Condition / Renovation -->
 					<wselect
-						[items]="['Euro Renovation', 'Cosmetic Repair', 'Emergency Condition', 'Newly Built']"
+						(modelChange)="selectedRenovations = $event; load()"
+						placeholder="Renovation"
+						[items]="renovations"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Renovation"
 					></wselect>
 
 					<!-- Appliances -->
 					<wselect
-						[items]="[
-                            'Furnished',
-                            'Unfurnished',
-                        'Electric Kettle',
-                        'Coffee Machine',
-                        'Hair Dryer',
-                        'Stove',
-                        'Oven',
-                        'Microwave',
-                        'Multicooker',
-                        'Air Conditioner',
-                        'Bathtub', 'Shower Cabin', 'Walk-in Closet', 'Loggia', 'Terrace'
-                        ]"
+						(modelChange)="selectedAppliances = $event; load()"
+						placeholder="Appliances"
+						[items]="appliances"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Appliances"
 					></wselect>
 
 					<!-- Utilities -->
 					<wselect
-						[items]="[
-                        'Gas',
-                        'Electricity',
-                        'Central Water Supply',
-                        'Well',
-                        'Sewerage',
-                        'Garbage Disposal',
-                        'Elevator',
-                        'Internet'
-                        ]"
+						(modelChange)="selectedUtilities = $event; load()"
+						placeholder="Utilities"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Utilities"
+						[items]="nearbys"
 					></wselect>
 
 					<!-- Nearby Infrastructure -->
 					<wselect
-						[items]="[
-                    'Kindergarten',
-                    'School',
-                    'Bus Stop',
-                    'Metro',
-                    'Market',
-                    'Store'
-                     ]"
+						(modelChange)="selectedNearbys = $event; load()"
+						placeholder="Utilities"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Nearby"
+						[items]="utilities"
 					></wselect>
 
+					<!-- Prices -->
 					<wselect
-						[items]="['Up to 500,000', '500,000 - 1,000,000', 'Above 1,000,000']"
+						(modelChange)="selectedPrices = $event; load()"
+						placeholder="Price"
 						[clearable]="true"
 						[multiple]="true"
-						placeholder="Price"
+						[items]="prices"
 					></wselect>
 				</div>
 			</div>
