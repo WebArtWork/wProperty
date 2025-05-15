@@ -4,10 +4,10 @@ export const environment = {
 	appId: 'property',
 	url: 'https://webart.work',
 	meta: {
-		title: 'Web Art Work',
+		title: 'wProperty',
 		description:
-			'An amazing solution to build web or mobile app for your business',
-		icon: 'https://webart.work/api/user/cdn/waw-logo.png'
+			"Універсальна платформа для власників нерухомості: додавайте свої об'єкти, продавайте чи здавайте їх в оренду, знаходьте майстрів і послуги для ремонту, купуйте матеріали та зберігайте повну історію обслуговування з фото й деталями.",
+		icon: 'https://wproperty.webart.work/assets/seo.png'
 	},
 	user: {
 		email: '',

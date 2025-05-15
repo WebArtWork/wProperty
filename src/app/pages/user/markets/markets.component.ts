@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./markets.component.scss'],
 	standalone: false
 })
-
 export class MarketsComponent {
-	isMenuOpen=false;
+	isMenuOpen = false;
 }
