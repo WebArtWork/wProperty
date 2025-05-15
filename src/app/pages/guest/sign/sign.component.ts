@@ -6,6 +6,7 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { User } from 'src/app/modules/user/interfaces/user.interface';
+import { environment } from 'src/environments/environment';
 
 interface RespStatus {
 	email: string;
@@ -90,11 +91,7 @@ export class SignComponent {
 		]
 	});
 
-	user = {
-		email: 'demo@webart.work',
-		password: 'asdasdasdasd',
-		resetPin: null
-	};
+	user = environment.user;
 
 	constructor(
 		public us: UserService,
@@ -144,11 +141,25 @@ export class SignComponent {
 	}
 
 	login(): void {
-		this._http.post('/api/user/login', this.user, this._set.bind(this));
+		this._http.post(
+			'/api/user/login',
+			{
+				appId: environment.appId,
+				...this.user
+			},
+			this._set.bind(this)
+		);
 	}
 
 	sign(): void {
-		this._http.post('/api/user/sign', this.user, this._set.bind(this));
+		this._http.post(
+			'/api/user/sign',
+			{
+				appId: environment.appId,
+				...this.user
+			},
+			this._set.bind(this)
+		);
 	}
 
 	reset(): void {
