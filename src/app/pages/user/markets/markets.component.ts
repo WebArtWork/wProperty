@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { appliances } from 'src/app/core/consts/appliances.const';
+import { areas } from 'src/app/core/consts/areas.const';
+import { buildingTypes } from 'src/app/core/consts/buildingTypes.const';
+import { floors } from 'src/app/core/consts/floors.const';
+import { nearbys } from 'src/app/core/consts/nearbys.const';
+import { prices } from 'src/app/core/consts/prices.const';
+import { propertyTypes } from 'src/app/core/consts/propertyTypes.const';
+import { renovations } from 'src/app/core/consts/renovations.const';
+import { rooms } from 'src/app/core/consts/rooms.const';
+import { utilities } from 'src/app/core/consts/utilities.const';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 
@@ -21,95 +31,25 @@ export class MarketsComponent {
 
 	readonly type_icon = this._propertyService.type_icon;
 
-	readonly propertyTypes = [
-		'Apartment',
-		'House',
-		'Office',
-		'Penthouse',
-		'Studio',
-		'Loft',
-		'Townhouse',
-		'Duplex',
-		'Commercial Space',
-		'Retail Space',
-		'Warehouse',
-		'Cottage',
-		'Mansion',
-		'Room',
-		'Dormitory'
-	];
+	readonly propertyTypes = propertyTypes;
 
-	readonly rooms = ['1 room', '2 rooms', '3+ rooms'];
+	readonly rooms = rooms;
 
-	readonly floors = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
+	readonly floors = floors;
 
-	readonly areas = [
-		'Up to 30 m²',
-		'31 - 50 m²',
-		'51 - 70 m²',
-		'71 - 100 m²',
-		'101 - 150 m²',
-		'Above 150 m²'
-	];
+	readonly areas = areas;
 
-	readonly buildingTypes = [
-		'Tsar-era Building',
-		'Stalinka',
-		'Khrushchevka',
-		'Czech-style',
-		'Dormitory'
-	];
+	readonly buildingTypes = buildingTypes;
 
-	readonly renovations = [
-		'Euro Renovation',
-		'Cosmetic Repair',
-		'Emergency Condition',
-		'Newly Built'
-	];
+	readonly renovations = renovations;
 
-	readonly appliances = [
-		'Furnished',
-		'Unfurnished',
-		'Electric Kettle',
-		'Coffee Machine',
-		'Hair Dryer',
-		'Stove',
-		'Oven',
-		'Microwave',
-		'Multicooker',
-		'Air Conditioner',
-		'Bathtub',
-		'Shower Cabin',
-		'Walk-in Closet',
-		'Loggia',
-		'Terrace'
-	];
+	readonly appliances = appliances;
 
-	readonly utilities = [
-		'Gas',
-		'Electricity',
-		'Central Water Supply',
-		'Well',
-		'Sewerage',
-		'Garbage Disposal',
-		'Elevator',
-		'Internet'
-	];
+	readonly utilities = utilities;
 
-	readonly nearbys = [
-		'Kindergarten',
-		'School',
-		'Bus Stop',
-		'Metro',
-		'Market',
-		'Store'
-	];
+	readonly nearbys = nearbys;
 
-	readonly prices = [
-		'Up to 500,000',
-		'500,000 - 1,000,000',
-		'Above 1,000,000'
-	];
+	readonly prices = prices;
 
 	selectedPropertyTypes: string[] = [];
 

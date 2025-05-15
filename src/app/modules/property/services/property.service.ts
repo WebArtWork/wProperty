@@ -13,7 +13,7 @@ import { propertyAuctionSaleFormComponents } from '../formcomponents/property.au
 	providedIn: 'root'
 })
 export class PropertyService extends CrudService<Property> {
-	types = [
+	readonly types = [
 		'For Sale',
 		'Partial Sale',
 		'Monthly Rent',
@@ -21,7 +21,7 @@ export class PropertyService extends CrudService<Property> {
 		'Auction Sale'
 	];
 
-	type_icon: Record<string, string> = {
+	readonly type_icon: Record<string, string> = {
 		'For Sale': 'sell',
 		'Partial Sale': 'splitscreen',
 		'Monthly Rent': 'event_note',
@@ -29,7 +29,7 @@ export class PropertyService extends CrudService<Property> {
 		'Auction Sale': 'gavel'
 	};
 
-	type_form: Record<string, FormInterface> = {
+	readonly type_form: Record<string, FormInterface> = {
 		'For Sale': this._form.getForm(
 			'propertyForSale',
 			propertyForSaleFormComponents
