@@ -5,3 +5,10 @@ export interface Propertyservice extends CrudDocument {
 	description: string;
 	provider: string;
 }
+
+export interface Service {
+	id: number;
+	name: string;
+	description: string;
+	image: string;
+}
