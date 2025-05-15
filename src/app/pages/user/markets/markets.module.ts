@@ -7,6 +7,14 @@ const routes: Routes = [
 	{
 		path: '',
 		component: MarketsComponent
+	},
+	{
+		path: ':type/:author_id',
+		component: MarketsComponent
+	},
+	{
+		path: ':_type',
+		component: MarketsComponent
 	}
 ];
 

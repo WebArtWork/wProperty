@@ -56,8 +56,11 @@ const routes: Routes = [
 						title: 'Task'
 					}
 				},
-				loadChildren: () => import('./pages/user/task/task.module').then(m => m.TaskModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/task/task.module').then(
+						(m) => m.TaskModule
+					)
+			},
 			{
 				path: 'services',
 				canActivate: [MetaGuard],
@@ -66,8 +69,11 @@ const routes: Routes = [
 						title: 'Services'
 					}
 				},
-				loadChildren: () => import('./pages/user/services/services.module').then(m => m.ServicesModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/services/services.module').then(
+						(m) => m.ServicesModule
+					)
+			},
 			{
 				path: 'tasks',
 				canActivate: [MetaGuard],
@@ -76,9 +82,12 @@ const routes: Routes = [
 						title: 'Tasks'
 					}
 				},
-				loadChildren: () => import('./pages/user/tasks/tasks.module').then(m => m.TasksModule)
-			}, 
-			
+				loadChildren: () =>
+					import('./pages/user/tasks/tasks.module').then(
+						(m) => m.TasksModule
+					)
+			},
+
 			{
 				path: 'webpropertytasks',
 				canActivate: [MetaGuard],
@@ -87,8 +96,11 @@ const routes: Routes = [
 						title: 'Task'
 					}
 				},
-				loadChildren: () => import('./modules/propertytask/pages/propertiestasks/tasks.module').then(m => m.TasksModule)
-			}, 
+				loadChildren: () =>
+					import(
+						'./modules/propertytask/pages/propertiestasks/tasks.module'
+					).then((m) => m.TasksModule)
+			},
 			{
 				path: 'propertyhistory',
 				canActivate: [MetaGuard],
@@ -155,11 +167,11 @@ const routes: Routes = [
 					)
 			},
 			{
-				path: 'markets',
+				path: 'hub',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Markets'
+						title: 'Real Estate Hub'
 					}
 				},
 				loadChildren: () =>

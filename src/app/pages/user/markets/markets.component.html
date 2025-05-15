@@ -16,7 +16,7 @@
 					</div>
 				</div>
 				<div class="documents-header__title" translate>
-					Markets.Advertisement
+					Markets.Real Estate Hub
 				</div>
 				<div
 					class="burger-wrap"
@@ -31,9 +31,19 @@
 				</div>
 			</div>
 
+			<div class="documents-main" *ngIf="selectType">
+				<!-- TODO Andrew, I see this as wide blocks with small height, or even fit screen height, there is fixed items, so can we easily calculated height -->
+				<div *ngFor="let type of types" routerLink="/hub/{{type}}">
+					<i class="material-icons">{{type_icon[type]}}</i>
+
+					<span>{{'Hub.'+type|translate}}</span>
+				</div>
+			</div>
+
 			<div
-				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
+				class="documents-sidebar"
+				*ngIf="!selectType"
 			>
 				<div
 					(click)="isMenuOpen = !isMenuOpen"
@@ -91,13 +101,6 @@
 						placeholder="Area (m²)"
 					></wselect>
 
-					<wselect
-						[items]="['Up to 500,000', '500,000 - 1,000,000', 'Above 1,000,000']"
-						[clearable]="true"
-						[multiple]="true"
-						placeholder="Price"
-					></wselect>
-
 					<!-- Building Type -->
 					<wselect
 						[items]="['Tsar-era Building', 'Stalinka', 'Khrushchevka', 'Czech-style', 'Dormitory']"
@@ -117,15 +120,15 @@
 					<!-- Appliances -->
 					<wselect
 						[items]="[
-                            'Furnished', 
+                            'Furnished',
                             'Unfurnished',
-                        'Electric Kettle', 
-                        'Coffee Machine', 
-                        'Hair Dryer', 
-                        'Stove', 
-                        'Oven', 
-                        'Microwave', 
-                        'Multicooker', 
+                        'Electric Kettle',
+                        'Coffee Machine',
+                        'Hair Dryer',
+                        'Stove',
+                        'Oven',
+                        'Microwave',
+                        'Multicooker',
                         'Air Conditioner',
                         'Bathtub', 'Shower Cabin', 'Walk-in Closet', 'Loggia', 'Terrace'
                         ]"
@@ -137,13 +140,13 @@
 					<!-- Utilities -->
 					<wselect
 						[items]="[
-                        'Gas', 
-                        'Electricity', 
-                        'Central Water Supply', 
-                        'Well', 
-                        'Sewerage', 
-                        'Garbage Disposal', 
-                        'Elevator', 
+                        'Gas',
+                        'Electricity',
+                        'Central Water Supply',
+                        'Well',
+                        'Sewerage',
+                        'Garbage Disposal',
+                        'Elevator',
                         'Internet'
                         ]"
 						[clearable]="true"
@@ -154,21 +157,28 @@
 					<!-- Nearby Infrastructure -->
 					<wselect
 						[items]="[
-                    'Kindergarten', 
-                    'School', 
-                    'Bus Stop', 
-                    'Metro', 
-                    'Market', 
+                    'Kindergarten',
+                    'School',
+                    'Bus Stop',
+                    'Metro',
+                    'Market',
                     'Store'
                      ]"
 						[clearable]="true"
 						[multiple]="true"
 						placeholder="Nearby"
 					></wselect>
+
+					<wselect
+						[items]="['Up to 500,000', '500,000 - 1,000,000', 'Above 1,000,000']"
+						[clearable]="true"
+						[multiple]="true"
+						placeholder="Price"
+					></wselect>
 				</div>
 			</div>
 
-			<div class="documents-main">
+			<div class="documents-main" *ngIf="!selectType">
 				<div class="documents-main-content">
 					<div
 						*ngFor="let worker of [{}, {}, {}]"
