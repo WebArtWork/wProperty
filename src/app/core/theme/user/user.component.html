@@ -5,12 +5,13 @@
 				<a
 					routerLinkActive="_activeLink"
 					(click)="showSidebar = false"
-					routerLink="/myproperties"
+					routerLink="/materials"
 					class="nav__a"
 				>
-					<span class="material-icons">location_city</span>
+					<span class="material-icons">build</span>
 				</a>
 			</li>
+
 			<li class="nav__li">
 				<a
 					routerLinkActive="_activeLink"
@@ -26,23 +27,14 @@
 				<a
 					routerLinkActive="_activeLink"
 					(click)="showSidebar = false"
-					routerLink="/materials"
-					class="nav__a"
-				>
-					<span class="material-icons">build</span>
-				</a>
-			</li>
-			<li class="nav__li">
-				<a
-					routerLinkActive="_activeLink"
-					(click)="showSidebar = false"
 					routerLink="/services"
 					class="nav__a"
 				>
 					<span class="material-icons">assignment</span>
 				</a>
 			</li>
-			<!-- 
+
+			<!--
 			<li class="nav__li">
 				<a
 					routerLinkActive="_activeLink"
@@ -59,23 +51,40 @@
 				<a
 					routerLinkActive="_activeLink"
 					(click)="showSidebar = false"
-					routerLink="/tasks"
-					class="nav__a"
-				>
-					<span class="material-icons">tasks</span>
-				</a>
-			</li>
-			<li class="nav__li">
-				<a
-					routerLinkActive="_activeLink"
-					(click)="showSidebar = false"
 					routerLink="/markets"
 					class="nav__a"
 				>
 					<span class="material-icons">storefront</span>
 				</a>
 			</li>
-			<li class="nav__li _burger" (click)="showSidebar = !showSidebar">
+
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/myproperties"
+					class="nav__a"
+				>
+					<span class="material-icons">location_city</span>
+				</a>
+			</li>
+
+			<li class="nav__li" *ngIf="us.role('propertyworker')">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/tasks"
+					class="nav__a"
+				>
+					<span class="material-icons">tasks</span>
+				</a>
+			</li>
+
+			<li
+				(click)="showSidebar = !showSidebar"
+				*ngIf="us.role('propertyworker')"
+				class="nav__li _burger"
+			>
 				<a class="nav__toggle" [class._active]="showSidebar">
 					<span class="nav__toggle-line"></span>
 				</a>
