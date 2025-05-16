@@ -19,7 +19,7 @@ export const environment = {
 	userForm: [
 		{
 			name: 'Text',
-			key: 'position',
+			key: 'data.position',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -33,7 +33,7 @@ export const environment = {
 		},
 		{
 			name: 'Number',
-			key: 'experience',
+			key: 'data.experience',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -47,7 +47,7 @@ export const environment = {
 		},
 		{
 			name: 'String',
-			key: 'city',
+			key: 'data.city',
 			fields: [
 				{
 					name: 'Label',
