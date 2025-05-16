@@ -46,7 +46,7 @@ export const environment = {
 			]
 		},
 		{
-			name: 'String',
+			name: 'Select',
 			key: 'data.city',
 			fields: [
 				{

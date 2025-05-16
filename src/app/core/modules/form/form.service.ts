@@ -222,7 +222,7 @@ export class FormService {
 
 		this._core.onComplete('form_loaded').then(() => {
 			const customForms = this._cfs.customforms.filter(
-				(f) => f.active && f.formId === formId
+				(f) => f.active && f.formId === form.formId
 			);
 
 			for (const customForm of customForms) {
@@ -231,7 +231,9 @@ export class FormService {
 				form.class = form.class || customForm.class;
 
 				for (const component of customForm.components) {
-					component.key = 'data.' + component.key;
+					component.key = component.key?.startsWith('data.')
+						? component.key
+						: 'data.' + component.key;
 
 					form.components.push(component);
 				}
@@ -351,25 +353,6 @@ export class FormService {
 		);
 	}
 
-	private _getComponent(
-		components: FormComponentInterface[],
-		key: string
-	): FormComponentInterface | null {
-		for (const component of components) {
-			if (component.key === key) {
-				return component;
-			} else if (component.components) {
-				const comp = this._getComponent(component.components, key);
-
-				if (comp) {
-					return comp;
-				}
-			}
-		}
-
-		return null;
-	}
-
 	getField(
 		form: FormInterface,
 		key: string,
@@ -406,4 +389,25 @@ export class FormService {
 			component?.resetFields?.();
 		}
 	}
+
+	private _getComponent(
+		components: FormComponentInterface[],
+		key: string
+	): FormComponentInterface | null {
+		for (const component of components) {
+			if (component.key === key) {
+				return component;
+			} else if (component.components) {
+				const comp = this._getComponent(component.components, key);
+
+				if (comp) {
+					return comp;
+				}
+			}
+		}
+
+		return null;
+	}
+
+	private _addCustomComponents(form: FormInterface) {}
 }
