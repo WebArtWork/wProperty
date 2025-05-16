@@ -18,7 +18,16 @@ import { User } from 'src/app/modules/user/interfaces/user.interface';
 	standalone: false
 })
 export class PropertiesrecordsComponent {
-	columns = ['name', 'description'];
+	columns = [
+		'name',
+		'description',
+		'price',
+		'materials',
+		'photos',
+		'service',
+		'incident',
+		'rent'
+	];
 
 	form: FormInterface = this._form.getForm(
 		'propertyrecord',
@@ -123,32 +132,31 @@ export class PropertiesrecordsComponent {
 		private _core: CoreService,
 		private _router: Router
 	) {
-			// worker
-					this._core.onComplete('user_loaded').then(() => {
-						console.log(this._userService.users);
-				  
-						(
-						  this.form.components[3]?.fields?.[0].value as unknown as User[]
-						).push(...this._userService.users);
-					  });
-			//seller
-					  this._core.onComplete('user_loaded').then(() => {
-						console.log(this._userService.users);
-				  
-						(
-						  this.form.components[4]?.fields?.[0].value as unknown as User[]
-						).push(...this._userService.users);
-					  });
+		// worker
+		this._core.onComplete('user_loaded').then(() => {
+			console.log(this._userService.users);
 
-			//buyer
-			this._core.onComplete('user_loaded').then(() => {
-				console.log(this._userService.users);
-		  
-				(
-				  this.form.components[5]?.fields?.[0].value as unknown as User[]
-				).push(...this._userService.users);
-			  });
+			(
+				this.form.components[3]?.fields?.[0].value as unknown as User[]
+			).push(...this._userService.users);
+		});
+		//seller
+		this._core.onComplete('user_loaded').then(() => {
+			console.log(this._userService.users);
 
+			(
+				this.form.components[4]?.fields?.[0].value as unknown as User[]
+			).push(...this._userService.users);
+		});
+
+		//buyer
+		this._core.onComplete('user_loaded').then(() => {
+			console.log(this._userService.users);
+
+			(
+				this.form.components[5]?.fields?.[0].value as unknown as User[]
+			).push(...this._userService.users);
+		});
 
 		this.setRows();
 

@@ -11,17 +11,22 @@ import { firstValueFrom } from 'rxjs';
 @Component({
 	templateUrl: './propertiesmaterials.component.html',
 	styleUrls: ['./propertiesmaterials.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class PropertiesmaterialsComponent {
-	columns = ['name', 'description'];
+	columns = ['name', 'description', 'quantity', 'supplier', 'price'];
 
-	form: FormInterface = this._form.getForm('propertymaterial', propertymaterialFormComponents);
+	form: FormInterface = this._form.getForm(
+		'propertymaterial',
+		propertymaterialFormComponents
+	);
 
 	config = {
 		paginate: this.setRows.bind(this),
 		perPage: 20,
-		setPerPage: this._propertymaterialService.setPerPage.bind(this._propertymaterialService),
+		setPerPage: this._propertymaterialService.setPerPage.bind(
+			this._propertymaterialService
+		),
 		allDocs: false,
 		create: (): void => {
 			this._form.modal<Propertymaterial>(this.form, {
@@ -32,11 +37,13 @@ export class PropertiesmaterialsComponent {
 					this._preCreate(created as Propertymaterial);
 
 					await firstValueFrom(
-						this._propertymaterialService.create(created as Propertymaterial)
+						this._propertymaterialService.create(
+							created as Propertymaterial
+						)
 					);
 
 					this.setRows();
-				},
+				}
 			});
 		},
 		update: (doc: Propertymaterial): void => {
@@ -55,39 +62,45 @@ export class PropertiesmaterialsComponent {
 				),
 				buttons: [
 					{
-						text: this._translate.translate('Common.No'),
+						text: this._translate.translate('Common.No')
 					},
 					{
 						text: this._translate.translate('Common.Yes'),
 						callback: async (): Promise<void> => {
-							await firstValueFrom(this._propertymaterialService.delete(doc));
+							await firstValueFrom(
+								this._propertymaterialService.delete(doc)
+							);
 
 							this.setRows();
-						},
-					},
-				],
+						}
+					}
+				]
 			});
 		},
 		buttons: [
 			{
 				icon: 'cloud_download',
 				click: (doc: Propertymaterial): void => {
-					this._form.modalUnique<Propertymaterial>('propertymaterial', 'url', doc);
-				},
-			},
+					this._form.modalUnique<Propertymaterial>(
+						'propertymaterial',
+						'url',
+						doc
+					);
+				}
+			}
 		],
 		headerButtons: [
 			{
 				icon: 'playlist_add',
 				click: this._bulkManagement(),
-				class: 'playlist',
+				class: 'playlist'
 			},
 			{
 				icon: 'edit_note',
 				click: this._bulkManagement(false),
-				class: 'edit',
-			},
-		],
+				class: 'edit'
+			}
+		]
 	};
 
 	rows: Propertymaterial[] = [];
@@ -108,11 +121,13 @@ export class PropertiesmaterialsComponent {
 		this._core.afterWhile(
 			this,
 			() => {
-				this._propertymaterialService.get({ page }).subscribe((rows) => {
-					this.rows.splice(0, this.rows.length);
+				this._propertymaterialService
+					.get({ page })
+					.subscribe((rows) => {
+						this.rows.splice(0, this.rows.length);
 
-					this.rows.push(...rows);
-				});
+						this.rows.push(...rows);
+					});
 			},
 			250
 		);
@@ -130,38 +145,53 @@ export class PropertiesmaterialsComponent {
 							this._preCreate(propertymaterial);
 
 							await firstValueFrom(
-								this._propertymaterialService.create(propertymaterial)
+								this._propertymaterialService.create(
+									propertymaterial
+								)
 							);
 						}
 					} else {
 						for (const propertymaterial of this.rows) {
 							if (
 								!propertymaterials.find(
-									(localPropertymaterial) => localPropertymaterial._id === propertymaterial._id
+									(localPropertymaterial) =>
+										localPropertymaterial._id ===
+										propertymaterial._id
 								)
 							) {
 								await firstValueFrom(
-									this._propertymaterialService.delete(propertymaterial)
+									this._propertymaterialService.delete(
+										propertymaterial
+									)
 								);
 							}
 						}
 
 						for (const propertymaterial of propertymaterials) {
 							const localPropertymaterial = this.rows.find(
-								(localPropertymaterial) => localPropertymaterial._id === propertymaterial._id
+								(localPropertymaterial) =>
+									localPropertymaterial._id ===
+									propertymaterial._id
 							);
 
 							if (localPropertymaterial) {
-								this._core.copy(propertymaterial, localPropertymaterial);
+								this._core.copy(
+									propertymaterial,
+									localPropertymaterial
+								);
 
 								await firstValueFrom(
-									this._propertymaterialService.update(localPropertymaterial)
+									this._propertymaterialService.update(
+										localPropertymaterial
+									)
 								);
 							} else {
 								this._preCreate(propertymaterial);
 
 								await firstValueFrom(
-									this._propertymaterialService.create(propertymaterial)
+									this._propertymaterialService.create(
+										propertymaterial
+									)
 								);
 							}
 						}

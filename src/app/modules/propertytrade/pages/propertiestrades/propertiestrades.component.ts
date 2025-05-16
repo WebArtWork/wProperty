@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 	standalone: false
 })
 export class PropertiestradesComponent {
-	columns = ['name', 'description'];
+	columns = ['name', 'description', 'type', 'price', 'contacts', 'comments'];
 
 	form: FormInterface = this._form.getForm(
 		'propertytrade',

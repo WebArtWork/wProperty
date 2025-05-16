@@ -182,6 +182,49 @@ export const propertyDailyRentFormComponents = {
 			]
 		},
 		{
+			name: 'Text',
+			key: 'pets',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Pets allowed or not allowed'
+				},
+				{
+					name: 'Label',
+					value: 'Pets'
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'parking',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Parking available or not'
+				},
+				{
+					name: 'Label',
+					value: 'Parking'
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'sleepingPlaces',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter number of sleeping places'
+				},
+				{
+					name: 'Label',
+					value: 'Sleeping places'
+				}
+			]
+		},
+
+		{
 			name: 'Number',
 			key: 'price',
 			fields: [

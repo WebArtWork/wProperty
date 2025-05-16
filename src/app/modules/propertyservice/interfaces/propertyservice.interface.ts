@@ -7,8 +7,11 @@ export interface Propertyservice extends CrudDocument {
 }
 
 export interface Service {
-	id: number;
+	/*id: number;
 	name: string;
 	description: string;
 	image: string;
+	service: String;
+	price: Number;
+	contact: String;*/
 }
