@@ -11,4 +11,7 @@ export interface Service {
 	name: string;
 	description: string;
 	image: string;
+	service: String;
+	price: Number;
+	contact: String;
 }

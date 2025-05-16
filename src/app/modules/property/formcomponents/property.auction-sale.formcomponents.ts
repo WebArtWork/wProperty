@@ -27,6 +27,7 @@ export const propertyAuctionSaleFormComponents = {
 				}
 			]
 		},
+
 		{
 			name: 'Text',
 			key: 'description',
@@ -183,15 +184,57 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'price',
+			key: 'startingprice',
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter property price'
+					value: 'Enter property starting price'
 				},
 				{
 					name: 'Label',
-					value: 'Price'
+					value: 'Starting Price'
+				}
+			]
+		},
+		{
+			name: 'Number',
+			key: 'auctiondate',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter start auction date'
+				},
+				{
+					name: 'Label',
+					value: 'Auction Date'
+				}
+			]
+		},
+		{
+			name: 'Number',
+			key: 'minimumbidincrement',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter minimum bid increment'
+				},
+				{
+					name: 'Label',
+					value: 'Minimum Bid Increment'
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'auctionrules',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter auction rules'
+				},
+				{
+					name: 'Label',
+					value: 'Auction Rules'
 				}
 			]
 		},

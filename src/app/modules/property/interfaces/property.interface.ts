@@ -12,6 +12,20 @@ export interface Property extends CrudDocument {
 	address: string;
 	type: string; // Визначаємо допустимі значення типу
 	area: number;
-	price: number;
 	thumb: string;
+	buildingtype: String;
+	rooms: Number;
+	floor: Number;
+	renovation: String;
+	appliances: String;
+	utilities: String;
+	nearby: String;
+	parking: String;
+	sleepingPlaces: Number;
+	pets: String;
+	minimumbidincrement: Number;
+	auctionrules: String;
+	auctiondate: Number;
+	startingprice: Number;
+	price: Number;
 }
