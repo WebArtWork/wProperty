@@ -618,21 +618,25 @@ wform {
 	display: flex;
 	flex-flow: row wrap;
 }
-.documents_materials_box{
-	&-item{
-		background-color: var(--doc-products);
-		padding: 10px;
-		border-radius: 6px;
-	}
-	flex: 0 0 33.333%;
-	max-width: 33.333%;
-	display: flex;
-	flex-flow: column wrap;
-	padding: 0 15px;
-	&:last-child{
-		border: none;
-	}
-	margin-bottom: 20px;
+.documents_materials_box {
+  &-item {
+    background-color: var(--doc-products);
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  & {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  &:last-child {
+    border: none;
+  }
 }
 .materials-wrapper{
 	display: flex;
