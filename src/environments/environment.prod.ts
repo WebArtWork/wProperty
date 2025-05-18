@@ -1,4 +1,5 @@
 import { cities } from 'src/app/core/consts/cities.const';
+import { materials } from 'src/app/core/consts/materials.const';
 import { services } from 'src/app/core/consts/services.const';
 
 export const environment = {
@@ -17,6 +18,7 @@ export const environment = {
 		password: '',
 		resetPin: null
 	},
+	defaultLanguageCode: 'ua',
 	userForm: [
 		{
 			name: 'Text',
@@ -55,8 +57,30 @@ export const environment = {
 					value: 'City'
 				},
 				{
+					name: 'Placeholder',
+					value: 'Fill cities where you are able to take work'
+				},
+				{
+					name: 'Multiple',
+					value: true
+				},
+				{
 					name: 'Items',
 					value: cities
+				}
+			]
+		},
+		{
+			name: 'Text',
+			key: 'data.area',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter your city zone or village'
+				},
+				{
+					name: 'Label',
+					value: 'Area'
 				}
 			]
 		},
@@ -69,8 +93,38 @@ export const environment = {
 					value: 'Services'
 				},
 				{
+					name: 'Placeholder',
+					value: 'Please fill services with which you are working'
+				},
+				{
 					name: 'Items',
 					value: services
+				},
+				{
+					name: 'Multiple',
+					value: true
+				},
+				{
+					name: 'Value',
+					value: 'id'
+				}
+			]
+		},
+		{
+			name: 'Select',
+			key: 'data.materials',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Materials'
+				},
+				{
+					name: 'Placeholder',
+					value: 'Please fill material with which you are working'
+				},
+				{
+					name: 'Items',
+					value: materials
 				},
 				{
 					name: 'Multiple',

@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
-import { ServicesComponent } from './services.component';
+import { WorkerComponent } from './worker.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: '',
-		component: ServicesComponent
+		path: ':_id',
+		component: WorkerComponent
 	}
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), CoreModule],
-	declarations: [ServicesComponent]
+	declarations: [WorkerComponent]
 })
-export class ServicesModule {}
+export class WorkerModule {}

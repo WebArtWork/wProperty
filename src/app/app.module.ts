@@ -49,6 +49,39 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'material',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Material'
+					}
+				},
+				loadChildren: () => import('./pages/user/material/material.module').then(m => m.MaterialModule)
+			}, 
+			{
+				path: 'worker',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Worker'
+					}
+				},
+				loadChildren: () => import('./pages/user/worker/worker.module').then(m => m.WorkerModule)
+			}, 
+			{
+				path: 'service',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Service'
+					}
+				},
+				loadChildren: () =>
+					import('./pages/user/service/service.module').then(
+						(m) => m.ServiceModule
+					)
+			},
+			{
 				path: 'task',
 				canActivate: [MetaGuard],
 				data: {
@@ -115,32 +148,6 @@ const routes: Routes = [
 					).then((m) => m.PropertyhistoryModule)
 			},
 			{
-				path: 'records',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Records'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./pages/user/propertieshistories/propertieshistories.module'
-					).then((m) => m.PropertieshistoriesModule)
-			},
-			{
-				path: 'records',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Records'
-					}
-				},
-				loadChildren: () =>
-					import('./pages/user/records/records.module').then(
-						(m) => m.RecordsModule
-					)
-			},
-			{
 				path: 'business',
 				canActivate: [MetaGuard],
 				data: {
@@ -158,7 +165,7 @@ const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Myproperty'
+						title: 'My property'
 					}
 				},
 				loadChildren: () =>

@@ -3,6 +3,7 @@ import { CoreModule } from 'src/app/core/core.module';
 import { WorkersComponent } from './workers.component';
 import { Routes, RouterModule } from '@angular/router';
 import { WorkerComponent } from './worker/worker.component';
+import { WorkersPipe } from './workers.pipe';
 
 const routes: Routes = [
 	{
@@ -10,13 +11,17 @@ const routes: Routes = [
 		component: WorkersComponent
 	},
 	{
-		path: ':workers/',
+		path: 'service/:service_id',
+		component: WorkersComponent
+	},
+	{
+		path: 'material/:material_id',
 		component: WorkersComponent
 	}
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes), CoreModule],
+	imports: [RouterModule.forChild(routes), CoreModule, WorkersPipe],
 	declarations: [WorkersComponent, WorkerComponent]
 })
 export class WorkersModule {}

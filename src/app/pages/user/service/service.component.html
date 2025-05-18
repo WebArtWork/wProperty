@@ -1,0 +1,97 @@
+<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+	<div class="documents-container">
+		<div class="documents-list">
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow" (click)="back()">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						class="documents-header-left__avatar"
+						routerLink="/profile"
+					>
+						<img [src]="userService.thumb" alt="" />
+					</div>
+				</div>
+				<div class="documents-header__title">{{service?.name}}</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+						<div class="documents__title">Calculator</div>
+						<div class="documents__description">
+							Calculate roughly amount of money which you will
+							need to execute this service
+						</div>
+						<wform [config]="formDoc"></wform>
+						<!-- TODO Denys or Anastasia: apply here calculator which will calculate roughly cost of the service required, also prepare auction for such service (auction is uncompleted record and later we need page where workers see such) -->
+					</div>
+					<div class="documents-main-row">
+						<div class="documents__title">Workers</div>
+						<div class="documents__description">
+							@if
+							((userService.usersByRole['propertyworker']|workers:service_id).length)
+							{ Those workers can do this work for you } @else {
+							No workers found }
+						</div>
+						<div class="documents-triggers">
+							<div
+								*ngFor="let user of userService.usersByRole['propertyworker']|workers:service_id"
+								routerLink="/worker/{{user._id}}"
+								class="documents-triggers__wrap"
+							>
+								<div class="documents-triggers__item">
+									<div class="documents-triggers__img">
+										<img
+											[src]="user.thumb ? url + user.thumb : '/assets/default.png'"
+											[alt]="user.name || user.email"
+										/>
+									</div>
+									<div class="documents-triggers__title">
+										{{user.name || user.email}}
+									</div>
+									<div
+										class="documents-triggers__description"
+										*ngIf="user.data['bio']"
+									>
+										{{user.data['bio']}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="documents-main-row">
+						<div class="documents__title">Materials</div>
+						<div class="documents__description">
+							Those could be used in specific service work
+						</div>
+						<div class="documents-triggers">
+							<div
+								routerLink="/material/{{material.id}}"
+								*ngFor="let material of materials"
+								class="documents-triggers__wrap"
+							>
+								<div class="documents-triggers__item">
+									<div class="documents-triggers__img">
+										<img
+											[src]="'/assets/service/' + material.image"
+											[alt]="material.name"
+										/>
+									</div>
+									<div class="documents-triggers__title">
+										{{material.name}}
+									</div>
+									<div
+										class="documents-triggers__description"
+									>
+										{{material.description}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

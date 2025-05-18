@@ -67,6 +67,7 @@
 							<div class="documents_services_box">
 								<div
 									*ngFor="let service of services|search:searchText"
+									routerLink="/service/{{service.id}}"
 									class="documents_services_box-item"
 								>
 									<div class="services-img">

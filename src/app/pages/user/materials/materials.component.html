@@ -77,7 +77,7 @@
 									<div class="documents_materials_box-item">
 										<!-- Виведення -->
 										<div
-											*ngFor="let material of filteredMaterials()"
+											*ngFor="let material of materials|materials:searchText:service_id"
 										>
 											{{ material.name }}
 										</div>

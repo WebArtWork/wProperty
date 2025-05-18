@@ -55,7 +55,8 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div
-						*ngFor="let user of userService.usersByRole['propertyworker']"
+						*ngFor="let user of userService.usersByRole['propertyworker']|workers:service_id:material_id"
+						routerLink="/worker/{{user._id}}"
 						class="documents-main-row"
 					>
 						{{user.name}}
