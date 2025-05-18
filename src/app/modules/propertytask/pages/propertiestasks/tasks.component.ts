@@ -16,15 +16,19 @@ import { User } from 'src/app/modules/user/interfaces/user.interface';
 	standalone: false
 })
 export class TasksComponent {
-	columns = ['name', 'description', 'category',
-		'assigned', 
-		'client',   
+	columns = [
+		'name',
+		'description',
+		'category',
+		'assigned',
+		'client',
 		'address',
-		'deadline', 
-		'latitude', 
-		'longitude', 
+		'deadline',
+		'latitude',
+		'longitude',
 		'startTime',
-		'endTime']
+		'endTime'
+	];
 
 	form: FormInterface = this._form.getForm(
 		'propertytask',
@@ -123,25 +127,22 @@ export class TasksComponent {
 		private _form: FormService,
 		private _core: CoreService
 	) {
-
 		//assigned
 		this._core.onComplete('user_loaded').then(() => {
 			console.log(this._userService.users);
-	  
+
 			(
-			  this.form.components[3]?.fields?.[0].value as unknown as User[]
+				this.form.components[3]?.fields?.[0].value as unknown as User[]
 			).push(...this._userService.users);
-		  });
+		});
 		//client
-		  this._core.onComplete('user_loaded').then(() => {
+		this._core.onComplete('user_loaded').then(() => {
 			console.log(this._userService.users);
-	  
+
 			(
-			  this.form.components[4]?.fields?.[0].value as unknown as User[]
+				this.form.components[4]?.fields?.[0].value as unknown as User[]
 			).push(...this._userService.users);
-		  });
-		  
-		
+		});
 
 		this.setRows();
 	}

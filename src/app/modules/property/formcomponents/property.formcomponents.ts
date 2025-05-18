@@ -3,198 +3,197 @@ export const propertyFormComponents = {
 	title: 'Property',
 	components: [
 		{
-			"name": "Text",
-			"key": "name",
-			"focused": true,
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter property title"
-			  },
-			  {
-				"name": "Label",
-				"value": "Title"
-			  }
+			name: 'Text',
+			key: 'name',
+			focused: true,
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property title'
+				},
+				{
+					name: 'Label',
+					value: 'Title'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "description",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter detailed property description"
-			  },
-			  {
-				"name": "Label",
-				"value": "Description"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'description',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter detailed property description'
+				},
+				{
+					name: 'Label',
+					value: 'Description'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "address",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter property address"
-			  },
-			  {
-				"name": "Label",
-				"value": "Address"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'address',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property address'
+				},
+				{
+					name: 'Label',
+					value: 'Address'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "type",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter property type (e.g. apartment, house)"
-			  },
-			  {
-				"name": "Label",
-				"value": "Type"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'type',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property type (e.g. apartment, house)'
+				},
+				{
+					name: 'Label',
+					value: 'Type'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "buildingtype",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter building type (e.g. new building, old stock)"
-			  },
-			  {
-				"name": "Label",
-				"value": "Building Type"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'buildingtype',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter building type (e.g. new building, old stock)'
+				},
+				{
+					name: 'Label',
+					value: 'Building Type'
+				}
 			]
-		  },
-		  {
-			"name": "Number",
-			"key": "area",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter property area in sq. m"
-			  },
-			  {
-				"name": "Label",
-				"value": "Area (sq. m)"
-			  }
+		},
+		{
+			name: 'Number',
+			key: 'area',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property area in sq. m'
+				},
+				{
+					name: 'Label',
+					value: 'Area (sq. m)'
+				}
 			]
-		  },
-		  {
-			"name": "Number",
-			"key": "rooms",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter number of rooms"
-			  },
-			  {
-				"name": "Label",
-				"value": "Rooms"
-			  }
+		},
+		{
+			name: 'Number',
+			key: 'rooms',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter number of rooms'
+				},
+				{
+					name: 'Label',
+					value: 'Rooms'
+				}
 			]
-		  },
-		  {
-			"name": "Number",
-			"key": "floor",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter floor number"
-			  },
-			  {
-				"name": "Label",
-				"value": "Floor"
-			  }
+		},
+		{
+			name: 'Number',
+			key: 'floor',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter floor number'
+				},
+				{
+					name: 'Label',
+					value: 'Floor'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "renovation",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter renovation details"
-			  },
-			  {
-				"name": "Label",
-				"value": "Renovation"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'renovation',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter renovation details'
+				},
+				{
+					name: 'Label',
+					value: 'Renovation'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "appliances",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "List included appliances"
-			  },
-			  {
-				"name": "Label",
-				"value": "Appliances"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'appliances',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'List included appliances'
+				},
+				{
+					name: 'Label',
+					value: 'Appliances'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "utilities",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "List available utilities"
-			  },
-			  {
-				"name": "Label",
-				"value": "Utilities"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'utilities',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'List available utilities'
+				},
+				{
+					name: 'Label',
+					value: 'Utilities'
+				}
 			]
-		  },
-		  {
-			"name": "Text",
-			"key": "nearby",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "List nearby infrastructure (shops, schools, transport)"
-			  },
-			  {
-				"name": "Label",
-				"value": "Nearby"
-			  }
+		},
+		{
+			name: 'Text',
+			key: 'nearby',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'List nearby infrastructure (shops, schools, transport)'
+				},
+				{
+					name: 'Label',
+					value: 'Nearby'
+				}
 			]
-		  },
-		  {
-			"name": "Number",
-			"key": "price",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter property price"
-			  },
-			  {
-				"name": "Label",
-				"value": "Price"
-			  }
+		},
+		{
+			name: 'Number',
+			key: 'price',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property price'
+				},
+				{
+					name: 'Label',
+					value: 'Price'
+				}
 			]
-		  },
-		  {
-			"name": "Photo",
-			"key": "thumb",
-			"fields": [
-			  {
-				"name": "Photo",
-				"value": "Upload a property photo"
-			  }
+		},
+		{
+			name: 'Photo',
+			key: 'thumb',
+			fields: [
+				{
+					name: 'Photo',
+					value: 'Upload a property photo'
+				}
 			]
-		  }
-
+		}
 	]
 };

@@ -56,7 +56,7 @@ export class PropertyhistoryComponent {
 					callback: (): void => {
 						this._propertyrecordService.delete(record);
 						this._router.navigateByUrl(
-							'/propertieshistories/' + record.property
+							'/records/' + record.property
 						);
 					}
 				}

@@ -31,131 +31,157 @@
 
 			<div class="documents-container">
 				<div class="documents-list">
-						<div class="documents-main-content documents-main-content--task">
-							<div class="stats-dashboard">
-								<div class="stat-card total">
-									<div class="stat-icon">
-										<i class="material-icons"
-											>playlist_add_check</i
-										>
-									</div>
-									<div class="stat-info">
-										<div class="stat-number">23</div>
-										<div class="stat-label">
-											Total Tasks
-										</div>
-									</div>
-								</div>
-
-								<div class="stat-card in-progress">
-									<div class="stat-icon">
-										<i class="material-icons"
-											>hourglass_empty</i
-										>
-									</div>
-									<div class="stat-info">
-										<div class="stat-number">8</div>
-										<div class="stat-label">
-											In Progress
-										</div>
-									</div>
-								</div>
-
-								<div class="stat-card done">
-									<div class="stat-icon">
-										<i class="material-icons"
-											>check_circle</i
-										>
-									</div>
-									<div class="stat-info">
-										<div class="stat-number">10</div>
-										<div class="stat-label">Completed</div>
-									</div>
-								</div>
-
-								<div class="stat-card overdue">
-									<div class="stat-icon">
-										<i class="material-icons">error</i>
-									</div>
-									<div class="stat-info">
-										<div class="stat-number">5</div>
-										<div class="stat-label">Overdue</div>
-									</div>
-								</div>
-							</div>
-
-							<div id="taskListPanel" class="task-list-panel">
-								<div id="taskkard" class="taskkard documents-main-row">
-									<h4 class="task-title"></h4>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">category</span>
-										</div>
-										<div class="documents-prop-text">
-											 Category: Repair 
-										</div>
-									</div>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">access_time</span>
-										</div>
-										<div class="documents-prop-text">
-											Time: 12:00 - 13:00
-										</div>
-									</div>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">location_on</span>
-										</div>
-										<div class="documents-prop-text">
-											Address: 123 Main St.
-										</div>
-									</div>
-									<button
-										class="more-options"
-										(click)="goToDetails(); $event.stopPropagation()"
+					<div
+						class="documents-main-content documents-main-content--task"
+					>
+						<div class="stats-dashboard">
+							<div class="stat-card total">
+								<div class="stat-icon">
+									<i class="material-icons"
+										>playlist_add_check</i
 									>
-										<i class="material-icons">more_vert</i>
-									</button>
+								</div>
+								<div class="stat-info">
+									<div class="stat-number">23</div>
+									<div class="stat-label">Total Tasks</div>
 								</div>
 							</div>
-							<div id="taskListPanel" class="task-list-panel documents-main-row">
-								<div id="taskkard" class="taskkard">
-									<h4 class="task-title"></h4>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">category</span>
-										</div>
-										<div class="documents-prop-text">
-											 Category: Repair 
-										</div>
-									</div>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">access_time</span>
-										</div>
-										<div class="documents-prop-text">
-											Time: 12:00 - 13:00
-										</div>
-									</div>
-									<div class="documents-prop-wrap documents_workers_box">
-										<div class="documents-prop-icon">
-											<span class="material-icons">location_on</span>
-										</div>
-										<div class="documents-prop-text">
-											Address: 123 Main St.
-										</div>
-									</div>
-									<button
-										class="more-options"
-										(click)="goToDetails(); $event.stopPropagation()"
+
+							<div class="stat-card in-progress">
+								<div class="stat-icon">
+									<i class="material-icons"
+										>hourglass_empty</i
 									>
-										<i class="material-icons">more_vert</i>
-									</button>
+								</div>
+								<div class="stat-info">
+									<div class="stat-number">8</div>
+									<div class="stat-label">In Progress</div>
 								</div>
 							</div>
-							<div class="documents-main-row">
-															<google-map
+
+							<div class="stat-card done">
+								<div class="stat-icon">
+									<i class="material-icons">check_circle</i>
+								</div>
+								<div class="stat-info">
+									<div class="stat-number">10</div>
+									<div class="stat-label">Completed</div>
+								</div>
+							</div>
+
+							<div class="stat-card overdue">
+								<div class="stat-icon">
+									<i class="material-icons">error</i>
+								</div>
+								<div class="stat-info">
+									<div class="stat-number">5</div>
+									<div class="stat-label">Overdue</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="taskListPanel" class="task-list-panel">
+							<div
+								id="taskkard"
+								class="taskkard documents-main-row"
+							>
+								<h4 class="task-title"></h4>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>category</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Category: Repair
+									</div>
+								</div>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>access_time</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Time: 12:00 - 13:00
+									</div>
+								</div>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>location_on</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Address: 123 Main St.
+									</div>
+								</div>
+								<button
+									class="more-options"
+									(click)="goToDetails(); $event.stopPropagation()"
+								>
+									<i class="material-icons">more_vert</i>
+								</button>
+							</div>
+						</div>
+						<div
+							id="taskListPanel"
+							class="task-list-panel documents-main-row"
+						>
+							<div id="taskkard" class="taskkard">
+								<h4 class="task-title"></h4>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>category</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Category: Repair
+									</div>
+								</div>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>access_time</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Time: 12:00 - 13:00
+									</div>
+								</div>
+								<div
+									class="documents-prop-wrap documents_workers_box"
+								>
+									<div class="documents-prop-icon">
+										<span class="material-icons"
+											>location_on</span
+										>
+									</div>
+									<div class="documents-prop-text">
+										Address: 123 Main St.
+									</div>
+								</div>
+								<button
+									class="more-options"
+									(click)="goToDetails(); $event.stopPropagation()"
+								>
+									<i class="material-icons">more_vert</i>
+								</button>
+							</div>
+						</div>
+						<div class="documents-main-row">
+							<google-map
 								height="500px"
 								width="100%"
 								[center]="center"
@@ -170,9 +196,8 @@
 									(mapClick)="focusOnMarker(task)"
 								></map-marker>
 							</google-map>
-							</div>
-
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>

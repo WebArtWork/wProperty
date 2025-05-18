@@ -6,7 +6,7 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 @Component({
 	templateUrl: './services.component.html',
 	styleUrls: ['./services.component.scss'],
-	standalone: false,
+	standalone: false
 })
 export class DocumentComponent {
 	formDoc: FormInterface = this._form.getForm('docForm', {
@@ -20,13 +20,13 @@ export class DocumentComponent {
 				fields: [
 					{
 						name: 'Placeholder',
-						value: 'Enter your name',
+						value: 'Enter your name'
 					},
 					{
 						name: 'Label',
-						value: 'Name',
-					},
-				],
+						value: 'Name'
+					}
+				]
 			},
 			{
 				name: 'Text',
@@ -34,13 +34,13 @@ export class DocumentComponent {
 				fields: [
 					{
 						name: 'Placeholder',
-						value: 'Enter your phone',
+						value: 'Enter your phone'
 					},
 					{
 						name: 'Label',
-						value: 'Phone',
-					},
-				],
+						value: 'Phone'
+					}
+				]
 			},
 			{
 				name: 'Text',
@@ -48,32 +48,32 @@ export class DocumentComponent {
 				fields: [
 					{
 						name: 'Placeholder',
-						value: 'Enter your bio',
+						value: 'Enter your bio'
 					},
 					{
 						name: 'Label',
-						value: 'Bio',
+						value: 'Bio'
 					},
 					{
 						name: 'Textarea',
-						value: true,
-					},
-				],
+						value: true
+					}
+				]
 			},
 			{
 				name: 'Button',
 				fields: [
 					{
 						name: 'Label',
-						value: "Let's go",
+						value: "Let's go"
 					},
 					{
 						name: 'Submit',
-						value: true,
-					},
-				],
-			},
-		],
+						value: true
+					}
+				]
+			}
+		]
 	});
 
 	isMenuOpen = false;

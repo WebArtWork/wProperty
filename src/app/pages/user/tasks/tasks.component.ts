@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/modules/user/services/user.service';
-import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
-import { FormService } from 'src/app/core/modules/form/form.service';
 import { GoogleMapsModule } from '@angular/google-maps'; // Імпортуємо Google Maps модуль
 import { PropertytaskService } from 'src/app/modules/propertytask/services/propertytask.service';
 import { Propertytask } from 'src/app/modules/propertytask/interfaces/propertytask.interface';
@@ -31,7 +29,9 @@ export class TasksComponent {
 
 	focusOnTask(task: Propertytask): void {
 		this.center = task.location;
+
 		this.zoom = 15;
+
 		this.activeTaskId = task.id;
 	}
 
@@ -39,11 +39,14 @@ export class TasksComponent {
 		console.log(task);
 
 		this.center = task.location;
+
 		this.zoom = 15;
+
 		this.activeTaskId = task.id;
 
 		// Прокрутка до відповідної картки
 		const el = document.getElementById('task-' + task.id);
+
 		if (el) {
 			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}

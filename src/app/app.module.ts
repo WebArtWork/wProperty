@@ -115,11 +115,11 @@ const routes: Routes = [
 					).then((m) => m.PropertyhistoryModule)
 			},
 			{
-				path: 'propertieshistories',
+				path: 'records',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Propertieshistories'
+						title: 'Records'
 					}
 				},
 				loadChildren: () =>
