@@ -7,6 +7,8 @@ import { Service } from 'src/app/modules/propertyservice/interfaces/propertyserv
 import { services } from 'src/app/core/consts/services.const';
 import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { materials } from 'src/app/core/consts/materials.const';
+import { Propertyportfolio } from 'src/app/modules/propertyportfolio/interfaces/propertyportfolio.interface';
+import { PropertyportfolioService } from 'src/app/modules/propertyportfolio/services/propertyportfolio.service';
 
 @Component({
 	templateUrl: './worker.component.html',
@@ -29,6 +31,8 @@ export class WorkerComponent {
 	user_id = this._router.url.replace('/worker/', '');
 
 	user = this.userService.doc(this.user_id);
+
+	portfolios: Propertyportfolio[] = [];
 
 	formDoc: FormInterface = this._form.getForm('docForm', {
 		formId: 'docForm',
@@ -98,10 +102,15 @@ export class WorkerComponent {
 	});
 
 	constructor(
+		private _portfolioService: PropertyportfolioService,
 		public userService: UserService,
 		private _form: FormService,
 		private _router: Router
 	) {
+		this._portfolioService
+			.get({ query: 'author=' + this.user_id })
+			.subscribe((portfolios) => (this.portfolios = portfolios));
+
 		for (const service of services) {
 			this.service[service.id] = service;
 		}

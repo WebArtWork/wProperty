@@ -49,6 +49,16 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'portfolios',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Portfolios'
+					}
+				},
+				loadChildren: () => import('./modules/propertyportfolio/pages/portfolios/portfolios.routes').then(r => r.portfoliosRoutes)
+			}, 
+			{
 				path: 'material',
 				canActivate: [MetaGuard],
 				data: {

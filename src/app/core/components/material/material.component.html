@@ -1,8 +1,12 @@
 <div class="material-wrapper">
 	<div class="documents_materials_box">
 		<div class="documents_materials_box-item">
-			<!-- Виведення -->
+			<img
+				[src]="'/assets/materials/' + material.image"
+				[alt]="material.name"
+			/>
 			<div>{{ material.name }}</div>
+			<div>{{ material.description }}</div>
 		</div>
 	</div>
 </div>

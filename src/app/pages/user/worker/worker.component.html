@@ -39,21 +39,22 @@
 						<div class="documents-triggers">
 							<div
 								class="documents-triggers__wrap"
-								*ngFor="let doc of [{}, {}, {}]"
+								*ngFor="let portfolio of portfolios"
 							>
-								<!-- TODO Denys or Anastasia: fill this when portfolio is completed -->
 								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img src="/assets/default.png" alt="" />
+									<div
+										class="documents-triggers__img"
+										*ngFor="let image of portfolio.images"
+									>
+										<img [src]="image" alt="" />
 									</div>
 									<div class="documents-triggers__title">
-										Trigger title...
+										{{portfolio.name}}
 									</div>
 									<div
 										class="documents-triggers__description"
 									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit
+										{{portfolio.description}}
 									</div>
 								</div>
 							</div>

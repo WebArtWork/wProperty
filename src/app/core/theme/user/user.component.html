@@ -231,6 +231,16 @@
 					<span class="material-icons">task</span>
 					<span translate>Theme.Tasks</span>
 				</a>
+				<a
+					[routerLinkActiveOptions]="{ exact: true }"
+					routerLinkActive="_activeLink"
+					routerLink="portfolios"
+					class="nav__burger-link"
+					(click)="hideSidebar()"
+				>
+					<span class="material-icons">view_module</span>
+					<span translate>Theme.Portfolios</span>
+				</a>
 				<!-- <a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
