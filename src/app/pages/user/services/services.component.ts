@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { PropertyserviceService } from 'src/app/modules/propertyservice/services/propertyservice.service';
+import { services } from 'src/app/core/consts/services.const';
 
 @Component({
 	templateUrl: './services.component.html',
@@ -9,7 +10,7 @@ import { PropertyserviceService } from 'src/app/modules/propertyservice/services
 	standalone: false
 })
 export class ServicesComponent {
-	readonly services = this._serviceService.services;
+	readonly services = services;
 
 	searchText = '';
 

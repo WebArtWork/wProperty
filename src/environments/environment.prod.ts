@@ -1,4 +1,5 @@
 import { cities } from 'src/app/core/consts/cities.const';
+import { services } from 'src/app/core/consts/services.const';
 
 export const environment = {
 	roles: ['propertyworker'],
@@ -56,6 +57,28 @@ export const environment = {
 				{
 					name: 'Items',
 					value: cities
+				}
+			]
+		},
+		{
+			name: 'Select',
+			key: 'data.services',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Services'
+				},
+				{
+					name: 'Items',
+					value: services
+				},
+				{
+					name: 'Multiple',
+					value: true
+				},
+				{
+					name: 'Value',
+					value: 'id'
 				}
 			]
 		}
