@@ -54,16 +54,12 @@
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<div
-						*ngFor="let user of userService.usersByRole['propertyworker']|workers:service_id:material_id"
-						routerLink="/worker/{{user._id}}"
-						class="documents-main-row"
-					>
-						{{user.name}}
-						<!--<app-worker
-							[provider]="provider"
-							(load)="load()"
-						></app-worker>-->
+					<div class="documents-main-row">
+						<core-worker
+							*ngFor="let user of userService.usersByRole['propertyworker']|workers:service_id:material_id"
+							routerLink="/worker/{{user._id}}"
+							[user]="user"
+						></core-worker>
 					</div>
 				</div>
 			</div>

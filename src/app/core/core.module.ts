@@ -12,9 +12,15 @@ import { FormcomponentsModule } from './formcomponents/formcomponents.module';
 import { SelectModule } from './modules/select/select.module';
 import { FormModule } from './modules/form/form.module';
 /* imports */
+import { WorkerComponent } from './components/worker/worker.component';
+import { ServiceComponent } from './components/service/service.component';
+import { MaterialComponent } from './components/material/material.component';
 
 const components: Type<any>[] = [
 	/* components */
+	WorkerComponent,
+	ServiceComponent,
+	MaterialComponent
 ];
 
 const selectors: Type<any>[] = [
@@ -45,6 +51,7 @@ const pipes: Type<any>[] = [
 		.concat(pipes),
 	imports: [
 		FormcomponentsModule,
+		TranslateModule,
 		SelectModule,
 		CommonModule,
 		FormsModule,

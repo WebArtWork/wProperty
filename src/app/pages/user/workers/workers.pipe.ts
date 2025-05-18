@@ -18,9 +18,9 @@ export class WorkersPipe implements PipeTransform {
 			  }) || []
 			: material_id
 			? users?.filter((user) => {
-					return ((user.data['material'] as number[]) || []).includes(
-						service_id
-					);
+					return (
+						(user.data['materials'] as number[]) || []
+					).includes(material_id);
 			  }) || []
 			: users;
 	}

@@ -72,18 +72,11 @@
 				<div class="documents-main-content">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<div class="material-wrapper">
-								<div class="documents_materials_box">
-									<div class="documents_materials_box-item">
-										<!-- Виведення -->
-										<div
-											*ngFor="let material of materials|materials:searchText:service_id"
-										>
-											{{ material.name }}
-										</div>
-									</div>
-								</div>
-							</div>
+							<core-material
+								*ngFor="let material of materials|materials:searchText:service_id"
+								routerLink="/material/{{material.id}}"
+								[material]="material"
+							></core-material>
 						</div>
 					</div>
 				</div>

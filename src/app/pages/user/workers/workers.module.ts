@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { WorkersComponent } from './workers.component';
 import { Routes, RouterModule } from '@angular/router';
-import { WorkerComponent } from './worker/worker.component';
 import { WorkersPipe } from './workers.pipe';
 
 const routes: Routes = [
@@ -22,6 +21,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), CoreModule, WorkersPipe],
-	declarations: [WorkersComponent, WorkerComponent]
+	declarations: [WorkersComponent]
 })
 export class WorkersModule {}

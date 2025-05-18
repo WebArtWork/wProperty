@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormService } from 'src/app/core/modules/form/form.service';
-import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
-import { propertyworkerFormComponents } from 'src/app/modules/propertyworker/formcomponents/propertyworker.formcomponents';
 import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
@@ -21,9 +18,5 @@ export class WorkersComponent {
 
 	isMenuOpen = false;
 
-	constructor(
-		public userService: UserService,
-		private _form: FormService,
-		private _router: Router
-	) {}
+	constructor(public userService: UserService, private _router: Router) {}
 }
