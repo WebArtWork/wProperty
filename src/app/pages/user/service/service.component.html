@@ -23,8 +23,14 @@
 							Calculate roughly amount of money which you will
 							need to execute this service
 						</div>
-
-						<winput></winput>
+						<div *ngFor="let unit of service?.units">
+							<span>{{unit.name}}</span>
+							<winput
+								placeholder="Fill unit use"
+								[value]="unit.use"
+							></winput>
+							<span>{{unit.type}}</span>
+						</div>
 					</div>
 					<div class="documents-main-row">
 						<div class="documents__title">Work request</div>
