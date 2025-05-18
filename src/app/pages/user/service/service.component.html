@@ -23,8 +23,16 @@
 							Calculate roughly amount of money which you will
 							need to execute this service
 						</div>
+
+						<winput></winput>
+					</div>
+					<div class="documents-main-row">
+						<div class="documents__title">Work request</div>
+						<div class="documents__description">
+							Post a work request on which multiple workers can
+							apply
+						</div>
 						<wform [config]="formDoc"></wform>
-						<!-- TODO Denys or Anastasia: apply here calculator which will calculate roughly cost of the service required, also prepare auction for such service (auction is uncompleted record and later we need page where workers see such) -->
 					</div>
 					<div class="documents-main-row">
 						<div class="documents__title">Workers</div>
@@ -66,28 +74,11 @@
 							Those could be used in specific service work
 						</div>
 						<div class="documents-triggers">
-							<div
+							<core-material
 								routerLink="/material/{{material.id}}"
 								*ngFor="let material of materials"
-								class="documents-triggers__wrap"
-							>
-								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img
-											[src]="'/assets/service/' + material.image"
-											[alt]="material.name"
-										/>
-									</div>
-									<div class="documents-triggers__title">
-										{{material.name}}
-									</div>
-									<div
-										class="documents-triggers__description"
-									>
-										{{material.description}}
-									</div>
-								</div>
-							</div>
+								[material]="material"
+							></core-material>
 						</div>
 					</div>
 				</div>
