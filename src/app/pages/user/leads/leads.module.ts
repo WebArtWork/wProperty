@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { LeadsComponent } from './leads.component';
 import { Routes, RouterModule } from '@angular/router';
-import { TabComponent } from 'src/app/modules/tab/tab.component';
+import { TabComponent } from 'src/app/core/modules/tab/tab.component';
 
 const routes: Routes = [
 	{

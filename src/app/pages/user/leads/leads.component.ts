@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/modules/user/services/user.service';
-import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
+import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
+import { propertyserviceFormComponents } from 'src/app/modules/propertyservice/formcomponents/propertyservice.formcomponents';
+import { Propertyservice } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
+import { PropertyserviceService } from 'src/app/modules/propertyservice/services/propertyservice.service';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
 	templateUrl: './leads.component.html',
@@ -9,72 +12,100 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 	standalone: false
 })
 export class LeadsComponent {
-	formDoc: FormInterface = this._form.getForm('docForm', {
-		formId: 'docForm',
-		title: 'Doc form',
-		components: [
-			{
-				name: 'Text',
-				key: 'name',
-				focused: true,
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your name'
-					},
-					{
-						name: 'Label',
-						value: 'Name'
-					}
-				]
+	tabs = [
+		{
+			name: 'Mine',
+			click: () => {
+				this._load('', '');
 			},
-			{
-				name: 'Text',
-				key: 'phone',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your phone'
-					},
-					{
-						name: 'Label',
-						value: 'Phone'
-					}
-				]
-			},
-			{
-				name: 'Text',
-				key: 'bio',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your bio'
-					},
-					{
-						name: 'Label',
-						value: 'Bio'
-					},
-					{
-						name: 'Textarea',
-						value: true
-					}
-				]
-			},
-			{
-				name: 'Button',
-				fields: [
-					{
-						name: 'Label',
-						value: "Let's go"
-					},
-					{
-						name: 'Submit',
-						value: true
-					}
-				]
+			active: true
+		},
+		{
+			name: 'Public',
+			click: () => {
+				this._load('status=New', 'public');
 			}
-		]
-	});
+		},
+		{
+			name: 'Assigned',
+			click: () => {
+				this._load(
+					'status=Assigned&worker=' + this.userService.user._id,
+					'public'
+				);
+			}
+		},
+		{
+			name: 'Completed',
+			click: () => {
+				this._load(
+					'status=Completed&worker=' + this.userService.user._id,
+					'public'
+				);
+			}
+		},
+		{
+			name: 'Test',
+			click: () => {}
+		},
+		{
+			name: 'Test',
+			click: () => {}
+		},
+		{
+			name: 'Test',
+			click: () => {}
+		},
+		{
+			name: 'Test',
+			click: () => {}
+		},
+		{
+			name: 'Test',
+			click: () => {}
+		}
+	];
 
-	constructor(private _form: FormService) {}
+	services: Propertyservice[] = [];
+
+	constructor(
+		private _serviceService: PropertyserviceService,
+		public userService: UserService,
+		private _formService: FormService
+	) {
+		this._load();
+	}
+
+	create() {
+		this._formService.modal<Propertyservice>(this._form, {
+			label: 'Create',
+			click: (created: unknown, close: () => void) => {
+				close();
+
+				this._serviceService
+					.create(created as Propertyservice)
+					.subscribe(() => {
+						this._load();
+					});
+			}
+		});
+	}
+	private _form: FormInterface = this._formService.getForm(
+		'propertyservice',
+		propertyserviceFormComponents
+	);
+
+	private _query = '';
+
+	private _name = '';
+
+	private _load(query = this._query, name = this._name) {
+		this._query = query;
+
+		this._name = name;
+
+		this._serviceService
+			.get({ query }, { name })
+			.subscribe((services) => (this.services = services));
+	}
 }

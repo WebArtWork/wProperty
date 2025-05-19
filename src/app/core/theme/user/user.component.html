@@ -69,6 +69,17 @@
 				</a>
 			</li>
 
+			<li class="nav__li">
+				<a
+					routerLinkActive="_activeLink"
+					(click)="showSidebar = false"
+					routerLink="/leads"
+					class="nav__a"
+				>
+					<span class="material-icons">person_search</span>
+				</a>
+			</li>
+
 			<li class="nav__li" *ngIf="us.role('propertyworker')">
 				<a
 					routerLinkActive="_activeLink"

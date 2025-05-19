@@ -10,25 +10,24 @@
 					Common.Leads
 				</div>
 				<div class="burger-wrap">
-					<i class="material-icons">add</i>
+					<i class="material-icons" (click)="create()">add</i>
 				</div>
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<wtab></wtab>
+					<wtab
+						*ngIf="userService.role('propertyworker')"
+						[tabs]="tabs"
+					></wtab>
 
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
+					<div
+						routerLink="/lead/{{service._id}}"
+						*ngFor="let service of services"
+						class="documents-main-row"
+					>
+						<div class="documents__title">{{service.name}}</div>
 						<div class="documents__description">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Mollitia voluptatum facilis sit
-							necessitatibus, rem consectetur pariatur sapiente
-							incidunt laudantium praesentium aut iste omnis
-							suscipit autem deleniti, nisi temporibus obcaecati
-							eligendi?
+							{{service.description}}
 						</div>
 						<div class="documents-tags">
 							<div
