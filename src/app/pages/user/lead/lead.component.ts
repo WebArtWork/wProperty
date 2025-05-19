@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
+import { PropertyserviceService } from 'src/app/modules/propertyservice/services/propertyservice.service';
+import { Router } from '@angular/router';
+import { Propertyservice } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
 
 @Component({
 	templateUrl: './lead.component.html',
@@ -9,6 +12,12 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 	standalone: false
 })
 export class LeadComponent {
+	service_id = this._router.url.replace('/lead/', '');
+
+	service: Propertyservice = this._serviceService.new();
+
+	services: Propertyservice[] = [];
+
 	formDoc: FormInterface = this._form.getForm('docForm', {
 		formId: 'docForm',
 		title: 'Doc form',
@@ -76,7 +85,25 @@ export class LeadComponent {
 		]
 	});
 
-	isMenuOpen = false;
+	constructor(
+		private _serviceService: PropertyserviceService,
+		public userService: UserService,
+		private _form: FormService,
+		private _router: Router
+	) {
+		this._serviceService
+			.fetch({ _id: this.service_id })
+			.subscribe((service) => {
+				this.service = service;
 
-	constructor(public userService: UserService, private _form: FormService) {}
+				this._serviceService
+					.get({
+						query:
+							'property=' +
+							service.property +
+							'&status=New,Assigned'
+					})
+					.subscribe((services) => (this.services = services));
+			});
+	}
 }

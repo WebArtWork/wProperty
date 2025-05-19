@@ -8,6 +8,10 @@ const routes: Routes = [
 	{
 		path: '',
 		component: LeadsComponent
+	},
+	{
+		path: ':property_id',
+		component: LeadsComponent
 	}
 ];
 

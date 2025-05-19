@@ -1,4 +1,15 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+<!--
+Service info
+
+Section with all New and In progress services and in case of in progress
+
+Mutate proposal
+Owner see proposal lists
+
+My Tasks (In case I been assigned on this work) with Mutation
+ -->
+
+<div class="documents-wrapper">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div class="documents-header">
@@ -6,58 +17,40 @@
 					<core-back></core-back>
 					<core-profile routerLink="/profile"></core-profile>
 				</div>
-				<div class="documents-header__title">Title header</div>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="burger-wrap"
-					class="burger-wrap"
-				>
-					<div
-						[class.burger--close]="isMenuOpen"
-						class="burger"
-					></div>
-				</div>
-			</div>
-			<div
-				[class.documents-sidebar--open]="isMenuOpen"
-				class="documents-sidebar"
-			>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="documents-sidebar__close"
-				>
-					<span class="material-icons">close</span>
-				</div>
-				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Sint molestiae consequatur quae. Modi corporis rem amet
-						tempore debitis assumenda minima repellat labore
-						expedita quam. Itaque accusamus culpa ullam
-						necessitatibus nisi.
-					</div>
+				<div class="documents-header__title">{{service.name}}</div>
+				<div class="burger-wrap" class="burger-wrap">
+					<div class="burger"></div>
 				</div>
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
+						<div class="documents__title">{{service.name}}</div>
 						<div class="documents__description">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Mollitia voluptatum facilis sit
-							necessitatibus, rem consectetur pariatur sapiente
-							incidunt laudantium praesentium aut iste omnis
-							suscipit autem deleniti, nisi temporibus obcaecati
-							eligendi?
+							{{service.description}}
+						</div>
+						<div
+							class="documents__description"
+							*ngIf="service.deadline"
+						>
+							<span translate>Common.Deadline</span>
+							<span>{{service.deadline}}</span>
+						</div>
+					</div>
+					<div
+						*ngFor="let service of services"
+						class="documents-main-row"
+					>
+						<div class="documents__title">{{service.name}}</div>
+						<div class="documents__description">
+							{{service.description}}
+						</div>
+						<div
+							class="documents__description"
+							*ngIf="service.deadline"
+						>
+							<span translate>Common.Deadline</span>
+							<span>{{service.deadline}}</span>
 						</div>
 					</div>
 					<div class="documents-main-row">

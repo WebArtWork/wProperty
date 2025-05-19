@@ -122,7 +122,6 @@ export class PropertiesservicesComponent {
 
 		this._route.paramMap.subscribe((params) => {
 			this.provider_id = params.get('provider_id') || '';
-			console.log(this.provider_id);
 		});
 	}
 
@@ -132,13 +131,11 @@ export class PropertiesservicesComponent {
 		this._core.afterWhile(
 			this,
 			() => {
-				this._propertyserviceService
-					.get({ page, query: this._query() })
-					.subscribe((rows) => {
-						this.rows.splice(0, this.rows.length);
+				this._propertyserviceService.get({ page }).subscribe((rows) => {
+					this.rows.splice(0, this.rows.length);
 
-						this.rows.push(...rows);
-					});
+					this.rows.push(...rows);
+				});
 			},
 			250
 		);
@@ -215,15 +212,5 @@ export class PropertiesservicesComponent {
 
 	private _preCreate(propertyservice: Propertyservice): void {
 		propertyservice.__created = false;
-		if (this.provider_id) {
-			propertyservice.provider = this.provider_id;
-		}
-	}
-	private _query(): string {
-		let query = '';
-		if (this.provider_id) {
-			query += (query ? '&' : '') + 'provider=' + this.provider_id;
-		}
-		return query;
 	}
 }

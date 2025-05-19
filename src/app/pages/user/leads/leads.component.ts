@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { propertyserviceFormComponents } from 'src/app/modules/propertyservice/formcomponents/propertyservice.formcomponents';
@@ -12,11 +13,15 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 	standalone: false
 })
 export class LeadsComponent {
+	property_id = this._router.url.includes('leads/')
+		? this._router.url.replace('/leads/', '')
+		: null;
+
 	tabs = [
 		{
 			name: 'Mine',
 			click: () => {
-				this._load('', '');
+				this._load(this._mineQuery(), '');
 			},
 			active: true
 		},
@@ -70,10 +75,11 @@ export class LeadsComponent {
 
 	constructor(
 		private _serviceService: PropertyserviceService,
+		private _formService: FormService,
 		public userService: UserService,
-		private _formService: FormService
+		private _router: Router
 	) {
-		this._load();
+		this._load(this._mineQuery());
 	}
 
 	create() {
@@ -85,7 +91,7 @@ export class LeadsComponent {
 				this._serviceService
 					.create(created as Propertyservice)
 					.subscribe(() => {
-						this._load();
+						this._load(this._mineQuery());
 					});
 			}
 		});
@@ -95,7 +101,7 @@ export class LeadsComponent {
 		propertyserviceFormComponents
 	);
 
-	private _query = '';
+	private _query = this._mineQuery();
 
 	private _name = '';
 
@@ -107,5 +113,9 @@ export class LeadsComponent {
 		this._serviceService
 			.get({ query }, { name })
 			.subscribe((services) => (this.services = services));
+	}
+
+	private _mineQuery(): string {
+		return this.property_id ? 'property=' + this.property_id : '';
 	}
 }

@@ -16,7 +16,7 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<wtab
-						*ngIf="userService.role('propertyworker')"
+						*ngIf="userService.role('propertyworker') && !property_id"
 						[tabs]="tabs"
 					></wtab>
 
