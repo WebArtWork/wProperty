@@ -5,6 +5,9 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 import { PropertyserviceService } from 'src/app/modules/propertyservice/services/propertyservice.service';
 import { Router } from '@angular/router';
 import { Propertyservice } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
+import { CoreService } from 'wacom';
+import { propertyserviceproposalFormComponents } from 'src/app/modules/propertyserviceproposal/formcomponents/propertyserviceproposal.formcomponents';
+import { PropertyserviceproposalService } from 'src/app/modules/propertyserviceproposal/services/propertyserviceproposal.service';
 
 @Component({
 	templateUrl: './lead.component.html',
@@ -18,92 +21,56 @@ export class LeadComponent {
 
 	services: Propertyservice[] = [];
 
-	formDoc: FormInterface = this._form.getForm('docForm', {
-		formId: 'docForm',
-		title: 'Doc form',
-		components: [
-			{
-				name: 'Text',
-				key: 'name',
-				focused: true,
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your name'
-					},
-					{
-						name: 'Label',
-						value: 'Name'
-					}
-				]
-			},
-			{
-				name: 'Text',
-				key: 'phone',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your phone'
-					},
-					{
-						name: 'Label',
-						value: 'Phone'
-					}
-				]
-			},
-			{
-				name: 'Text',
-				key: 'bio',
-				fields: [
-					{
-						name: 'Placeholder',
-						value: 'Enter your bio'
-					},
-					{
-						name: 'Label',
-						value: 'Bio'
-					},
-					{
-						name: 'Textarea',
-						value: true
-					}
-				]
-			},
-			{
-				name: 'Button',
-				fields: [
-					{
-						name: 'Label',
-						value: "Let's go"
-					},
-					{
-						name: 'Submit',
-						value: true
-					}
-				]
-			}
-		]
-	});
+	formProposal: FormInterface = this._form.getForm(
+		'propertyserviceproposal',
+		propertyserviceproposalFormComponents
+	);
+
+	submitionProposal: Record<string, unknown> = {};
 
 	constructor(
+		private _proposalService: PropertyserviceproposalService,
 		private _serviceService: PropertyserviceService,
 		public userService: UserService,
 		private _form: FormService,
+		private _core: CoreService,
 		private _router: Router
 	) {
+		this._proposalService
+			.fetch({
+				service: this.service_id
+			})
+			.subscribe((proposal) => {
+				if (proposal) {
+					this._core.copy(proposal, this.submitionProposal);
+				}
+			});
+
 		this._serviceService
 			.fetch({ _id: this.service_id })
 			.subscribe((service) => {
 				this.service = service;
 
-				this._serviceService
-					.get({
-						query:
-							'property=' +
-							service.property +
-							'&status=New,Assigned'
-					})
-					.subscribe((services) => (this.services = services));
+				if (service.property) {
+					this._serviceService
+						.get({
+							query:
+								'property=' +
+								service.property +
+								'&status=New,Assigned'
+						})
+						.subscribe((services) => (this.services = services));
+				}
 			});
+	}
+
+	update() {
+		this._core.afterWhile(() => {
+			this._serviceService.update(this.service);
+		});
+	}
+
+	updateProposal() {
+		console.log(this.submitionProposal);
 	}
 }

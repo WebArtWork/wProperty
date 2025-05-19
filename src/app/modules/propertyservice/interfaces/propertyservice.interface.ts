@@ -1,6 +1,7 @@
 import { CrudDocument } from 'wacom';
 
 export interface Propertyservice extends CrudDocument {
+	author: string;
 	name: string;
 	description: string;
 	deadline: string;

@@ -1,35 +1,67 @@
 export const propertyserviceproposalFormComponents = {
 	formId: 'propertyserviceproposal',
-	title: 'Propertyserviceproposal',
+	title: 'Proposal for service',
 	components: [
 		{
-			name: 'Text',
-			key: 'name',
-			focused: true,
+			name: 'Objects',
+			key: 'units',
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'fill propertyserviceproposal title',
+					name: 'Label',
+					value: 'Units'
 				},
 				{
-					name: 'Label',
-					value: 'Title',
+					name: 'Fields',
+					value: [
+						{ key: 'name' },
+						{ key: 'type' },
+						{ key: 'use', type: 'number' },
+						{ key: 'price', type: 'number' }
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
-			key: 'description',
+			name: 'Number',
+			key: 'price',
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'fill propertyserviceproposal description',
+					value: 'Enter price ...'
 				},
 				{
 					name: 'Label',
-					value: 'Description',
+					value: 'Price'
+				}
+			]
+		},
+		{
+			name: 'Number',
+			key: 'workdays',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter workdays ...'
+				},
+				{
+					name: 'Label',
+					value: 'Workdays'
+				}
+			]
+		},
+		{
+			name: 'Date',
+			key: 'deadline',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter deadline ...'
+				},
+				{
+					name: 'Label',
+					value: 'Deadline'
 				}
 			]
 		}
 	]
-}
+};

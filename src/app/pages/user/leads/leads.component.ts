@@ -48,26 +48,6 @@ export class LeadsComponent {
 					'public'
 				);
 			}
-		},
-		{
-			name: 'Test',
-			click: () => {}
-		},
-		{
-			name: 'Test',
-			click: () => {}
-		},
-		{
-			name: 'Test',
-			click: () => {}
-		},
-		{
-			name: 'Test',
-			click: () => {}
-		},
-		{
-			name: 'Test',
-			click: () => {}
 		}
 	];
 
