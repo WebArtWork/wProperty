@@ -32,7 +32,44 @@
 			background-color: var(--c-primary-hover);
 		}
 	}
-
+	&._secondary{
+		background-color: var(--btn-secondary);
+		&:hover {
+			background-color: var(--btn-secondary-h);
+		}
+	}
+	&._success{
+		background-color: var(--btn-success);
+		&:hover {
+			background-color: var(--btn-success-h);
+		}
+	}
+	&._warning{
+		background-color: var(--btn-warning);
+		&:hover {
+			background-color: var(--btn-warning-h);
+		}
+	}
+	&._info{
+		background-color: var(--card-body);
+		&:hover {
+			background-color: var(--card-body-h);
+		}
+	}
+	&._light{
+		background-color: var(--btn-light);
+		color: #000;
+		&:hover {
+			background-color: var(--btn-light-h);
+		}
+	
+	}
+	&._dark{
+		background-color: var(--btn-dark);
+		&:hover {
+			background-color: var(--btn-dark-h);
+		}
+	}
 	&._second {
 		border: 1px solid #256eff;
 		background-color: var(--c-white);
@@ -42,7 +79,6 @@
 	&._danger {
 		background-color: var(--c-secondary);
 		color: white;
-
 		&:hover {
 			background: var(--c-secondary-hover);
 		}
@@ -50,10 +86,10 @@
 
 	&._link {
 		background: transparent;
-		color: var(--c-text-primary);
+		color: var(--c-primary);
 		font-size: 14px;
 		font-weight: 400;
-
+		text-decoration: underline;
 		&:hover {
 			color: var(--c-text-secondary);
 		}

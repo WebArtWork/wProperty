@@ -139,6 +139,17 @@ $transition: if(
 	--header-doc:#d8d8d8;
 	--doc-products:#f5f5f5;
 	--card-body:#1f1d1d;
+	--card-body-h:#000000;
+	--btn-secondary: #466bb5;
+	--btn-secondary-h: #3f5e9d;
+	--btn-success: #4ddd6f;
+	--btn-success-h: #45c062;
+	--btn-warning: #c8e02a;
+	--btn-warning-h: #adc224;
+	--btn-light:#ebdfdf;
+	--btn-light-h:#ffffff;
+	--btn-dark:#1e293f;
+	--btn-dark-h:#0c1119;
 }
 
 html.dark:root {
@@ -159,4 +170,14 @@ html.dark:root {
 	--header-doc:#1b1b1be3;
 	--doc-products:#252222;
 	--card-body:#1f1d1d;
+	--card-body-h:#000000;
+	--btn-secondary: #466bb5;
+	--btn-secondary-h: #3f5e9d;
+	--btn-success: #4ddd6f;
+	--btn-success-h: #45c062;
+	--btn-warning: #c8e02a;
+	--btn-warning-h: #adc224;
+	--btn-light:#ebdfdf;
+	--btn-light-h:#ffffff;
+	--btn-dark:#1e293f;
 }
