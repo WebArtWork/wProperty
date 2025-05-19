@@ -119,8 +119,4 @@ export class WorkerComponent {
 			this.material[material.id] = material;
 		}
 	}
-
-	back(): void {
-		window.history.back();
-	}
 }

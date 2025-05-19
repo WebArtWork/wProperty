@@ -1,0 +1,56 @@
+.tabs {
+    display: flex;
+    flex-wrap: wrap; // make sure it wraps
+  
+    label {
+      order: 1; // Put the labels first
+      display: block;
+      padding: 1rem 2rem;
+      margin-right: 0.2rem;
+      cursor: pointer;
+      background: var(--c-basic);
+      font-weight: bold;
+      transition: var(--transition);
+      transition: background ease 0.2s;
+      color: var(--c-white);
+    }
+  
+    &__content {
+      order: 99; // Put the tabs last
+      flex-grow: 1;
+      width: 100%;
+      display: none;
+      padding: 1rem;
+      background: var(--c-white);
+    }
+  
+    input[type="radio"] {
+      display: none;
+    }
+  
+    input[type="radio"]:checked+label {
+      background: var(--c-white);
+      transition: var(--transition);
+      color: var(--c-basic);
+    }
+  
+    input[type="radio"]:checked+label+&__content {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 45em) {
+    .tabs {
+      &__content {
+        order: initial;
+      }
+  
+      label {
+        order: initial;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+  

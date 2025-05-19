@@ -9,8 +9,4 @@ import { services } from 'src/app/core/consts/services.const';
 })
 export class ServicesComponent {
 	readonly services = services;
-
-	back(): void {
-		window.history.back();
-	}
 }

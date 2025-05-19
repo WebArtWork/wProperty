@@ -21,8 +21,4 @@ export class MaterialComponent {
 	);
 
 	constructor(public userService: UserService, private _router: Router) {}
-
-	back(): void {
-		window.history.back();
-	}
 }

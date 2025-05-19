@@ -95,8 +95,4 @@ export class ServiceComponent {
 		private _form: FormService,
 		private _router: Router
 	) {}
-
-	back(): void {
-		window.history.back();
-	}
 }
