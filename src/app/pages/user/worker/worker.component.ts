@@ -30,7 +30,7 @@ export class WorkerComponent {
 
 	user_id = this._router.url.replace('/worker/', '');
 
-	user = this.userService.doc(this.user_id);
+	user = this._userService.doc(this.user_id);
 
 	portfolios: Propertyportfolio[] = [];
 
@@ -103,7 +103,7 @@ export class WorkerComponent {
 
 	constructor(
 		private _portfolioService: PropertyportfolioService,
-		public userService: UserService,
+		private _userService: UserService,
 		private _form: FormService,
 		private _router: Router
 	) {

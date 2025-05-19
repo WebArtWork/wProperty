@@ -1,4 +1,4 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+<div class="documents-wrapper">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div class="documents-header">
@@ -6,65 +6,10 @@
 					<div class="documents-header-left__arrow">
 						<span class="material-icons">arrow_back_ios</span>
 					</div>
-					<div
-						routerlink="/profile"
-						class="documents-header-left__avatar"
-						tabindex="0"
-						ng-reflect-router-link="/profile"
-					>
-						<img alt="" src="assets/default.png" />
-					</div>
+					<core-profile routerLink="/profile"></core-profile>
 				</div>
 				<div class="documents-header__title" translate>
 					Materials.Materials
-				</div>
-				<div
-					class="burger-wrap"
-					class="burger-wrap"
-					(click)="isMenuOpen=!isMenuOpen"
-					[class.burger-wrap--open]="isMenuOpen"
-				>
-					<div
-						class="burger"
-						[class.burger--close]="isMenuOpen"
-					></div>
-				</div>
-			</div>
-			<div
-				class="documents-sidebar"
-				[class.documents-sidebar--open]="isMenuOpen"
-			>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="documents-sidebar__close"
-				>
-					<span class="material-icons">close</span>
-				</div>
-				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__title">Filters</div>
-					<!-- Статичне вікно пошуку -->
-					<div class="materials-search">
-						<input
-							type="text"
-							placeholder="Find materials"
-							[(ngModel)]="searchText"
-						/>
-						<div class="materials-search__img">
-							<span class="material-icons">search</span>
-						</div>
-					</div>
-					<!--<wselect
-						[items]="['Wood', 'Concrete', 'Steel', 'Plastic', 'Glass']"
-						[clearable]="true"
-						[multiple]="true"
-						placeholder="Material Type"
-					></wselect>
-					<wselect
-						[items]="['Construction', 'Water supply', 'Wiring the light', 'Renovation', 'Furniture', 'Interior Design', 'Landscaping']"
-						[clearable]="true"
-						[multiple]="true"
-						placeholder="Usage Industry"
-					></wselect>-->
 				</div>
 			</div>
 

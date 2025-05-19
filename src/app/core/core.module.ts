@@ -12,12 +12,14 @@ import { FormcomponentsModule } from './formcomponents/formcomponents.module';
 import { SelectModule } from './modules/select/select.module';
 import { FormModule } from './modules/form/form.module';
 /* imports */
+import { ProfileComponent } from './components/profile.component';
 import { WorkerComponent } from './components/worker/worker.component';
 import { ServiceComponent } from './components/service/service.component';
 import { MaterialComponent } from './components/material/material.component';
 
 const components: Type<any>[] = [
 	/* components */
+	ProfileComponent,
 	WorkerComponent,
 	ServiceComponent,
 	MaterialComponent

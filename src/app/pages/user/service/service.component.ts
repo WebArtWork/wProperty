@@ -90,8 +90,6 @@ export class ServiceComponent {
 		]
 	});
 
-	isMenuOpen = false;
-
 	constructor(
 		public userService: UserService,
 		private _form: FormService,

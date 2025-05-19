@@ -1,4 +1,4 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+<div class="documents-wrapper">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div class="documents-header">
@@ -6,14 +6,7 @@
 					<div class="documents-header-left__arrow">
 						<span class="material-icons">arrow_back_ios</span>
 					</div>
-					<div
-						routerlink="/profile"
-						class="documents-header-left__avatar"
-						tabindex="0"
-						ng-reflect-router-link="/profile"
-					>
-						<img alt="" src="assets/default.png" />
-					</div>
+					<core-profile routerLink="/profile"></core-profile>
 				</div>
 				<div class="documents-header__title" translate>
 					Workers.Workers
