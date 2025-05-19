@@ -1,7 +1,10 @@
 .tabs {
 	display: flex;
 	flex-wrap: wrap; // make sure it wraps
-
+	justify-content: center;
+	wbutton{
+		padding: 5px;
+	}
 	label {
 		order: 1; // Put the labels first
 		display: block;
@@ -52,4 +55,27 @@
 			margin-top: 0.2rem;
 		}
 	}
+}
+@media screen and (max-width: 767px) {
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* для плавного скролу на iOS */
+  scrollbar-width: none; /* Firefox */
+      flex-wrap: unset;
+	    overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+      justify-content: unset;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.tabs wbutton {
+  flex: 0 0 auto; /* щоб кнопки не стискалися і йшли в ряд */
+}
+
 }
