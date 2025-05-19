@@ -333,6 +333,10 @@ wform {
 	&-main {
 		flex: 1 0;
 		padding-left: 280px;
+		&--full{
+			padding: 0;
+			width: 100%;
+		}
 		&-content {
 			padding: 15px;
 		}
@@ -858,6 +862,7 @@ wform {
 	}
 	.documents-main {
 		padding: 20px 0 0 ;
+		width: 100%;
 	}
 	.documents-header{
         display: flex;
