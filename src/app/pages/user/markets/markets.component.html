@@ -31,12 +31,19 @@
 				</div>
 			</div>
 
-			<div class="documents-main" *ngIf="selectType">
+			<div class="documents-main documents-main--full" *ngIf="selectType">
 				<!-- TODO Andrew, I see this as wide blocks with small height, or even fit screen height, there is fixed items, so can we easily calculated height -->
-				<div *ngFor="let type of types" routerLink="/hub/{{type}}">
-					<i class="material-icons">{{type_icon[type]}}</i>
+				<div class="hub-wrapper">
+					<div *ngFor="let type of types" routerLink="/hub/{{type}}" class="hub-item">
+						<div class="hub-img">
+							<i class="material-icons">{{type_icon[type]}}</i>
+						</div>	
+						<div class="hub-text">
+							<span>{{'Hub.'+type|translate}}</span>
+						</div>
 
-					<span>{{'Hub.'+type|translate}}</span>
+
+				</div>
 				</div>
 			</div>
 
