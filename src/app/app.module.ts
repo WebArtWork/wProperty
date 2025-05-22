@@ -49,25 +49,31 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
-				path: 'lead',
+				path: 'project',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Lead'
+						title: 'Project'
 					}
 				},
-				loadChildren: () => import('./pages/user/lead/lead.module').then(m => m.LeadModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/lead/lead.module').then(
+						(m) => m.LeadModule
+					)
+			},
 			{
-				path: 'leads',
+				path: 'projects',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Leads'
+						title: 'Projects'
 					}
 				},
-				loadChildren: () => import('./pages/user/leads/leads.module').then(m => m.LeadsModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/leads/leads.module').then(
+						(m) => m.LeadsModule
+					)
+			},
 			{
 				path: 'proposals',
 				canActivate: [MetaGuard],
@@ -76,8 +82,11 @@ const routes: Routes = [
 						title: 'Proposals'
 					}
 				},
-				loadChildren: () => import('./modules/propertyserviceproposal/pages/proposals/proposals.routes').then(r => r.proposalsRoutes)
-			}, 
+				loadChildren: () =>
+					import(
+						'./modules/propertyserviceproposal/pages/proposals/proposals.routes'
+					).then((r) => r.proposalsRoutes)
+			},
 			{
 				path: 'portfolios',
 				canActivate: [MetaGuard],
@@ -86,8 +95,11 @@ const routes: Routes = [
 						title: 'Portfolios'
 					}
 				},
-				loadChildren: () => import('./modules/propertyportfolio/pages/portfolios/portfolios.routes').then(r => r.portfoliosRoutes)
-			}, 
+				loadChildren: () =>
+					import(
+						'./modules/propertyportfolio/pages/portfolios/portfolios.routes'
+					).then((r) => r.portfoliosRoutes)
+			},
 			{
 				path: 'material',
 				canActivate: [MetaGuard],
@@ -96,8 +108,11 @@ const routes: Routes = [
 						title: 'Material'
 					}
 				},
-				loadChildren: () => import('./pages/user/material/material.module').then(m => m.MaterialModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/material/material.module').then(
+						(m) => m.MaterialModule
+					)
+			},
 			{
 				path: 'worker',
 				canActivate: [MetaGuard],
@@ -106,8 +121,11 @@ const routes: Routes = [
 						title: 'Worker'
 					}
 				},
-				loadChildren: () => import('./pages/user/worker/worker.module').then(m => m.WorkerModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/worker/worker.module').then(
+						(m) => m.WorkerModule
+					)
+			},
 			{
 				path: 'service',
 				canActivate: [MetaGuard],

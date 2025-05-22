@@ -15,7 +15,7 @@ import { PropertyserviceproposalService } from 'src/app/modules/propertyservicep
 	standalone: false
 })
 export class LeadComponent {
-	service_id = this._router.url.replace('/lead/', '');
+	service_id = this._router.url.replace('/project/', '');
 
 	service: Propertyservice = this._serviceService.new();
 

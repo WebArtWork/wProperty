@@ -13,8 +13,8 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 	standalone: false
 })
 export class LeadsComponent {
-	property_id = this._router.url.includes('leads/')
-		? this._router.url.replace('/leads/', '')
+	property_id = this._router.url.includes('projects/')
+		? this._router.url.replace('/projects/', '')
 		: null;
 
 	tabs = [
