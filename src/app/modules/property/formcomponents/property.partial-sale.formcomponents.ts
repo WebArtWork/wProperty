@@ -183,15 +183,15 @@ export const propertyPartialSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'price',
+			key: 'pricePerPartial',
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter property price'
+					value: 'Enter price per partial property'
 				},
 				{
 					name: 'Label',
-					value: 'Price'
+					value: 'Price per partial property '
 				}
 			]
 		},

@@ -57,30 +57,54 @@ export const propertyAuctionSaleFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'type',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter property type (e.g. apartment, house)'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Type'
+					name: 'Items',
+					value: [
+						'Apartment',
+						'House',
+						'Office',
+						'Penthouse',
+						'Studio',
+						'Loft',
+						'Townhouse',
+						'Duplex',
+						'Commercial Space',
+						'Retail Space',
+						'Warehouse',
+						'Cottage',
+						'Mansion',
+						'Room',
+						'Dormitory'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'buildingtype',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter building type (e.g. new building, old stock)'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Building Type'
+					name: 'Items',
+					value: [
+						'Tsar-era Building',
+						'Stalinka',
+						'Khrushchevka',
+						'Czech-style',
+						'Dormitory'
+					]
 				}
 			]
 		},
@@ -115,6 +139,7 @@ export const propertyAuctionSaleFormComponents = {
 		{
 			name: 'Number',
 			key: 'floor',
+
 			fields: [
 				{
 					name: 'Placeholder',
@@ -127,58 +152,99 @@ export const propertyAuctionSaleFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'renovation',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter renovation details'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Renovation'
+					name: 'Items',
+					value: [
+						'Euro Renovation',
+						'Cosmetic Repair',
+						'Emergency Condition',
+						'Newly Built'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'appliances',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'List included appliances'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Appliances'
+					name: 'Items',
+					value: [
+						'Furnished',
+						'Unfurnished',
+						'Electric Kettle',
+						'Coffee Machine',
+						'Hair Dryer',
+						'Stove',
+						'Oven',
+						'Microwave',
+						'Multicooker',
+						'Air Conditioner',
+						'Bathtub',
+						'Shower Cabin',
+						'Walk-in Closet',
+						'Loggia',
+						'Terrace'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'utilities',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'List available utilities'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Utilities'
+					name: 'Items',
+					value: [
+						'Gas',
+						'Electricity',
+						'Central Water Supply',
+						'Well',
+						'Sewerage',
+						'Garbage Disposal',
+						'Elevator',
+						'Internet'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'nearby',
+			focused: false,
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'List nearby infrastructure (shops, schools, transport)'
+					name: 'Items',
+					value: [
+						'Kindergarten',
+						'School',
+						'Bus Stop',
+						'Metro',
+						'Market',
+						'Store'
+					]
 				},
 				{
-					name: 'Label',
-					value: 'Nearby'
+					name: 'Placeholder',
+					value: 'Select category'
 				}
 			]
 		},

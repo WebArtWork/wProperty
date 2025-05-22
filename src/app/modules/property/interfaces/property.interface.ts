@@ -10,7 +10,7 @@ export interface Property extends CrudDocument {
 	name: string;
 	description: string;
 	address: string;
-	type: string; // Визначаємо допустимі значення типу
+	type: string;
 	area: number;
 	thumb: string;
 	buildingtype: String;

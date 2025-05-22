@@ -46,30 +46,54 @@ export const propertyFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'type',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter property type (e.g. apartment, house)'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Type'
+					name: 'Items',
+					value: [
+						'Apartment',
+						'House',
+						'Office',
+						'Penthouse',
+						'Studio',
+						'Loft',
+						'Townhouse',
+						'Duplex',
+						'Commercial Space',
+						'Retail Space',
+						'Warehouse',
+						'Cottage',
+						'Mansion',
+						'Room',
+						'Dormitory'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'buildingtype',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter building type (e.g. new building, old stock)'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Building Type'
+					name: 'Items',
+					value: [
+						'Tsar-era Building',
+						'Stalinka',
+						'Khrushchevka',
+						'Czech-style',
+						'Dormitory'
+					]
 				}
 			]
 		},
@@ -115,76 +139,7 @@ export const propertyFormComponents = {
 				}
 			]
 		},
-		{
-			name: 'Text',
-			key: 'renovation',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'Enter renovation details'
-				},
-				{
-					name: 'Label',
-					value: 'Renovation'
-				}
-			]
-		},
-		{
-			name: 'Text',
-			key: 'appliances',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'List included appliances'
-				},
-				{
-					name: 'Label',
-					value: 'Appliances'
-				}
-			]
-		},
-		{
-			name: 'Text',
-			key: 'utilities',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'List available utilities'
-				},
-				{
-					name: 'Label',
-					value: 'Utilities'
-				}
-			]
-		},
-		{
-			name: 'Text',
-			key: 'nearby',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'List nearby infrastructure (shops, schools, transport)'
-				},
-				{
-					name: 'Label',
-					value: 'Nearby'
-				}
-			]
-		},
-		{
-			name: 'Number',
-			key: 'price',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'Enter property price'
-				},
-				{
-					name: 'Label',
-					value: 'Price'
-				}
-			]
-		},
+
 		{
 			name: 'Photo',
 			key: 'thumb',
