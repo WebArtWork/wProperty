@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { materials } from 'src/app/core/consts/materials.const';
+import { Material } from 'src/app/core/interfaces/material.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
-import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 
 @Component({
 	templateUrl: './materials.component.html',

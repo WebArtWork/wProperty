@@ -1,0 +1,47 @@
+<div class="documents-wrapper">
+	<div class="documents-container">
+		<div class="documents-list">
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<core-back></core-back>
+					<core-profile routerLink="/profile"></core-profile>
+				</div>
+				<div class="documents-header__title" translate>Common.Jobs</div>
+				<div class="burger-wrap">
+					<i class="material-icons" (click)="create()">add</i>
+				</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<wtab [tabs]="pagesTabs"></wtab>
+
+					<wtab
+						*ngIf="userService.role('propertyworker') && !property_id"
+						[tabs]="jobsTabs"
+					></wtab>
+
+					<div
+						routerLink="/job/{{service._id}}"
+						*ngFor="let service of services"
+						class="documents-main-row"
+					>
+						<div class="documents__title">{{service.name}}</div>
+						<div class="documents__description">
+							{{service.description}}
+						</div>
+						<div class="documents-tags">
+							<div
+								class="documents-tags__wrap"
+								*ngFor="let tag of [{}, {}, {}, {}, {}]"
+							>
+								<div class="documents-tags__item">
+									Smth here
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

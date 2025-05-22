@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { PropertieshistoriesComponent } from './propertieshistories.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HistoryComponent } from './history/history.component';
+import { HistoryComponent } from '../records/history/history.component';
 
 const routes: Routes = [
 	{

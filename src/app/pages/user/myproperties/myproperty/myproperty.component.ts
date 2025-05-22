@@ -10,7 +10,6 @@ import { AlertService, CoreService } from 'wacom';
 @Component({
 	selector: 'app-myproperty',
 	standalone: false,
-
 	templateUrl: './myproperty.component.html',
 	styleUrl: './myproperty.component.scss'
 })

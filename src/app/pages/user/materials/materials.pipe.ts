@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
+import { Material } from 'src/app/core/interfaces/material.interface';
 
 @Pipe({
 	name: 'materials'

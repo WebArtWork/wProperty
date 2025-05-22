@@ -3,12 +3,12 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { Router } from '@angular/router';
-import { Service } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
+import { Service } from 'src/app/core/interfaces/service.interface';
 import { services } from 'src/app/core/consts/services.const';
-import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { materials } from 'src/app/core/consts/materials.const';
 import { Propertyportfolio } from 'src/app/modules/propertyportfolio/interfaces/propertyportfolio.interface';
 import { PropertyportfolioService } from 'src/app/modules/propertyportfolio/services/propertyportfolio.service';
+import { Material } from 'src/app/core/interfaces/material.interface';
 
 @Component({
 	templateUrl: './worker.component.html',

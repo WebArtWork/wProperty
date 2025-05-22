@@ -3,11 +3,11 @@
 		<img src="assets/prop.jpg" alt="" />
 	</div>
 	<div class="property-card__text">
-		<a routerLink="/myproperty/{{property._id}}" class="property__name">
+		<a routerLink="/property/{{property._id}}" class="property__name">
 			<div class="documents__title">{{property.name}}</div>
 		</a>
 
-		<a routerLink="/myproperty/{{property._id}}" class="property-loc">
+		<a routerLink="/property/{{property._id}}" class="property-loc">
 			<div class="property-loc__img">
 				<span class="material-icons">location_on</span>
 			</div>
@@ -15,7 +15,7 @@
 				{{property.address}}
 			</div>
 		</a>
-		<a routerLink="/myproperty/{{property._id}}" class="property-loc">
+		<a routerLink="/property/{{property._id}}" class="property-loc">
 			<div class="property-loc__img">
 				<span class="material-icons">holiday_village</span>
 			</div>
@@ -34,8 +34,8 @@
 				<span class="material-icons" (click)="update()">edit</span>
 			</div>
 			<div class="property-links__wrap">
-				<a routerLink="/projects/{{property._id}}">
-					<span class="material-icons">work</span>
+				<a routerLink="/jobs/{{property._id}}">
+					<span class="material-icons">engineering</span>
 				</a>
 			</div>
 			<div class="property-links__wrap" *ngFor="let type of types">

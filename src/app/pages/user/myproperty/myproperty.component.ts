@@ -5,8 +5,6 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { propertyFormComponents } from 'src/app/modules/property/formcomponents/property.formcomponents';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
-import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
-import { Propertymaterial } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import {
 	trigger,
@@ -20,7 +18,6 @@ import { CoreService, AlertService } from 'wacom';
 @Component({
 	templateUrl: './myproperty.component.html',
 	styleUrls: ['./myproperty.component.scss'],
-
 	standalone: false,
 	animations: [
 		trigger('accordionAnimation', [
@@ -81,6 +78,7 @@ export class MypropertyComponent {
 		const firstContent = this.el.nativeElement.querySelector(
 			'.accordion-content'
 		) as HTMLElement;
+
 		const firstButton = this.el.nativeElement.querySelector(
 			'.accordion-button'
 		) as HTMLElement;

@@ -49,33 +49,56 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
-				path: 'project',
+				path: 'schedule',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Project'
+						title: 'Schedule'
 					}
 				},
-				loadChildren: () =>
-					import('./pages/user/lead/lead.module').then(
-						(m) => m.LeadModule
-					)
-			},
+				loadChildren: () => import('./pages/user/schedule/schedule.module').then(m => m.ScheduleModule)
+			}, 
 			{
-				path: 'projects',
+				path: 'hub',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Projects'
+						title: 'Real Estate Hub'
 					}
 				},
 				loadChildren: () =>
-					import('./pages/user/leads/leads.module').then(
-						(m) => m.LeadsModule
+					import('./pages/user/hub/hub.module').then(
+						(m) => m.HubModule
 					)
 			},
 			{
-				path: 'proposals',
+				path: 'job',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Job'
+					}
+				},
+				loadChildren: () =>
+					import('./pages/user/job/job.module').then(
+						(m) => m.JobModule
+					)
+			},
+			{
+				path: 'jobs',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Jobs'
+					}
+				},
+				loadChildren: () =>
+					import('./pages/user/jobs/jobs.module').then(
+						(m) => m.JobsModule
+					)
+			},
+			{
+				path: 'jobproposals',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -84,7 +107,20 @@ const routes: Routes = [
 				},
 				loadChildren: () =>
 					import(
-						'./modules/propertyserviceproposal/pages/proposals/proposals.routes'
+						'./modules/propertyjobproposal/pages/proposals/proposals.routes'
+					).then((r) => r.proposalsRoutes)
+			},
+			{
+				path: 'tradeproposals',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Proposals'
+					}
+				},
+				loadChildren: () =>
+					import(
+						'./modules/propertytradeproposal/pages/proposals/proposals.routes'
 					).then((r) => r.proposalsRoutes)
 			},
 			{
@@ -206,20 +242,7 @@ const routes: Routes = [
 					).then((m) => m.PropertyhistoryModule)
 			},
 			{
-				path: 'business',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Business'
-					}
-				},
-				loadChildren: () =>
-					import('./pages/user/provider/provider.module').then(
-						(m) => m.ProviderModule
-					)
-			},
-			{
-				path: 'myproperty',
+				path: 'property',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -229,19 +252,6 @@ const routes: Routes = [
 				loadChildren: () =>
 					import('./pages/user/myproperty/myproperty.module').then(
 						(m) => m.MypropertyModule
-					)
-			},
-			{
-				path: 'hub',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Real Estate Hub'
-					}
-				},
-				loadChildren: () =>
-					import('./pages/user/markets/markets.module').then(
-						(m) => m.MarketsModule
 					)
 			},
 			{
@@ -271,20 +281,7 @@ const routes: Routes = [
 					)
 			},
 			{
-				path: 'businesses',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Businesses'
-					}
-				},
-				loadChildren: () =>
-					import('./pages/user/providers/providers.module').then(
-						(m) => m.ProvidersModule
-					)
-			},
-			{
-				path: 'myproperties',
+				path: 'properties',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -321,71 +318,6 @@ const routes: Routes = [
 					import(
 						'./modules/propertytrade/pages/propertiestrades/propertiestrades.module'
 					).then((m) => m.PropertiestradesModule)
-			},
-			{
-				path: 'propertiesworkers',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Propertiesworkers'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./modules/propertyworker/pages/propertiesworkers/propertiesworkers.module'
-					).then((m) => m.PropertiesworkersModule)
-			},
-			{
-				path: 'propertiesservices',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Propertiesservices'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./modules/propertyservice/pages/propertiesservices/propertiesservices.module'
-					).then((m) => m.PropertiesservicesModule)
-			},
-			{
-				path: 'propertiestasks',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Propertiestasks'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./modules/propertyservice/pages/propertiesservices/propertiesservices.module'
-					).then((m) => m.PropertiesservicesModule)
-			},
-			{
-				path: 'propertiesproviders',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Propertiesproviders'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./modules/propertyprovider/pages/propertiesproviders/propertiesproviders.module'
-					).then((m) => m.PropertiesprovidersModule)
-			},
-			{
-				path: 'propertiesmaterials',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Propertiesmaterials'
-					}
-				},
-				loadChildren: () =>
-					import(
-						'./modules/propertymaterial/pages/propertiesmaterials/propertiesmaterials.module'
-					).then((m) => m.PropertiesmaterialsModule)
 			},
 			{
 				path: 'properties',

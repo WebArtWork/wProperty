@@ -1,4 +1,4 @@
-import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
+import { Material } from '../interfaces/material.interface';
 
 export const materials: Material[] = [
 	{

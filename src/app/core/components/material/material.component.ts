@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Material } from 'src/app/modules/propertymaterial/interfaces/propertymaterial.interface';
+import { Material } from '../../interfaces/material.interface';
 
 @Component({
 	selector: 'core-material',

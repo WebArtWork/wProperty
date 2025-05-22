@@ -3,6 +3,8 @@
 		[type]="tab.active ? 'primary' : 'secondary'"
 		*ngFor="let tab of tabs; index as i"
 		(click)="tab.click(tab.name, i); clear(); tab.active = true"
-		>{{tab.name}}</wbutton
 	>
+		<i class="material-icons" *ngIf="tab.icon">{{tab.icon}}</i>
+		<span>{{tab.name}}</span>
+	</wbutton>
 </div>

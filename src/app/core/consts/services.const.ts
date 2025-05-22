@@ -1,4 +1,4 @@
-import { Service } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
+import { Service } from '../interfaces/service.interface';
 
 export const services: Service[] = [
 	{

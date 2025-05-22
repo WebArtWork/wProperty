@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Service } from 'src/app/modules/propertyservice/interfaces/propertyservice.interface';
+import { Service } from 'src/app/core/interfaces/service.interface';
 
 @Component({
 	selector: 'core-service',

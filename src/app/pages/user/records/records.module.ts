@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
-import { RecordsComponent } from './records.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HistoryComponent } from '../records/history/history.component';
+import { RecordsComponent } from './records.component';
 
 const routes: Routes = [
 	{
-		path: '',
+		path: ':id',
 		component: RecordsComponent
 	}
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), CoreModule],
-	declarations: [RecordsComponent]
+	declarations: [RecordsComponent, HistoryComponent]
 })
 export class RecordsModule {}
