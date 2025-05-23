@@ -19,6 +19,7 @@ export const environment = {
 		resetPin: null
 	},
 	defaultLanguageCode: 'ua',
+	userFields: ['property'], // userService.user.data['property]['anId']l userService.updateMe()
 	userForm: [
 		{
 			name: 'Text',

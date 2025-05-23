@@ -12,6 +12,7 @@
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
+					details
 					<div class="documents-main-row">
 						<div class="documents__title">
 							<winput
@@ -36,6 +37,7 @@
 							<span>{{service.deadline}}</span>
 						</div>
 					</div>
+					services
 					<div
 						*ngFor="let service of services"
 						class="documents-main-row"
@@ -52,7 +54,7 @@
 							<span>{{service.deadline}}</span>
 						</div>
 					</div>
-
+					make proposal
 					<div
 						*ngIf="userService.user._id !== service.author"
 						class="documents-main-row"
@@ -65,7 +67,7 @@
 
 						<wbutton (click)="updateProposal()">Update</wbutton>
 					</div>
-
+					proposals list
 					<ng-container
 						*ngIf="userService.user._id === service.author"
 					>
@@ -89,6 +91,7 @@
 							<wbutton>Ask detailed proposal</wbutton>
 						</div>
 					</ng-container>
+					tasks list
 				</div>
 			</div>
 		</div>
