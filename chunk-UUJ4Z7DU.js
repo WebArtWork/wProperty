@@ -1,0 +1,1 @@
+import{u as r,zb as e}from"./chunk-A62Y4MUH.js";var a=(()=>{class t extends e{constructor(){super({name:"propertytask"})}static{this.\u0275fac=function(o){return new(o||t)}}static{this.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{a};
