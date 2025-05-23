@@ -58,7 +58,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'type',
+			key: 'propertyTypes',
 			focused: false,
 			fields: [
 				{
@@ -110,7 +110,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'area',
+			key: 'areas',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -138,7 +138,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'floor',
+			key: 'floors',
 
 			fields: [
 				{
@@ -153,7 +153,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'renovation',
+			key: 'renovations',
 			focused: false,
 			fields: [
 				{
@@ -228,7 +228,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'nearby',
+			key: 'nearbys',
 			focused: false,
 			fields: [
 				{

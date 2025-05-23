@@ -57,7 +57,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'type',
+			key: 'propertyTypes',
 			focused: false,
 			fields: [
 				{
@@ -109,7 +109,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'area',
+			key: 'areas',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -137,7 +137,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'floor',
+			key: 'floors',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -151,7 +151,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'renovation',
+			key: 'renovations',
 			focused: false,
 			fields: [
 				{
@@ -226,7 +226,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'nearby',
+			key: 'nearbys',
 			focused: false,
 			fields: [
 				{

@@ -47,7 +47,7 @@ export const propertyFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'type',
+			key: 'propertyTypes',
 			focused: false,
 			fields: [
 				{
@@ -99,7 +99,7 @@ export const propertyFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'area',
+			key: 'areas',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -127,7 +127,7 @@ export const propertyFormComponents = {
 		},
 		{
 			name: 'Number',
-			key: 'floor',
+			key: 'floors',
 			fields: [
 				{
 					name: 'Placeholder',
