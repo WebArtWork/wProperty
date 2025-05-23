@@ -89,7 +89,7 @@ export const propertyAuctionSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'buildingtype',
+			key: 'buildingTypes',
 			focused: false,
 			fields: [
 				{
@@ -232,6 +232,10 @@ export const propertyAuctionSaleFormComponents = {
 			focused: false,
 			fields: [
 				{
+					name: 'Placeholder',
+					value: 'Select category'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Kindergarten',
@@ -241,10 +245,6 @@ export const propertyAuctionSaleFormComponents = {
 						'Market',
 						'Store'
 					]
-				},
-				{
-					name: 'Placeholder',
-					value: 'Select category'
 				}
 			]
 		},

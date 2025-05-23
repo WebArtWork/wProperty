@@ -71,7 +71,7 @@ export const propertyPartialSaleFormComponents = {
 		},
 		{
 			name: 'Text',
-			key: 'buildingtype',
+			key: 'buildingTypes',
 			fields: [
 				{
 					name: 'Placeholder',
@@ -126,58 +126,99 @@ export const propertyPartialSaleFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'renovation',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter renovation details'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Renovation'
+					name: 'Items',
+					value: [
+						'Euro Renovation',
+						'Cosmetic Repair',
+						'Emergency Condition',
+						'Newly Built'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'appliances',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'List included appliances'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Appliances'
+					name: 'Items',
+					value: [
+						'Furnished',
+						'Unfurnished',
+						'Electric Kettle',
+						'Coffee Machine',
+						'Hair Dryer',
+						'Stove',
+						'Oven',
+						'Microwave',
+						'Multicooker',
+						'Air Conditioner',
+						'Bathtub',
+						'Shower Cabin',
+						'Walk-in Closet',
+						'Loggia',
+						'Terrace'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'utilities',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'List available utilities'
+					value: 'Select category '
 				},
 				{
-					name: 'Label',
-					value: 'Utilities'
+					name: 'Items',
+					value: [
+						'Gas',
+						'Electricity',
+						'Central Water Supply',
+						'Well',
+						'Sewerage',
+						'Garbage Disposal',
+						'Elevator',
+						'Internet'
+					]
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'nearby',
+			focused: false,
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'List nearby infrastructure (shops, schools, transport)'
+					name: 'Items',
+					value: [
+						'Kindergarten',
+						'School',
+						'Bus Stop',
+						'Metro',
+						'Market',
+						'Store'
+					]
 				},
 				{
-					name: 'Label',
-					value: 'Nearby'
+					name: 'Placeholder',
+					value: 'Select category'
 				}
 			]
 		},

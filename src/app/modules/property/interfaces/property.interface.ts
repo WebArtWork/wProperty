@@ -13,7 +13,7 @@ export interface Property extends CrudDocument {
 	type: string;
 	area: number;
 	thumb: string;
-	buildingtype: String;
+	buildingTypes: String;
 	rooms: Number;
 	floor: Number;
 	renovation: String;
