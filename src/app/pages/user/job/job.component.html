@@ -6,9 +6,8 @@
 					<core-back></core-back>
 					<core-profile routerLink="/profile"></core-profile>
 				</div>
-				<div class="documents-header__title">{{service.name}}</div>
-				<div class="burger-wrap" class="burger-wrap">
-					<div class="burger"></div>
+				<div class="documents-header__title">
+					{{service.name || 'Job'}}
 				</div>
 			</div>
 			<div class="documents-main">

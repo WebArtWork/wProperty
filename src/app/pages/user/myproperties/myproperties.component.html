@@ -1,4 +1,4 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+<div class="documents-wrapper">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div class="documents-header">
@@ -18,38 +18,8 @@
 				<div class="documents-header__title" translate>
 					Myproperties.My properties
 				</div>
-				<div
-					class="burger-wrap"
-					class="burger-wrap"
-					(click)="isMenuOpen=!isMenuOpen"
-					[class.burger-wrap--open]="isMenuOpen"
-				>
-					<div
-						class="burger"
-						[class.burger--close]="isMenuOpen"
-					></div>
-				</div>
-			</div>
-			<div
-				class="documents-sidebar"
-				[class.documents-sidebar--open]="isMenuOpen"
-			>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="documents-sidebar__close"
-				>
-					<span class="material-icons">close</span>
-				</div>
-				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						<wbutton (click)="create()">Create</wbutton>
-					</div>
+				<div class="burger-wrap">
+					<i class="material-icons" (click)="create()">add</i>
 				</div>
 			</div>
 			<div class="documents-main">
