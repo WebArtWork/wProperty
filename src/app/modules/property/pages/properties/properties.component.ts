@@ -21,7 +21,7 @@ export class PropertiesComponent {
 		'description',
 		'address',
 		'type',
-		'buildingtype',
+		'buildingTypes',
 		'area',
 		'rooms',
 		'floor',

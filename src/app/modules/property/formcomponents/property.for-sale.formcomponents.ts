@@ -88,7 +88,7 @@ export const propertyForSaleFormComponents = {
 		},
 		{
 			name: 'Select',
-			key: 'buildingtype',
+			key: 'buildingTypes',
 			focused: false,
 			fields: [
 				{
