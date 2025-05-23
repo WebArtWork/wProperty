@@ -54,7 +54,21 @@ export class PropertyService extends CrudService<Property> {
 
 	constructor(private _form: FormService) {
 		super({
-			name: 'property'
+			name: 'property',
+			replace: (property) => {
+				property.isForSale = property.types.includes('For Sale');
+
+				property.isPartialSale =
+					property.types.includes('Partial Sale');
+
+				property.isMonthlyRent =
+					property.types.includes('Monthly Rent');
+
+				property.isDailyRent = property.types.includes('Daily Rent');
+
+				property.isAuctionSale =
+					property.types.includes('Auction Sale');
+			}
 		});
 	}
 
