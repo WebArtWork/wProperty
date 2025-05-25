@@ -14,11 +14,14 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
-						<core-service
+						<div class="services-main-wrapper">
+							<core-service
 							*ngFor="let service of services"
 							routerLink="/service/{{service.id}}"
 							[service]="service"
+							class=""
 						></core-service>
+						</div>
 					</div>
 				</div>
 			</div>

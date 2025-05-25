@@ -1,6 +1,9 @@
 .documents-main-content--task {
 	width: 100%;
 }
+.more-options{
+	max-width: 235px;
+}
 /* Контейнер меню */
 .documents-wrapper {
 	display: flex;
@@ -17,6 +20,7 @@
 /* Панель статистики */
 .stats-dashboard {
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: space-between;
 	gap: 10px;
 	padding: 10px;
@@ -167,6 +171,9 @@ google-map {
 
 /* Мобільна адаптивність */
 @media (max-width: 768px) {
+	.more-options {
+		max-width: 175px;
+	}
 	.task1-card,
 	.task2-card {
 		flex-direction: column;

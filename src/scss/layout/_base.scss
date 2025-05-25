@@ -289,6 +289,9 @@ wform {
 .documents-list:not(:has(.documents-sidebar)) .documents-main {
   padding: 0;
 }
+.documents-list:not(:has(.documents-sidebar)) .documents-main .documents-main-content {
+  padding: 20px 0 0 0;
+}
 .documents {
 	&-header{
 		&__logo{
@@ -578,10 +581,10 @@ wform {
 }
 .documents-block-text{
     flex: 1 0;
-    padding-right: 150px;
+    padding-right: 30px;
 }
 .documents-block-img{
-    flex: 1;
+    flex: 0 0 280px;
     img{
         width: 100%;
         height: 210px;
@@ -852,6 +855,9 @@ wform {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
+	.documents-block-img {
+		flex: 0 0 200px;
+	}
 }
 @media screen and (max-width: 991px) {
 	.documents-sidebar {
@@ -931,7 +937,7 @@ wform {
 	}
 
 	.burger--close::before {
-		transform: translateY(0px) rotate(45deg);
+		transform: translateY(2px) rotate(45deg);
 	}
 
 	.burger--close::after {
@@ -955,6 +961,9 @@ wform {
 	.documents_materials_box {
 		flex: 0 0 50%;
 		max-width: 50%;
+	}
+	.documents-block-img {
+		flex: 0 0 300px;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -997,6 +1006,7 @@ wform {
 	.documents_services_box {
 		flex: 0 0 100%;
 		max-width: 100%;
+		padding: 0;
 	}
 	.business-contacts {
 		flex-flow: column wrap;
@@ -1017,5 +1027,8 @@ wform {
 	}
 	.documents-main-content {
 		padding: 0;
+	}
+	.services-img{
+		    max-width: 240px;
 	}
 }
