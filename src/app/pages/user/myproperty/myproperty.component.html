@@ -46,21 +46,21 @@
 						{{property.name}}
 					</div>
 					<div class="documents-sidebar__description">
-						<div class="documents-sidebar-btns">
+						<div class="documents-sidebar-btns mb-10">
 							<wbutton routerLink="/records/{{property._id}}"
 								>Records</wbutton
 							>
 						</div>
-						<div class="documents-sidebar-btns">
+						<div class="documents-sidebar-btns mb-10">
 							<wbutton (click)="update(property)">Edit</wbutton>
 						</div>
-						<div class="documents-sidebar-btns">
+						<div class="documents-sidebar-btns mb-10">
 							<wbutton routerLink="/jobs/{{property._id}}"
 								>Projects</wbutton
 							>
 						</div>
 						<div
-							class="documents-sidebar-btns"
+							class="documents-sidebar-btns mb-10"
 							*ngFor="let type of types"
 						>
 							<wbutton (click)="updateType(type)">
@@ -70,7 +70,7 @@
 								<span>{{type}}</span>
 							</wbutton>
 						</div>
-						<div class="documents-sidebar-btns">
+						<div class="documents-sidebar-btns mb-10">
 							<wbutton (click)="delete(property)">Delete</wbutton>
 						</div>
 					</div>

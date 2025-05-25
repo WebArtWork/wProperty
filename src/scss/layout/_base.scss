@@ -286,7 +286,9 @@ wform {
 	}
 }
 /* burger */
-
+.documents-list:not(:has(.documents-sidebar)) .documents-main {
+  padding: 0;
+}
 .documents {
 	&-header{
 		&__logo{
@@ -826,6 +828,16 @@ wform {
             margin-left: 2px;
         }
     }
+}
+
+.tabs{
+	button{
+		font-size: 20px;
+		height: 56px;
+		i{
+			margin-right: 7px;
+		}
+	}
 }
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {

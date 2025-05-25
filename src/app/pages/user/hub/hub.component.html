@@ -32,7 +32,6 @@
 			</div>
 
 			<div class="documents-main documents-main--full" *ngIf="selectType">
-				<!-- TODO Andrew, I see this as wide blocks with small height, or even fit screen height, there is fixed items, so can we easily calculated height -->
 				<div class="hub-wrapper">
 					<div
 						*ngFor="let type of types"
@@ -61,7 +60,7 @@
 					<span class="material-icons">close</span>
 				</div>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__title">Filters</div>
+					<div class="documents-sidebar__title mb-10">Filters</div>
 
 					<!-- Property Type -->
 					<wselect
@@ -70,6 +69,7 @@
 						[items]="propertyTypes"
 						[clearable]="true"
 						[multiple]="true"
+						class="mb-10"
 					></wselect>
 
 					<!-- Number of Rooms -->
@@ -79,6 +79,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="rooms"
+						class="mb-10"
 					></wselect>
 
 					<!-- Floor -->
@@ -88,6 +89,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="floors"
+						class="mb-10"
 					></wselect>
 
 					<!-- Area (m²) -->
@@ -97,6 +99,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						placeholder="Area (m²)"
+						class="mb-10"
 					></wselect>
 
 					<!-- Building Type -->
@@ -106,6 +109,7 @@
 						[items]="buildingTypes"
 						[clearable]="true"
 						[multiple]="true"
+						class="mb-10"
 					></wselect>
 
 					<!-- Condition / Renovation -->
@@ -115,6 +119,7 @@
 						[items]="renovations"
 						[clearable]="true"
 						[multiple]="true"
+						class="mb-10"
 					></wselect>
 
 					<!-- Appliances -->
@@ -124,6 +129,7 @@
 						[items]="appliances"
 						[clearable]="true"
 						[multiple]="true"
+						class="mb-10"
 					></wselect>
 
 					<!-- Utilities -->
@@ -133,6 +139,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="nearbys"
+						class="mb-10"
 					></wselect>
 
 					<!-- Nearby Infrastructure -->
@@ -142,6 +149,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="utilities"
+						class="mb-10"
 					></wselect>
 
 					<!-- Prices -->
@@ -151,6 +159,7 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="prices"
+						class="mb-10"
 					></wselect>
 				</div>
 			</div>
