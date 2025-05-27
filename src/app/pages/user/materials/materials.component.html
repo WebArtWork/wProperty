@@ -17,11 +17,14 @@
 				<div class="documents-main-content">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
-							<core-material
+							<div class="material-main-wrapper">
+								<core-material
 								*ngFor="let material of materials|materials:searchText:service_id"
 								routerLink="/material/{{material.id}}"
 								[material]="material"
+								class="material-main-wrapper__item"
 							></core-material>
+							</div>
 						</div>
 					</div>
 				</div>
