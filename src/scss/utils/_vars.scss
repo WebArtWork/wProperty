@@ -100,6 +100,7 @@ $transition: if(
 
 // theme
 :root {
+	--b-radius: 8px;
 	--c-white: #fff;
 	--c-basic: #3558ae;
 	--c-primary: #256eff;
@@ -109,7 +110,7 @@ $transition: if(
 	--c-bg-primary: #f3f4f7;
 	--c-bg-secondary: #ffffff;
 	--c-bg-tertiary: #fcfdfe;
-	--c-border: #f0f1f7;
+	--c-border: #444444;
 	--c-shadow: #f3f3f3;
 	--c-text-primary: #666666;
 	--c-text-secondary: #19235c;
@@ -158,7 +159,7 @@ html.dark:root {
 	--c-bg-primary: #282828;
 	--c-bg-secondary: #343434;
 	--c-bg-tertiary: #404040;
-	--c-border: #404040;
+	--c-border: #f3ecec87;
 	--c-shadow: #444444;
 	--c-text-primary: #ffffff;
 	--c-text-secondary: #ffffff;

@@ -12,16 +12,20 @@
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
-					details
+					<div class="documents__title">
+						Details
+					</div>
 					<div class="documents-main-row">
-						<div class="documents__title">
+						<div class="job__input-title">
+							Services name
 							<winput
 								placeholder="Enter service name..."
 								[value]="service.name"
 								(wChange)="update()"
 							></winput>
 						</div>
-						<div class="documents__description">
+						<div class="job__input-title">
+							Services description
 							<winput
 								placeholder="Enter service description..."
 								[value]="service.description"
@@ -37,7 +41,11 @@
 							<span>{{service.deadline}}</span>
 						</div>
 					</div>
-					services
+					
+
+					<div class="documents__title">
+						Services
+					</div>	
 					<div
 						*ngFor="let service of services"
 						class="documents-main-row"
@@ -54,7 +62,9 @@
 							<span>{{service.deadline}}</span>
 						</div>
 					</div>
-					make proposal
+					<div class="documents__title">
+						Make proposal
+					</div>
 					<div
 						*ngIf="userService.user._id !== service.author"
 						class="documents-main-row"
@@ -63,6 +73,7 @@
 							[submition]="submitionProposal"
 							[config]="formProposal"
 							(wSubmit)="updateProposal()"
+							class="job-form"
 						></wform>
 
 						<wbutton (click)="updateProposal()">Update</wbutton>

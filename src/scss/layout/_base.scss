@@ -864,6 +864,50 @@ wform {
 		}
 	}
 }
+.documents-sidebar-btns{
+        button{
+            i{
+                margin-right: 8px;
+                font-size: 22px;
+            }
+        }
+}
+.job{
+	&-form{
+		.w-forms{
+			margin-bottom: 20px;
+		}
+		div{
+			display: flex;
+			flex-flow: row wrap;
+			winput{
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding-right: 10px;
+			}
+			&:first-child{
+				display: block;
+			}
+		}
+	}
+    &__input-title{
+		color: #aec1e7;
+    	font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+        .w-forms__title{
+            margin: 0 !important;
+        }
+		.w-forms__textarea{
+			margin: 0 !important;
+			border-radius: 8px;
+		}
+    }
+}
+
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
