@@ -876,6 +876,10 @@ wform {
 	&-form{
 		.w-forms{
 			margin-bottom: 20px;
+			wbutton{
+				max-width: 230px;
+   				width: 100%;
+			}
 		}
 		div{
 			display: flex;

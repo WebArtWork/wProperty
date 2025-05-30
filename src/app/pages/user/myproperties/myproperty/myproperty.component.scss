@@ -49,6 +49,7 @@
 			margin-right: 10px;
 			padding-right: 10px;
 			border-right: 1px solid var(--c-text-primary);
+			cursor: pointer;
 			&:last-child {
 				border: unset;
 			}
@@ -56,6 +57,10 @@
 				display: flex;
 				font-size: 26px;
 				color: var(--c-text-primary);
+				transition: all .3s;
+				&:hover{
+					color: #aec1e7;
+				}
 			}
 		}
 	}
