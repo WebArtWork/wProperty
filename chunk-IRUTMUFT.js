@@ -1,0 +1,1 @@
+import{u as r,zb as o}from"./chunk-HUWGFJIC.js";var a=(()=>{class t extends o{constructor(){super({name:"propertyportfolio"})}static{this.\u0275fac=function(e){return new(e||t)}}static{this.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{a};

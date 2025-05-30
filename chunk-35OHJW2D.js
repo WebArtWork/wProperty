@@ -1,0 +1,1 @@
+import{T as a}from"./chunk-HUWGFJIC.js";var p=(()=>{class r{transform(t,e,n=0){return e?t?.filter(i=>(i.data.services||[]).includes(e))||[]:n?t?.filter(i=>(i.data.materials||[]).includes(n))||[]:t}static{this.\u0275fac=function(e){return new(e||r)}}static{this.\u0275pipe=a({name:"workers",type:r,pure:!0})}}return r})();export{p as a};
