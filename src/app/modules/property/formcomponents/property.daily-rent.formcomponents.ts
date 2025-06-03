@@ -295,7 +295,7 @@ export const propertyDailyRentFormComponents = {
 
 		{
 			name: 'Number',
-			key: 'pricePerDay ',
+			key: 'pricePerDay',
 			fields: [
 				{
 					name: 'Placeholder',
