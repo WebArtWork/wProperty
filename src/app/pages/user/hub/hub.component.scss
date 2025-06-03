@@ -37,3 +37,38 @@
     font-size: 28px;
     padding-left: 15px;
 }
+
+
+.documents-prop-glwrapper{
+    display: flex;
+    flex-flow: row wrap;
+    .documents-prop-wrap{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .documents-prop-icon {
+        width: 24px;
+        height: 24px;
+        span {
+            font-size: 18px;
+        }
+    }   
+    .documents-prop-text {
+        padding: 0 0 0 8px;
+        font-size: 15px;
+    }
+    .documents-block-img{
+        margin-bottom: 15px;
+        max-width: 250px;
+        img{
+            border-radius: 6px;
+        }
+    }
+    .documents__name {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}

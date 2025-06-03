@@ -912,6 +912,26 @@ wform {
     }
 }
 
+.services-main-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    &__item{
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+		display: flex;
+        .services-main{
+            display: flex;
+            .documents_services_box{
+                flex: unset;
+                max-width: unset;
+				.documents_services_box-item{
+					height: 100%;
+				}
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
@@ -1039,6 +1059,11 @@ wform {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
+	.services-main-wrapper__item {
+		flex: 0 0 50%;
+		max-width: 50%;
+		display: flex;
+	}
 }
 @media screen and (max-width: 767px) {
 	.documents-triggers__wrap {
@@ -1107,7 +1132,11 @@ wform {
 		padding: 0;
 	}
 	.services-img{
-		    max-width: 240px;
+		max-width: 240px;
 	}
-
+	.services-main-wrapper__item {
+		flex: 0 0 100%;
+		max-width: 100%;
+		display: flex;
+	}
 }

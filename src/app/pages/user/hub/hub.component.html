@@ -189,26 +189,17 @@
 						class="documents-main-row"
 					>
 						<div class="documents-block-list">
-							<div class="documents-block-text">
 								<div class="documents-block-text">
 									<!-- Property Title -->
 									<div class="documents__name">
 										{{property.name}}
 									</div>
-
-									<!-- Description -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>description</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.description}}
-										</div>
+									<div class="documents__description">
+										{{property.description}}
 									</div>
 
-									<!-- Address -->
+									<div class="documents-prop-glwrapper">
+																			<!-- Address -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-icon">
 											<span class="material-icons"
@@ -327,17 +318,18 @@
 											{{property.nearbys}}
 										</div>
 									</div>
+									</div>
 
 									<!-- Price -->
 									<div class="documents__price">
 										{{property.price}}
 									</div>
 								</div>
-							</div>
+								<div class="documents-block-img">
+									<img src="assets/prop.jpg" alt="" />
+								</div>
 						</div>
-						<div class="documents-block-img">
-							<img src="assets/prop.jpg" alt="" />
-						</div>
+
 					</div>
 				</div>
 			</div>
