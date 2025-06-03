@@ -173,10 +173,15 @@ export const propertyForSaleFormComponents = {
 			name: 'Select',
 			key: 'appliances',
 			focused: false,
+
 			fields: [
 				{
 					name: 'Placeholder',
 					value: 'Select category '
+				},
+				{
+					name: 'Multiple',
+					value: 'True'
 				},
 				{
 					name: 'Items',
@@ -204,10 +209,15 @@ export const propertyForSaleFormComponents = {
 			name: 'Select',
 			key: 'utilities',
 			focused: false,
+
 			fields: [
 				{
 					name: 'Placeholder',
 					value: 'Select category '
+				},
+				{
+					name: 'Multiple',
+					value: 'True'
 				},
 				{
 					name: 'Items',
@@ -219,6 +229,7 @@ export const propertyForSaleFormComponents = {
 						'Sewerage',
 						'Garbage Disposal',
 						'Elevator',
+						'Parking',
 						'Internet'
 					]
 				}
@@ -239,6 +250,10 @@ export const propertyForSaleFormComponents = {
 						'Market',
 						'Store'
 					]
+				},
+				{
+					name: 'Multiple',
+					value: 'True'
 				},
 				{
 					name: 'Placeholder',

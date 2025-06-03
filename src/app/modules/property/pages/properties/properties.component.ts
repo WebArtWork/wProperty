@@ -29,7 +29,6 @@ export class PropertiesComponent {
 		'appliances',
 		'utilities',
 		'nearbys',
-		'parking',
 		'sleepingPlaces',
 		'pets',
 		'minimumbidincrement',
@@ -37,6 +36,9 @@ export class PropertiesComponent {
 		'auctiondate',
 		'startingprice',
 		'price',
+		'pricePerDay',
+		'pricePerMountly',
+		'pricePerPartial',
 		'thumb'
 	];
 

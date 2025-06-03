@@ -6,6 +6,8 @@ import { buildingTypes } from 'src/app/core/consts/buildingTypes.const';
 import { floors } from 'src/app/core/consts/floors.const';
 import { nearbys } from 'src/app/core/consts/nearbys.const';
 import { prices } from 'src/app/core/consts/prices.const';
+import { pets } from 'src/app/core/consts/pets.const';
+import { sleepingPlaces } from 'src/app/core/consts/sleepingPlaces.const';
 import { propertyTypes } from 'src/app/core/consts/propertyTypes.const';
 import { renovations } from 'src/app/core/consts/renovations.const';
 import { rooms } from 'src/app/core/consts/rooms.const';
@@ -51,6 +53,10 @@ export class HubComponent {
 
 	readonly prices = prices;
 
+	readonly pets = pets;
+
+	readonly sleepingPlaces = sleepingPlaces;
+
 	selectedPropertyTypes: string[] = [];
 
 	selectedRooms: string[] = [];
@@ -70,6 +76,10 @@ export class HubComponent {
 	selectedNearbys: string[] = [];
 
 	selectedPrices: string[] = [];
+
+	selectedPets: string[] = [];
+
+	selectedSleepingPlaces: string[] = [];
 
 	isMenuOpen = false;
 
@@ -98,7 +108,9 @@ export class HubComponent {
 					appliances: this.selectedAppliances,
 					utilities: this.selectedUtilities,
 					nearbys: this.selectedNearbys,
-					prices: this.selectedPrices
+					prices: this.selectedPrices,
+					pets: this.selectedPets,
+					sleepingPlaces: this.selectedSleepingPlaces
 				})
 			})
 			.subscribe((properties) => (this.properties = properties));

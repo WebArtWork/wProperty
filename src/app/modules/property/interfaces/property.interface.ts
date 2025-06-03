@@ -20,7 +20,6 @@ export interface Property extends CrudDocument {
 	appliances: String;
 	utilities: String;
 	nearbys: String;
-	parking: String;
 	sleepingPlaces: Number;
 	pets: String;
 	minimumbidincrement: Number;
@@ -28,4 +27,7 @@ export interface Property extends CrudDocument {
 	auctiondate: Number;
 	startingprice: Number;
 	price: Number;
+	pricePerDay: Number;
+	pricePerMountly: Number;
+	pricePerPartial: Number;
 }

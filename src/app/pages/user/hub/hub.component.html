@@ -138,7 +138,7 @@
 						placeholder="Utilities"
 						[clearable]="true"
 						[multiple]="true"
-						[items]="nearbys"
+						[items]="utilities"
 						class="mb-10"
 					></wselect>
 
@@ -148,7 +148,7 @@
 						placeholder="Nearby Infrastructure"
 						[clearable]="true"
 						[multiple]="true"
-						[items]="utilities"
+						[items]="nearbys"
 						class="mb-10"
 					></wselect>
 
@@ -159,6 +159,24 @@
 						[clearable]="true"
 						[multiple]="true"
 						[items]="prices"
+						class="mb-10"
+					></wselect>
+					<!-- Pets -->
+					<wselect
+						(modelChange)="selectedPets = $event; load()"
+						placeholder="Pets"
+						[clearable]="true"
+						[multiple]="true"
+						[items]="pets"
+						class="mb-10"
+					></wselect>
+					<!-- Pets -->
+					<wselect
+						(modelChange)="selectedSleepingPlaces = $event; load()"
+						placeholder="SleepingPlaces"
+						[clearable]="true"
+						[multiple]="true"
+						[items]="sleepingPlaces"
 						class="mb-10"
 					></wselect>
 				</div>
@@ -210,7 +228,7 @@
 											>
 										</div>
 										<div class="documents-prop-text">
-											{{property.types}}
+											{{property.propertyTypes}}
 										</div>
 									</div>
 

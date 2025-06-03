@@ -181,6 +181,10 @@ export const propertyAuctionSaleFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Furnished',
@@ -212,6 +216,10 @@ export const propertyAuctionSaleFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Gas',
@@ -221,6 +229,7 @@ export const propertyAuctionSaleFormComponents = {
 						'Sewerage',
 						'Garbage Disposal',
 						'Elevator',
+						'Parking',
 						'Internet'
 					]
 				}
@@ -233,7 +242,11 @@ export const propertyAuctionSaleFormComponents = {
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Select category'
+					value: 'Pets'
+				},
+				{
+					name: 'Multiple',
+					value: 'True'
 				},
 				{
 					name: 'Items',
@@ -263,7 +276,7 @@ export const propertyAuctionSaleFormComponents = {
 			]
 		},
 		{
-			name: 'Number',
+			name: 'Date',
 			key: 'auctiondate',
 			fields: [
 				{

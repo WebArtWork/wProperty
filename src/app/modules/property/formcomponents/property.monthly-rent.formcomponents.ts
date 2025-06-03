@@ -179,6 +179,10 @@ export const propertyMonthlyRentFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Furnished',
@@ -210,6 +214,10 @@ export const propertyMonthlyRentFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Gas',
@@ -219,6 +227,7 @@ export const propertyMonthlyRentFormComponents = {
 						'Sewerage',
 						'Garbage Disposal',
 						'Elevator',
+						'Parking',
 						'Internet'
 					]
 				}
@@ -241,39 +250,32 @@ export const propertyMonthlyRentFormComponents = {
 					]
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Placeholder',
 					value: 'Select category'
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'pets',
+			focused: false,
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'Pets allowed or not allowed'
+					name: 'Items',
+					value: ['Allowed', 'Not Allowed']
 				},
+
 				{
-					name: 'Label',
-					value: 'Pets'
+					name: 'Placeholder',
+					value: 'Select category'
 				}
 			]
 		},
-		{
-			name: 'Text',
-			key: 'parking',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'Parking available or not'
-				},
-				{
-					name: 'Label',
-					value: 'Parking'
-				}
-			]
-		},
+
 		{
 			name: 'Number',
 			key: 'pricePerMountly',

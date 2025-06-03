@@ -155,6 +155,10 @@ export const propertyPartialSaleFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Furnished',
@@ -186,6 +190,10 @@ export const propertyPartialSaleFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Gas',
@@ -195,6 +203,7 @@ export const propertyPartialSaleFormComponents = {
 						'Sewerage',
 						'Garbage Disposal',
 						'Elevator',
+						'Parking',
 						'Internet'
 					]
 				}
@@ -215,6 +224,10 @@ export const propertyPartialSaleFormComponents = {
 						'Market',
 						'Store'
 					]
+				},
+				{
+					name: 'Multiple',
+					value: 'True'
 				},
 				{
 					name: 'Placeholder',

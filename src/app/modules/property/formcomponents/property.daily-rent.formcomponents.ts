@@ -179,6 +179,10 @@ export const propertyDailyRentFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Furnished',
@@ -210,6 +214,10 @@ export const propertyDailyRentFormComponents = {
 					value: 'Select category '
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Items',
 					value: [
 						'Gas',
@@ -219,6 +227,7 @@ export const propertyDailyRentFormComponents = {
 						'Sewerage',
 						'Garbage Disposal',
 						'Elevator',
+						'Parking',
 						'Internet'
 					]
 				}
@@ -241,50 +250,45 @@ export const propertyDailyRentFormComponents = {
 					]
 				},
 				{
+					name: 'Multiple',
+					value: 'True'
+				},
+				{
 					name: 'Placeholder',
 					value: 'Select category'
 				}
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'pets',
+			focused: false,
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'Pets allowed or not allowed'
+					name: 'Items',
+					value: ['Allowed', 'Not Allowed']
 				},
+
 				{
-					name: 'Label',
-					value: 'Pets'
+					name: 'Placeholder',
+					value: 'Select category'
 				}
 			]
 		},
+
 		{
-			name: 'Text',
-			key: 'parking',
-			fields: [
-				{
-					name: 'Placeholder',
-					value: 'Parking available or not'
-				},
-				{
-					name: 'Label',
-					value: 'Parking'
-				}
-			]
-		},
-		{
-			name: 'Text',
+			name: 'Select',
 			key: 'sleepingPlaces',
+			focused: false,
 			fields: [
 				{
-					name: 'Placeholder',
-					value: 'Enter number of sleeping places'
+					name: 'Items',
+					value: ['1', '2', '3', '4', '5+']
 				},
+
 				{
-					name: 'Label',
-					value: 'Sleeping places'
+					name: 'Placeholder',
+					value: 'Select category'
 				}
 			]
 		},
