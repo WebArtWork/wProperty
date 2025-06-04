@@ -16,10 +16,11 @@
 					<div class="documents-main-row">
 						<div class="services-main-wrapper">
 							<core-service
+							
 							*ngFor="let service of services"
 							routerLink="/service/{{service.id}}"
 							[service]="service"
-							class=""
+							class="services-main-wrapper__item"
 						></core-service>
 						</div>
 					</div>

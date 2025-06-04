@@ -190,253 +190,251 @@
 					>
 						<div class="documents-block-list">
 							<div class="documents-block-text">
-								<div class="documents-block-text">
-									<div
-										*ngIf="type === 'For sale'|| 'Partial Sale' || 'Monthly Rent' || 'Daily Rent'|| 'Auction Sale'"
-									>
-										<!-- Property Title -->
-										<div class="documents__name">
-											{{property.name}}
-										</div>
+								<div
+									*ngIf="type === 'For sale'|| 'Partial Sale' || 'Monthly Rent' || 'Daily Rent'|| 'Auction Sale'"
+								>
+									<!-- Property Title -->
+									<div class="documents__name">
+										{{property.name}}
+									</div>
 
-										<!-- Description -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>description</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.description}}
-											</div>
+									<!-- Description -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>description</span
+											>
 										</div>
-
-										<!-- Address -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>location_on</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.address}}
-											</div>
-										</div>
-
-										<!-- Area -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>square_foot</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.areas}}
-											</div>
-										</div>
-
-										<!-- Rooms -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>apartment</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.rooms}}
-											</div>
-										</div>
-
-										<!-- Floor -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>stairs</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.floors}}
-											</div>
-										</div>
-
-										<!-- Renovation -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>construction</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.renovations}}
-											</div>
-										</div>
-
-										<!-- Appliances -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>kitchen</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.appliances}}
-											</div>
-										</div>
-
-										<!-- Utilities -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>water_drop</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.utilities}}
-											</div>
-										</div>
-
-										<!-- Property Type -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>holiday_village</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.propertyTypes}}
-											</div>
-										</div>
-
-										<!-- Building Type -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>home_work</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.buildingTypes}}
-											</div>
-										</div>
-
-										<!-- Nearby -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>map</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.nearbys}}
-											</div>
+										<div class="documents-prop-text">
+											{{property.description}}
 										</div>
 									</div>
 
-									<div
-										*ngIf="type ===  'Monthly Rent' || 'Daily Rent'"
-									>
-										<!-- Pets -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>pets</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.pets}}
-											</div>
+									<!-- Address -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>location_on</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.address}}
 										</div>
 									</div>
-									<div *ngIf="type === 'Daily Rent'">
-										<!-- Sleeping Places -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>hotel</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.sleepingPlaces}}
-											</div>
-										</div>
-										<!-- Price Per Day -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-text">
-												$ {{property.pricePerDay}}
-											</div>
-										</div>
-									</div>
-									<div *ngIf="type ===  'For Sale'">
-										<!-- Price -->
-										<div class="documents__price">
-											$ {{property.price}}
-										</div>
-									</div>
-									<div *ngIf="type ===   'Partial Sale'">
-										<!-- Price Per Partial Period -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-text">
-												$ {{property.pricePerPartial}}
-											</div>
-										</div>
-									</div>
-									<div *ngIf="type ===  'Monthly Rent' ">
-										<!-- Price Per Month -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-text">
-												$ {{property.pricePerMountly}}
-											</div>
-										</div>
-									</div>
-									<div *ngIf="type ===  'Auction Sale'">
-										<!-- Minimum Bid Increment -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons">
-													attach_money</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												Bid:
-												{{property.minimumbidincrement}}
-											</div>
-										</div>
 
-										<!-- Auction Rules -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>gavel</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.auctionrules}}
-											</div>
+									<!-- Area -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>square_foot</span
+											>
 										</div>
-
-										<!-- Auction Date -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-icon">
-												<span class="material-icons"
-													>event</span
-												>
-											</div>
-											<div class="documents-prop-text">
-												{{property.auctiondate | date:
-												'mediumDate'}}
-											</div>
-										</div>
-
-										<!-- Starting Price -->
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-text">
-												$ {{property.startingprice}}
-											</div>
+										<div class="documents-prop-text">
+											{{property.areas}}
 										</div>
 									</div>
-									<div class="documents-block-img">
-										<img src="assets/prop.jpg" alt="" />
+
+									<!-- Rooms -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>apartment</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.rooms}}
+										</div>
 									</div>
+
+									<!-- Floor -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>stairs</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.floors}}
+										</div>
+									</div>
+
+									<!-- Renovation -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>construction</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.renovations}}
+										</div>
+									</div>
+
+									<!-- Appliances -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>kitchen</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.appliances}}
+										</div>
+									</div>
+
+									<!-- Utilities -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>water_drop</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.utilities}}
+										</div>
+									</div>
+
+									<!-- Property Type -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>holiday_village</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.propertyTypes}}
+										</div>
+									</div>
+
+									<!-- Building Type -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>home_work</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.buildingTypes}}
+										</div>
+									</div>
+
+									<!-- Nearby -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>map</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.nearbys}}
+										</div>
+									</div>
+								</div>
+
+								<div
+									*ngIf="type ===  'Monthly Rent' || 'Daily Rent'"
+								>
+									<!-- Pets -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>pets</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.pets}}
+										</div>
+									</div>
+								</div>
+								<div *ngIf="type === 'Daily Rent'">
+									<!-- Sleeping Places -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>hotel</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.sleepingPlaces}}
+										</div>
+									</div>
+									<!-- Price Per Day -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-text">
+											$ {{property.pricePerDay}}
+										</div>
+									</div>
+								</div>
+								<div *ngIf="type ===  'For Sale'">
+									<!-- Price -->
+									<div class="documents__price">
+										$ {{property.price}}
+									</div>
+								</div>
+								<div *ngIf="type ===   'Partial Sale'">
+									<!-- Price Per Partial Period -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-text">
+											$ {{property.pricePerPartial}}
+										</div>
+									</div>
+								</div>
+								<div *ngIf="type ===  'Monthly Rent' ">
+									<!-- Price Per Month -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-text">
+											$ {{property.pricePerMountly}}
+										</div>
+									</div>
+								</div>
+								<div *ngIf="type ===  'Auction Sale'">
+									<!-- Minimum Bid Increment -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons">
+												attach_money</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											Bid:
+											{{property.minimumbidincrement}}
+										</div>
+									</div>
+
+									<!-- Auction Rules -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>gavel</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.auctionrules}}
+										</div>
+									</div>
+
+									<!-- Auction Date -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-icon">
+											<span class="material-icons"
+												>event</span
+											>
+										</div>
+										<div class="documents-prop-text">
+											{{property.auctiondate | date:
+											'mediumDate'}}
+										</div>
+									</div>
+
+									<!-- Starting Price -->
+									<div class="documents-prop-wrap">
+										<div class="documents-prop-text">
+											$ {{property.startingprice}}
+										</div>
+									</div>
+								</div>
+								<div class="documents-block-img">
+									<img src="assets/prop.jpg" alt="" />
 								</div>
 							</div>
 						</div>

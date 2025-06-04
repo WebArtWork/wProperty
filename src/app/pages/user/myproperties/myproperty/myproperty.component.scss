@@ -88,8 +88,25 @@
 .property-card__img {
 	border-radius: 10px;
 }
-@media screen and (max-width: 479px) {
-	.property-card__img {
-		flex: 0 0 130px;
+@media screen and (max-width: 767px) {
+	.property-links__wrap {
+		margin-bottom: 10px;
 	}
+}
+@media screen and (max-width: 479px) {
+	.property-card-wrap {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.property-card__img {
+		flex: 0 0 100%;
+		max-width: 260px;
+		img{
+			height: 150px;
+		}
+	}
+	.property-card__text {
+		padding: 10px 0 0 0;
+	}
+
 }

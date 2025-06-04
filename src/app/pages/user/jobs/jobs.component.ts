@@ -6,6 +6,7 @@ import { propertyjobFormComponents } from 'src/app/modules/propertyjob/formcompo
 import { Propertyjob } from 'src/app/modules/propertyjob/interfaces/propertyjob.interface';
 import { PropertyjobService } from 'src/app/modules/propertyjob/services/propertyjob.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { CoreService } from 'wacom';
 
 @Component({
 	templateUrl: './jobs.component.html',
@@ -17,7 +18,16 @@ export class JobsComponent {
 		? this._router.url.replace('/jobs/', '')
 		: null;
 
-	pagesTabs = [
+	pagesTabs = (this._core.isMobile()
+		? []
+		: [
+				{
+					name: '',
+					icon: 'add',
+					click: this.create.bind(this)
+				}
+		  ]
+	).concat([
 		{
 			name: 'Materials',
 			icon: 'build',
@@ -39,7 +49,7 @@ export class JobsComponent {
 				this._router.navigateByUrl('/services');
 			}
 		}
-	];
+	]);
 
 	jobsTabs = [
 		{
@@ -81,6 +91,7 @@ export class JobsComponent {
 		private _jobService: PropertyjobService,
 		private _formService: FormService,
 		public userService: UserService,
+		private _core: CoreService,
 		private _router: Router
 	) {
 		this._load(this._mineQuery());
