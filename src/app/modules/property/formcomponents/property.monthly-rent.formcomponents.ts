@@ -122,30 +122,48 @@ export const propertyMonthlyRentFormComponents = {
 			]
 		},
 		{
-			name: 'Number',
+			name: 'Select',
 			key: 'rooms',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter number of rooms'
+					value: 'Select number of room'
 				},
 				{
-					name: 'Label',
-					value: 'Rooms'
+					name: 'Items',
+					value: ['1 room', '2 rooms', '3+ rooms']
 				}
 			]
 		},
 		{
-			name: 'Number',
+			name: 'Select',
 			key: 'floors',
+			focused: false,
 			fields: [
 				{
 					name: 'Placeholder',
-					value: 'Enter floor number'
+					value: 'Select floor'
 				},
 				{
-					name: 'Label',
-					value: 'Floor'
+					name: 'Items',
+					value: [
+						'1',
+						'2',
+						'3',
+						'4',
+						'5',
+						'6',
+						'7',
+						'8',
+						'9',
+						'10',
+						'11',
+						'12',
+						'13',
+						'14',
+						'15'
+					]
 				}
 			]
 		},

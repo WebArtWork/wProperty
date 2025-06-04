@@ -94,28 +94,73 @@ export class HubComponent {
 		}
 	}
 
-	load() {
-		this._propertyService
-			.get({
-				query: this.obj2query({
-					types: this.type,
-					propertyTypes: this.selectedPropertyTypes,
-					rooms: this.selectedRooms,
-					floors: this.selectedFloors,
-					areas: this.selectedAreas,
-					buildingTypes: this.selectedBuildingTypes,
-					renovations: this.selectedRenovations,
-					appliances: this.selectedAppliances,
-					utilities: this.selectedUtilities,
-					nearbys: this.selectedNearbys,
-					prices: this.selectedPrices,
-					pets: this.selectedPets,
-					sleepingPlaces: this.selectedSleepingPlaces
-				})
-			})
-			.subscribe((properties) => (this.properties = properties));
+	/**price and area filtering */
+
+	areaMap: Record<string, [number, number]> = {
+		'Up to 30 m²': [0, 30],
+		'31 - 50 m²': [31, 50],
+		'51 - 70 m²': [51, 70],
+		'71 - 100 m²': [71, 100],
+		'101 - 150 m²': [101, 150],
+		'Above 150 m²': [151, Infinity]
+	};
+
+	priceMap: Record<string, [number, number]> = {
+		'Up to 500,000': [0, 500000],
+		'500,000 - 1,000,000': [500000, 1000000],
+		'Above 1,000,000': [1000001, Infinity]
+	};
+	getRangeBounds(selected: string[], map: Record<string, [number, number]>) {
+		let min = Infinity;
+		let max = -Infinity;
+
+		selected.forEach((label) => {
+			const [low, high] = map[label];
+			min = Math.min(min, low);
+			max = Math.max(max, high);
+		});
+
+		return min === Infinity || max === -Infinity ? null : [min, max];
 	}
 
+	load(): void {
+		const areaRange = this.getRangeBounds(this.selectedAreas, this.areaMap);
+		const priceRange = this.getRangeBounds(
+			this.selectedPrices,
+			this.priceMap
+		);
+
+		const query = this.obj2query({
+			types: this.type,
+			propertyTypes: this.selectedPropertyTypes,
+			rooms: this.selectedRooms,
+			floors: this.selectedFloors,
+			buildingTypes: this.selectedBuildingTypes,
+			renovations: this.selectedRenovations,
+			appliances: this.selectedAppliances,
+			utilities: this.selectedUtilities,
+			nearbys: this.selectedNearbys,
+			pets: this.selectedPets,
+			sleepingPlaces: this.selectedSleepingPlaces
+			// НЕ додавайте prices і areas сюди
+		});
+
+		this._propertyService.get({ query }).subscribe((all: Property[]) => {
+			this.properties = all.filter((prop) => {
+				const area = Number(prop.areas);
+				const price = Number(prop.price);
+
+				const areaMatch =
+					!areaRange ||
+					(area >= areaRange[0] && area <= areaRange[1]);
+				const priceMatch =
+					!priceRange ||
+					(price >= priceRange[0] && price <= priceRange[1]);
+
+				return areaMatch && priceMatch;
+			});
+		});
+	}
 	obj2query(
 		obj: Record<string, string | number | string[] | number[]>
 	): string {

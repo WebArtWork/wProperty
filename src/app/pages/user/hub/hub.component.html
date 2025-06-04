@@ -161,7 +161,9 @@
 						[items]="prices"
 						class="mb-10"
 					></wselect>
-					<div *ngIf="type ===  'Monthly Rent' || 'Daily Rent'">
+					<div
+						*ngIf="type ===  'Monthly Rent' || type ==='Daily Rent'"
+					>
 						<!-- Pets -->
 						<wselect
 							(modelChange)="selectedPets = $event; load()"
@@ -247,7 +249,7 @@
 											>
 										</div>
 										<div class="documents-prop-text">
-											rooms: {{property.rooms}}
+											{{property.rooms}}
 										</div>
 									</div>
 
@@ -337,7 +339,7 @@
 								</div>
 
 								<div
-									*ngIf="type ===  'Monthly Rent' || 'Daily Rent'"
+									*ngIf="type ===  'Monthly Rent' || type === 'Daily Rent'"
 								>
 									<!-- Pets -->
 									<div class="documents-prop-wrap">
