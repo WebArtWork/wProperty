@@ -18,7 +18,19 @@ export const environment = {
 		password: '',
 		resetPin: null
 	},
-	defaultLanguageCode: 'ua',
+	defaultLanguageCode: 'uk',
+	languages: [
+		{
+			code: 'en',
+			name: 'English',
+			origin: 'English'
+		},
+		{
+			code: 'uk',
+			name: 'Українська',
+			origin: 'Українська'
+		}
+	],
 	userFields: ['property'], // userService.user.data['property]['anId']l userService.updateMe()
 	userForm: [
 		{

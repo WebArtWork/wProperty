@@ -7,4 +7,10 @@ export interface Propertyjob extends CrudDocument {
 	deadline: string;
 	property: string;
 	status: string;
+	services: {
+		id: number;
+	}[];
+	materials: {
+		id: number;
+	}[];
 }

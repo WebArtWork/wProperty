@@ -7,6 +7,8 @@ import { Propertyjob } from 'src/app/modules/propertyjob/interfaces/propertyjob.
 import { PropertyjobService } from 'src/app/modules/propertyjob/services/propertyjob.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService } from 'wacom';
+import { serviceById } from 'src/app/core/consts/services.const';
+import { materialById } from 'src/app/core/consts/materials.const';
 
 @Component({
 	templateUrl: './jobs.component.html',
@@ -14,6 +16,10 @@ import { CoreService } from 'wacom';
 	standalone: false
 })
 export class JobsComponent {
+	readonly serviceById = serviceById;
+
+	readonly materialById = materialById;
+
 	property_id = this._router.url.includes('jobs/')
 		? this._router.url.replace('/jobs/', '')
 		: null;
@@ -85,7 +91,7 @@ export class JobsComponent {
 		}
 	];
 
-	services: Propertyjob[] = [];
+	jobs: Propertyjob[] = [];
 
 	constructor(
 		private _jobService: PropertyjobService,
@@ -127,7 +133,7 @@ export class JobsComponent {
 
 		this._jobService
 			.get({ query }, { name })
-			.subscribe((services) => (this.services = services));
+			.subscribe((jobs) => (this.jobs = jobs));
 	}
 
 	private _mineQuery(): string {
