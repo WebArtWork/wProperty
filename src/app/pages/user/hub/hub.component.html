@@ -161,24 +161,29 @@
 						[items]="prices"
 						class="mb-10"
 					></wselect>
-					<!-- Pets -->
-					<wselect
-						(modelChange)="selectedPets = $event; load()"
-						placeholder="Pets"
-						[clearable]="true"
-						[multiple]="true"
-						[items]="pets"
-						class="mb-10"
-					></wselect>
-					<!-- Pets -->
-					<wselect
-						(modelChange)="selectedSleepingPlaces = $event; load()"
-						placeholder="SleepingPlaces"
-						[clearable]="true"
-						[multiple]="true"
-						[items]="sleepingPlaces"
-						class="mb-10"
-					></wselect>
+					<div *ngIf="type ===  'Monthly Rent' || 'Daily Rent'">
+						<!-- Pets -->
+						<wselect
+							(modelChange)="selectedPets = $event; load()"
+							placeholder="Pets"
+							[clearable]="true"
+							[multiple]="true"
+							[items]="pets"
+							class="mb-10"
+						></wselect>
+					</div>
+
+					<div *ngIf="type === 'Daily Rent'">
+						<!-- SleepingPlaces -->
+						<wselect
+							(modelChange)="selectedSleepingPlaces = $event; load()"
+							placeholder="SleepingPlaces"
+							[clearable]="true"
+							[multiple]="true"
+							[items]="sleepingPlaces"
+							class="mb-10"
+						></wselect>
+					</div>
 				</div>
 			</div>
 
@@ -230,7 +235,7 @@
 											>
 										</div>
 										<div class="documents-prop-text">
-											{{property.areas}}
+											area: {{property.areas}} м²
 										</div>
 									</div>
 
@@ -242,7 +247,7 @@
 											>
 										</div>
 										<div class="documents-prop-text">
-											{{property.rooms}}
+											rooms: {{property.rooms}}
 										</div>
 									</div>
 
@@ -254,7 +259,7 @@
 											>
 										</div>
 										<div class="documents-prop-text">
-											{{property.floors}}
+											floor: {{property.floors}}
 										</div>
 									</div>
 
