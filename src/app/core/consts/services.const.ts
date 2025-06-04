@@ -345,3 +345,9 @@ export const services: Service[] = [
 		]
 	}
 ];
+
+export const serviceById: Record<number, Service> = {};
+
+for (const service of services) {
+	serviceById[service.id] = service;
+}

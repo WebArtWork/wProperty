@@ -402,3 +402,9 @@ export const materials: Material[] = [
 			'Sand-Lime Brick is commonly used in construction and renovation projects for its practical application.'
 	}
 ];
+
+export const materialById: Record<number, Material> = {};
+
+for (const material of materials) {
+	materialById[material.id] = material;
+}

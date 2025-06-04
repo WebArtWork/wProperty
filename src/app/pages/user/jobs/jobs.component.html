@@ -21,21 +21,29 @@
 					></wtab>
 
 					<div
-						routerLink="/job/{{service._id}}"
-						*ngFor="let service of services"
+						routerLink="/job/{{job._id}}"
+						*ngFor="let job of jobs"
 						class="documents-main-row"
 					>
-						<div class="documents__title">{{service.name}}</div>
+						<div class="documents__title">{{job.name}}</div>
 						<div class="documents__description">
-							{{service.description}} {{service.status}}
+							{{job.description}} {{job.status}}
 						</div>
 						<div class="documents-tags">
 							<div
 								class="documents-tags__wrap"
-								*ngFor="let tag of [{}, {}, {}, {}, {}]"
+								*ngFor="let service of job.services"
 							>
 								<div class="documents-tags__item">
-									Smth here
+									{{serviceById[service.id].name}}
+								</div>
+							</div>
+							<div
+								class="documents-tags__wrap"
+								*ngFor="let material of job.materials"
+							>
+								<div class="documents-tags__item">
+									{{materialById[material.id].name}}
 								</div>
 							</div>
 						</div>
