@@ -195,10 +195,14 @@
 						*ngFor="let property of properties"
 						class="documents-main-row"
 					>
-						<div class="documents-block-list">
+						<a
+							routerLink="/property/{{property._id}}"
+							class="documents-block-list"
+							style="text-decoration: none; color: inherit"
+						>
 							<div class="documents-block-text">
 								<div
-									*ngIf="type === 'For sale'|| 'Partial Sale' || 'Monthly Rent' || 'Daily Rent'|| 'Auction Sale'"
+									*ngIf="type === 'For sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
 								>
 									<!-- Property Title -->
 									<div class="documents__name">
@@ -339,7 +343,7 @@
 								</div>
 
 								<div
-									*ngIf="type ===  'Monthly Rent' || type === 'Daily Rent'"
+									*ngIf="type === 'Monthly Rent' || type === 'Daily Rent'"
 								>
 									<!-- Pets -->
 									<div class="documents-prop-wrap">
@@ -353,6 +357,7 @@
 										</div>
 									</div>
 								</div>
+
 								<div *ngIf="type === 'Daily Rent'">
 									<!-- Sleeping Places -->
 									<div class="documents-prop-wrap">
@@ -365,6 +370,7 @@
 											{{property.sleepingPlaces}}
 										</div>
 									</div>
+
 									<!-- Price Per Day -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -372,13 +378,15 @@
 										</div>
 									</div>
 								</div>
-								<div *ngIf="type ===  'For Sale'">
+
+								<div *ngIf="type === 'For Sale'">
 									<!-- Price -->
 									<div class="documents__price">
 										$ {{property.price}}
 									</div>
 								</div>
-								<div *ngIf="type ===   'Partial Sale'">
+
+								<div *ngIf="type === 'Partial Sale'">
 									<!-- Price Per Partial Period -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -386,7 +394,8 @@
 										</div>
 									</div>
 								</div>
-								<div *ngIf="type ===  'Monthly Rent' ">
+
+								<div *ngIf="type === 'Monthly Rent'">
 									<!-- Price Per Month -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -394,12 +403,13 @@
 										</div>
 									</div>
 								</div>
-								<div *ngIf="type ===  'Auction Sale'">
+
+								<div *ngIf="type === 'Auction Sale'">
 									<!-- Minimum Bid Increment -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-icon">
-											<span class="material-icons">
-												attach_money</span
+											<span class="material-icons"
+												>attach_money</span
 											>
 										</div>
 										<div class="documents-prop-text">
@@ -440,11 +450,12 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="documents-block-img">
 									<img src="assets/prop.jpg" alt="" />
 								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>

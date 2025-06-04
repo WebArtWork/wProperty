@@ -14,6 +14,7 @@ import { AuthenticatedGuard } from './core/guards/authenticated.guard';
 import { GuestGuard } from './core/guards/guest.guard';
 import { AdminsGuard } from './core/guards/admins.guard';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HubInfoComponent } from './pages/user/hub-info/hub-info.component';
 
 const routes: Routes = [
 	{
@@ -49,6 +50,19 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'hubInfo',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'HubInfo'
+					}
+				},
+				loadChildren: () =>
+					import('./pages/user/hub-info/hub-info.module').then(
+						(m) => m.HubInfoModule
+					)
+			},
+			{
 				path: 'schedule',
 				canActivate: [MetaGuard],
 				data: {
@@ -56,8 +70,11 @@ const routes: Routes = [
 						title: 'Schedule'
 					}
 				},
-				loadChildren: () => import('./pages/user/schedule/schedule.module').then(m => m.ScheduleModule)
-			}, 
+				loadChildren: () =>
+					import('./pages/user/schedule/schedule.module').then(
+						(m) => m.ScheduleModule
+					)
+			},
 			{
 				path: 'hub',
 				canActivate: [MetaGuard],

@@ -1,46 +1,46 @@
 <div class="propperty-p">
 	<div class="documents-wrapper">
-	<div class="documents-container">
-		<div class="documents-list">
-			<div class="documents-header">
-				<div class="documents-header-left">
-					<div class="documents-header-left__arrow">
-						<span class="material-icons">arrow_back_ios</span>
+		<div class="documents-container">
+			<div class="documents-list">
+				<div class="documents-header">
+					<div class="documents-header-left">
+						<div class="documents-header-left__arrow">
+							<span class="material-icons">arrow_back_ios</span>
+						</div>
+						<div
+							routerlink="/profile"
+							class="documents-header-left__avatar"
+							tabindex="0"
+							ng-reflect-router-link="/profile"
+						>
+							<img alt="" src="assets/default.png" />
+						</div>
 					</div>
-					<div
-						routerlink="/profile"
-						class="documents-header-left__avatar"
-						tabindex="0"
-						ng-reflect-router-link="/profile"
-					>
-						<img alt="" src="assets/default.png" />
+					<div class="documents-header__title" translate>
+						Myproperties.My properties
+					</div>
+					<div class="burger-wrap">
+						<i class="material-icons" (click)="create()">add</i>
 					</div>
 				</div>
-				<div class="documents-header__title" translate>
-					Myproperties.My properties
-				</div>
-				<div class="burger-wrap">
-					<i class="material-icons" (click)="create()">add</i>
-				</div>
-			</div>
-			<div class="documents-main">
-				<div class="documents-main-content">
-					<div
-						*ngFor="let property of properties"
-						class="documents-main-row"
-					>
-						<app-myproperty
-							[property]="property"
-							(load)="load()"
-						></app-myproperty>
+				<div class="documents-main">
+					<div class="documents-main-content">
+						<div
+							*ngFor="let property of properties"
+							class="documents-main-row"
+						>
+							<app-myproperty
+								[property]="property"
+								(load)="load()"
+							></app-myproperty>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<!--
+	<!--
 <wbutton type="danger">danger</wbutton>
 <wbutton> 213123</wbutton>
 <wbutton type="secondary">secondary</wbutton>
@@ -51,5 +51,4 @@
 <wbutton type="dark">dark</wbutton>
 <wbutton type="link">link</wbutton>
 
--->
-</div>
+--></div>
