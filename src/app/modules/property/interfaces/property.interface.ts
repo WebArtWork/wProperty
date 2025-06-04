@@ -24,7 +24,7 @@ export interface Property extends CrudDocument {
 	pets: String;
 	minimumbidincrement: Number;
 	auctionrules: String;
-	auctiondate: Number;
+	auctiondate: Date;
 	startingprice: Number;
 	price: Number;
 	pricePerDay: Number;
