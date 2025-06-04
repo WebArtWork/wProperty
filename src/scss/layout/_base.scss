@@ -911,7 +911,23 @@ wform {
 		}
     }
 }
-
+.documents_materials_box, .documents_services_box{
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+        transform: scale(1.03);
+    }
+}
+.services{
+    &__img{
+        img{
+            height: 180px;
+        }
+    }
+    &__description{
+        padding-top: 5px;
+    }
+}
 .services-main-wrapper{
     display: flex;
     flex-flow: row wrap;
