@@ -196,29 +196,18 @@
 						class="documents-main-row"
 					>
 						<a
-							routerLink="/property/{{property._id}}"
+							[routerLink]="['/hubInfo']"
+							[state]="{ property: property, type: type }"
 							class="documents-block-list"
 							style="text-decoration: none; color: inherit"
 						>
 							<div class="documents-block-text">
 								<div
-									*ngIf="type === 'For sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
+									*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
 								>
 									<!-- Property Title -->
 									<div class="documents__name">
 										{{property.name}}
-									</div>
-
-									<!-- Description -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>description</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.description}}
-										</div>
 									</div>
 
 									<!-- Address -->
@@ -232,145 +221,9 @@
 											{{property.address}}
 										</div>
 									</div>
-
-									<!-- Area -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>square_foot</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											area: {{property.areas}} м²
-										</div>
-									</div>
-
-									<!-- Rooms -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>apartment</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.rooms}}
-										</div>
-									</div>
-
-									<!-- Floor -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>stairs</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											floor: {{property.floors}}
-										</div>
-									</div>
-
-									<!-- Renovation -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>construction</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.renovations}}
-										</div>
-									</div>
-
-									<!-- Appliances -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>kitchen</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.appliances}}
-										</div>
-									</div>
-
-									<!-- Utilities -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>water_drop</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.utilities}}
-										</div>
-									</div>
-
-									<!-- Property Type -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>holiday_village</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.propertyTypes}}
-										</div>
-									</div>
-
-									<!-- Building Type -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>home_work</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.buildingTypes}}
-										</div>
-									</div>
-
-									<!-- Nearby -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>map</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.nearbys}}
-										</div>
-									</div>
-								</div>
-
-								<div
-									*ngIf="type === 'Monthly Rent' || type === 'Daily Rent'"
-								>
-									<!-- Pets -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>pets</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.pets}}
-										</div>
-									</div>
 								</div>
 
 								<div *ngIf="type === 'Daily Rent'">
-									<!-- Sleeping Places -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>hotel</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.sleepingPlaces}}
-										</div>
-									</div>
-
 									<!-- Price Per Day -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -405,44 +258,6 @@
 								</div>
 
 								<div *ngIf="type === 'Auction Sale'">
-									<!-- Minimum Bid Increment -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>attach_money</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											Bid:
-											{{property.minimumbidincrement}}
-										</div>
-									</div>
-
-									<!-- Auction Rules -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>gavel</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.auctionrules}}
-										</div>
-									</div>
-
-									<!-- Auction Date -->
-									<div class="documents-prop-wrap">
-										<div class="documents-prop-icon">
-											<span class="material-icons"
-												>event</span
-											>
-										</div>
-										<div class="documents-prop-text">
-											{{property.auctiondate | date:
-											'mediumDate'}}
-										</div>
-									</div>
-
 									<!-- Starting Price -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">

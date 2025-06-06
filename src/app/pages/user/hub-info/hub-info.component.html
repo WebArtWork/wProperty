@@ -1,302 +1,211 @@
-<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+<div class="documents-wrapper documents-wrapper--open">
 	<div class="documents-container">
 		<div class="documents-list">
 			<div class="documents-header">
-				<div class="documents-header-left">
-					<div class="documents-header-left__arrow" (click)="back()">
-						<span class="material-icons">arrow_back_ios</span>
-					</div>
-					<div
-						class="documents-header-left__avatar"
-						routerLink="/profile"
-					>
-						<img [src]="userService.thumb" alt="" />
-					</div>
-				</div>
-				<div class="documents-header__title">Title header</div>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="burger-wrap"
-					class="burger-wrap"
-				>
-					<div
-						[class.burger--close]="isMenuOpen"
-						class="burger"
-					></div>
+				<div class="documents-header__title">
+					Property: {{ property.name }}
 				</div>
 			</div>
-			<div
-				[class.documents-sidebar--open]="isMenuOpen"
-				class="documents-sidebar"
-			>
-				<div
-					(click)="isMenuOpen = !isMenuOpen"
-					class="documents-sidebar__close"
-				>
-					<span class="material-icons">close</span>
-				</div>
-				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						Title of sidebar...
-					</div>
-					<div class="documents-sidebar__description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Sint molestiae consequatur quae. Modi corporis rem amet
-						tempore debitis assumenda minima repellat labore
-						expedita quam. Itaque accusamus culpa ullam
-						necessitatibus nisi.
-					</div>
-				</div>
-			</div>
+
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
-						<div class="documents__description">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Mollitia voluptatum facilis sit
-							necessitatibus, rem consectetur pariatur sapiente
-							incidunt laudantium praesentium aut iste omnis
-							suscipit autem deleniti, nisi temporibus obcaecati
-							eligendi?
-						</div>
-					</div>
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
-						<div class="documents__description">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Mollitia voluptatum facilis sit
-							necessitatibus, rem consectetur pariatur sapiente
-							incidunt laudantium praesentium aut iste omnis
-							suscipit autem deleniti, nisi temporibus obcaecati
-							eligendi?
-						</div>
-						<div class="documents-tags">
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+						<div class="documents-block-text">
+							<div class="documents__name">
+								{{ property.name }}
+							</div>
+
+							<div
+								*ngIf="property.description"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">description</span>
+								<div class="documents-prop-text">
+									{{ property.description }}
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.address"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">location_on</span>
+								<div class="documents-prop-text">
+									{{ property.address }}
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.areas"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">square_foot</span>
+								<div class="documents-prop-text">
+									Area: {{ property.areas }} m²
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.rooms"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">apartment</span>
+								<div class="documents-prop-text">
+									{{ property.rooms }}
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.floors"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">stairs</span>
+								<div class="documents-prop-text">
+									Floor: {{ property.floors }}
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.renovations"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">construction</span>
+								<div class="documents-prop-text">
+									{{ property.renovations }}
 								</div>
 							</div>
-							<div class="documents-tags__wrap">
-								<div class="documents-tags__item">
-									Smth here
+
+							<div
+								*ngIf="property.appliances"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">kitchen</span>
+								<div class="documents-prop-text">
+									{{ property.appliances }}
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
-						<div class="documents-triggers">
-							<div class="documents-triggers__wrap">
-								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img src="/assets/default.png" alt="" />
-									</div>
-									<div class="documents-triggers__title">
-										Trigger title...
-									</div>
-									<div
-										class="documents-triggers__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit
-									</div>
+
+							<div
+								*ngIf="property.utilities"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">water_drop</span>
+								<div class="documents-prop-text">
+									{{ property.utilities }}
 								</div>
 							</div>
-							<div class="documents-triggers__wrap">
-								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img src="/assets/default.png" alt="" />
-									</div>
-									<div class="documents-triggers__title">
-										Trigger title...
-									</div>
-									<div
-										class="documents-triggers__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit
-									</div>
+
+							<div
+								*ngIf="property.propertyTypes"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons"
+									>holiday_village</span
+								>
+								<div class="documents-prop-text">
+									{{ property.propertyTypes }}
 								</div>
 							</div>
-							<div class="documents-triggers__wrap">
-								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img src="/assets/default.png" alt="" />
-									</div>
-									<div class="documents-triggers__title">
-										Trigger title...
-									</div>
-									<div
-										class="documents-triggers__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit
-									</div>
+
+							<div
+								*ngIf="property.buildingTypes"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">home_work</span>
+								<div class="documents-prop-text">
+									{{ property.buildingTypes }}
 								</div>
 							</div>
-							<div class="documents-triggers__wrap">
-								<div class="documents-triggers__item">
-									<div class="documents-triggers__img">
-										<img src="/assets/default.png" alt="" />
-									</div>
-									<div class="documents-triggers__title">
-										Trigger title...
-									</div>
-									<div
-										class="documents-triggers__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit
-									</div>
+
+							<div
+								*ngIf="property.nearbys"
+								class="documents-prop-wrap"
+							>
+								<span class="material-icons">map</span>
+								<div class="documents-prop-text">
+									{{ property.nearbys }}
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
-						<div class="documents-wrap">
-							<div class="documents-img">
-								<img src="/assets/default.png" alt="" />
-							</div>
-							<div class="documents-text">
-								<div class="documents-text__title">
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit.
-								</div>
-								<div class="documents-text__description">
-									<p>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Tenetur accusantium
-										quis minus mollitia voluptatum illo hic
-										laborum laboriosam et commodi. Quas
-										nulla doloribus mollitia vero nostrum
-										laudantium dolores quidem provident.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur,
-										adipisicing elit. Sunt accusantium
-										eveniet quo? Minus quisquam odit magnam
-										nulla.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur,
-										adipisicing elit. Sunt accusantium
-										eveniet quo? Minus quisquam odit magnam
-										nulla.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="documents-main-row">
-						<div class="documents__title">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.
-						</div>
-						<a href="" class="documents__btn">Press button</a>
-					</div>
-					<div class="documents-main-row">
-						<div class="documents-products-list">
-							<div class="documents-products__wrap">
-								<div class="documents-products__item">
-									<div class="documents-products__img">
-										<img src="assets/logo.png" alt="" />
+
+							<!-- Типові блоки -->
+							<ng-container [ngSwitch]="type">
+								<ng-container *ngSwitchCase="'Monthly Rent'">
+									<div class="documents-prop-wrap">
+										<span class="material-icons">pets</span>
+										<div class="documents-prop-text">
+											{{ property.pets }}
+										</div>
 									</div>
-									<div class="documents-products__title">
-										Title of product card here
+									<div class="documents-prop-text">
+										${{ property.pricePerMountly }}
 									</div>
-									<div
-										class="documents-products__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Optio nesciunt
-										voluptates reiciendis sequi assumenda?
-										Illo porro qui ducimus sint provident
-										amet, molestias ut eligendi quod cumque,
-										laudantium dicta quasi. Iure!
+								</ng-container>
+
+								<ng-container *ngSwitchCase="'Daily Rent'">
+									<div class="documents-prop-wrap">
+										<span class="material-icons"
+											>hotel</span
+										>
+										<div class="documents-prop-text">
+											{{ property.sleepingPlaces }}
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="documents-products__wrap">
-								<div class="documents-products__item">
-									<div class="documents-products__img">
-										<img src="assets/logo.png" alt="" />
+									<div class="documents-prop-text">
+										${{ property.pricePerDay }}
 									</div>
-									<div class="documents-products__title">
-										Title of product card here
+								</ng-container>
+
+								<ng-container *ngSwitchCase="'For Sale'">
+									<div class="documents-prop-text">
+										${{ property.price }}
 									</div>
-									<div
-										class="documents-products__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Optio nesciunt
-										voluptates reiciendis sequi assumenda?
-										Illo porro qui ducimus sint provident
-										amet, molestias ut eligendi quod cumque,
-										laudantium dicta quasi. Iure!
+								</ng-container>
+
+								<ng-container *ngSwitchCase="'Partial Sale'">
+									<div class="documents-prop-text">
+										${{ property.pricePerPartial }}
 									</div>
-								</div>
-							</div>
-							<div class="documents-products__wrap">
-								<div class="documents-products__item">
-									<div class="documents-products__img">
-										<img src="assets/logo.png" alt="" />
+								</ng-container>
+
+								<ng-container *ngSwitchCase="'Auction Sale'">
+									<div class="documents-prop-wrap">
+										<span class="material-icons"
+											>attach_money</span
+										>
+										<div class="documents-prop-text">
+											Bid: {{ property.minimumbidincrement
+											}}
+										</div>
 									</div>
-									<div class="documents-products__title">
-										Title of product card here
+									<div class="documents-prop-wrap">
+										<span class="material-icons"
+											>gavel</span
+										>
+										<div class="documents-prop-text">
+											{{ property.auctionrules }}
+										</div>
 									</div>
-									<div
-										class="documents-products__description"
-									>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Optio nesciunt
-										voluptates reiciendis sequi assumenda?
-										Illo porro qui ducimus sint provident
-										amet, molestias ut eligendi quod cumque,
-										laudantium dicta quasi. Iure!
+									<div class="documents-prop-wrap">
+										<span class="material-icons"
+											>event</span
+										>
+										<div class="documents-prop-text">
+											{{ property.auctiondate | date:
+											'mediumDate' }}
+										</div>
 									</div>
-								</div>
+									<div class="documents-prop-text">
+										${{ property.startingprice }}
+									</div>
+								</ng-container>
+							</ng-container>
+
+							<!-- Зображення -->
+							<div class="documents-block-img">
+								<img
+									src="assets/prop.jpg"
+									alt="Property Image"
+								/>
 							</div>
 						</div>
 					</div>
