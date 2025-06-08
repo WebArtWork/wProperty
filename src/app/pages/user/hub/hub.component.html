@@ -203,10 +203,11 @@
 						>
 							<div class="documents-block-text">
 								<div
-									*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
+								class="mb-20"	
+								*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
 								>
 									<!-- Property Title -->
-									<div class="documents__name">
+									<div class="documents__name mb-10">
 										{{property.name}}
 									</div>
 
@@ -223,7 +224,7 @@
 									</div>
 								</div>
 
-								<div *ngIf="type === 'Daily Rent'">
+								<div *ngIf="type === 'Daily Rent'" class="documents-block-text__rent">
 									<!-- Price Per Day -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -232,7 +233,7 @@
 									</div>
 								</div>
 
-								<div *ngIf="type === 'For Sale'">
+								<div *ngIf="type === 'For Sale'" class="documents-block-text__rent">
 									<!-- Price -->
 									<div class="documents__price">
 										$ {{property.price}}
@@ -266,10 +267,11 @@
 									</div>
 								</div>
 
-								<div class="documents-block-img">
+
+							</div>
+															<div class="documents-block-img">
 									<img src="assets/prop.jpg" alt="" />
 								</div>
-							</div>
 						</a>
 					</div>
 				</div>

@@ -25,14 +25,14 @@
 	gap: 10px;
 	padding: 10px;
 	margin-bottom: 20px;
-	background-color: #333;
+	background-color: var(--c-bg-secondary);
 	border-radius: 8px;
 }
 
 .stat-card {
 	display: flex;
 	align-items: center;
-	background-color: #252222;
+	background-color: var(--doc-products);
 	padding: 8px;
 	border-radius: 5px;
 	width: 23%;
@@ -49,11 +49,13 @@
 .stat-info {
 	display: flex;
 	flex-direction: column;
+	color: var(--c-text-primary);
 }
 
 .stat-number {
 	font-size: 14px;
 	font-weight: bold;
+	color: var(--c-text-primary);
 }
 
 .stat-label {

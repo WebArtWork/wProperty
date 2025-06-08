@@ -718,6 +718,9 @@ wform {
 		line-height: 1;
 		padding: 15px 0 10px 0;
 	}
+	&__description{
+		color: var(--c-text-primary);
+	}
 }
 .business-rating{
 	display: flex;
@@ -926,6 +929,7 @@ wform {
     }
     &__description{
         padding-top: 5px;
+		color: var(--c-text-primary);
     }
 }
 .services-main-wrapper{

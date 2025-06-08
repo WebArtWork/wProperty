@@ -20,7 +20,7 @@
     cursor: pointer;
     transition: all .3s;
     &:hover{
-        background: #343434a3;
+        background: var(--item-h);
     }
 }
 
@@ -36,6 +36,9 @@
 .hub-text{
     font-size: 28px;
     padding-left: 15px;
+    span{
+        color: var(--c-text-primary);
+    }
 }
 
 
@@ -70,5 +73,15 @@
     .documents__name {
         font-size: 18px;
         font-weight: 600;
+    }
+}
+@media screen and (max-width: 479px) {
+    .documents-block-img{
+        margin-bottom: 15px;
+        max-width: 190px;
+        img{
+            border-radius: 6px;
+            height: 140px;
+        }
     }
 }
