@@ -379,8 +379,8 @@ wform {
 			overflow-y: scroll;
 			scrollbar-width: none;
 			&::-webkit-scrollbar {
-				width: 0px; /* Для вертикальной полосы прокрутки */
-				height: 0px; /* Для горизонтальной полосы прокрутки */
+				width: 0px; 
+				height: 0px; 
 			}
 		}
 		&__img {
@@ -803,12 +803,22 @@ wform {
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 15px;
+	display: block;
 }
-.records-comments{
-	background: #aec1e747;
-    border-radius: 5px;
-    padding: 2px 5px;
-    margin: 5px 0;
+.records{
+	&-comments{
+		background: #aec1e747;
+		border-radius: 5px;
+		padding: 2px 5px;
+		margin: 5px 0;
+		color: var(--c-text-primary);
+	}
+	&__bottom{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 15px;
+	}
 }
 .materials-search{
 	position: relative;
@@ -844,7 +854,24 @@ wform {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
-
+.documents-time{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	color: var(--c-text-primary);
+	&__icon{
+		display: flex;
+		span{
+			font-size: 23px;
+		}
+	}
+	&__text{
+		flex: 1 0;
+		padding-left: 7px;
+		font-size: 15px;
+		font-weight: 600;
+	}
+}
 .documents-sidebar-btns{
     display: flex;
     justify-content: space-between;
@@ -952,6 +979,122 @@ wform {
     }
 }
 
+
+.property {
+	&__img {
+		margin-bottom: 10px;
+		img {
+			width: 300px;
+			height: 185px;
+			border-radius: 6px;
+			object-fit: cover;
+		}
+	}
+	&__name {
+		.documents__title {
+			color: #aec1e7;
+			font-size: 18px;
+		}
+	}
+	&-loc {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		margin-bottom: 10px;
+		&__title {
+			flex: 1 0;
+		}
+		.documents__title {
+			padding: 0 0 0 7px;
+		}
+		&__img {
+			width: 28px;
+			height: 28px;
+			background: rgb(88 141 244 / 21%);
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			span {
+				display: flex;
+				color: #aec1e7;
+				font-size: 20px;
+			}
+		}
+	}
+	&-links {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		padding-top: 10px;
+		&__wrap {
+			margin-right: 10px;
+			padding-right: 10px;
+			border-right: 1px solid var(--c-text-primary);
+			cursor: pointer;
+			&:last-child {
+				border: unset;
+			}
+			span {
+				display: flex;
+				font-size: 26px;
+				color: var(--c-text-primary);
+				transition: all .3s;
+				&:hover{
+					color: #aec1e7;
+				}
+			}
+		}
+	}
+}
+
+.property-card-wrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+.property-card {
+	&__text {
+		flex: 1 0;
+		padding-left: 10px;
+	}
+	&__img {
+		flex: 0 0 200px;
+		img {
+			border-radius: 10px;
+		}
+	}
+}
+.property-loc__title {
+	font-size: 16px;
+}
+.property-card__img {
+	border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+	.property-links__wrap {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (max-width: 479px) {
+	.property-card-wrap {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.property-card__img {
+		flex: 0 0 100%;
+		max-width: 260px;
+		img{
+			height: 150px;
+		}
+	}
+	.property-card__text {
+		padding: 10px 0 0 0;
+	}
+
+}
+
+
+
 @media screen and (max-width: 1199px) {
 	.documents-sidebar {
 		flex: 0 0 240px;
@@ -971,18 +1114,21 @@ wform {
 }
 @media screen and (max-width: 991px) {
 	.documents-sidebar {
-		flex: 0 0 100%;
-		max-width: 100%;
-		height: 0;
-		border-radius: 12px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		margin: 5px;
-		transition: all 0.3s;
-		overflow: hidden;
+        flex: 0 0 99%;
+        max-width: 98%;
+        height: 0;
+        border-radius: 12px;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        transition: all 0.3s;
+        overflow: hidden;
+		border: 1px solid unset;
 		&--open {
 			height: calc(100% - 75px);
+			border: 1px solid var(--c-border);
 		}
 	}
 	.documents-sidebar-content {
@@ -1062,7 +1208,7 @@ wform {
 		padding: 30px 0 0 0;
 	}
 	.documents-main-row {
-		padding: 10px 30px 20px 15px;
+		padding: 12px
 	}
 	.documents-products__wrap{
 		flex: 0 0 50%;

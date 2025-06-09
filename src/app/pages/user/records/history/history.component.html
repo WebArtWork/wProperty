@@ -1,12 +1,32 @@
-<a routerLink="/propertyhistory/{{record._id}}">
-	<div class="documents_name">name</div>
-	<div class="documents_responsible">responsible</div>
-	<div class="documents_description">description</div>
-	<div class="documents_comments">comments</div>
-	<div class="documents_expenses">expenses</div>
-	<div class="documents__description">
-		{{record._id|mongodate|date:'d MMMM y'}}
+<a routerLink="/propertyhistory/{{record._id}}" >
+	<div class="documents__name records-title">name</div>
+	<div class="documents__description records__description">description</div>
+	<div class="materials-wrapper">
+		<div class="materials-wrapper__icon"></div>
+		<div class="materials-wrapper__text"> Responsible: <span class="">5 years</span>
+		</div>
+	</div>
+
+	<div class="documents__comments records-comments"> Comments block lorem ipsjun asdsadsad </div>
+	<div class="records__bottom">
+		<div class="documents__price records__price"> $expenses </div>
+		<div class="documents-time">
+			<div class="documents-time__icon">
+				<span class="material-icons">calendar_today</span>
+			</div>
+			<div class="documents-time__text">
+				{{record._id|mongodate|date:'d MMMM y'}}
+			</div>
+		</div>
 	</div>
 </a>
-<span (click)="update()" class="material-icons">edit</span>
-<span (click)="delete()" class="material-icons">delete</span>
+<div class="property-links">
+	<div class="property-links__wrap">
+		<span (click)="update()" class="material-icons">edit</span>
+	</div>
+	<div class="property-links__wrap">
+		<span (click)="delete()" class="material-icons">delete</span>
+	</div>
+</div>
+
+

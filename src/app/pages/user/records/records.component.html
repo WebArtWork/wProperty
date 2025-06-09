@@ -1,24 +1,50 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
 	<div class="documents-container">
 		<div class="documents-list">
-			<div
-				class="burger-wrap"
-				(click)="isMenuOpen = !isMenuOpen"
-				[class.burger-wrap--open]="isMenuOpen"
-			>
-				<div class="burger" [class.burger--close]="isMenuOpen"></div>
+			<div class="documents-header">
+				<div class="documents-header-left">
+					<div class="documents-header-left__arrow">
+						<span class="material-icons">arrow_back_ios</span>
+					</div>
+					<div
+						routerlink="/profile"
+						class="documents-header-left__avatar"
+						tabindex="0"
+						ng-reflect-router-link="/profile"
+					>
+						<img alt="" src="assets/default.png" />
+					</div>
+				</div>
+				<div class="documents-header__title">Title header</div>
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
+					<div
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
 			</div>
 			<div
 				class="documents-sidebar"
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
+				<div
+					(click)="isMenuOpen = !isMenuOpen"
+					class="documents-sidebar__close"
+				>
+					<span class="material-icons">close</span>
+				</div>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__img">
 						<img src="assets/default.png" alt="Sidebar Image" />
 					</div>
 					<div class="documents-sidebar__title">Records</div>
 					<div class="documents-sidebar__description">
-						<wbutton (click)="create()">Create</wbutton>
+						<wbutton (click)="create()" class="mb-10">Create</wbutton>
 
 						<wselect
 							[items]=" [
@@ -44,6 +70,7 @@
 						<app-history
 							[record]="record"
 							(load)="load()"
+							class="documents_records_box"
 						></app-history>
 					</div>
 				</div>
