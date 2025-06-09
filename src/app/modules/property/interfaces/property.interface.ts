@@ -1,6 +1,8 @@
 import { CrudDocument } from 'wacom';
+import { User } from 'src/app/modules/user/interfaces/user.interface';
 
 export interface Property extends CrudDocument {
+	author: string;
 	isForSale?: boolean;
 	isPartialSale?: boolean;
 	isMonthlyRent?: boolean;

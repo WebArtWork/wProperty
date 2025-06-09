@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CoreModule } from 'src/app/core/core.module';
-import { HubInfoComponent } from './hub-info.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HubInfoComponent } from './hub-info.component';
 
 const routes: Routes = [
 	{
@@ -11,6 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes), CoreModule]
+	imports: [RouterModule.forChild(routes), CoreModule],
+	exports: [RouterModule]
 })
 export class HubInfoModule {}
