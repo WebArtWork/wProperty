@@ -5,7 +5,6 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 import { Router } from '@angular/router';
 import { CoreService } from 'wacom';
 import { Propertyjob } from 'src/app/modules/propertyjob/interfaces/propertyjob.interface';
-import { propertyjobFormComponents } from 'src/app/modules/propertyjob/formcomponents/propertyjob.formcomponents';
 import { propertyjobproposalFormComponents } from 'src/app/modules/propertyjobproposal/formcomponents/propertyjobproposal.formcomponents';
 import { PropertyjobproposalService } from 'src/app/modules/propertyjobproposal/services/propertyjobproposal.service';
 import { PropertyjobService } from 'src/app/modules/propertyjob/services/propertyjob.service';
@@ -16,11 +15,11 @@ import { PropertyjobService } from 'src/app/modules/propertyjob/services/propert
 	standalone: false
 })
 export class JobComponent {
-	service_id = this._router.url.replace('/job/', '');
+	job_id = this._router.url.replace('/job/', '');
 
-	service: Propertyjob = this._jobService.new();
+	job: Propertyjob = this._jobService.new();
 
-	services: Propertyjob[] = [];
+	jobs: Propertyjob[] = [];
 
 	formProposal: FormInterface = this._form.getForm(
 		'propertyjobproposalForm',
@@ -39,7 +38,7 @@ export class JobComponent {
 	) {
 		this._proposalService
 			.fetch({
-				service: this.service_id
+				job: this.job_id
 			})
 			.subscribe((proposal) => {
 				if (proposal) {
@@ -47,27 +46,23 @@ export class JobComponent {
 				}
 			});
 
-		this._jobService
-			.fetch({ _id: this.service_id })
-			.subscribe((service) => {
-				this.service = service;
+		this._jobService.fetch({ _id: this.job_id }).subscribe((job) => {
+			this.job = job;
 
-				if (service.property) {
-					this._jobService
-						.get({
-							query:
-								'property=' +
-								service.property +
-								'&status=New,Assigned'
-						})
-						.subscribe((services) => (this.services = services));
-				}
-			});
+			if (job.property) {
+				this._jobService
+					.get({
+						query:
+							'property=' + job.property + '&status=New,Assigned'
+					})
+					.subscribe((jobs) => (this.jobs = jobs));
+			}
+		});
 	}
 
 	update() {
 		this._core.afterWhile(() => {
-			this._jobService.update(this.service);
+			this._jobService.update(this.job);
 		});
 	}
 

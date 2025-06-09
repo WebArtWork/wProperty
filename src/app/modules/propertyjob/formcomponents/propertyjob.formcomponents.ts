@@ -1,3 +1,4 @@
+import { materials } from 'src/app/core/consts/materials.const';
 import { services } from 'src/app/core/consts/services.const';
 
 export const propertyjobFormComponents = {
@@ -39,7 +40,7 @@ export const propertyjobFormComponents = {
 			fields: [
 				{
 					name: 'Label',
-					value: 'Service'
+					value: 'Services'
 				},
 				{
 					name: 'Fields',
@@ -53,6 +54,78 @@ export const propertyjobFormComponents = {
 							items: services
 						}
 					]
+				}
+			]
+		},
+		{
+			name: 'Objects',
+			key: 'materials',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Materials'
+				},
+				{
+					name: 'Fields',
+					value: [
+						{
+							placeholder: 'Enter material ...',
+							key: 'id',
+							label: 'Material',
+							type: 'select',
+							value: 'id',
+							items: materials
+						}
+					]
+				}
+			]
+		},
+		{
+			name: 'Objects',
+			key: 'units',
+			fields: [
+				{
+					name: 'Label',
+					value: 'Units'
+				},
+				{
+					name: 'Fields',
+					value: [
+						{
+							placeholder: 'Enter name ...',
+							key: 'name',
+							label: 'Name'
+						},
+						{
+							placeholder: 'Enter type ...',
+							key: 'type',
+							label: 'Type'
+						},
+						{
+							placeholder: 'Enter quantity ...',
+							key: 'quantity',
+							label: 'Quantity'
+						},
+						{
+							placeholder: 'Enter price ...',
+							key: 'price',
+							label: 'Price'
+						}
+					]
+				}
+			]
+		},
+		{
+			name: 'Select',
+			key: 'property',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter property ...'
+				},
+				{
+					name: 'Items',
+					value: []
 				}
 			]
 		}

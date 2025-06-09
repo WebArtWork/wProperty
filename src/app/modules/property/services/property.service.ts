@@ -8,6 +8,7 @@ import { propertyPartialSaleFormComponents } from '../formcomponents/property.pa
 import { propertyMonthlyRentFormComponents } from '../formcomponents/property.monthly-rent.formcomponents';
 import { propertyForSaleFormComponents } from '../formcomponents/property.for-sale.formcomponents';
 import { propertyAuctionSaleFormComponents } from '../formcomponents/property.auction-sale.formcomponents';
+import { propertyjobFormComponents } from '../../propertyjob/formcomponents/propertyjob.formcomponents';
 
 @Injectable({
 	providedIn: 'root'
@@ -69,6 +70,16 @@ export class PropertyService extends CrudService<Property> {
 				property.isAuctionSale =
 					property.types.includes('Auction Sale');
 			}
+		});
+
+		this.get().subscribe(() => {
+			const component = propertyjobFormComponents.components.find(
+				(c) => c.key === 'property'
+			);
+
+			(component?.fields[1].value as Array<unknown>).push(
+				...this.getDocs()
+			);
 		});
 	}
 

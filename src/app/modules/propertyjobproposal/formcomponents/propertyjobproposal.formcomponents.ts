@@ -22,6 +22,24 @@ export const propertyjobproposalFormComponents = {
 			]
 		},
 		{
+			name: 'Text',
+			key: 'description',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter description ...'
+				},
+				{
+					name: 'Label',
+					value: 'Description'
+				},
+				{
+					name: 'Textarea',
+					value: true
+				}
+			]
+		},
+		{
 			name: 'Number',
 			key: 'price',
 			fields: [

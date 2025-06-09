@@ -6,69 +6,75 @@
 					<core-back></core-back>
 					<core-profile routerLink="/profile"></core-profile>
 				</div>
-				<div class="documents-header__title">
-					{{service.name || 'Job'}}
-				</div>
+				<div class="documents-header__title">{{job.name || 'Job'}}</div>
 			</div>
 			<div class="documents-main">
 				<div class="documents-main-content">
-					<div class="documents__title">
-						Details
+					@if(job.author === userService.user._id) {
+					<div class="documents__title" translate>
+						Job.Job details
 					</div>
 					<div class="documents-main-row">
 						<div class="job__input-title">
-							Services name
 							<winput
-								placeholder="Enter service name..."
-								[value]="service.name"
-								(wChange)="update()"
+								(wChange)="job.name = $event + ''; update()"
+								placeholder="Enter title..."
+								[value]="job.name"
 							></winput>
 						</div>
 						<div class="job__input-title">
-							Services description
 							<winput
-								placeholder="Enter service description..."
-								[value]="service.description"
+								(wChange)="job.description = $event + ''; update()"
+								placeholder="Enter description..."
+								[value]="job.description"
 								(wChange)="update()"
 								type="textarea"
 							></winput>
 						</div>
 						<div
 							class="documents__description"
-							*ngIf="service.deadline"
+							*ngIf="job.deadline"
 						>
-							<span translate>Common.Deadline</span>
-							<span>{{service.deadline}}</span>
+							<winput
+								(wChange)="job.deadline = $event + ''; update()"
+								placeholder="Enter deadline..."
+								[value]="job.deadline"
+								(wChange)="update()"
+								type="date"
+							></winput>
 						</div>
 					</div>
-					
-
-					<div class="documents__title">
-						Services
-					</div>	
-					<div
-						*ngFor="let service of services"
-						class="documents-main-row"
-					>
-						<div class="documents__title">{{service.name}}</div>
-						<div class="documents__description">
-							{{service.description}}
+					} @else if (job.description || job.deadline) {
+					<div class="documents-main-row">
+						<div class="job__input-title" *ngIf="job.description">
+							{{job.description}}
 						</div>
 						<div
 							class="documents__description"
-							*ngIf="service.deadline"
+							*ngIf="job.deadline"
 						>
 							<span translate>Common.Deadline</span>
-							<span>{{service.deadline}}</span>
+							<span>: {{job.deadline|date}}</span>
 						</div>
 					</div>
-					<div class="documents__title">
-						Make proposal
+					} @if (jobs.length) {
+					<div class="documents__title">Other jobs</div>
+					<div *ngFor="let job of jobs" class="documents-main-row">
+						<div class="documents__title">{{job.name}}</div>
+						<div class="documents__description">
+							{{job.description}}
+						</div>
+						<div
+							class="documents__description"
+							*ngIf="job.deadline"
+						>
+							<span translate>Common.Deadline</span>
+							<span>: {{job.deadline|date}}</span>
+						</div>
 					</div>
-					<div
-						*ngIf="userService.user._id !== service.author"
-						class="documents-main-row"
-					>
+					} @if (userService.user._id !== job.author) {
+					<div class="documents__title">Make proposal</div>
+					<div class="documents-main-row">
 						<wform
 							[submition]="submitionProposal"
 							[config]="formProposal"
@@ -78,31 +84,28 @@
 
 						<wbutton (click)="updateProposal()">Update</wbutton>
 					</div>
-					proposals list
-					<ng-container
-						*ngIf="userService.user._id === service.author"
-					>
-						<div class="documents-main-row">
-							<div class="documents__title">Honchar Denys</div>
-							<div class="documents__description">
-								Price: 500$ Workdays: 5 Deadline: 05/05/25
-								Price: 500$
-							</div>
-							<div class="documents-tags">
-								<div
-									class="documents-tags__wrap"
-									*ngFor="let tag of [{}, {}, {}, {}, {}]"
-								>
-									<div class="documents-tags__item">
-										Smth here
-									</div>
+
+					} @if (userService.user._id === job.author) {
+					<div class="documents-main-row">
+						<div class="documents__title">Honchar Denys</div>
+						<div class="documents__description">
+							Price: 500$ Workdays: 5 Deadline: 05/05/25 Price:
+							500$
+						</div>
+						<div class="documents-tags">
+							<div
+								class="documents-tags__wrap"
+								*ngFor="let tag of [{}, {}, {}, {}, {}]"
+							>
+								<div class="documents-tags__item">
+									Smth here
 								</div>
 							</div>
-
-							<wbutton>Ask detailed proposal</wbutton>
 						</div>
-					</ng-container>
-					tasks list
+
+						<wbutton>Ask detailed proposal</wbutton>
+					</div>
+					} tasks list
 				</div>
 			</div>
 		</div>
