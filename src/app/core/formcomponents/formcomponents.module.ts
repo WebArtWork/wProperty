@@ -49,6 +49,7 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
 	declarations: [
 		/* declarations */
 		ObjectsComponent,
+		ObjectsComponent,
 		CodeComponent,
 		HtmlComponent,
 		EmailComponent,

@@ -12,7 +12,7 @@ import { CrudComponent } from 'wacom';
 @Component({
 	imports: [CommonModule, TableModule],
 	templateUrl: './proposals.component.html',
-	styleUrls: ['./proposals.component.scss'],
+	styleUrls: ['./proposals.component.scss']
 })
 export class ProposalsComponent extends CrudComponent<
 	PropertyjobproposalService,
@@ -21,16 +21,19 @@ export class ProposalsComponent extends CrudComponent<
 > {
 	columns = ['name', 'description'];
 
-	config = {
-		...this.getConfig(),
-	};
+	config = this.getConfig();
 
 	constructor(
 		_propertyjobproposalService: PropertyjobproposalService,
 		_translate: TranslateService,
 		_form: FormService
 	) {
-		super(propertyjobproposalFormComponents, _form, _translate, _propertyjobproposalService);
+		super(
+			propertyjobproposalFormComponents,
+			_form,
+			_translate,
+			_propertyjobproposalService
+		);
 
 		this.setDocuments();
 	}

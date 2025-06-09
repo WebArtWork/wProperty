@@ -1,18 +1,28 @@
 <ng-template #templateRef let-data>
 	<div *ngIf="data.field.Fields">
 		<h2 *ngIf="data.field.Label">{{data.field.Label}}</h2>
-		<!-- TODO Andrew next should be row, not multiple rows -->
+
 		<div>
+			@for (field of data.field.Fields; track field.key) { @if (field.type
+			=== 'select') {
+			<wselect
+				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
+				(modelChange)="field.__value = $event"
+				[select]="field.__value"
+				[items]="field.items"
+				[value]="field.value"
+			></wselect>
+			} @else {
 			<winput
 				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
 				[label]="field.label || field.key.capitalize()"
 				(wChange)="field.__value = $event"
-				*ngFor="let field of data.field.Fields"
 				[type]="field.type || 'text'"
 				[value]="field.__value"
 				(wSubmit)="addTag(data)"
 				[setFocus]="field"
 			></winput>
+			} }
 
 			<wbutton (click)="addTag(data)" [disableSubmit]="true">
 				{{data.field.Button || 'Add'}}
@@ -21,6 +31,16 @@
 
 		<!-- TODO Andrew next should be row, not multiple rows -->
 		<div *ngFor="let obj of data.submition[data.key]; index as i">
+			@for (field of data.field.Fields; track field.key) { @if (field.type
+			=== 'select') {
+			<wselect
+				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
+				(modelChange)="obj[field.key] = $event; data.wChange()"
+				[select]="obj[field.key]"
+				[items]="field.items"
+				[value]="field.value"
+			></wselect>
+			} @else {
 			<winput
 				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
 				(wChange)="obj[field.key] = $event; data.wChange()"
@@ -31,6 +51,7 @@
 				(wSubmit)="data.wSubmit()"
 				[setFocus]="data.field"
 			></winput>
+			} }
 
 			<wbutton
 				(click)="data.submition[data.key].splice(i, 1); data.wChange()"

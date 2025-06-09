@@ -12,7 +12,7 @@ import { CrudComponent } from 'wacom';
 @Component({
 	imports: [CommonModule, TableModule],
 	templateUrl: './jobs.component.html',
-	styleUrls: ['./jobs.component.scss'],
+	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent extends CrudComponent<
 	PropertyjobService,
@@ -21,16 +21,19 @@ export class JobsComponent extends CrudComponent<
 > {
 	columns = ['name', 'description'];
 
-	config = {
-		...this.getConfig(),
-	};
+	config = this.getConfig();
 
 	constructor(
 		_propertyjobService: PropertyjobService,
 		_translate: TranslateService,
 		_form: FormService
 	) {
-		super(propertyjobFormComponents, _form, _translate, _propertyjobService);
+		super(
+			propertyjobFormComponents,
+			_form,
+			_translate,
+			_propertyjobService
+		);
 
 		this.setDocuments();
 	}
