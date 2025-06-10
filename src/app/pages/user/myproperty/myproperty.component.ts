@@ -14,6 +14,7 @@ import { propertyFormComponents } from 'src/app/modules/property/formcomponents/
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { AlertService, CoreService } from 'wacom';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './myproperty.component.html',
@@ -49,6 +50,7 @@ export class MypropertyComponent {
 	constructor(
 		private _propertyService: PropertyService,
 		private _translate: TranslateService,
+		private location: Location,
 		private _alert: AlertService,
 		private renderer: Renderer2,
 		private _form: FormService,
@@ -112,6 +114,9 @@ export class MypropertyComponent {
 
 			this.renderer.addClass(button, 'active');
 		}
+	}
+	goBack(): void {
+		this.location.back();
 	}
 
 	update(prop: Property): void {

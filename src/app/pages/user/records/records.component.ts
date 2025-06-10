@@ -5,6 +5,7 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { propertyrecordFormComponents } from 'src/app/modules/propertyrecord/formcomponents/propertyrecord.formcomponents';
 import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
 import { PropertyrecordService } from 'src/app/modules/propertyrecord/services/propertyrecord.service';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './records.component.html',
@@ -19,6 +20,7 @@ export class RecordsComponent {
 	constructor(
 		private _propertyrecordService: PropertyrecordService,
 		private _route: ActivatedRoute,
+		private location: Location,
 		private _form: FormService
 	) {
 		this._route.paramMap.subscribe((params) => {
@@ -31,7 +33,9 @@ export class RecordsComponent {
 		'propertyrecord',
 		propertyrecordFormComponents
 	);
-
+	goBack(): void {
+		this.location.back();
+	}
 	create(): void {
 		this._form.modal<Propertyrecord>(this.form, {
 			label: 'Create',

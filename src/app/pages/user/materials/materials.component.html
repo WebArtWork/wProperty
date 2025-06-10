@@ -4,8 +4,11 @@
 			<div class="documents-header">
 				<div class="documents-header-left">
 					<div class="documents-header-left__arrow">
-						<span class="material-icons">arrow_back_ios</span>
+						<span class="material-icons" (click)="goBack()"
+							>arrow_back_ios</span
+						>
 					</div>
+
 					<core-profile routerLink="/profile"></core-profile>
 				</div>
 				<div class="documents-header__title" translate>
@@ -19,11 +22,11 @@
 						<div class="documents-main-row">
 							<div class="material-main-wrapper">
 								<core-material
-								*ngFor="let material of materials|materials:searchText:service_id"
-								routerLink="/material/{{material.id}}"
-								[material]="material"
-								class="material-main-wrapper__item"
-							></core-material>
+									*ngFor="let material of materials|materials:searchText:service_id"
+									routerLink="/material/{{material.id}}"
+									[material]="material"
+									class="material-main-wrapper__item"
+								></core-material>
 							</div>
 						</div>
 					</div>
