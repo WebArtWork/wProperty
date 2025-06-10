@@ -1,3 +1,10 @@
+import {
+	animate,
+	state,
+	style,
+	transition,
+	trigger
+} from '@angular/animations';
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/modules/form/form.service';
@@ -6,14 +13,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { propertyFormComponents } from 'src/app/modules/property/formcomponents/property.formcomponents';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
-import {
-	trigger,
-	state,
-	style,
-	transition,
-	animate
-} from '@angular/animations';
-import { CoreService, AlertService } from 'wacom';
+import { AlertService, CoreService } from 'wacom';
 
 @Component({
 	templateUrl: './myproperty.component.html',
@@ -36,7 +36,7 @@ export class MypropertyComponent {
 	readonly type_icon = this._propertyService.type_icon;
 
 	property = this._propertyService.doc(
-		this._router.url.replace('/myproperty/', '')
+		this._router.url.replace('/property/', '')
 	);
 
 	isMenuOpen = false;
@@ -89,16 +89,19 @@ export class MypropertyComponent {
 				'maxHeight',
 				firstContent.scrollHeight + 'px'
 			);
+
 			this.renderer.addClass(firstButton, 'active');
 		}
 	}
 
 	toggleAccordion(event: Event): void {
 		const button = event.currentTarget as HTMLElement;
+
 		const content = button.nextElementSibling as HTMLElement;
 
 		if (content.style.maxHeight && content.style.maxHeight !== '0px') {
 			this.renderer.setStyle(content, 'maxHeight', null);
+
 			this.renderer.removeClass(button, 'active');
 		} else {
 			this.renderer.setStyle(
@@ -106,6 +109,7 @@ export class MypropertyComponent {
 				'maxHeight',
 				content.scrollHeight + 'px'
 			);
+
 			this.renderer.addClass(button, 'active');
 		}
 	}
@@ -115,6 +119,7 @@ export class MypropertyComponent {
 			.modal<Property>(this.form, [], prop)
 			.then((updated: Property) => {
 				this._core.copy(updated, prop);
+
 				this._propertyService.update(prop);
 			});
 	}
@@ -132,6 +137,7 @@ export class MypropertyComponent {
 					text: this._translate.translate('Common.Yes'),
 					callback: (): void => {
 						this._propertyService.delete(prop);
+
 						this._router.navigateByUrl('/myproperties');
 					}
 				}

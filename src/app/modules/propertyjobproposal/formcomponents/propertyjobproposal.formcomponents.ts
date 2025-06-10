@@ -1,4 +1,6 @@
-export const propertyjobproposalFormComponents = {
+import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
+
+export const propertyjobproposalFormComponents: FormInterface = {
 	formId: 'propertyjobproposal',
 	title: 'Proposal for job',
 	components: [
@@ -64,6 +66,20 @@ export const propertyjobproposalFormComponents = {
 				{
 					name: 'Label',
 					value: 'Workdays'
+				}
+			]
+		},
+		{
+			name: 'Date',
+			key: 'start',
+			fields: [
+				{
+					name: 'Placeholder',
+					value: 'Enter deadline ...'
+				},
+				{
+					name: 'Label',
+					value: 'Deadline'
 				}
 			]
 		},

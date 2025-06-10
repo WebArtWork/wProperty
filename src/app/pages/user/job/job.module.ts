@@ -1,7 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from 'src/app/core/core.module';
 import { JobComponent } from './job.component';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
@@ -11,7 +12,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes), CoreModule],
+	imports: [RouterModule.forChild(routes), CoreModule, DatePipe],
+	providers: [DatePipe],
 	declarations: [JobComponent]
 })
 export class JobModule {}

@@ -64,6 +64,10 @@
 						<div class="documents__description">
 							{{job.description}}
 						</div>
+						<div class="documents__description" *ngIf="job.start">
+							<span translate>Common.Start date</span>
+							<span>: {{job.start|date}}</span>
+						</div>
 						<div
 							class="documents__description"
 							*ngIf="job.deadline"
@@ -72,7 +76,7 @@
 							<span>: {{job.deadline|date}}</span>
 						</div>
 					</div>
-					} @if (userService.user._id !== job.author) {
+					} @if (job.author && userService.user._id !== job.author) {
 					<div class="documents__title">Make proposal</div>
 					<div class="documents-main-row">
 						<wform
@@ -85,27 +89,41 @@
 						<wbutton (click)="updateProposal()">Update</wbutton>
 					</div>
 
-					} @if (userService.user._id === job.author) {
+					} @if (userService.user._id === job.author) { @for (proposal
+					of proposals; track proposal._id ) {
+
 					<div class="documents-main-row">
-						<div class="documents__title">Honchar Denys</div>
+						<div class="documents__title">
+							{{userService.doc(proposal.author).name}}
+						</div>
 						<div class="documents__description">
-							Price: 500$ Workdays: 5 Deadline: 05/05/25 Price:
-							500$
+							Price: {{proposal.price}}$ Workdays:
+							{{proposal.workdays}} @if(proposal.start) { start:
+							{{proposal.start|date}} } @if(proposal.deadline) {
+							Deadline: {{proposal.deadline|date}} }
 						</div>
 						<div class="documents-tags">
 							<div
 								class="documents-tags__wrap"
-								*ngFor="let tag of [{}, {}, {}, {}, {}]"
+								*ngFor="let unit of proposal.units"
 							>
 								<div class="documents-tags__item">
-									Smth here
+									{{unit.name}} -
+									{{unit.use}}{{unit.type}}/{{unit.price}}$
 								</div>
 							</div>
 						</div>
-
-						<wbutton>Ask detailed proposal</wbutton>
+						@if(!proposal.moreDetails) {
+						<wbutton (click)="moreDetails(proposal)"
+							>Ask detailed proposal</wbutton
+						>
+						} @if(!job.worker) {
+						<wbutton (click)="assignWorker(proposal)"
+							>Ask detailed proposal</wbutton
+						>
+						}
 					</div>
-					} tasks list
+					} } tasks list
 				</div>
 			</div>
 		</div>

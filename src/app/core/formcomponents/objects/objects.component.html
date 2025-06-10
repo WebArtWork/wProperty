@@ -15,8 +15,8 @@
 			} @else {
 			<winput
 				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
+				(wChange)="field.__value = value($event, field.type)"
 				[label]="field.label || field.key.capitalize()"
-				(wChange)="field.__value = $event"
 				[type]="field.type || 'text'"
 				[value]="field.__value"
 				(wSubmit)="addTag(data)"
@@ -43,9 +43,8 @@
 			} @else {
 			<winput
 				[placeholder]="field.placeholder || `Enter ${field.key || ''} ...`"
-				(wChange)="obj[field.key] = $event; data.wChange()"
+				(wChange)="obj[field.key] = value($event, field.type); data.wChange()"
 				[label]="field.label || field.key.capitalize()"
-				*ngFor="let field of data.field.Fields"
 				[type]="field.type || 'text'"
 				[value]="obj[field.key]"
 				(wSubmit)="data.wSubmit()"

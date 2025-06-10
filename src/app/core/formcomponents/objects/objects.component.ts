@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormService } from '../../modules/form/form.service';
+import { Value } from '../../modules/input/input.component';
 
 interface Interface {}
 
@@ -32,5 +33,9 @@ export class ObjectsComponent implements OnInit {
 		data.submition[data.key].push(document);
 
 		data.wChange();
+	}
+
+	value(value: Value, type = 'text') {
+		return type === 'number' ? Number(value) : value;
 	}
 }
