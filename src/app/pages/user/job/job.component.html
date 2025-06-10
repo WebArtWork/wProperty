@@ -80,17 +80,13 @@
 							<span>: {{job.deadline|date}}</span>
 						</div>
 					</div>
-					} @if (userService.role('propertyworker')) {
-					<div class="documents__title">Make proposal</div>
+					} @if (userService.role('propertyworker') && job.author !==
+					userService.user._id) {
+					<div class="documents__title">My proposal</div>
 					<div class="documents-main-row">
-						<wform
-							[submition]="submitionProposal"
-							[config]="formProposal"
-							(wSubmit)="updateProposal()"
-							class="job-form"
-						></wform>
+						{{proposal.price}}
 
-						<wbutton (click)="updateProposal()">Update</wbutton>
+						<wbutton (click)="mutateProposal()">Update</wbutton>
 					</div>
 
 					} @if (userService.user._id === job.author && job.status ===
@@ -129,10 +125,27 @@
 					</div>
 					} } @if (job.worker === userService.user._id && job.status
 					=== "Assigned") {
-					<wbutton (click)="createTask()">Create task</wbutton>
+					<wbutton (click)="mutateTask()">Create task</wbutton>
+					@for (task of tasks; track task._id; let i = $index) {
+					<div>{{task.name}}</div>
+					<wbutton (click)="mutateTask(task)">Mutate task</wbutton>
+					<wbutton (click)="deleteTask(task); tasks.splice(i, 1)"
+						>Delete task</wbutton
+					>
+					} } @if (job.worker === userService.user._id && job.status
+					=== 'Assigned') {
+					<wbutton (click)="changeStatus('Invoiced')"
+						>Invoiced</wbutton
+					>
+					} @if (job.author === userService.user._id && job.status ===
+					'Invoiced') {
+					<wbutton (click)="changeStatus('Paid')">Paid</wbutton>
+					} @if (job.worker === userService.user._id && job.status ===
+					'Completed') {
+					<wbutton (click)="changeStatus('Completed')"
+						>Completed</wbutton
+					>
 					}
-					<hr />
-					{{job.worker}} {{userService.user._id}} {{job.status}}
 				</div>
 			</div>
 		</div>

@@ -50,6 +50,16 @@ const routes: Routes = [
 		children: [
 			/* user */
 			{
+				path: 'invoices',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Invoices'
+					}
+				},
+				loadChildren: () => import('./modules/propertyinvoice/pages/invoices/invoices.routes').then(r => r.invoicesRoutes)
+			}, 
+			{
 				path: 'hubInfo',
 				canActivate: [MetaGuard],
 				data: {
