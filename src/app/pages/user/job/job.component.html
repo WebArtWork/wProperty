@@ -76,7 +76,7 @@
 							<span>: {{job.deadline|date}}</span>
 						</div>
 					</div>
-					} @if (job.author && userService.user._id !== job.author) {
+					} @if (userService.role('propertyworker')) {
 					<div class="documents__title">Make proposal</div>
 					<div class="documents-main-row">
 						<wform
@@ -89,8 +89,8 @@
 						<wbutton (click)="updateProposal()">Update</wbutton>
 					</div>
 
-					} @if (userService.user._id === job.author) { @for (proposal
-					of proposals; track proposal._id ) {
+					} @if (userService.user._id === job.author && job.status ===
+					"New") { @for (proposal of proposals; track proposal._id ) {
 
 					<div class="documents-main-row">
 						<div class="documents__title">
@@ -117,13 +117,18 @@
 						<wbutton (click)="moreDetails(proposal)"
 							>Ask detailed proposal</wbutton
 						>
-						} @if(!job.worker) {
+						} @if(!job.worker || job.status === 'New') {
 						<wbutton (click)="assignWorker(proposal)"
-							>Ask detailed proposal</wbutton
+							>Assign worker</wbutton
 						>
 						}
 					</div>
-					} } tasks list {{job.worker}}
+					} } @if (job.worker === userService.user._id && job.status
+					=== "Assigned") {
+					<wbutton (click)="createTask()">Create task</wbutton>
+					}
+					<hr />
+					{{job.worker}} {{userService.user._id}} {{job.status}}
 				</div>
 			</div>
 		</div>

@@ -8,6 +8,8 @@ import { PropertyjobService } from 'src/app/modules/propertyjob/services/propert
 import { propertyjobproposalFormComponents } from 'src/app/modules/propertyjobproposal/formcomponents/propertyjobproposal.formcomponents';
 import { Propertyjobproposal } from 'src/app/modules/propertyjobproposal/interfaces/propertyjobproposal.interface';
 import { PropertyjobproposalService } from 'src/app/modules/propertyjobproposal/services/propertyjobproposal.service';
+import { propertytaskFormComponents } from 'src/app/modules/propertytask/formcomponents/propertytask.formcomponents';
+import { Propertytask } from 'src/app/modules/propertytask/interfaces/propertytask.interface';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService, HttpService } from 'wacom';
 
@@ -27,6 +29,10 @@ export class JobComponent {
 
 	formProposal: FormInterface = this._form.prepareForm(
 		propertyjobproposalFormComponents
+	);
+
+	formTask: FormInterface = this._form.prepareForm(
+		propertytaskFormComponents
 	);
 
 	submitionProposal: Record<string, unknown> = {
@@ -52,8 +58,6 @@ export class JobComponent {
 					this._proposalExists = true;
 
 					this._prepareDates(proposal);
-
-					console.log(proposal);
 
 					this._core.copy(proposal, this.submitionProposal);
 				}
@@ -125,6 +129,15 @@ export class JobComponent {
 		this.job.deadline = proposal.deadline;
 
 		this._http.post('/api/property/assign', proposal);
+	}
+
+	createTask() {
+		this._form.modal<Propertytask>(this.formTask, {
+			label: 'Create',
+			click: (submition: unknown, close: () => void) => {
+				close();
+			}
+		});
 	}
 
 	private _proposalExists = false;
