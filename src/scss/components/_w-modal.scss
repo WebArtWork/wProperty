@@ -3,14 +3,17 @@
 @use 'src/scss/utils/vars' as vars;
 
 #html .modal {
-	padding: 20px;
+    padding: 20px 30px;
 
 	&-content {
 		background: var(--c-bg-secondary);
 		border-radius: vars.$b-radius;
 		border: 1px solid var(--c-border);
 		max-width: 700px;
-		padding-top: 45px;
+		padding-top: 20px;
+    	height: fit-content;
+    	max-height: calc(100vh - 100px);
+		overflow: auto;
 	}
 	.close {
 		top: -2px;
