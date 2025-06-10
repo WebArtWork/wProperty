@@ -5,6 +5,7 @@ import { materials } from 'src/app/core/consts/materials.const';
 import { Service } from 'src/app/core/interfaces/service.interface';
 import { services } from 'src/app/core/consts/services.const';
 import { Material } from 'src/app/core/interfaces/material.interface';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './material.component.html',
@@ -20,5 +21,12 @@ export class MaterialComponent {
 		s.materials.includes(this.material.id)
 	);
 
-	constructor(public userService: UserService, private _router: Router) {}
+	constructor(
+		public userService: UserService,
+		private _router: Router,
+		private location: Location
+	) {}
+	goBack(): void {
+		this.location.back();
+	}
 }

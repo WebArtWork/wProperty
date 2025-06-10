@@ -10,6 +10,7 @@ import { CoreService } from 'wacom';
 import { serviceById } from 'src/app/core/consts/services.const';
 import { materialById } from 'src/app/core/consts/materials.const';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './jobs.component.html',
@@ -100,6 +101,7 @@ export class JobsComponent {
 		private _formService: FormService,
 		public userService: UserService,
 		private _core: CoreService,
+		private location: Location,
 		private _router: Router
 	) {
 		this._load(this._mineQuery());
@@ -118,6 +120,9 @@ export class JobsComponent {
 					});
 			}
 		});
+	}
+	goBack(): void {
+		this.location.back();
 	}
 	private _form: FormInterface = this._formService.getForm(
 		'propertyjob',

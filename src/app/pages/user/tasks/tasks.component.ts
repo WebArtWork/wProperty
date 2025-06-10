@@ -4,6 +4,7 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 import { GoogleMapsModule } from '@angular/google-maps'; // Імпортуємо Google Maps модуль
 import { PropertytaskService } from 'src/app/modules/propertytask/services/propertytask.service';
 import { Propertytask } from 'src/app/modules/propertytask/interfaces/propertytask.interface';
+import { Location } from '@angular/common';
 
 @Component({
 	standalone: true, // Оголошуємо компонент як standalone
@@ -21,12 +22,15 @@ export class TasksComponent {
 
 	constructor(
 		private _taskService: PropertytaskService,
+		private location: Location,
 		public userService: UserService,
 		private router: Router
 	) {
 		this._taskService.get().subscribe((tasks) => (this.tasks = tasks));
 	}
-
+	goBack(): void {
+		this.location.back();
+	}
 	focusOnTask(task: Propertytask): void {
 		this.center = task.location;
 

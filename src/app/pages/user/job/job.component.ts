@@ -10,6 +10,7 @@ import { Propertyjobproposal } from 'src/app/modules/propertyjobproposal/interfa
 import { PropertyjobproposalService } from 'src/app/modules/propertyjobproposal/services/propertyjobproposal.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService, HttpService } from 'wacom';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './job.component.html',
@@ -35,6 +36,7 @@ export class JobComponent {
 
 	constructor(
 		private _proposalService: PropertyjobproposalService,
+		private location: Location,
 		private _jobService: PropertyjobService,
 		public userService: UserService,
 		private _http: HttpService,
@@ -84,7 +86,9 @@ export class JobComponent {
 				}
 			});
 	}
-
+	goBack(): void {
+		this.location.back();
+	}
 	update() {
 		this._core.afterWhile(() => {
 			this._jobService.update(this.job);

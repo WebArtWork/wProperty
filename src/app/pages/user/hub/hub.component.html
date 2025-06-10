@@ -4,7 +4,9 @@
 			<div class="documents-header">
 				<div class="documents-header-left">
 					<div class="documents-header-left__arrow">
-						<span class="material-icons">arrow_back_ios</span>
+						<span class="material-icons" (click)="goBack()"
+							>arrow_back_ios</span
+						>
 					</div>
 					<div
 						routerlink="/profile"
@@ -203,8 +205,8 @@
 						>
 							<div class="documents-block-text">
 								<div
-								class="mb-20"	
-								*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
+									class="mb-20"
+									*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
 								>
 									<!-- Property Title -->
 									<div class="documents__name mb-10">
@@ -224,7 +226,10 @@
 									</div>
 								</div>
 
-								<div *ngIf="type === 'Daily Rent'" class="documents-block-text__rent">
+								<div
+									*ngIf="type === 'Daily Rent'"
+									class="documents-block-text__rent"
+								>
 									<!-- Price Per Day -->
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
@@ -233,7 +238,10 @@
 									</div>
 								</div>
 
-								<div *ngIf="type === 'For Sale'" class="documents-block-text__rent">
+								<div
+									*ngIf="type === 'For Sale'"
+									class="documents-block-text__rent"
+								>
 									<!-- Price -->
 									<div class="documents__price">
 										$ {{property.price}}
@@ -266,12 +274,10 @@
 										</div>
 									</div>
 								</div>
-
-
 							</div>
-															<div class="documents-block-img">
-									<img src="assets/prop.jpg" alt="" />
-								</div>
+							<div class="documents-block-img">
+								<img src="assets/prop.jpg" alt="" />
+							</div>
 						</a>
 					</div>
 				</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './workers.component.html',
@@ -18,5 +19,12 @@ export class WorkersComponent {
 
 	isMenuOpen = false;
 
-	constructor(public userService: UserService, private _router: Router) {}
+	constructor(
+		public userService: UserService,
+		private _router: Router,
+		private location: Location
+	) {}
+	goBack(): void {
+		this.location.back();
+	}
 }

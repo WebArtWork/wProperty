@@ -9,6 +9,7 @@ import { materials } from 'src/app/core/consts/materials.const';
 import { Propertyportfolio } from 'src/app/modules/propertyportfolio/interfaces/propertyportfolio.interface';
 import { PropertyportfolioService } from 'src/app/modules/propertyportfolio/services/propertyportfolio.service';
 import { Material } from 'src/app/core/interfaces/material.interface';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './worker.component.html',
@@ -105,6 +106,7 @@ export class WorkerComponent {
 		private _portfolioService: PropertyportfolioService,
 		private _userService: UserService,
 		private _form: FormService,
+		private location: Location,
 		private _router: Router
 	) {
 		this._portfolioService
@@ -118,5 +120,8 @@ export class WorkerComponent {
 		for (const material of materials) {
 			this.material[material.id] = material;
 		}
+	}
+	goBack(): void {
+		this.location.back();
 	}
 }

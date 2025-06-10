@@ -3,7 +3,12 @@
 		<div class="documents-list">
 			<div class="documents-header">
 				<div class="documents-header-left">
-					<core-back></core-back>
+					<div class="documents-header-left__arrow">
+						<span class="material-icons" (click)="goBack()"
+							>arrow_back_ios</span
+						>
+					</div>
+
 					<core-profile routerLink="/profile"></core-profile>
 				</div>
 				<div class="documents-header__title">{{material.name}}</div>

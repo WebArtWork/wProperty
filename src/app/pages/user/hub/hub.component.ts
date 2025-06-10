@@ -14,6 +14,7 @@ import { rooms } from 'src/app/core/consts/rooms.const';
 import { utilities } from 'src/app/core/consts/utilities.const';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './hub.component.html',
@@ -87,6 +88,7 @@ export class HubComponent {
 
 	constructor(
 		private _propertyService: PropertyService,
+		private location: Location,
 		private _router: Router
 	) {
 		if (!this.selectType) {
@@ -122,7 +124,9 @@ export class HubComponent {
 
 		return min === Infinity || max === -Infinity ? null : [min, max];
 	}
-
+	goBack(): void {
+		this.location.back();
+	}
 	load(): void {
 		const areaRange = this.getRangeBounds(this.selectedAreas, this.areaMap);
 		const priceRange = this.getRangeBounds(

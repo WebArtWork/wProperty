@@ -4,6 +4,7 @@ import { materials } from 'src/app/core/consts/materials.const';
 import { Material } from 'src/app/core/interfaces/material.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
+import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './materials.component.html',
@@ -34,8 +35,14 @@ export class MaterialsComponent {
 		);
 	}
 
-	constructor(private _form: FormService, private _router: Router) {}
-
+	constructor(
+		private _form: FormService,
+		private _router: Router,
+		private location: Location
+	) {}
+	goBack(): void {
+		this.location.back();
+	}
 	create(): void {
 		if (!this.formDoc) {
 			console.warn('formDoc не визначено');
