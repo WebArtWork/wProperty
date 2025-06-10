@@ -4,6 +4,7 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { propertyFormComponents } from 'src/app/modules/property/formcomponents/property.formcomponents';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	templateUrl: './myproperties.component.html',
@@ -11,6 +12,7 @@ import { PropertyService } from 'src/app/modules/property/services/property.serv
 	standalone: false
 })
 export class MypropertiesComponent {
+	readonly url = environment.url;
 	isMenuOpen = false;
 
 	properties: Property[] = [];
