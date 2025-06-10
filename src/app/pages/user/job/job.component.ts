@@ -132,12 +132,12 @@ export class JobComponent {
 	private _prepareDates(proposal: Propertyjobproposal) {
 		proposal.start = this._datePipe.transform(
 			proposal.start,
-			'dd/MM/yyyy'
+			'yyyy-MM-dd'
 		) as string;
 
 		proposal.deadline = this._datePipe.transform(
 			proposal.deadline,
-			'dd/MM/yyyy'
+			'yyyy-MM-dd'
 		) as string;
 	}
 

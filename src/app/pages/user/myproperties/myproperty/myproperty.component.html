@@ -1,6 +1,9 @@
 <div class="property-card-wrap">
 	<div class="property-card__img">
-		<img src="assets/prop.jpg" alt="" />
+		<img
+			[src]="property.thumb ? url + property.thumb : 'assets/prop.jpg'"
+			alt=""
+		/>
 	</div>
 	<div class="property-card__text">
 		<a routerLink="/property/{{property._id}}" class="property__name">

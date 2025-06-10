@@ -5,6 +5,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { propertyFormComponents } from 'src/app/modules/property/formcomponents/property.formcomponents';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
+import { environment } from 'src/environments/environment';
 import { AlertService, CoreService } from 'wacom';
 
 @Component({
@@ -14,6 +15,8 @@ import { AlertService, CoreService } from 'wacom';
 	styleUrl: './myproperty.component.scss'
 })
 export class MypropertyComponent {
+	readonly url = environment.url;
+
 	readonly types = this._propertyService.types;
 
 	readonly type_icon = this._propertyService.type_icon;
