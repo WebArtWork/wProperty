@@ -1293,6 +1293,7 @@ wform {
 	}
 	.propperty-p{
         padding-top: 20px;
+		position: relative;
     }
 }
 @media screen and (max-width: 767px) {
@@ -1334,6 +1335,14 @@ wform {
 	.material-main-wrapper__item{
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	.tabs button {
+		font-size: 16px;
+		height: 50px;
+	}
+
+	.tabs button i {
+		font-size: 20px;
 	}
 }
 @media screen and (max-width: 479px) {
