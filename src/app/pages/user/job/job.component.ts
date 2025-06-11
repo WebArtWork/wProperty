@@ -26,7 +26,9 @@ export class JobComponent {
 
 	jobs: Propertyjob[] = [];
 
-	proposal: Propertyjobproposal = this._proposalService.new();
+	proposal: Propertyjobproposal = {
+		job: this.job_id
+	} as unknown as Propertyjobproposal;
 
 	proposals: Propertyjobproposal[] = [];
 
