@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from 'src/app/core/core.module';
 import { MypropertyComponent } from './myproperty.component';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
@@ -9,7 +9,7 @@ const routes: Routes = [
 		component: MypropertyComponent
 	},
 	{
-		path: '',
+		path: ':property_id/:type',
 		component: MypropertyComponent
 	}
 ];
