@@ -15,6 +15,8 @@ import { propertyFormComponents } from 'src/app/modules/property/formcomponents/
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { AlertService, CoreService } from 'wacom';
+import { materials } from 'src/app/core/consts/materials.const';
+import { Material } from 'src/app/core/interfaces/material.interface';
 
 @Component({
 	templateUrl: './myproperty.component.html',
@@ -33,6 +35,7 @@ import { AlertService, CoreService } from 'wacom';
 	]
 })
 export class MypropertyComponent implements AfterViewInit {
+	materials: Material[] = materials;
 	readonly types = this._propertyService.types;
 
 	readonly type_icon = this._propertyService.type_icon;

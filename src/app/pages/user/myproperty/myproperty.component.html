@@ -458,45 +458,36 @@
 									>
 								</div>
 							</div>
+
 							<div
 								class="documents-properties-main accordion-content"
 							>
 								<div class="material-wrapper">
 									<div
 										class="documents_materials_box"
-										*ngFor="let material of [{}, {}, {}]"
+										*ngFor="let material of materials"
 									>
 										<div
 											class="documents_materials_box-item"
 										>
+											<!-- Назва матеріалу -->
 											<div class="documents__name">
-												name
+												{{ material.name }}
 											</div>
+
+											<!-- Картинка -->
+											<div class="documents__image">
+												<div class="documents__image">
+													<img
+														[src]="'/assets/materials/' + material.image"
+														[alt]="material.name"
+													/>
+												</div>
+											</div>
+
+											<!-- Опис -->
 											<div class="documents__description">
-												description
-											</div>
-											<div class="materials-wrapper">
-												<div
-													class="materials-wrapper__icon"
-												></div>
-												<div
-													class="materials-wrapper__text"
-												>
-													Quantity: <span>1</span>
-												</div>
-											</div>
-											<div class="materials-wrapper">
-												<div
-													class="materials-wrapper__icon"
-												></div>
-												<div
-													class="materials-wrapper__text"
-												>
-													Supplier: <span>1</span>
-												</div>
-											</div>
-											<div class="documents__price">
-												price $
+												{{ material.description }}
 											</div>
 										</div>
 									</div>
@@ -505,7 +496,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
