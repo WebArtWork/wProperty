@@ -39,7 +39,7 @@ export class PropertiesComponent {
 		'pricePerDay',
 		'pricePerMountly',
 		'pricePerPartial',
-		'thumb'
+		'thumbs'
 	];
 
 	form: FormInterface = this._form.getForm(

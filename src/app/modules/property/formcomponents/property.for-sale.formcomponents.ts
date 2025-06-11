@@ -294,12 +294,21 @@ export const propertyForSaleFormComponents = {
 			]
 		},
 		{
-			name: 'Photo',
-			key: 'thumb',
+			name: 'Photos',
+			key: 'thumbs',
+
 			fields: [
 				{
-					name: 'Photo',
-					value: 'Upload a property photo'
+					name: 'Label',
+					value: 'Upload property photos'
+				},
+				{
+					name: 'Accept',
+					value: 'image/*'
+				},
+				{
+					name: 'Multiple',
+					value: true
 				}
 			]
 		}

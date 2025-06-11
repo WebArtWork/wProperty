@@ -14,7 +14,7 @@ export interface Property extends CrudDocument {
 	address: string;
 	propertyTypes: string;
 	areas: number;
-	thumb: string;
+	thumbs: string[];
 	buildingTypes: String;
 	rooms: String;
 	floors: String;

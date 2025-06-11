@@ -15,11 +15,13 @@ import { Property } from 'src/app/modules/property/interfaces/property.interface
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { AlertService, CoreService } from 'wacom';
 import { Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
 	templateUrl: './myproperty.component.html',
 	styleUrls: ['./myproperty.component.scss'],
 	standalone: false,
+
 	animations: [
 		trigger('accordionAnimation', [
 			state(
@@ -32,6 +34,7 @@ import { Location } from '@angular/common';
 	]
 })
 export class MypropertyComponent {
+	type: string = '';
 	readonly types = this._propertyService.types;
 
 	readonly type_icon = this._propertyService.type_icon;
@@ -95,6 +98,22 @@ export class MypropertyComponent {
 			this.renderer.addClass(firstButton, 'active');
 		}
 	}
+	images: string[] = [];
+
+	ngAfterViewInit(): void {
+		if (this.property?.thumbs) {
+			if (Array.isArray(this.property.thumbs)) {
+				this.images = this.property.thumbs;
+			} else if (typeof this.property.thumbs === 'string') {
+				try {
+					const parsed = JSON.parse(this.property.thumbs);
+					this.images = Array.isArray(parsed) ? parsed : [parsed];
+				} catch {
+					this.images = [this.property.thumbs];
+				}
+			}
+		}
+	}
 
 	toggleAccordion(event: Event): void {
 		const button = event.currentTarget as HTMLElement;
@@ -117,6 +136,24 @@ export class MypropertyComponent {
 	}
 	goBack(): void {
 		this.location.back();
+	}
+	currentIndex = 0;
+	prev() {
+		this.currentIndex =
+			this.currentIndex === 0
+				? this.images.length - 1
+				: this.currentIndex - 1;
+	}
+
+	next() {
+		this.currentIndex =
+			this.currentIndex === this.images.length - 1
+				? 0
+				: this.currentIndex + 1;
+	}
+
+	goToSlide(index: number) {
+		this.currentIndex = index;
 	}
 
 	update(prop: Property): void {

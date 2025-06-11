@@ -103,7 +103,38 @@
 										<div class="documents__name">
 											{{property.name}}
 										</div>
+										<div class="documents-block-img">
+											<img
+												[src]="images[currentIndex]"
+												alt="Property Image"
+												class="slider-image"
+											/>
+
+											<button
+												class="nav prev"
+												(click)="prev()"
+											>
+												&#10094;
+											</button>
+											<button
+												class="nav next"
+												(click)="next()"
+											>
+												&#10095;
+											</button>
+
+											<div class="dots">
+												<span
+													*ngFor="let img of images; let i = index"
+													[class.active]="i === currentIndex"
+													(click)="goToSlide(i)"
+												></span>
+											</div>
+										</div>
 										<div class="documents__description">
+											<span class="material-icons"
+												>description</span
+											>
 											{{property.description}}
 										</div>
 										<div
@@ -120,22 +151,6 @@
 												class="documents-address__text documents-prop-text"
 											>
 												{{property.address}}
-											</div>
-										</div>
-										<div
-											class="documents-type documents-prop-wrap"
-										>
-											<div
-												class="documents-type__icon documents-prop-icon"
-											>
-												<span class="material-icons"
-													>holiday_village</span
-												>
-											</div>
-											<div
-												class="documents-type__text documents-prop-text"
-											>
-												{{property.types}}
 											</div>
 										</div>
 
@@ -155,48 +170,83 @@
 												{{property.areas}} m²
 											</div>
 										</div>
-										<div class="documents__thumb">
-											{{property.thumb}}
-										</div>
-										<div
-											class="documents-area documents-prop-wrap"
-										>
-											<div
-												class="documents-area__icon documents-prop-icon"
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>apartment</span
 											>
-												<span class="material-icons"
-													>stairs</span
-												>
-											</div>
-											<div
-												class="documents-area__text documents-prop-text"
-											>
-												floor
-											</div>
-										</div>
-										<div
-											class="documents-rooms documents-prop-wrap"
-										>
-											<div
-												class="documents-rooms__icon documents-prop-icon"
-											>
-												<span class="material-icons"
-													>apartment</span
-												>
-											</div>
-											<div
-												class="documents-rooms__text documents-prop-text"
-											>
-												rooms
+											<div class="documents-prop-text">
+												{{ property.rooms }}
 											</div>
 										</div>
 
-										<div class="documents__price">
-											{{property.price}} $
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>stairs</span
+											>
+											<div class="documents-prop-text">
+												Floor: {{ property.floors }}
+											</div>
 										</div>
-									</div>
-									<div class="documents-block-img">
-										<img src="assets/prop.jpg" alt="" />
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>construction</span
+											>
+											<div class="documents-prop-text">
+												{{ property.renovations }}
+											</div>
+										</div>
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>kitchen</span
+											>
+											<div class="documents-prop-text">
+												{{ property.appliances }}
+											</div>
+										</div>
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>water_drop</span
+											>
+											<div class="documents-prop-text">
+												{{ property.utilities }}
+											</div>
+										</div>
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>holiday_village</span
+											>
+											<div class="documents-prop-text">
+												{{ property.propertyTypes }}
+											</div>
+										</div>
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>home_work</span
+											>
+											<div class="documents-prop-text">
+												{{ property.buildingTypes }}
+											</div>
+										</div>
+
+										<div class="documents-prop-wrap">
+											<span class="material-icons"
+												>map</span
+											>
+											<div class="documents-prop-text">
+												{{ property.nearbys }}
+											</div>
+										</div>
+										<div class="documents-prop-wrap">
+											<div class="documents-prop-text">
+												${{ property.price }}
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
