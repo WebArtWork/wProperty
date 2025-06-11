@@ -242,18 +242,142 @@
 												{{ property.nearbys }}
 											</div>
 										</div>
-										<div class="documents-prop-wrap">
+										<div
+											class="documents-prop-wrap"
+											*ngIf="!type"
+										>
 											<div class="documents-prop-text">
 												${{ property.price }}
 											</div>
 										</div>
+										<!-- Типові блоки -->
+										<ng-container [ngSwitch]="type">
+											<ng-container
+												*ngSwitchCase="'Monthly Rent'"
+											>
+												<div
+													class="documents-prop-wrap"
+												>
+													<span class="material-icons"
+														>pets</span
+													>
+													<div
+														class="documents-prop-text"
+													>
+														{{ property.pets }}
+													</div>
+												</div>
+												<div
+													class="documents-prop-text"
+												>
+													${{ property.pricePerMountly
+													}}
+												</div>
+											</ng-container>
+
+											<ng-container
+												*ngSwitchCase="'Daily Rent'"
+											>
+												<div
+													class="documents-prop-wrap"
+												>
+													<span class="material-icons"
+														>hotel</span
+													>
+													<div
+														class="documents-prop-text"
+													>
+														{{
+														property.sleepingPlaces
+														}}
+													</div>
+												</div>
+												<div
+													class="documents-prop-text"
+												>
+													${{ property.pricePerDay }}
+												</div>
+											</ng-container>
+
+											<ng-container
+												*ngSwitchCase="'For Sale'"
+											>
+												<div
+													class="documents-prop-text"
+												>
+													${{ property.price }}
+												</div>
+											</ng-container>
+
+											<ng-container
+												*ngSwitchCase="'Partial Sale'"
+											>
+												<div
+													class="documents-prop-text"
+												>
+													${{ property.pricePerPartial
+													}}
+												</div>
+											</ng-container>
+
+											<ng-container
+												*ngSwitchCase="'Auction Sale'"
+											>
+												<div
+													class="documents-prop-wrap"
+												>
+													<span class="material-icons"
+														>attach_money</span
+													>
+													<div
+														class="documents-prop-text"
+													>
+														Bid: {{
+														property.minimumbidincrement
+														}}
+													</div>
+												</div>
+												<div
+													class="documents-prop-wrap"
+												>
+													<span class="material-icons"
+														>gavel</span
+													>
+													<div
+														class="documents-prop-text"
+													>
+														{{ property.auctionrules
+														}}
+													</div>
+												</div>
+												<div
+													class="documents-prop-wrap"
+												>
+													<span class="material-icons"
+														>event</span
+													>
+													<div
+														class="documents-prop-text"
+													>
+														{{ property.auctiondate
+														| date: 'mediumDate' }}
+													</div>
+												</div>
+												<div
+													class="documents-prop-text"
+												>
+													${{ property.startingprice
+													}}
+												</div>
+											</ng-container>
+										</ng-container>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="prop-section">
+				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div
@@ -318,7 +442,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="prop-section">
+				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div
@@ -382,7 +506,7 @@
 					</div>
 				</div>
 
-				<div class="prop-section">
+				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div
@@ -532,7 +656,7 @@
 					</div>
 				</div>
 
-				<div class="prop-section">
+				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div
@@ -604,7 +728,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="prop-section">
+				<div class="prop-section" *ngIf="!type">
 					<div class="documents-main-content">
 						<div class="documents-main-row">
 							<div
