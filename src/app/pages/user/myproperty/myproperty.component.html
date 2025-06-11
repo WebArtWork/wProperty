@@ -103,43 +103,11 @@
 										<div class="documents__name">
 											{{property.name}}
 										</div>
-										<div class="documents-block-img">
-											<img
-												[src]="images[currentIndex]"
-												alt="Property Image"
-												class="slider-image"
-											/>
-
-											<button
-												class="nav prev"
-												(click)="prev()"
-											>
-												&#10094;
-											</button>
-											<button
-												class="nav next"
-												(click)="next()"
-											>
-												&#10095;
-											</button>
-
-											<div class="dots">
-												<span
-													*ngFor="let img of images; let i = index"
-													[class.active]="i === currentIndex"
-													(click)="goToSlide(i)"
-												></span>
-											</div>
-										</div>
 										<div class="documents__description">
-											<span class="material-icons"
-												>description</span
-											>
 											{{property.description}}
 										</div>
-										<div
-											class="documents-address documents-prop-wrap"
-										>
+										<div class="documents-prop-listm">
+																					<div class="documents-address documents-prop-wrap">
 											<div
 												class="documents-address__icon documents-prop-icon"
 											>
@@ -154,9 +122,7 @@
 											</div>
 										</div>
 
-										<div
-											class="documents-area documents-prop-wrap"
-										>
+										<div class="documents-area documents-prop-wrap">
 											<div
 												class="documents-area__icon documents-prop-icon"
 											>
@@ -172,81 +138,119 @@
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>apartment</span
+											<div
+												class="documents-address__icon documents-prop-icon"
 											>
+												<span class="material-icons">apartment</span>
+											</div>
+
 											<div class="documents-prop-text">
 												{{ property.rooms }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>stairs</span
+											<div
+												class="documents-address__icon documents-prop-icon"
 											>
+												<span class="material-icons">stairs</span>
+											</div>
 											<div class="documents-prop-text">
 												Floor: {{ property.floors }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>construction</span
+											<div
+												class="documents-address__icon documents-prop-icon"
 											>
+												<span class="material-icons">construction</span>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.renovations }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>kitchen</span
-											>
+											<div class="documents-address__icon documents-prop-icon">
+												<span class="material-icons">kitchen</span>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.appliances }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>water_drop</span
-											>
+											<div class="documents-address__icon documents-prop-icon">
+												<span class="material-icons"
+													>water_drop</span
+												>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.utilities }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>holiday_village</span
-											>
+											<div class="documents-address__icon documents-prop-icon">
+												<span class="material-icons">holiday_village</span>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.propertyTypes }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>home_work</span
-											>
+											<div class="documents-address__icon documents-prop-icon">
+												<span class="material-icons">home_work</span>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.buildingTypes }}
 											</div>
 										</div>
 
 										<div class="documents-prop-wrap">
-											<span class="material-icons"
-												>map</span
-											>
+											<div class="documents-address__icon documents-prop-icon">
+												<span class="material-icons">map</span>
+											</div>
 											<div class="documents-prop-text">
 												{{ property.nearbys }}
 											</div>
 										</div>
-										<div class="documents-prop-wrap">
-											<div class="documents-prop-text">
-												${{ property.price }}
-											</div>
 										</div>
+										<div class="documents__price">
+											${{ property.price }}
+										</div>
+									</div>
+									<div class="documents-block-img">
+											<img
+												[src]="images[currentIndex]"
+												alt="Property Image"
+												class="slider-image"
+											/>
+
+											<div class="documents-block-img__btn">
+												<button
+													class="nav prev documents-block-img__prev"
+													(click)="prev()"
+												>
+													&#10094;
+												</button>
+												<button
+													class="nav next documents-block-img__next"
+													(click)="next()"
+												>
+													&#10095;
+												</button>
+											</div>
+
+											<div class="dots">
+												<span
+													*ngFor="let img of images; let i = index"
+													[class.active]="i === currentIndex"
+													(click)="goToSlide(i)"
+												></span>
+											</div>
 									</div>
 								</div>
 							</div>

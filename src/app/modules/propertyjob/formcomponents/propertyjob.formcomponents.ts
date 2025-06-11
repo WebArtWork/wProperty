@@ -4,6 +4,7 @@ import { services } from 'src/app/core/consts/services.const';
 export const propertyjobFormComponents = {
 	formId: 'propertyjob',
 	title: 'Job',
+	class: 'form-job',
 	components: [
 		{
 			name: 'Text',

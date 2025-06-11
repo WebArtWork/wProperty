@@ -541,22 +541,22 @@ wform {
     margin-bottom: 10px;
 }
 .documents-prop-icon{
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: rgba(88, 141, 244, 0.21);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     span{
-        font-size: 22px;
+        font-size: 20px;
 		color: #7494d3;
     }
 }
 .documents-prop-text{
     padding: 0 0 0 12px;
     flex: 1 0;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
 	color: var(--c-text-primary);
 }
@@ -568,7 +568,7 @@ wform {
 .documents__name{
     font-size: 24px;
     color: #aec1e7;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
 	line-height: 1;
 }
 .documents__description{
@@ -591,6 +591,22 @@ wform {
         object-fit: cover;
         border-radius: 10px;
     }
+	&__btn{
+		padding-top: 10px;
+		text-align: center;
+		button{
+			background: unset;
+			border: unset;
+			color: var(--c-text-primary);
+			font-size: 43px;
+			margin: 0 12px;
+			cursor: pointer;
+			transition: all .3s;
+			&:hover{
+				color: #aec1e7;
+			}
+		}
+	}
 }
 .documents-properties-title{
     display: flex;
@@ -626,6 +642,16 @@ wform {
 .material-wrapper{
 	display: flex;
 	flex-flow: row wrap;
+}
+.documents-prop-listm{
+	display: flex;
+    flex-flow: row wrap;
+	padding-bottom: 10px;
+	.documents-prop-wrap{
+		flex: 0 0 50%;
+		max-width: 50%;
+    	padding-right: 10px;
+	}
 }
 .documents_materials_box {
   &-item {
@@ -1070,6 +1096,20 @@ wform {
 .property-card__img {
 	border-radius: 10px;
 }
+.propertyjob{
+	wselect{
+		margin-bottom: 15px;
+	}
+}
+.propertyjob_2 > div {
+  margin-bottom: 10px;
+}
+.propertyjob_4{
+	winput{
+		margin-bottom: 15px;
+		display: block;
+	}
+}
 @media screen and (max-width: 767px) {
 	.property-links__wrap {
 		margin-bottom: 10px;
@@ -1110,6 +1150,26 @@ wform {
 	}
 	.documents-block-img {
 		flex: 0 0 200px;
+	}
+		.documents-block-list {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.documents-block-text {
+		flex: 1 0;
+		padding-right: 0;
+	}
+	.documents-block-img {
+        flex: 0 0 100%;
+        order: -1;
+        max-width: 400px;
+        display: flex;
+        flex-flow: column wrap;
+		margin-bottom: 12px;
+	}
+	.documents-block-img__btn{
+		padding: 0 0 14px 0;
+		order: -1;
 	}
 }
 @media screen and (max-width: 991px) {
@@ -1249,19 +1309,6 @@ wform {
 	.documents-text {
 		flex: 0 0 100%;
 		padding: 20px 0 0 0;
-	}
-	.documents-block-list {
-		display: flex;
-		flex-flow: column wrap;
-	}
-	.documents-block-text {
-		flex: 1 0;
-		padding-right: 0;
-	}
-	.documents-block-img {
-		flex: 0 0 100%;
-		order: -1;
-		max-width: 400px;
 	}
 	.documents_materials_box {
 		flex: 0 0 100%;

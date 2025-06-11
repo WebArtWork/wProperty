@@ -100,9 +100,12 @@
 	}
 	.property-card__img {
 		flex: 0 0 100%;
-		max-width: 260px;
+		max-width: 210px;
 		img{
 			height: 150px;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 6px;
 		}
 	}
 	.property-card__text {
