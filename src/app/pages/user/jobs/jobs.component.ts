@@ -1,16 +1,16 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { materialById } from 'src/app/core/consts/materials.const';
+import { serviceById } from 'src/app/core/consts/services.const';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
+import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { propertyjobFormComponents } from 'src/app/modules/propertyjob/formcomponents/propertyjob.formcomponents';
 import { Propertyjob } from 'src/app/modules/propertyjob/interfaces/propertyjob.interface';
 import { PropertyjobService } from 'src/app/modules/propertyjob/services/propertyjob.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService } from 'wacom';
-import { serviceById } from 'src/app/core/consts/services.const';
-import { materialById } from 'src/app/core/consts/materials.const';
-import { PropertyService } from 'src/app/modules/property/services/property.service';
-import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './jobs.component.html',
@@ -78,6 +78,24 @@ export class JobsComponent {
 			click: () => {
 				this._load(
 					'status=Assigned&worker=' + this.userService.user._id,
+					'public'
+				);
+			}
+		},
+		{
+			name: 'Invoiced',
+			click: () => {
+				this._load(
+					'status=Invoiced&worker=' + this.userService.user._id,
+					'public'
+				);
+			}
+		},
+		{
+			name: 'Paid',
+			click: () => {
+				this._load(
+					'status=Paid&worker=' + this.userService.user._id,
 					'public'
 				);
 			}

@@ -40,7 +40,8 @@ export const propertyjobFormComponents = {
 			fields: [
 				{
 					name: 'Label',
-					value: 'Services'
+					value: 'Services',
+					class: 'mb-10'
 				},
 				{
 					name: 'Fields',
@@ -51,7 +52,7 @@ export const propertyjobFormComponents = {
 							label: 'Service',
 							type: 'select',
 							value: 'id',
-							items: services
+							items: services,
 						}
 					]
 				}

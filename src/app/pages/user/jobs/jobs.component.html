@@ -1,53 +1,57 @@
-<div class="documents-wrapper">
-	<div class="documents-container">
-		<div class="documents-list">
-			<div class="documents-header">
-				<div class="documents-header-left">
-					<div class="documents-header-left__arrow">
-						<span class="material-icons" (click)="goBack()"
-							>arrow_back_ios</span
-						>
-					</div>
-					<core-profile routerLink="/profile"></core-profile>
-				</div>
-				<div class="documents-header__title" translate>Common.Jobs</div>
-				<div class="burger-wrap">
-					<i class="material-icons" (click)="create()">add</i>
-				</div>
-			</div>
-			<div class="documents-main">
-				<div class="documents-main-content">
-					<wtab [tabs]="pagesTabs" class="tabs"></wtab>
-
-					<wtab
-						*ngIf="userService.role('propertyworker') && !property_id"
-						[tabs]="jobsTabs"
-					></wtab>
-
-					<div
-						routerLink="/job/{{job._id}}"
-						*ngFor="let job of jobs"
-						class="documents-main-row"
-					>
-						<div class="documents__title">{{job.name}}</div>
-						<div class="documents__description">
-							{{job.description}} {{job.status}}
+<div class="propperty-p">
+	<div class="documents-wrapper">
+		<div class="documents-container">
+			<div class="documents-list">
+				<div class="documents-header">
+					<div class="documents-header-left">
+						<div class="documents-header-left__arrow">
+							<span class="material-icons" (click)="goBack()"
+								>arrow_back_ios</span
+							>
 						</div>
-						<div class="documents-tags">
-							<div
-								class="documents-tags__wrap"
-								*ngFor="let service of job.services"
-							>
-								<div class="documents-tags__item">
-									{{serviceById[service.id].name}}
-								</div>
+						<core-profile routerLink="/profile"></core-profile>
+					</div>
+					<div class="documents-header__title" translate>
+						Common.Jobs
+					</div>
+					<div class="burger-wrap">
+						<i class="material-icons" (click)="create()">add</i>
+					</div>
+				</div>
+				<div class="documents-main">
+					<div class="documents-main-content">
+						<wtab [tabs]="pagesTabs" class="tabs"></wtab>
+
+						<wtab
+							*ngIf="userService.role('propertyworker') && !property_id"
+							[tabs]="jobsTabs"
+						></wtab>
+
+						<div
+							routerLink="/job/{{job._id}}"
+							*ngFor="let job of jobs"
+							class="documents-main-row"
+						>
+							<div class="documents__title">{{job.name}}</div>
+							<div class="documents__description">
+								{{job.description}} {{job.status}}
 							</div>
-							<div
-								class="documents-tags__wrap"
-								*ngFor="let material of job.materials"
-							>
-								<div class="documents-tags__item">
-									{{materialById[material.id].name}}
+							<div class="documents-tags">
+								<div
+									class="documents-tags__wrap"
+									*ngFor="let service of job.services"
+								>
+									<div class="documents-tags__item">
+										{{serviceById[service.id].name}}
+									</div>
+								</div>
+								<div
+									class="documents-tags__wrap"
+									*ngFor="let material of job.materials"
+								>
+									<div class="documents-tags__item">
+										{{materialById[material.id].name}}
+									</div>
 								</div>
 							</div>
 						</div>

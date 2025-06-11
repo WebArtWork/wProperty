@@ -1,6 +1,7 @@
 import { CrudDocument } from 'wacom';
 
 export interface Propertytask extends CrudDocument {
+	job: string;
 	name: string;
 	description: string;
 	category: string;
@@ -8,10 +9,10 @@ export interface Propertytask extends CrudDocument {
 	client: string;
 	address: string;
 	deadline: string;
-	latitude: Number;
-	longitude: Number;
-	startTime: Number;
-	endTime: Number;
+	latitude: number;
+	longitude: number;
+	startTime: number;
+	endTime: number;
 
 	id: number;
 	title: string;
