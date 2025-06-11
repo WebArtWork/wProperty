@@ -5,7 +5,8 @@ import {
 	transition,
 	trigger
 } from '@angular/animations';
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Location } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
@@ -14,8 +15,8 @@ import { propertyFormComponents } from 'src/app/modules/property/formcomponents/
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
 import { AlertService, CoreService } from 'wacom';
-import { Location } from '@angular/common';
-import { CommonModule } from '@angular/common';
+import { materials } from 'src/app/core/consts/materials.const';
+import { Material } from 'src/app/core/interfaces/material.interface';
 
 @Component({
 	templateUrl: './myproperty.component.html',
@@ -33,15 +34,20 @@ import { CommonModule } from '@angular/common';
 		])
 	]
 })
-export class MypropertyComponent {
-	type: string = '';
+export class MypropertyComponent implements AfterViewInit {
+	materials: Material[] = materials;
 	readonly types = this._propertyService.types;
 
 	readonly type_icon = this._propertyService.type_icon;
 
-	property = this._propertyService.doc(
-		this._router.url.replace('/property/', '')
-	);
+	property_id = this._router.url.split('/')[2];
+
+	property = this._propertyService.doc(this.property_id);
+
+	type = (this._router.url.split('/').length === 4
+		? this._router.url.split('/')[3]
+		: ''
+	).replace('%20', ' ');
 
 	isMenuOpen = false;
 
@@ -49,6 +55,10 @@ export class MypropertyComponent {
 		'property',
 		propertyFormComponents
 	);
+
+	images: string[] = [];
+
+	currentIndex = 0;
 
 	constructor(
 		private _propertyService: PropertyService,
@@ -98,7 +108,6 @@ export class MypropertyComponent {
 			this.renderer.addClass(firstButton, 'active');
 		}
 	}
-	images: string[] = [];
 
 	ngAfterViewInit(): void {
 		if (this.property?.thumbs) {
@@ -107,6 +116,7 @@ export class MypropertyComponent {
 			} else if (typeof this.property.thumbs === 'string') {
 				try {
 					const parsed = JSON.parse(this.property.thumbs);
+
 					this.images = Array.isArray(parsed) ? parsed : [parsed];
 				} catch {
 					this.images = [this.property.thumbs];
@@ -137,7 +147,7 @@ export class MypropertyComponent {
 	goBack(): void {
 		this.location.back();
 	}
-	currentIndex = 0;
+
 	prev() {
 		this.currentIndex =
 			this.currentIndex === 0

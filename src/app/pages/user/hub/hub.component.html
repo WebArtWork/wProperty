@@ -198,8 +198,7 @@
 						class="documents-main-row"
 					>
 						<a
-							[routerLink]="['/property']"
-							[state]="{ property: property, type: type }"
+							routerLink="/property/{{property._id}}/{{type}}"
 							class="documents-block-list"
 							style="text-decoration: none; color: inherit"
 						>
