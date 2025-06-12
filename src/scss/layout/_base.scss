@@ -411,7 +411,7 @@ wform {
 			}
 		}
 		&__item {
-			background: #e0653f;
+			background: #466bb5;
 			padding: 2px 5px;
 			border-radius: 5px;
 			margin-bottom: 10px;
@@ -867,6 +867,13 @@ wform {
 		left: 10px;
 	}
 }
+.row-hover{
+	transition: all .3s;
+	cursor: pointer;
+	&:hover{
+		background: var(--item-h);
+	}
+}
 .task__description{
 	margin: 12px 0;
 }
@@ -1105,7 +1112,7 @@ wform {
   margin-bottom: 15px;
 }
 
-.propertyjob_4{
+.propertyjob_4, .propertyjobproposal_0{
 	winput{
 		margin-bottom: 15px;
 		display: block;

@@ -1,3 +1,4 @@
+<div class="propperty-p">
 <div class="documents-wrapper">
 	<div class="documents-container">
 		<div class="documents-list">
@@ -113,8 +114,9 @@
 								</div>
 							</div>
 						</div>
-						@if(!proposal.moreDetails) {
-						<wbutton (click)="moreDetails(proposal)"
+						<div class="job-btns">
+							@if(!proposal.moreDetails) {
+						<wbutton class="mb-10" (click)="moreDetails(proposal)"
 							>Ask detailed proposal</wbutton
 						>
 						} @if(!job.worker || job.status === 'New') {
@@ -122,14 +124,15 @@
 							>Assign worker</wbutton
 						>
 						}
+						</div>
 					</div>
 					} } @if (job.worker === userService.user._id && job.status
 					=== "Assigned") {
-					<wbutton (click)="mutateTask()">Create task</wbutton>
+					<wbutton (click)="mutateTask()" class="mb-10">Create task</wbutton>
 					@for (task of tasks; track task._id; let i = $index) {
-					<div>{{task.name}}</div>
-					<wbutton (click)="mutateTask(task)">Mutate task</wbutton>
-					<wbutton (click)="deleteTask(task); tasks.splice(i, 1)"
+					<div class="documents__title" >{{task.name}}</div>
+					<wbutton (click)="mutateTask(task)" class="mb-10">Mutate task</wbutton>
+					<wbutton (click)="deleteTask(task); tasks.splice(i, 1)" class="mb-10"
 						>Delete task</wbutton
 					>
 					} } @if (job.worker === userService.user._id && job.status
@@ -151,3 +154,6 @@
 		</div>
 	</div>
 </div>
+
+</div>
+

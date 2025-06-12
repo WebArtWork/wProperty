@@ -24,13 +24,13 @@
 
 						<wtab
 							*ngIf="userService.role('propertyworker') && !property_id"
-							[tabs]="jobsTabs"
+							[tabs]="jobsTabs" class="mb-10" style="display: block;"
 						></wtab>
 
 						<div
 							routerLink="/job/{{job._id}}"
 							*ngFor="let job of jobs"
-							class="documents-main-row"
+							class="documents-main-row row-hover"
 						>
 							<div class="documents__title">{{job.name}}</div>
 							<div class="documents__description">
