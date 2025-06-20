@@ -598,7 +598,7 @@ wform {
 			background: unset;
 			border: unset;
 			color: var(--c-text-primary);
-			font-size: 43px;
+			font-size: 24px;
 			margin: 0 12px;
 			cursor: pointer;
 			transition: all .3s;
@@ -1176,7 +1176,7 @@ wform {
 		margin-bottom: 12px;
 	}
 	.documents-block-img__btn{
-		padding: 0 0 14px 0;
+		padding: 0 0 8px 0;
 		order: -1;
 	}
 }
@@ -1212,7 +1212,7 @@ wform {
         width: 100%;
         top: 0;
 		left: 0;
-        padding: 10px;
+        padding: 5px 10px;
 		background: var(--header-doc);
 		z-index: 8;
 		&__title{
@@ -1222,6 +1222,7 @@ wform {
 			top: 50%;
 			font-weight: 600;
 			color: var(--c-text-primary);
+			font-size: 14px;
 		}
 	}
 	.documents-header-left{
@@ -1244,13 +1245,13 @@ wform {
 		}
 	}
 	.burger-wrap {
-		display: flex;
-		align-items: center;
-		position: absolute;
-		z-index: 3;
-		right: 3px;
-		transform: translate(-50%, -50%);
-		top: 50%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 3;
+        right: 10px;
+        transform: translateY(-50%);
+        top: 50%;
 	}
 	.documents-sidebar__close{
 		display: block;
@@ -1345,11 +1346,17 @@ wform {
 	}
 	.tabs button {
 		font-size: 16px;
-		height: 50px;
+		height: 34px;
 	}
 
 	.tabs button i {
+		font-size: 18px;
+	}
+	.documents-properties-title__text {
 		font-size: 20px;
+	}
+	.documents-properties-title__arrow span {
+		font-size: 32px;
 	}
 }
 @media screen and (max-width: 479px) {
@@ -1401,4 +1408,11 @@ wform {
 			border-radius: 120px;
 		}
 	}
+	.documents-block-img {
+        flex: 0 0 100%;
+		max-width: 320px;
+		img{
+			height: 160px;
+		}
+    }
 }
