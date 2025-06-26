@@ -11,7 +11,10 @@
 		/>
 	</label>
 
-	<label *ngIf="multiple" for="formPhotos" class="file__add">Add</label>
+	<label *ngIf="multiple" for="formPhotos" class="file__add">
+		<span class="file__add-icon material-icons">image</span>
+		Add
+	</label>
 
 	<div *ngIf="multiple" class="file__list">
 		<div *ngFor="let file of files; index as i" class="file__item">

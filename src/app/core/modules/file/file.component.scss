@@ -25,7 +25,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
+		span{
+			font-size: 20px;
+			margin-right: 5px;
+		}
 		&:hover {
 			background-color: var(--c-primary-hover);
 		}
