@@ -5,7 +5,6 @@ import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interfa
 import { propertyrecordFormComponents } from 'src/app/modules/propertyrecord/formcomponents/propertyrecord.formcomponents';
 import { Propertyrecord } from 'src/app/modules/propertyrecord/interfaces/propertyrecord.interface';
 import { PropertyrecordService } from 'src/app/modules/propertyrecord/services/propertyrecord.service';
-import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './records.component.html',
@@ -14,17 +13,19 @@ import { Location } from '@angular/common';
 })
 export class RecordsComponent {
 	propertyRecords: Propertyrecord[] = [];
+
 	isMenuOpen = false;
+
 	property_id = '';
 
 	constructor(
-		private _propertyrecordService: PropertyrecordService,
+		private _recordService: PropertyrecordService,
 		private _route: ActivatedRoute,
-		private location: Location,
 		private _form: FormService
 	) {
 		this._route.paramMap.subscribe((params) => {
 			this.property_id = params.get('property_id') || '';
+
 			this.load();
 		});
 	}
@@ -33,9 +34,7 @@ export class RecordsComponent {
 		'propertyrecord',
 		propertyrecordFormComponents
 	);
-	goBack(): void {
-		this.location.back();
-	}
+
 	create(): void {
 		this._form.modal<Propertyrecord>(this.form, {
 			label: 'Create',
@@ -44,7 +43,7 @@ export class RecordsComponent {
 
 				this._preCreate(created as Propertyrecord);
 
-				this._propertyrecordService
+				this._recordService
 					.create(created as Propertyrecord)
 					.subscribe(() => {
 						this.load();
@@ -54,10 +53,11 @@ export class RecordsComponent {
 	}
 
 	load(): void {
-		this._propertyrecordService
+		this._recordService
 			.get({ page: 1, query: this._query() })
 			.subscribe((records) => {
 				this.propertyRecords.splice(0, this.propertyRecords.length);
+
 				this.propertyRecords.push(...records);
 			});
 	}
@@ -69,9 +69,11 @@ export class RecordsComponent {
 		if (this.property_id) {
 			query += (query ? '&' : '') + 'property=' + this.property_id;
 		}
+
 		if (this.type) {
 			query += (query ? '&' : '') + 'type=' + this.type;
 		}
+
 		return query;
 	}
 
@@ -81,6 +83,7 @@ export class RecordsComponent {
 		if (this.property_id) {
 			record.property = this.property_id;
 		}
+
 		if (this.type) {
 			record.property = this.type;
 		}

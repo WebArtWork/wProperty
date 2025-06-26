@@ -1,14 +1,19 @@
-<a routerLink="/propertyhistory/{{record._id}}" >
-	<div class="documents__name records-title">name</div>
-	<div class="documents__description records__description">description</div>
-		<div class="documents__comments records-comments"> Comments block lorem ipsjun asdsadsad </div>
+<a routerLink="/propertyhistory/{{record._id}}">
+	<div class="documents__name records-title">{{record.name}}</div>
+	<div class="documents__description records__description">
+		{{record.description}}
+	</div>
+	<div class="documents__comments records-comments">
+		Comments block lorem ipsjun asdsadsad
+	</div>
 	<div class="materials-wrapper">
 		<div class="materials-wrapper__icon"></div>
-		<div class="materials-wrapper__text"> Responsible: <span class="">5 years</span>
+		<div class="materials-wrapper__text">
+			Responsible: <span class="">5 years</span>
 		</div>
 	</div>
 	<div class="records__bottom">
-		<div class="documents__price records__price"> $expenses </div>
+		<div class="documents__price records__price">$expenses</div>
 		<div class="documents-time">
 			<div class="documents-time__icon">
 				<span class="material-icons">calendar_today</span>
@@ -27,5 +32,3 @@
 		<span (click)="delete()" class="material-icons">delete</span>
 	</div>
 </div>
-
-

@@ -24,66 +24,6 @@ export const propertyrecordFormComponents = {
 				}
 			]
 		},
-
-		/*{
-			"name": "Text",
-			"key": "name",
-			"focused": true,
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter record title"
-			  },
-			  {
-				"name": "Label",
-				"value": "Title"
-			  }
-			]
-		  },
-
-		  {
-			"name": "Text",
-			"key": "description",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter record description"
-			  },
-			  {
-				"name": "Label",
-				"value": "Description"
-			  }
-			]
-		  },
-		  {
-			"name": "Text",
-			"key": "responsible",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter name of responsible person"
-			  },
-			  {
-				"name": "Label",
-				"value": "Responsible"
-			  }
-			]
-		  },
-
-		  {
-			"name": "Text",
-			"key": "comments",
-			"fields": [
-			  {
-				"name": "Placeholder",
-				"value": "Enter any additional comments"
-			  },
-			  {
-				"name": "Label",
-				"value": "Comments"
-			  }
-			]
-		  },*/
 		{
 			name: 'Select',
 			key: 'materials',
@@ -104,7 +44,6 @@ export const propertyrecordFormComponents = {
 				}
 			]
 		},
-
 		{
 			name: 'Photos',
 			key: 'photos',
@@ -192,7 +131,6 @@ export const propertyrecordFormComponents = {
 				}
 			]
 		},
-
 		{
 			name: 'Number',
 			key: 'price',
@@ -237,5 +175,66 @@ export const propertyrecordFormComponents = {
 				}
 			]
 		}
+		// {
+		// 	name: 'Text',
+		// 	key: 'name',
+		// 	focused: true,
+		// 	fields: [
+		// 		{
+		// 			name: 'Placeholder',
+		// 			value: 'Enter record title'
+		// 		},
+		// 		{
+		// 			name: 'Label',
+		// 			value: 'Title'
+		// 		}
+		// 	]
+		// },
+
+		// {
+		// 	name: 'Text',
+		// 	key: 'description',
+		// 	fields: [
+		// 		{
+		// 			name: 'Placeholder',
+		// 			value: 'Enter record description'
+		// 		},
+		// 		{
+		// 			name: 'Label',
+		// 			value: 'Description'
+		// 		}
+		// 	]
+		// },
+		/*
+
+		  {
+			"name": "Text",
+			"key": "responsible",
+			"fields": [
+			  {
+				"name": "Placeholder",
+				"value": "Enter name of responsible person"
+			  },
+			  {
+				"name": "Label",
+				"value": "Responsible"
+			  }
+			]
+		  },
+
+		  {
+			"name": "Text",
+			"key": "comments",
+			"fields": [
+			  {
+				"name": "Placeholder",
+				"value": "Enter any additional comments"
+			  },
+			  {
+				"name": "Label",
+				"value": "Comments"
+			  }
+			]
+		  },*/
 	]
 };
