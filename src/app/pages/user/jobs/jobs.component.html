@@ -4,12 +4,8 @@
 			<div class="documents-list">
 				<div class="documents-header">
 					<div class="documents-header-left">
-						<div class="documents-header-left__arrow">
-							<span class="material-icons" (click)="goBack()"
-								>arrow_back_ios</span
-							>
-						</div>
-						<core-profile routerLink="/profile"></core-profile>
+						<core-back></core-back>
+						<core-profile></core-profile>
 					</div>
 					<div class="documents-header__title" translate>
 						Common.Jobs
@@ -24,7 +20,9 @@
 
 						<wtab
 							*ngIf="userService.role('propertyworker') && !property_id"
-							[tabs]="jobsTabs" class="mb-10" style="display: block;"
+							[tabs]="jobsTabs"
+							class="mb-10"
+							style="display: block"
 						></wtab>
 
 						<div

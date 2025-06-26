@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { appliances } from 'src/app/core/consts/appliances.const';
@@ -5,16 +6,15 @@ import { areas } from 'src/app/core/consts/areas.const';
 import { buildingTypes } from 'src/app/core/consts/buildingTypes.const';
 import { floors } from 'src/app/core/consts/floors.const';
 import { nearbys } from 'src/app/core/consts/nearbys.const';
-import { prices } from 'src/app/core/consts/prices.const';
 import { pets } from 'src/app/core/consts/pets.const';
-import { sleepingPlaces } from 'src/app/core/consts/sleepingPlaces.const';
+import { prices } from 'src/app/core/consts/prices.const';
 import { propertyTypes } from 'src/app/core/consts/propertyTypes.const';
 import { renovations } from 'src/app/core/consts/renovations.const';
 import { rooms } from 'src/app/core/consts/rooms.const';
+import { sleepingPlaces } from 'src/app/core/consts/sleepingPlaces.const';
 import { utilities } from 'src/app/core/consts/utilities.const';
 import { Property } from 'src/app/modules/property/interfaces/property.interface';
 import { PropertyService } from 'src/app/modules/property/services/property.service';
-import { Location } from '@angular/common';
 
 @Component({
 	templateUrl: './hub.component.html',
@@ -22,7 +22,7 @@ import { Location } from '@angular/common';
 	standalone: false
 })
 export class HubComponent {
-	readonly selectType = this._router.url === '/hub';
+	readonly selectType = this._router.url === '/marketplace';
 
 	readonly type = !this.selectType
 		? this._router.url.split('/')[2].replace('%20', ' ')
@@ -114,11 +114,14 @@ export class HubComponent {
 	};
 	getRangeBounds(selected: string[], map: Record<string, [number, number]>) {
 		let min = Infinity;
+
 		let max = -Infinity;
 
 		selected.forEach((label) => {
 			const [low, high] = map[label];
+
 			min = Math.min(min, low);
+
 			max = Math.max(max, high);
 		});
 
@@ -129,6 +132,7 @@ export class HubComponent {
 	}
 	load(): void {
 		const areaRange = this.getRangeBounds(this.selectedAreas, this.areaMap);
+
 		const priceRange = this.getRangeBounds(
 			this.selectedPrices,
 			this.priceMap
@@ -152,11 +156,13 @@ export class HubComponent {
 		this._propertyService.get({ query }).subscribe((all: Property[]) => {
 			this.properties = all.filter((prop) => {
 				const area = Number(prop.areas);
+
 				const price = Number(prop.price);
 
 				const areaMatch =
 					!areaRange ||
 					(area >= areaRange[0] && area <= areaRange[1]);
+
 				const priceMatch =
 					!priceRange ||
 					(price >= priceRange[0] && price <= priceRange[1]);

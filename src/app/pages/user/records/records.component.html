@@ -3,32 +3,17 @@
 		<div class="documents-list">
 			<div class="documents-header">
 				<div class="documents-header-left">
-					<div class="documents-header-left__arrow">
-						<span class="material-icons" (click)="goBack()"
-							>arrow_back_ios</span
-						>
-					</div>
-
-					<div
-						routerlink="/profile"
-						class="documents-header-left__avatar"
-						tabindex="0"
-						ng-reflect-router-link="/profile"
-					>
-						<img alt="" src="assets/default.png" />
-					</div>
+					<core-back></core-back>
+					<core-profile></core-profile>
 				</div>
-				<div class="documents-header__title">Title header</div>
-				<div
-					class="burger-wrap"
-					class="burger-wrap"
-					(click)="isMenuOpen=!isMenuOpen"
-					[class.burger-wrap--open]="isMenuOpen"
-				>
-					<div
-						class="burger"
-						[class.burger--close]="isMenuOpen"
-					></div>
+				<div class="documents-header__title" translate>
+					Myproperties.My real estate history
+				</div>
+				<div class="burger-wrap">
+					<i class="material-icons" (click)="isMenuOpen = !isMenuOpen"
+						>tune</i
+					>
+					<i class="material-icons" (click)="create()">add</i>
 				</div>
 			</div>
 			<div

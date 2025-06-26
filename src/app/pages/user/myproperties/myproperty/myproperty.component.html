@@ -1,5 +1,5 @@
 <div class="property-card-wrap">
-	<div class="property-card__img">
+	<div class="property-card__img" *ngIf="property.thumbs.length">
 		<img
 			[src]="property.thumbs ? url + property.thumbs : 'assets/prop.jpg'"
 			alt=""
@@ -7,10 +7,16 @@
 	</div>
 	<div class="property-card__text">
 		<a routerLink="/property/{{property._id}}" class="property__name">
-			<div class="documents__title">{{property.name}}</div>
+			<div class="documents__title">
+				{{property.name || 'Myproperties.Unknown property' | translate}}
+			</div>
 		</a>
 
-		<a routerLink="/property/{{property._id}}" class="property-loc">
+		<a
+			routerLink="/property/{{property._id}}"
+			class="property-loc"
+			*ngIf="property.address"
+		>
 			<div class="property-loc__img">
 				<span class="material-icons">location_on</span>
 			</div>
@@ -18,7 +24,11 @@
 				{{property.address}}
 			</div>
 		</a>
-		<a routerLink="/property/{{property._id}}" class="property-loc">
+		<a
+			routerLink="/property/{{property._id}}"
+			*ngIf="property.types.length"
+			class="property-loc"
+		>
 			<div class="property-loc__img">
 				<span class="material-icons">holiday_village</span>
 			</div>

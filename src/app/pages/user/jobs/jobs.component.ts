@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { materialById } from 'src/app/core/consts/materials.const';
@@ -119,7 +118,6 @@ export class JobsComponent {
 		private _formService: FormService,
 		public userService: UserService,
 		private _core: CoreService,
-		private location: Location,
 		private _router: Router
 	) {
 		this._load(this._mineQuery());
@@ -139,9 +137,7 @@ export class JobsComponent {
 			}
 		});
 	}
-	goBack(): void {
-		this.location.back();
-	}
+
 	private _form: FormInterface = this._formService.getForm(
 		'propertyjob',
 		propertyjobFormComponents

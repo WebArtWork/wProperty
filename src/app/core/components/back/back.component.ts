@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 	standalone: false
 })
 export class BackComponent {
-	back(): void {
-		window.history.back();
+	constructor(private location: Location) {}
+
+	goBack(): void {
+		this.location.back();
 	}
 }

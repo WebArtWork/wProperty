@@ -3,41 +3,27 @@
 		<div class="documents-list">
 			<div class="documents-header">
 				<div class="documents-header-left">
-					<div class="documents-header-left__arrow">
-						<span class="material-icons" (click)="goBack()"
-							>arrow_back_ios</span
-						>
-					</div>
-					<div
-						routerlink="/profile"
-						class="documents-header-left__avatar"
-						tabindex="0"
-						ng-reflect-router-link="/profile"
+					<core-back></core-back>
+					<core-profile></core-profile>
+				</div>
+				<div class="documents-header__title">
+					{{ (type ? 'Hub.'+type : 'Hub.Marketplace' ) | translate }}
+				</div>
+				<div class="burger-wrap">
+					<i
+						(click)="isMenuOpen=!isMenuOpen"
+						class="material-icons"
+						*ngIf="type"
+						>tune</i
 					>
-						<img alt="" src="assets/default.png" />
-					</div>
-				</div>
-				<div class="documents-header__title" translate>
-					Markets.Real Estate Hub
-				</div>
-				<div
-					class="burger-wrap"
-					class="burger-wrap"
-					(click)="isMenuOpen=!isMenuOpen"
-					[class.burger-wrap--open]="isMenuOpen"
-				>
-					<div
-						class="burger"
-						[class.burger--close]="isMenuOpen"
-					></div>
 				</div>
 			</div>
 
-			<div class="documents-main documents-main--full" *ngIf="selectType">
+			<div class="documents-main documents-main--full" *ngIf="!type">
 				<div class="hub-wrapper">
 					<div
+						routerLink="/marketplace/{{type}}"
 						*ngFor="let type of types"
-						routerLink="/hub/{{type}}"
 						class="hub-item"
 					>
 						<div class="hub-img">
