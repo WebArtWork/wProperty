@@ -1,0 +1,1 @@
+import{Hb as o,u as e}from"./chunk-7J63SMGH.js";var s=(()=>{let t=class t extends o{constructor(){super({name:"propertyjob"})}};t.\u0275fac=function(n){return new(n||t)},t.\u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"});let r=t;return r})();export{s as a};
