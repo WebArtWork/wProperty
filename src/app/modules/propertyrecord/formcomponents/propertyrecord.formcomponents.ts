@@ -1,11 +1,12 @@
-export const propertyrecordFormComponents = {
+import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
+
+export const propertyrecordFormComponents: FormInterface = {
 	formId: 'propertyrecord',
 	title: 'Propertyrecord',
 	components: [
 		{
 			name: 'Select',
 			key: 'type',
-			focused: true,
 			fields: [
 				{
 					name: 'Placeholder',
@@ -15,11 +16,10 @@ export const propertyrecordFormComponents = {
 					name: 'Items',
 					value: [
 						'Utility bill',
-						'Change owner',
-						'Service',
-						'Materials',
 						'Rent bill',
-						'Incident'
+						'Incident',
+						'Job',
+						'Change owner'
 					]
 				}
 			]
@@ -27,8 +27,6 @@ export const propertyrecordFormComponents = {
 		{
 			name: 'Select',
 			key: 'materials',
-			Multiple: true,
-			focused: true,
 			fields: [
 				{
 					name: 'Items',
@@ -178,7 +176,6 @@ export const propertyrecordFormComponents = {
 		// {
 		// 	name: 'Text',
 		// 	key: 'name',
-		// 	focused: true,
 		// 	fields: [
 		// 		{
 		// 			name: 'Placeholder',
