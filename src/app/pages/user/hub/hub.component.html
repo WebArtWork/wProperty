@@ -179,13 +179,27 @@
 
 			<div class="documents-main" *ngIf="!selectType">
 				<div class="documents-main-content">
+											<!-- коли нема контенту-->
+						<div class="guide-bg">
+							<img src="assets/bg/1.png" alt="">
+						</div>
+
+						<!-- коли нема контенту -->
+						 <div class="guide-wrapper">
+							<div class="guide__text">
+								Натисніть кнопку 
+							</div>
+							<div class="guide__text">
+								що б додати нерухомість
+							</div>
+						 </div>
 					<div
 						*ngFor="let property of properties"
-						class="documents-main-row"
-					>
+						class="documents-main-row">
+						<!--
 						<a
 							routerLink="/property/{{property._id}}/{{type}}"
-							class="documents-block-list"
+							cl	ass="documents-block-list"
 							style="text-decoration: none; color: inherit"
 						>
 							<div class="documents-block-text">
@@ -193,12 +207,12 @@
 									class="mb-20"
 									*ngIf="type === 'For Sale' || type === 'Partial Sale' || type === 'Monthly Rent' || type === 'Daily Rent' || type === 'Auction Sale'"
 								>
-									<!-- Property Title -->
+	
 									<div class="documents__name mb-10">
-										{{property.name}}
+										{{property.name}} 
 									</div>
 
-									<!-- Address -->
+							
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-icon">
 											<span class="material-icons"
@@ -215,7 +229,7 @@
 									*ngIf="type === 'Daily Rent'"
 									class="documents-block-text__rent"
 								>
-									<!-- Price Per Day -->
+									
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
 											$ {{property.pricePerDay}}
@@ -227,14 +241,14 @@
 									*ngIf="type === 'For Sale'"
 									class="documents-block-text__rent"
 								>
-									<!-- Price -->
+								
 									<div class="documents__price">
 										$ {{property.price}}
 									</div>
 								</div>
 
 								<div *ngIf="type === 'Partial Sale'">
-									<!-- Price Per Partial Period -->
+					
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
 											$ {{property.pricePerPartial}}
@@ -243,7 +257,7 @@
 								</div>
 
 								<div *ngIf="type === 'Monthly Rent'">
-									<!-- Price Per Month -->
+								
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
 											$ {{property.pricePerMountly}}
@@ -252,7 +266,7 @@
 								</div>
 
 								<div *ngIf="type === 'Auction Sale'">
-									<!-- Starting Price -->
+
 									<div class="documents-prop-wrap">
 										<div class="documents-prop-text">
 											$ {{property.startingprice}}
@@ -263,7 +277,8 @@
 							<div class="documents-block-img">
 								<img src="assets/prop.jpg" alt="" />
 							</div>
-						</a>
+						</a>-->
+
 					</div>
 				</div>
 			</div>
