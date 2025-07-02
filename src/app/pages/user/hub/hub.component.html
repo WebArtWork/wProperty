@@ -179,24 +179,25 @@
 
 			<div class="documents-main" *ngIf="!selectType">
 				<div class="documents-main-content">
-											<!-- коли нема контенту-->
-						<div class="guide-bg">
-							<img src="assets/bg/1.png" alt="">
-						</div>
+						<!-- коли нема контенту
+						<div class="guide-bg guide-bg--sale">
+							<img src="assets/bg/2.png" alt="">
+							<div class="guide-wrapper">
+								<div class="guide__text">
+									Додайте 
+								</div>
+								<div class="guide__text">
+									нерухомість
+								</div>
+								<a href="/properties" class="guide__plus">
+									<span class="material-icons" style="color: var(--c-text-primary);">location_city</span>
+								</a>
+							</div>
+						</div>-->
 
-						<!-- коли нема контенту -->
-						 <div class="guide-wrapper">
-							<div class="guide__text">
-								Натисніть кнопку 
-							</div>
-							<div class="guide__text">
-								що б додати нерухомість
-							</div>
-						 </div>
 					<div
 						*ngFor="let property of properties"
 						class="documents-main-row">
-						<!--
 						<a
 							routerLink="/property/{{property._id}}/{{type}}"
 							cl	ass="documents-block-list"
@@ -277,7 +278,7 @@
 							<div class="documents-block-img">
 								<img src="assets/prop.jpg" alt="" />
 							</div>
-						</a>-->
+						</a>
 
 					</div>
 				</div>

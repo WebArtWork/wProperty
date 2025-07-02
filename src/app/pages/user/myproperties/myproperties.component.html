@@ -1,9 +1,22 @@
 <div class="propperty-p">
 	<div class="documents-wrapper">
-		<!-- коли нема контенту
-		<div class="guide-bg">
+		
+		<!-- Коли нема контенту
+					<div class="guide-bg">
 			<img src="assets/bg/1.png" alt="">
-		</div>-->
+			<div class="guide-wrapper guide-wrapper--first">
+				<div class="guide__text">
+					Натисніть кнопку 
+				</div>
+				<div class="guide__plus" (click)="create()">
+					+
+				</div>
+				<div class="guide__text">
+					що б додати нерухомість
+				</div>
+			</div>
+		</div>
+		-->
 		<div class="documents-container">
 			<div class="documents-list">
 				<div class="documents-header">
@@ -20,7 +33,8 @@
 				</div>
 				<div class="documents-main">
 					<div class="documents-main-content">
-						<div
+						
+						 <div
 							*ngFor="let property of properties"
 							class="documents-main-row"
 						>
@@ -29,22 +43,10 @@
 								(load)="load()"
 							></app-myproperty>
 						</div>
-						<!-- коли нема контенту
-						 <div class="guide-wrapper">
-							<div class="guide__text">
-								Натисніть кнопку 
-							</div>
-							<div class="guide__plus" (click)="create()">
-								+
-							</div>
-							<div class="guide__text">
-								що б додати нерухомість
-							</div>
-						 </div>-->
+						 </div>
 
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
