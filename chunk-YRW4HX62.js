@@ -1,0 +1,1 @@
+import{S as c}from"./chunk-7J63SMGH.js";var o=(()=>{let t=class t{transform(r,e,a=0){return e?r?.filter(n=>(n.data.services||[]).includes(e))||[]:a?r?.filter(n=>(n.data.materials||[]).includes(a))||[]:r}};t.\u0275fac=function(e){return new(e||t)},t.\u0275pipe=c({name:"workers",type:t,pure:!0});let i=t;return i})();export{o as a};
