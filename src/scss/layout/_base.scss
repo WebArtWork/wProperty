@@ -1294,6 +1294,7 @@ wform {
 	.burger-wrap {
         display: flex;
         align-items: center;
+		justify-content: end;
         position: absolute;
         z-index: 3;
         right: 10px;
